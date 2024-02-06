@@ -38,6 +38,8 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    1. [Exceptions](#exceptions)
    2. [Try-Except Block](#try-except-block)
    3. [Finally Clause](#finally-clause)
+   4. [Some Error Handling examples](#some-error-handling-examples)
+   5. [More 10 Error Handling examples](#more-10-error-handling-examples)
 6. [Intermediate Python](#error-handling)
    1. [Comprehensions](#comprehensions)
    2. [Lambda Functions](#lambda-functions)
@@ -1451,20 +1453,331 @@ Go back to [Contents](#contents).
 
 ## Error Handling
 
+Error handling is crucial for creating reliable and user-friendly programs.
+
 Go back to [Contents](#contents).
 
 ### Exceptions
+
+In Python, exceptions are errors detected during execution that interrupt the normal flow of a program. 
+
+These could be due to logical errors, like trying to divide by zero, or runtime errors, like attempting to open a file that doesn't exist. 
+
+Exceptions are Python's way of signaling that something has gone wrong.
 
 Go back to [Contents](#contents).
 
 ### Try-Except Block
 
+Python provides a try-except block for handle exceptions.
+* In the 'try' block, you write code that might cause an exception. 
+* In the 'except' block, you handle the exception, providing a response or a fallback action. 
+
+Here's a basic example:
+
+```python
+try:
+    num = int(input("Enter a number: "))
+    inverse = 1 / num
+except ZeroDivisionError:
+    print("Division by zero is not allowed.")
+else:
+    print("The inverse is:", inverse)
+```
+
+In this example, if the user enters '0', a ZeroDivisionError is raised, and the except block handles it by printing a message. 
+
+Otherwise, the 'else' block executes, printing the inverse of the number.
+
 Go back to [Contents](#contents).
 
 ### Finally Clause
 
+The 'finally' block is optional and is executed no matter what, whether an exception is raised or not. 
+
+It's often used for clean-up actions, such as closing a file or releasing resources.
+
+Here's an example:
+
+```python
+try:
+    file = open("example.txt")
+    data = file.read()
+except FileNotFoundError:
+    print("File not found.")
+finally:
+    file.close()
+    print("File closed.")
+```
+
+Here, whether the file opening succeeds or fails, the 'finally' block ensures the file is closed.
+
+Notes:
+
+* Understanding exceptions and how to handle them with try-except blocks, along with the use of the finally clause, is essential for writing resilient Python programs. 
+* It allows you to gracefully deal with unexpected situations, maintaining the integrity and reliability of your application.
+
 Go back to [Contents](#contents).
 
+### Some Error Handling examples
+
+Go back to [Contents](#contents).
+
+#### Exceptions
+
+**Problem 1:** Handling a Division by Zero Error
+
+Solution: 
+
+```python
+try:
+    number = int(input("Enter a number: "))
+    result = 1 / number
+except ZeroDivisionError:
+    print("Division by zero is not allowed.")
+else:
+    print(f"The result is {result}")
+```
+
+Go back to [Contents](#contents).
+
+#### Try-Except Block
+
+**Problem 2:** Handling a File Not Found Error
+
+Solution: 
+
+```python
+try:
+    with open("nonexistent_file.txt") as file:
+        content = file.read()
+except FileNotFoundError:
+    print("Sorry, the file does not exist.")
+else:
+    print(content)
+```
+
+Go back to [Contents](#contents).
+
+#### Finally Clause
+
+**Problem 3:** Using Finally for Cleanup
+
+Solution: 
+
+```python
+try:
+    file = open("example.txt")
+    data = file.read()
+    # Process data here
+except FileNotFoundError:
+    print("File not found.")
+finally:
+    file.close()
+    print("File closed.")
+```
+
+Go back to [Contents](#contents).
+
+#### Combined Example (Try-Except-Else-Finally)
+
+**Problem 4:** Comprehensive Error Handling Example
+
+Solution: 
+
+```python
+try:
+    number = int(input("Enter a number: "))
+    result = 100 / number
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+except ValueError:
+    print("Invalid input. Please enter a number.")
+else:
+    print(f"Result: {result}")
+finally:
+    print("Operation completed.")
+```
+
+Go back to [Contents](#contents).
+
+### More 10 Error Handling examples
+
+**Problem 1:** Division by Zero
+
+Handle the exception when dividing by zero.
+
+Solution: 
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Invalid Input for Integer Conversion
+
+Handle the exception when input is not an integer.
+
+Solution: 
+
+```python
+try:
+    number = int(input("Enter a number: "))
+except ValueError:
+    print("That's not an integer!")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Accessing a Non-existent File
+
+Handle the exception when a file does not exist.
+
+Solution: 
+
+```python
+try:
+    with open("non_existent_file.txt") as file:
+        content = file.read()
+except FileNotFoundError:
+    print("File does not exist.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Index Out of Range in a List
+
+Handle the exception for an invalid list index.
+
+Solution: 
+
+```python
+try:
+    lst = [1, 2, 3]
+    print(lst[3])
+except IndexError:
+    print("Index out of range.")
+```
+
+Go back to [Contents](#contents).
+
+
+**Problem 5:** Key Error in Dictionary Access
+
+Handle the exception when accessing a non-existent dictionary key.
+
+Solution: 
+
+```python
+try:
+    dict = {'a': 1, 'b': 2}
+    print(dict['c'])
+except KeyError:
+    print("Key not found in the dictionary.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Handling Multiple Exceptions
+
+Handle different types of exceptions from one try block.
+
+Solution: 
+
+```python
+try:
+    lst = [1, 2, 3]
+    print(lst[3])
+    number = int(input("Enter a number: "))
+except (IndexError, ValueError) as e:
+    print(f"An error occurred: {e}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Using Finally for Cleanup
+
+Use finally to ensure code execution even after an exception.
+
+Solution: 
+
+```python
+try:
+    file = open("example.txt")
+    data = file.read()
+except FileNotFoundError:
+    print("File not found.")
+finally:
+    file.close()
+    print("File closed.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Custom Exception Message
+
+Provide a custom error message for an exception.
+
+Solution: 
+
+```python
+try:
+    number = int(input("Enter a positive number: "))
+    if number <= 0:
+        raise ValueError("That is not a positive number!")
+except ValueError as ve:
+    print(ve)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Nested Try-Except Blocks
+
+Use nested try-except blocks for multiple error checks.
+
+Solution: 
+
+```python
+try:
+    file = open("example.txt")
+    try:
+        data = file.read()
+    except UnicodeDecodeError:
+        print("File decoding error.")
+    finally:
+        file.close()
+except FileNotFoundError:
+    print("File not found.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Re-raising an Exception
+
+Catch an exception and then re-raise it for the outer scope.
+
+Solution: 
+
+```python
+def process_file():
+    try:
+        file = open("example.txt")
+        data = file.read()
+    except FileNotFoundError as e:
+        print("Handling error locally.")
+        raise e  # Re-raise the exception
+
+try:
+    process_file()
+except FileNotFoundError:
+    print("File not found error caught in the outer scope.")
+```
+
+Go back to [Contents](#contents).
 
 
 ## Intermediate Python
