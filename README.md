@@ -221,6 +221,256 @@ print("Hello, " + name)
 
 Go back to [Contents](#contents).
 
+
+
+## Control Structures
+
+Go back to [Contents](#contents).
+
+### Conditional Statements
+
+Go back to [Contents](#contents).
+
+### Loops
+
+Go back to [Contents](#contents).
+
+
+
+## Data Structures
+
+Go back to [Contents](#contents).
+
+### Lists and Tuples
+
+Go back to [Contents](#contents).
+
+### Dictionaries
+
+Go back to [Contents](#contents).
+
+### Sets
+
+Go back to [Contents](#contents).
+
+
+
+## Functions
+
+Go back to [Contents](#contents).
+
+### Defining Functions
+
+Go back to [Contents](#contents).
+
+### Parameters and Return Value
+
+Go back to [Contents](#contents).
+
+### Scope
+
+Go back to [Contents](#contents).
+
+
+
+## Error Handling
+
+Go back to [Contents](#contents).
+
+### Exceptions
+
+Go back to [Contents](#contents).
+
+### Try-Except Block
+
+Go back to [Contents](#contents).
+
+### Finally Clause
+
+Go back to [Contents](#contents).
+
+
+
+## Intermediate Python
+
+Go back to [Contents](#contents).
+
+### Comprehensions
+
+Go back to [Contents](#contents).
+
+### Lambda Functions
+
+Go back to [Contents](#contents).
+
+### Map and Filter
+
+Go back to [Contents](#contents).
+
+
+
+## Object-Oriented Programming
+
+Go back to [Contents](#contents).
+
+### Classes and Objects
+
+Go back to [Contents](#contents).
+
+### Inheritance
+
+Go back to [Contents](#contents).
+
+### Encapsulation and Polymorphism
+
+Go back to [Contents](#contents).
+
+
+
+## Modules and Packages
+
+Go back to [Contents](#contents).
+
+### Modules
+
+Go back to [Contents](#contents).
+
+### Packages
+
+Go back to [Contents](#contents).
+
+### Import Statements
+
+Go back to [Contents](#contents).
+
+
+
+## Working with Files
+
+Go back to [Contents](#contents).
+
+### File Operations
+
+Go back to [Contents](#contents).
+
+### File Handling Modes
+
+Go back to [Contents](#contents).
+
+### Context Managers
+
+Go back to [Contents](#contents).
+
+
+
+## Python Scripting and Programming
+
+Go back to [Contents](#contents).
+
+### Scripting vs Programming
+
+Go back to [Contents](#contents).
+
+### Automating Tasks
+
+Go back to [Contents](#contents).
+
+### Best Practices
+
+Go back to [Contents](#contents).
+
+
+
+## Python Libraries
+
+Go back to [Contents](#contents).
+
+### NumPy
+
+Go back to [Contents](#contents).
+
+### SciPy
+
+Go back to [Contents](#contents).
+
+### Pandas
+
+Go back to [Contents](#contents).
+
+### Matplotlib
+
+Go back to [Contents](#contents).
+
+### Seaborn
+
+Go back to [Contents](#contents).
+
+### Plotly
+
+Go back to [Contents](#contents).
+
+### Flask
+
+Go back to [Contents](#contents).
+
+### Django
+
+Go back to [Contents](#contents).
+
+### Pillow
+
+Go back to [Contents](#contents).
+
+### OpenCV
+
+Go back to [Contents](#contents).
+
+### NLTK
+
+Go back to [Contents](#contents).
+
+### Scikit-Learn
+
+Go back to [Contents](#contents).
+
+### TensorFlow
+
+Go back to [Contents](#contents).
+
+### PyTorch
+
+Go back to [Contents](#contents).
+
+### Keras
+
+Go back to [Contents](#contents).
+
+
+
+## Unit Tests in Python
+
+Go back to [Contents](#contents).
+
+### unittest
+
+Go back to [Contents](#contents).
+
+### pytest
+
+Go back to [Contents](#contents).
+
+
+
+## Conclusion
+
+### Summary of Key Points
+
+### Further Learning Resources
+
+Go back to [Contents](#contents).
+
+
+
 ## Contact
 
 #### Ramon Figueiredo Pessoa
