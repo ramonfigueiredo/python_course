@@ -1,4 +1,4 @@
-Python Course
+Python Course - From Beginner to Expert
 ===========================
 
 by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
