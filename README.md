@@ -33,6 +33,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    1. [Defining Functions](#defining-functions)
    2. [Parameters and Return Value](#parameters-and-return-value)
    3. [Scope](#scope)
+   4. [More 10 Functions examples](#more-10-functions-examples)
 5. [Error Handling](#error-handling)
    1. [Exceptions](#exceptions)
    2. [Try-Except Block](#try-except-block)
@@ -1197,20 +1198,255 @@ Go back to [Contents](#contents).
 
 ## Functions
 
+Functions are the building blocks of any Python program. They help you to organize your code into manageable parts and promote code reusability. 
+
+Let's start by understanding how to define and call functions.
+
 Go back to [Contents](#contents).
 
 ### Defining Functions
+
+A function in Python is defined using the `def` keyword, followed by the **function name** and parentheses `()`.
+* Inside these parentheses, you can pass arguments or parameters that your function can use. 
+* After the colon, the indented block of code is the function body. 
+
+Here's a simple example:
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Alice")  # Calling the function with 'Alice' as an argument
+```
+
+This function greet takes one parameter, name, and prints a greeting message using that parameter.
 
 Go back to [Contents](#contents).
 
 ### Parameters and Return Value
 
+Functions can return values using the return statement. The return value can be the result of an expression, a value, or a data structure. 
+
+Here's an example:
+
+```python
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8
+```
+
+In this example, the add function returns the sum of the two arguments a and b.
+
 Go back to [Contents](#contents).
 
 ### Scope
 
+The scope of variables in functions refers to where a variable is accessible in your code. 
+* **Local variables:** Variables defined inside a function are called local variables and are only accessible within that function. 
+* **Global variables:** Variables defined outside of all functions are known as global variables and can be accessed anywhere in your program.
+
+Here's an example to illustrate this:
+
+```python
+def my_function():
+    local_variable = "I am local"
+    print(local_variable)
+
+my_function()
+# print(local_variable)  # This would raise an error as local_variable is not accessible here
+
+global_variable = "I am global"
+
+def access_global_variable():
+    print(global_variable)
+
+access_global_variable()
+```
+
+In this example, `local_variable` is only accessible within my_function, while `global_variable` is accessible globally, even inside `access_global_variable`.
+
+**Notes:** 
+
+* Understanding how to define and use functions, including how to handle parameters, return values, and variable scope, is crucial for efficient and organized Python programming. 
+* Functions not only make your code more readable and maintainable but also enable you to avoid repetition and make your programming workflow much more efficient.
+
 Go back to [Contents](#contents).
 
+### More 10 Functions examples
+
+**Problem 1:** Greeting Function
+
+Create a function that greets a user with their name.
+
+Solution: 
+
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Laura"))  # Output: Hello, Laura!
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Adding Two Numbers
+
+Define a function to add two numbers.
+
+Solution: 
+
+```python
+def add(a, b):
+    return a + b
+
+print(add(5, 3))  # Output: 8
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Calculating Area of a Circle
+
+Write a function to calculate the area of a circle given its radius.
+
+Solution: 
+
+```python
+import math
+
+def circle_area(radius):
+    return math.pi * radius ** 2
+
+print(circle_area(5))  # Output: 78.53981633974483
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Checking Prime Numbers
+
+Create a function to check if a number is prime.
+
+Solution: 
+
+```python
+def is_prime(num):
+    if num <= 1:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+
+print(is_prime(7))  # Output: True
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Finding Maximum in a List
+
+Write a function to find the maximum number in a list.
+
+Solution: 
+
+```python
+def find_max(lst):
+    return max(lst)
+
+print(find_max([3, 1, 4, 2]))  # Output: 4
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Fibonacci Sequence Generator
+
+Create a function that returns the Fibonacci sequence up to N terms.
+
+Solution: 
+
+```python
+def fibonacci(n):
+    sequence = [0, 1]
+    for i in range(2, n):
+        sequence.append(sequence[i-1] + sequence[i-2])
+    return sequence[:n]
+
+print(fibonacci(5))  # Output: [0, 1, 1, 2, 3]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Factorial Calculation
+
+Define a function to calculate the factorial of a number.
+
+Solution: 
+
+```python
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Temperature Conversion
+
+Write a function to convert Celsius to Fahrenheit.
+
+Solution: 
+
+```python
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+print(celsius_to_fahrenheit(30))  # Output: 86.0
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Counting Vowels in a String
+
+Create a function to count the number of vowels in a string.
+
+Solution: 
+
+```python
+def count_vowels(string):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in string:
+        if char in vowels:
+            count += 1
+    return count
+
+print(count_vowels("Hello World"))  # Output: 3
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Global and Local Variable Demonstration
+
+Demonstrate the use of local and global variables.
+
+Solution: 
+
+```python
+x = "global"
+
+def demo_global_local():
+    y = "local"
+    print("Inside function:", x, y)  # Accessing global x and local y
+
+demo_global_local()
+print("Outside function:", x)  # Accessing global x
+# print(y)  # This would raise an error as y is not accessible outside the function
+```
+
+Go back to [Contents](#contents).
 
 
 ## Error Handling
