@@ -57,7 +57,7 @@ Go back to [Contents](#contents).
 
 ### Comments
 
-* **Using Comments:** Comments start with # and explain the code.
+* **Comments** start with # and can be used to explain the code.
 
 ```python
 # This is a single-line comment explaining the next line of code
