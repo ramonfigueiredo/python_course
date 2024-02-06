@@ -22,8 +22,13 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       4. [More 10 loops examples](#10-loops-examples)
 3. [Data Structures](#data-structures)
    1. [Lists and Tuples](#lists-and-tuples)
+      1. [List](#list)
+      2. [Tuple](#tuple)
+      3. [More 10 Lists and Tuples examples](#more-10-lists-and-tuples-examples)
    2. [Dictionaries](#dictionaries)
+      1. [More 10 Dictionaries examples](#more-10-dictionaries-examples)
    3. [Sets](#sets)
+      1. [More 10 Sets examples](#more-10-sets-examples)
 4. [Functions](#functions)
    1. [Defining Functions](#defining-functions)
    2. [Parameters and Return Value](#parameters-and-return-value)
@@ -680,20 +685,514 @@ Go back to [Contents](#contents).
 
 ## Data Structures
 
+Next, we will explore some of the most versatile and fundamental data structures in Python: 
+* Lists and Tuples
+* Dictionaries
+* Sets.
+
 Go back to [Contents](#contents).
 
 ### Lists and Tuples
+
+Lists and Tuples: Both are used to store collections of items, but they have some key differences. 
+
+Go back to [Contents](#contents).
+
+#### List
+  * List is dynamic.
+    * It can be altered after its creation, which means you can add, remove, or change items. 
+  * Lists are defined by square brackets []
+
+Here's an example:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")  # Adding an item
+print(fruits)
+```
+
+Go back to [Contents](#contents).
+
+#### Tuple
+*  Tuple is immutable. 
+  * Once a tuple is created, you cannot change its contents. 
+* Tuples are a great choice when you need a constant set of values throughout your program and are defined by parentheses ().
+
+```python
+coordinates = (10.0, 20.0)
+print(coordinates)
+```
+
+#### More 10 Lists and Tuples examples
+
+**Problem 1:** Concatenating Two Lists
+
+Concatenate (combine) two lists.
+
+Solution: 
+
+```python
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+combined_list = list1 + list2
+print(combined_list)  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Finding the Maximum and Minimum in a List
+
+Find the maximum and minimum number in a list.
+
+Solution: 
+
+```python
+numbers = [50, 20, 40, 30, 10]
+print("Max:", max(numbers))  # Output: Max: 50
+print("Min:", min(numbers))  # Output: Min: 10
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** List Reversal
+
+Reverse the elements of a list.
+
+Solution: 
+
+```python
+original_list = [1, 2, 3, 4, 5]
+reversed_list = original_list[::-1]
+print(reversed_list)  # Output: [5, 4, 3, 2, 1]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Tuple to List Conversion
+
+Convert a tuple into a list.
+
+Solution: 
+
+```python
+my_tuple = (1, 2, 3)
+my_list = list(my_tuple)
+print(my_list)  # Output: [1, 2, 3]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Slicing a List
+
+Extract a portion of a list.
+
+Solution: 
+
+```python
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+sliced = numbers[2:5]  # Get elements from index 2 to 4
+print(sliced)  # Output: [2, 3, 4]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** List Element Count
+
+Count the occurrences of an element in a list.
+
+Solution: 
+
+```python
+items = ['apple', 'banana', 'cherry', 'apple', 'cherry']
+count = items.count('apple')
+print("Apple count:", count)  # Output: Apple count: 2
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Flattening a Nested List
+
+Flatten a list containing other lists.
+
+Solution: 
+
+```python
+nested_list = [[1, 2, 3], [4, 5], [6]]
+flat_list = [item for sublist in nested_list for item in sublist]
+print(flat_list)  # Output: [1, 2, 3, 4, 5, 6]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Removing Duplicates from a List
+
+Remove all duplicates from a list.
+
+Solution: 
+
+```python
+original_list = [1, 2, 2, 3, 3, 3, 4]
+unique_list = list(set(original_list))
+print(unique_list)  # Output: [1, 2, 3, 4]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Sum of Tuple Elements
+
+Calculate the sum of all numbers in a tuple.
+
+Solution: 
+
+```python
+numbers_tuple = (1, 2, 3, 4, 5)
+total = sum(numbers_tuple)
+print("Total:", total)  # Output: Total: 15
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Appending an Element to a List
+
+Add an element to the end of a list.
+
+Solution: 
+
+```python
+fruits = ['apple', 'banana', 'cherry']
+fruits.append('orange')
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']
+```
+
+Go back to [Contents](#contents).
+
 
 Go back to [Contents](#contents).
 
 ### Dictionaries
 
+Dictionaries in Python are used to store data in key-value pairs.
+* Each key is unique and is used to access its corresponding value.
+* Dictionaries are highly efficient for looking up and retrieving data. 
+* They are defined with curly braces {}.
+
+Here's an example:
+
+```python
+student = {"name": "John", "age": 25, "course": "Python"}
+print(student["name"])  # Accessing value using key
+```
+
+Go back to [Contents](#contents).
+
+#### More 10 Dictionaries examples
+
+**Problem 1:** Creating a Dictionary
+
+Create a dictionary with keys and values.
+
+Solution: 
+
+```python
+person = {"name": "John", "age": 30, "city": "New York"}
+print(person)  # Output: {'name': 'John', 'age': 30, 'city': 'New York'}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Accessing Dictionary Values
+
+Access the value of a specific key in a dictionary.
+
+Solution: 
+
+```python
+person = {"name": "Alice", "age": 25}
+print(person["name"])  # Output: Alice
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Adding New Key-Value Pairs
+
+Add a new key-value pair to an existing dictionary.
+
+Solution: 
+
+```python
+person = {"name": "Bob", "age": 20}
+person["city"] = "London"
+print(person)  # Output: {'name': 'Bob', 'age': 20, 'city': 'London'}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Updating Values
+
+Update the value of an existing key in a dictionary.
+
+Solution: 
+
+```python
+person = {"name": "Carol", "age": 30}
+person["age"] = 31
+print(person)  # Output: {'name': 'Carol', 'age': 31}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Removing Key-Value Pairs
+
+Remove a specific key-value pair from a dictionary.
+
+Solution: 
+
+```python
+person = {"name": "Dave", "age": 40, "city": "Berlin"}
+person.pop("age")
+print(person)  # Output: {'name': 'Dave', 'city': 'Berlin'}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Iterating Over a Dictionary
+
+Iterate through the keys and values of a dictionary.
+
+Solution: 
+
+```python
+person = {"name": "Eve", "age": 35}
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Merging Two Dictionaries
+
+Merge two dictionaries into one.
+
+Solution: 
+
+```python
+dict1 = {"name": "Frank", "age": 29}
+dict2 = {"city": "Paris", "job": "Engineer"}
+merged_dict = {**dict1, **dict2}
+print(merged_dict)  # Output: {'name': 'Frank', 'age': 29, 'city': 'Paris', 'job': 'Engineer'}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Dictionary Comprehension
+
+Create a dictionary from two lists using dictionary comprehension.
+
+Solution: 
+
+```python
+keys = ["name", "age", "city"]
+values = ["Grace", 32, "Sydney"]
+person = {keys[i]: values[i] for i in range(len(keys))}
+print(person)  # Output: {'name': 'Grace', 'age': 32, 'city': 'Sydney'}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Checking if Key Exists
+
+Check if a key exists in a dictionary.
+
+Solution: 
+
+```python
+person = {"name": "Henry", "age": 27}
+if "name" in person:
+    print("Name is present.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Nested Dictionaries
+
+Work with nested dictionaries.
+
+Solution: 
+
+```python
+family = {
+    "child1": {"name": "Ivy", "age": 5},
+    "child2": {"name": "John", "age": 7}
+}
+print(family["child1"])  # Output: {'name': 'Ivy', 'age': 5}
+```
+
 Go back to [Contents](#contents).
 
 ### Sets
 
+A set is a collection which is unordered, unchangeable* and unindexed. 
+* Sets are written with curly braces. 
+* They are ideal for membership testing and eliminating duplicate entries.
+
+**Note:** * When I say 'unchangeable', I mean that while you can add or remove items from a set, you cannot change the items already present.
+
+Here's an example:
+
+```python
+colors = {"red", "green", "blue"}
+colors.add("yellow")
+print(colors)
+```
+
 Go back to [Contents](#contents).
 
+#### More 10 Sets examples
+
+**Problem 1:** Creating a Set
+
+Create a set of numbers.
+
+Solution: 
+
+```python
+numbers = {1, 2, 3, 4, 5}
+print(numbers)  # Output: {1, 2, 3, 4, 5}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Adding Elements to a Set
+
+Add an element to an existing set.
+
+Solution: 
+
+```python
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
+print(fruits)  # Output: {'banana', 'orange', 'apple', 'cherry'}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Removing Elements from a Set
+
+Remove an element from a set.
+
+Solution: 
+
+```python
+fruits = {"apple", "banana", "cherry"}
+fruits.discard("banana")
+print(fruits)  # Output: {'apple', 'cherry'}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Union of Two Sets
+
+Create a union of two sets.
+
+Solution: 
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+union_set = set1.union(set2)
+print(union_set)  # Output: {1, 2, 3, 4, 5}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Intersection of Two Sets
+
+Find the intersection of two sets.
+
+Solution: 
+
+```python
+set1 = {1, 2, 3}
+set2 = {2, 3, 4}
+intersection_set = set1.intersection(set2)
+print(intersection_set)  # Output: {2, 3}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Difference Between Sets
+
+Find the difference between two sets.
+
+Solution: 
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+difference_set = set1.difference(set2)
+print(difference_set)  # Output: {1, 2}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Symmetric Difference of Two Sets
+
+Find the symmetric difference of two sets.
+
+Solution: 
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+symmetric_difference_set = set1.symmetric_difference(set2)
+print(symmetric_difference_set)  # Output: {1, 2, 4, 5}
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Checking for Subset
+
+Check if a set is a subset of another set.
+
+Solution: 
+
+```python
+set1 = {1, 2, 3}
+set2 = {1, 2, 3, 4, 5}
+is_subset = set1.issubset(set2)
+print(is_subset)  # Output: True
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Checking for Superset
+
+Check if a set is a superset of another set.
+
+Solution: 
+
+```python
+set1 = {1, 2, 3, 4, 5}
+set2 = {1, 2, 3}
+is_superset = set1.issuperset(set2)
+print(is_superset)  # Output: True
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Clearing a Set
+
+Remove all elements from a set.
+
+Solution: 
+
+```python
+fruits = {"apple", "banana", "cherry"}
+fruits.clear()
+print(fruits)  # Output: set()
+```
+
+Go back to [Contents](#contents).
 
 
 ## Functions
