@@ -14,7 +14,12 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    6. [Input and Output Functions](#input-and-output-functions)
 2. [Control Structures](#control-structures)
    1. [Conditional Statements](#conditional-statements)
+      1. [More 10 conditional statements examples](#10-conditional-statements-examples)
    2. [Loops](#loops)
+      1. [The for loop](#the-for-loop)
+      2. [The while loop](#the-while-loop)
+      3. [Loop statements - break  - continue - pass](#loop-statements---break---continue---pass)
+      4. [More 10 loops examples](#10-loops-examples)
 3. [Data Structures](#data-structures)
    1. [Lists and Tuples](#lists-and-tuples)
    2. [Dictionaries](#dictionaries)
@@ -229,13 +234,449 @@ Go back to [Contents](#contents).
 
 ### Conditional Statements
 
+In Python, the conditional statements are primarily the 'if', 'elif', and 'else' statements. They allow your program to execute different actions based on certain conditions. 
+
+An 'if' statement checks a condition and executes a block of code if the condition is true. 
+
+The 'elif' (short for 'else if') provides additional conditions to check, and 'else' executes a block of code if none of the previous conditions were true.
+
+Here's a simple example:
+
+```python
+age = 18
+if age < 18:
+    print("Minor")
+elif age == 18:
+    print("Just turned 18")
+else:
+    print("Adult")
+```
+
+In this example, Python evaluates each condition in turn and executes the block of code under the first true condition.
+
+Go back to [Contents](#contents).
+
+#### More 10 conditional statements examples
+
+Go back to [Contents](#contents).
+
+**Problem 1:** Age Group Categorization
+
+Categorize a person's age group based on their age.
+
+Solution: 
+
+```python
+age = int(input("Enter age: "))
+if age < 13:
+    print("Child")
+elif age < 20:
+    print("Teenager")
+elif age < 60:
+    print("Adult")
+else:
+    print("Senior")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Grading System
+
+Convert numeric grades to letter grades (90-100: A, 80-89: B, etc.).
+
+Solution: 
+
+```python
+grade = int(input("Enter your grade: "))
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+elif grade >= 60:
+    print("D")
+else:
+    print("F")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Leap Year Checker
+
+Check if a year is a leap year.
+
+Solution: 
+
+```python
+year = int(input("Enter a year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print(f"{year} is a leap year.")
+else:
+    print(f"{year} is not a leap year.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Smallest of Three Numbers
+
+Find the smallest number among three given numbers.
+
+Solution: 
+
+```python
+a, b, c = map(int, input("Enter three numbers: ").split())
+if a < b and a < c:
+    print(f"The smallest number is {a}")
+elif b < c:
+    print(f"The smallest number is {b}")
+else:
+    print(f"The smallest number is {c}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Eligibility for Voting
+
+Determine if a person is eligible to vote based on their age.
+
+Solution: 
+
+```python
+age = int(input("Enter your age: "))
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Calculator
+
+Perform basic arithmetic operations (+, -, *, /) based on user input.
+
+Solution: 
+
+```python
+num1 = float(input("Enter first number: "))
+op = input("Enter operator (+, -, *, /): ")
+num2 = float(input("Enter second number: "))
+
+if op == '+':
+    print(num1 + num2)
+elif op == '-':
+    print(num1 - num2)
+elif op == '*':
+    print(num1 * num2)
+elif op == '/':
+    print(num1 / num2)
+else:
+    print("Invalid operator")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Odd or Even
+
+Check if a number is odd or even.
+
+Solution: 
+
+```python
+num = int(input("Enter a number: "))
+if num % 2 == 0:
+    print(f"{num} is Even")
+else:
+    print(f"{num} is Odd")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Password Strength Checker
+
+Check if a password is strong (at least 8 characters, contains a number).
+
+Solution: 
+
+```python
+password = input("Enter your password: ")
+if len(password) >= 8 and any(char.isdigit() for char in password):
+    print("Password is strong.")
+else:
+    print("Password is weak.")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Traffic Light Simulator
+
+Simulate traffic light actions (Red: Stop, Green: Go, Yellow: Wait).
+
+Solution: 
+
+```python
+light = input("Enter traffic light color (Red, Yellow, Green): ").lower()
+if light == 'red':
+    print("Stop")
+elif light == 'yellow':
+    print("Wait")
+elif light == 'green':
+    print("Go")
+else:
+    print("Invalid color")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Number Classification
+
+Classify a number as positive, negative, or zero.
+
+Solution: 
+
+```python
+num = float(input("Enter a number: "))
+if num > 0:
+    print("Positive number")
+elif num < 0:
+    print("Negative number")
+else:
+    print("Zero")
+```
+
 Go back to [Contents](#contents).
 
 ### Loops
 
+Python provides two types of loops - 'for' and 'while'. 
+
+A 'for' loop is used for iterating over a sequence like a list, tuple, string, or range. 
+
+Meanwhile, a 'while' loop repeats as long as a certain boolean condition is met.
+
+Go back to [Contents](#contents).
+
+#### The for loop
+
+Here's how a 'for' loop works:
+
+```python
+for i in range(5):
+    print(i)
+```
+
+This loop prints numbers from 0 to 4. The 'range(5)' function generates a sequence of numbers, which the loop iterates through.
+
+Go back to [Contents](#contents).
+
+#### The while loop
+
+Here's how a 'while' loop works:
+
+```python
+count = 5
+while count > 0:
+    print(count)
+    count -= 1
+```
+
+This loop continues running until 'count' is no longer greater than 0.
+
 Go back to [Contents](#contents).
 
 
+#### Loop statements - break  - continue - pass
+Furthermore, loops can be controlled with 'break', 'continue', and 'pass' statements. 
+
+* 'break' exits the loop
+* 'continue' skips to the next iteration
+* 'pass' does nothing and is generally used as a placeholder
+
+For example:
+
+```python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+```
+
+This loop will print numbers from 0 to 4. When it reaches 5, the 'break' statement terminates the loop.
+
+Go back to [Contents](#contents).
+
+#### More 10 loops examples
+
+Go back to [Contents](#contents).
+
+**Problem 1:** Sum of Natural Numbers
+
+Find the sum of the first N natural numbers.
+
+Solution: 
+
+```python
+n = int(input("Enter N: "))
+sum = 0
+for i in range(1, n + 1):
+    sum += i
+print(f"Sum of the first {n} natural numbers is {sum}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Multiplication Table
+
+Print the multiplication table for a given number.
+
+Solution: 
+
+```python
+num = int(input("Enter a number: "))
+for i in range(1, 11):
+    print(f"{num} x {i} = {num * i}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Factorial of a Number
+
+Calculate the factorial of a given number.
+
+Solution: 
+
+```python
+n = int(input("Enter a number: "))
+factorial = 1
+for i in range(1, n + 1):
+    factorial *= i
+print(f"The factorial of {n} is {factorial}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Prime Number Check
+
+Check if a number is prime.
+
+Solution: 
+
+```python
+num = int(input("Enter a number: "))
+is_prime = True
+if num > 1:
+    for i in range(2, num):
+        if (num % i) == 0:
+            is_prime = False
+            break
+if is_prime:
+    print(f"{num} is a prime number")
+else:
+    print(f"{num} is not a prime number")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Fibonacci Series
+
+Print the first N numbers of the Fibonacci sequence.
+
+Solution: 
+
+```python
+n = int(input("Enter the number of Fibonacci terms: "))
+a, b = 0, 1
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Counting Vowels
+
+Count the number of vowels in a given string.
+
+Solution: 
+
+```python
+string = input("Enter a string: ").lower()
+count = 0
+for char in string:
+    if char in "aeiou":
+        count += 1
+print(f"Number of vowels in the string is {count}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Number Guessing Game
+
+A simple number guessing game where the user has to guess a number between 1 and 10.
+
+Solution: 
+
+```python
+import random
+target_num, guess_num = random.randint(1, 10), 0
+while target_num != guess_num:
+    guess_num = int(input("Guess a number between 1 and 10 until you get it right: "))
+print("Well guessed!")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Reverse a String
+
+Reverse a given string.
+
+Solution: 
+
+```python
+string = input("Enter a string: ")
+reversed_string = ''
+for char in string:
+    reversed_string = char + reversed_string
+print("Reversed String:", reversed_string)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Find the Largest Number in a List
+
+Find the largest number in a list of numbers.
+
+Solution: 
+
+```python
+numbers = [3, 6, 2, 8, 4, 10]
+largest_num = numbers[0]
+for num in numbers:
+    if num > largest_num:
+        largest_num = num
+print("The largest number is:", largest_num)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Exit on Command
+
+Continuously prompt the user for input until they type "exit".
+
+Solution: 
+
+```python
+while True:
+    command = input("Enter command: ")
+    if command.lower() == 'exit':
+        break
+    else:
+        print(f"You entered: {command}")
+print("Exited the loop")
+```
+
+Go back to [Contents](#contents).
 
 ## Data Structures
 
