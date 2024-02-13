@@ -1796,6 +1796,8 @@ Go back to [Contents](#contents).
 
 Comprehensions in Python provide a concise, readable way to create lists, dictionaries, and sets. They offer a simpler syntax when you want to create a new collection based on the values of an existing collection.
 
+Go back to [Contents](#contents).
+
 #### List Comprehensions
 
 List Comprehensions are a beautiful way to create new lists by applying an expression to each element of an existing iterable. 
@@ -1810,6 +1812,8 @@ print(squared)  # Output: [1, 4, 9, 16, 25]
 
 This one-line (`squared = [number ** 2 for number in numbers]`) replaces multiple lines of a traditional `for` loop, making your code compact and readable.
 
+Go back to [Contents](#contents).
+
 #### Dictionary Comprehensions
 
 Moving on to Dictionary Comprehensions, which are similar, but they create dictionaries instead of lists. You can transform and filter data into key-value pairs. 
@@ -1821,6 +1825,8 @@ numbers = [1, 2, 3, 4, 5]
 squared_dict = {number: number ** 2 for number in numbers}
 print(squared_dict)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 ```
+
+Go back to [Contents](#contents).
 
 #### Set Comprehensions
 
@@ -1835,6 +1841,8 @@ print(evens)  # Output: {2, 4}
 ```
 
 Notice how duplicates are automatically removed, which is a characteristic of sets.
+
+Go back to [Contents](#contents).
 
 #### Some Examples of List Comprehensions, Dictionary Comprehensions, and Set Comprehensions 
 
@@ -1852,6 +1860,8 @@ Solution:
 squares = [x**2 for x in range(1, 11)]
 print(squares)
 ```
+
+Go back to [Contents](#contents).
 
 **Problem 2:** Filter Even Numbers
 
