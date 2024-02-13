@@ -56,21 +56,31 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       3. [Some Map and Filter examples](#some-map-and-filter-examples)
 7. [Object-Oriented Programming](#object-oriented-programming)
    1. [Classes and Objects](#classes-and-objects)
-   2. [Inheritance](#inheritance)
-   3. [Encapsulation and Polymorphism](#encapsulation-and-polymorphism)
-7. [Modules and Packages](#modules-and-packages)
+   2. [Class Member Visibility](#class-member-visibility)
+      1. [Public Members](#public-members)
+      2. [Protected Members](#protected-members)
+      3. [Private Members](#private-members)
+      4. [Default Visibility](#default-visibility)
+      5. [Name mangling in Python](#name-mangling-in-python)
+   3. [Inheritance](#inheritance)
+   4. [Encapsulation and Polymorphism](#encapsulation-and-polymorphism)
+   5. [Abstract Method](#abstract-method)
+   6. [Class Method and Static Method](#class-method-and-static-method)
+   7. [Property decorators - getter setter deleter](#property-decorators---getter-setter-deleter)
+   8. [Some Object-Oriented Programming examples](#some-object-oriented-programming-examples)
+8. [Modules and Packages](#modules-and-packages)
    1. [Modules](#modules)
    2. [Packages](#packages)
    3. [Import Statements](#import-statements)
-8. [Working with Files](#working-with-files)
+9. [Working with Files](#working-with-files)
    1. [File Operations](#file-operations)
    2. [File Handling Modes](#file-handling-modes)
    3. [Context Managers](#context-managers)
-8. [Python Scripting and Programming](#python-scripting-and-programming)
+10. [Python Scripting and Programming](#python-scripting-and-programming)
    1. [Scripting vs Programming](#scripting-vs-programming)
    2. [Automating Tasks](#automating-tasks)
    3. [Best Practices](#best-practices)
-9. [Python Libraries](#python-libraries)
+11. [Python Libraries](#python-libraries)
    1. [NumPy](#numpy)
    2. [SciPy](#scipy)
    3. [Pandas](#pandas)
@@ -86,14 +96,14 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    13. [TensorFlow](#tensorflow)
    14. [PyTorch](#pytorch)
    15. [Keras](#keras)
-10. [Unit Tests in Python](#unit-tests-in-python)
+12. [Unit Tests in Python](#unit-tests-in-python)
     1. [unittest](#unittest)
     2. [pytest](#pytest)
-11. [Conclusion](#conclusion)
+13. [Conclusion](#conclusion)
    1. [Summary of Key Points](#summary-of-key-points)
    2. [Further Learning Resources](#further-learning-resources)
-12. [Contact](#contact)
-13. [License](#license)
+14. [Contact](#contact)
+15. [License](#license)
 
 ## Introduction to Python
 
@@ -2389,21 +2399,790 @@ Go back to [Contents](#contents).
 
 ## Object-Oriented Programming
 
+Object-oriented programming, often abbreviated as OOP, is a fundamental programming paradigm used widely in software development. 
+
+OOP concepts provide a structured approach to writing programs.
+
+Let's break down these concepts starting with **Classes** and **Objects**, explain what is member visibility in Python classes and how to use them, then move on to **Inheritance**, and finally discuss **Encapsulation** and **Polymorphism**.
+
 Go back to [Contents](#contents).
 
 ### Classes and Objects
+
+In Python, 
+
+- A **class** is a template definition (blueprint) for creating objects.
+- **Objects** are instances of classes and can have properties and behaviors, known as **attributes** and **methods**. 
+
+Think of a class as a template for creating individual instances, each with their own specific data and functionality. 
+
+Here's a basic example of a class in Python:
+
+```python
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        return "Woof!"
+
+# Creating an instance of Dog
+my_dog = Dog('Rex', 5)
+print(my_dog.bark())  # Output: Woof!
+```
+
+In this example, `Dog` is a class with attributes (`name` and `age`) and a method (`bark`). The `my_dog` is an object or instance of the `Dog` class.
+
+Go back to [Contents](#contents).
+
+### Class Member Visibility
+
+The visibility of a class member variable or member function determines from where that variable can be accessed/modified or from where the member function can be called. 
+
+In Python, visibility of class members is determined by naming conventions, as opposed to explicit keywords (public, protected, private) found in many other programming languages like Java, C# or C++.
+
+The class member visibility in Python can be public (default), protected, or private.
+
+Go back to [Contents](#contents).
+
+#### Public Members
+
+- Public members can be accessed from inside and outside of their class without any restriction.
+- By default, all attributes and methods in a Python class are public.
+
+Example:
+
+```python
+class Car:
+    def __init__(self):
+        self.make = "Tesla"  # Public attribute
+        self.model = "Model S"  # Public attribute
+    
+    def display_info(self):  # Public method
+        print(f"This car is a {self.make} {self.model}.")
+
+my_car = Car()
+print(my_car.make)  # Accessible
+my_car.display_info()  # Accessible
+```
+
+Go back to [Contents](#contents).
+
+#### Protected Members
+
+- Protected members are intended to be accessible only from within the class and its subclasses.
+- In Python, a member is made protected by prefixing its name with a single underscore `_`
+- This is only a convention and is not enforced by Python (except in a very specific scenario involving name mangling).
+
+Example:
+
+```python
+class Car:
+    def __init__(self):
+        self._engine_type = "Electric"  # Protected attribute
+
+class ElectricCar(Car):
+    def display_engine_type(self):
+        print(f"This car uses a {self._engine_type} engine.")  # Accessible
+
+my_electric_car = ElectricCar()
+my_electric_car.display_engine_type()  # Accessible
+print(my_electric_car._engine_type)  # Accessible, but not recommended
+```
+
+Go back to [Contents](#contents).
+
+#### Private Members
+
+- Private members are intended to be accessible only from within their own class.
+- In Python, a member is made private by prefixing its name with two underscores `__`.
+- This triggers name mangling, where `_ClassName__memberName` is how the member can be accessed from outside the class.
+
+Example:
+
+```python
+class Car:
+    def __init__(self):
+        self.__vin_number = "1234"  # Private attribute
+    
+    def display_vin(self):
+        print(f"The VIN number is {self.__vin_number}.")  # Accessible
+
+my_car = Car()
+my_car.display_vin()  # Accessible
+# print(my_car.__vin_number)  # Raises an AttributeError
+print(my_car._Car__vin_number)  # Accessible due to name mangling, but not recommended
+```
+
+Go back to [Contents](#contents).
+
+#### Default Visibility
+
+As mentioned, in Python, members are public by default. 
+- There are no specific keywords to define visibility explicitly. 
+- it is all managed through naming conventions (`_` for protected and `__` for private).
+
+These conventions allow for a flexible but clear way to signal the intended visibility of class members. 
+
+However, it's important to note that because Python is a dynamically typed language, these access modifiers are based on a "gentleman's agreement" and can be bypassed if necessary, as seen in the private member access through **name mangling**.
+
+Go back to [Contents](#contents).
+
+#### Name mangling in Python
+
+- A technique used to make a class attribute or method private by prefixing its name with at least two leading underscores and at most one trailing underscore (e.g., `__attribute`). 
+- This alters the way the attribute or method is stored in the class namespace, effectively making it inaccessible by its original name from outside the class. 
+- Python internally changes the name to `_ClassName__attribute`, allowing class methods to access it while making it less accessible from outside the class.
 
 Go back to [Contents](#contents).
 
 ### Inheritance
 
+**Inheritance** allows a new class to inherit attributes and methods from an existing class. 
+
+The new class is called a derived (or child) class, and the class from which it inherits is called the base (or parent) class. 
+
+Inheritance promotes code reuse and establishes a relationship between classes. 
+
+Here's an example:
+
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclass must implement this method")
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow"
+
+my_cat = Cat("Whiskers")
+print(my_cat.speak())  # Output: Meow
+```
+
+In this example, `Cat` inherits from `Animal` and implements the speak method.
+
 Go back to [Contents](#contents).
 
 ### Encapsulation and Polymorphism
 
+**Encapsulation** involves grouping the data and methods that operate on the data within one unit, like a class. This concept helps in hiding the internal state of the object from the outside. 
+
+**Polymorphism** refers to the way in which different object classes can share the same method name, but those methods can act differently based on which object calls them. 
+
+Here's a brief example:
+
+```python
+## The class 'Animal' was defined in previous example
+class Bird(Animal):
+    def speak(self):
+        return "Tweet"
+
+def animal_speak(animal):
+    print(animal.speak())
+
+## The next line uses the my_cat object from the previous example
+animal_speak(my_cat)  # Output: Meow
+animal_speak(Bird("Polly"))  # Output: Tweet
+```
+
+In this example, `animal_speak` demonstrates polymorphism by calling the speak method on different animal types.
+
 Go back to [Contents](#contents).
 
+### Abstract Method
 
+An abstract method is a method defined in an abstract base class without an implementation. 
+
+Subclasses inheriting from the abstract base class are required to provide an implementation for the abstract methods. 
+
+Abstract methods are declared using the `@abstractmethod` decorator from the `abc` (Abstract Base Class) module, indicating that the derived class must override this method. 
+
+This mechanism enforces a contract for class hierarchies to ensure certain methods are implemented by child classes.
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.__width = width
+        self.__height = height
+
+    def area(self):
+        return self.__width * self.__height
+```
+
+In this example, any subclass of `Shape` must implement the `area` method, or it will raise an error if instantiated.
+
+Go back to [Contents](#contents).
+
+### Class Method and Static Method
+
+Class methods and static methods are two types of methods that behave differently from regular instance methods.
+
+Go back to [Contents](#contents).
+
+Class Method:
+- A class method is a method that is bound to the class rather than its object. It can modify a class state that applies across all instances of the class.
+- Class methods take the class as the first argument (conventionally named `cls`) to access or modify class attributes.
+- Defined with the `@classmethod` decorator.
+
+Static Method:
+- A static method does not depend on the state of the object or class. 
+  - It can't access or modify class state.
+- Static methods are utility functions that perform a task in isolation. 
+  - They don't take a class or instance reference as their first argument.
+- Defined with the `@staticmethod` decorator.
+
+Example:
+
+```python
+class MyClass:
+    _my_var = 5
+    
+    @classmethod
+    def class_method(cls):
+        cls._my_var += 1
+        return cls._my_var
+    
+    @staticmethod
+    def static_method(value):
+        return value * 2
+
+# Usage
+print(MyClass.class_method())  # Modifies class state, output: 6
+print(MyClass.static_method(3))  # Purely functional, output: 6
+```
+
+Go back to [Contents](#contents).
+
+### Property decorators - getter setter deleter
+
+In Python, property decorators are used to define getter, setter, and deleter functions for managing the access to an attribute of a class. 
+
+The `@property` decorator turns a method into a "getter" for a property, allowing you to access the value of a private attribute without directly exposing the attribute itself. 
+
+The `@<property_name>.setter` and `@<property_name>.deleter` decorators are used to define corresponding setter and deleter methods for the property, enabling controlled setting or deletion of the property's value.
+
+```python
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        """Getter method for name property."""
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        """Setter method for name property."""
+        if not isinstance(value, str):
+            raise ValueError("Name must be a string.")
+        self._name = value
+
+    @name.deleter
+    def name(self):
+        """Deleter method for name property."""
+        del self._name
+
+# Usage
+person = Person("Alice")
+print(person.name)  # Accesses the getter
+person.name = "Bob"  # Calls the setter
+del person.name  # Calls the deleter
+```
+
+This approach provides a way to encapsulate data, ensuring that attributes of a class can be accessed and modified in a controlled manner, such as performing validation or transformation of the data before it's assigned.
+
+Go back to [Contents](#contents).
+
+Notes about a deleter:
+- A deleter is used in conjunction with property decorators to manage the deletion of an attribute's value in a controlled manner. 
+- The need for a deleter arises in scenarios where simply removing an attribute from an object isn't enough, and additional actions or cleanup operations are required upon deletion. 
+
+Here are some reasons why a deleter might be needed:
+- **Resource Management:** 
+  - To ensure proper release or cleanup of resources (e.g., closing files or network connections) associated with an attribute when it's no longer needed.
+- **Data Integrity:** 
+  - To maintain the integrity of related data or states within an object. Deleting an attribute might necessitate updating or validating other attributes.
+- **Encapsulation and Safety:** 
+  - To prevent direct access to attribute deletion, allowing the class to encapsulate its behavior and ensure that any deletion operation goes through a controlled process.
+- **Custom Behavior:** 
+  - To implement custom behavior or logic when an attribute is deleted, such as logging, notifying observers, or setting related attributes to default values.
+- **Consistency:** 
+  - To maintain a consistent interface for accessing and modifying object attributes, providing getters, setters, and deleters ensures a uniform way of interacting with class properties.
+
+Go back to [Contents](#contents).
+
+### Some Object-Oriented Programming examples
+
+Go back to [Contents](#contents).
+
+**Problem 1:** Create a Basic Class and Object
+
+Define a Book class and create an object of that class.
+
+Solution: 
+
+```python
+class Book:
+    def __init__(self, title, author):
+        self.title = title
+        self.author = author
+
+book1 = Book("2024", "Ramon Figueiredo")
+print(book1.title)  # Output: 2024
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Class with a Method
+
+Add a method to a class that displays information about an object.
+
+Solution: 
+
+```python
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def display_info(self):
+        return f"Car: {self.make} {self.model}"
+
+car1 = Car("Toyota", "Corolla")
+print(car1.display_info())  # Output: Car: Toyota Corolla
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Public Method and Attribute
+
+Solution: 
+
+```python
+class Dog:
+    def __init__(self, name):
+        self.name = name  # Public attribute
+
+    def speak(self):  # Public method
+        return f"{self.name} says Woof!"
+
+my_dog = Dog("Buddy")
+print(my_dog.name)  # Accessing public attribute
+print(my_dog.speak())  # Calling public method
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Protected Method and Attribute
+
+Solution: 
+
+```python
+class Car:
+    def __init__(self, make):
+        self._make = make  # Protected attribute
+
+    def _display_make(self):  # Protected method
+        return f"This is a {self._make}."
+
+my_car = Car("Tesla")
+print(my_car._make)  # Not recommended, but possible
+print(my_car._display_make())  # Not recommended, but possible
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Private Method and Attribute
+
+Solution: 
+
+```python
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def __display_balance(self):  # Private method
+        return f"Account balance: ${self.__balance}"
+
+    def public_method(self):
+        return self.__display_balance()  # Accessing private method
+
+my_account = Account(1000)
+# print(my_account.__balance)  # AttributeError
+# print(my_account.__display_balance())  # AttributeError
+print(my_account.public_method())  # Accessing private method via public method
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Inheritance with Protected Members
+
+Solution: 
+
+```python
+class Animal:
+    def __init__(self):
+        self._legs = 4  # Protected attribute
+
+    def _make_sound(self):  # Protected method
+        return "Some sound"
+
+class Dog(Animal):
+    def bark(self):
+        return self._make_sound()  # Accessing protected method from parent
+
+my_dog = Dog()
+print(my_dog.bark())
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Name Mangling with Private Members
+
+Solution: 
+
+```python
+class Person:
+    def __init__(self, age):
+        self.__age = age  # Private attribute
+
+    def get_age(self):
+        return self.__age
+
+john = Person(30)
+# print(john.__age)  # AttributeError
+print(john.get_age())  # Correct way to access private attribute
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Changing Protected Member in Subclass
+
+Solution: 
+
+```python
+class Vehicle:
+    def __init__(self):
+        self._wheels = 4  # Protected attribute
+
+class Bike(Vehicle):
+    def __init__(self):
+        super().__init__()
+        self._wheels = 2  # Changing protected attribute in subclass
+
+my_bike = Bike()
+print(my_bike._wheels)  # Accessing changed protected attribute
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Using Private Members Across Methods in the Same Class
+
+Solution: 
+
+```python
+class Computer:
+    def __init__(self):
+        self.__os = "Windows"  # Private attribute
+
+    def __update_os(self):  # Private method
+        self.__os = "Linux"
+
+    def change_os(self):
+        self.__update_os()  # Calling private method
+        return f"OS changed to {self.__os}"
+
+my_computer = Computer()
+print(my_computer.change_os())
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Direct Access to Name Mangled Private Members (Not Recommended)
+
+Solution: 
+
+```python
+class Sample:
+    def __init__(self):
+        self.__privateVar = "I'm private"
+
+sample = Sample()
+print(sample._Sample__privateVar)  # Directly accessing a name mangled private variable
+```
+
+Go back to [Contents](#contents).
+
+**Problem 11:** Mix of Public, Protected, and Private Members
+
+Solution: 
+
+```python
+class MyData:
+    def __init__(self):
+        self.name = "Public Name"  # Public
+        self._data = "Protected Data"  # Protected
+        self.__info = "Private Info"  # Private
+
+    def public_method(self):
+        return f"Public can access {self.name}, {self._data}, and {self.__info}"
+
+obj = MyData()
+print(obj.public_method())  # Accesses all types within the class
+```
+
+Go back to [Contents](#contents).
+
+**Problem 12:** Overriding Protected Method in Subclass
+
+Solution: 
+
+```python
+class Parent:
+    def _protected_method(self):
+        return "Parent's protected method"
+
+class Child(Parent):
+    def _protected_method(self):
+        return "Child's overridden protected method"
+
+child_obj = Child()
+print(child_obj._protected_method())  # Accessing overridden protected method
+```
+
+Go back to [Contents](#contents).
+
+**Problem 13:** Inheritance
+
+Create a derived class that inherits from a base class.
+
+Solution: 
+
+```python
+class Animal:
+    def speak(self):
+        return "Some sound"
+
+class Dog(Animal):
+    def speak(self):
+        return "Woof"
+
+dog = Dog()
+print(dog.speak())  # Output: Woof
+```
+
+Go back to [Contents](#contents).
+
+**Problem 14:** Multi-level Inheritance
+
+Implement multi-level inheritance.
+
+Solution: 
+
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+class Bird(Animal):
+    pass
+
+class Parrot(Bird):
+    def speak(self):
+        return "Squawk"
+
+parrot = Parrot("Polly")
+print(parrot.name, parrot.speak())  # Output: Polly Squawk
+```
+
+Go back to [Contents](#contents).
+
+**Problem 15:** Multiple Inheritance
+
+Create a class that inherits from two parent classes.
+
+Solution: 
+
+```python
+class Father:
+    father_name = "John"
+
+class Mother:
+    mother_name = "Jane"
+
+class Child(Father, Mother):
+    def parents(self):
+        return f"Father: {self.father_name}, Mother: {self.mother_name}"
+
+child = Child()
+print(child.parents())  # Output: Father: John, Mother: Jane
+```
+
+Go back to [Contents](#contents).
+
+**Problem 16:** Encapsulation - Using Private Members
+
+Implement encapsulation using private members.
+
+Solution: 
+
+```python
+class Account:
+    def __init__(self):
+        self.__balance = 0  # Private attribute
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+account = Account()
+account.deposit(100)
+print(account.get_balance())  # Output: 100
+```
+
+Go back to [Contents](#contents).
+
+**Problem 17:** Polymorphism with Methods
+
+Demonstrate polymorphism with methods.
+
+Solution: 
+
+```python
+class Canada:
+    def capital(self):
+        return "Ottawa"
+
+class USA:
+    def capital(self):
+        return "Washington"
+    
+class Brazil:
+    def capital(self):
+        return "Brasília"
+
+def country_capital(country):
+    print(country.capital())
+
+canada = Canada()
+usa = USA()
+brazil = Brazil()
+
+country_capital(canada)  # Output: Ottawa
+country_capital(usa)    # Output: Washington
+country_capital(brazil)    # Output: Brasília
+```
+
+Go back to [Contents](#contents).
+
+**Problem 18:** Abstract Base Class and Method
+
+Create an abstract class with an abstract method.
+
+Solution: 
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+rectangle = Rectangle(10, 20)
+print(rectangle.area())  # Output: 200
+```
+
+Go back to [Contents](#contents).
+
+**Problem 19:** Class Method and Static Method
+
+Use class methods and static methods.
+
+Solution: 
+
+```python
+class Person:
+    population = 0
+
+    def __init__(self, name):
+        self.name = name
+        Person.population += 1
+
+    @classmethod
+    def get_population(cls):
+        return cls.population
+
+    @staticmethod
+    def is_adult(age):
+        return age >= 18
+
+print(Person.is_adult(20))  # Output: True
+print(Person.get_population())  # Output: 0
+```
+
+Go back to [Contents](#contents).
+
+**Problem 20:** Property Decorators - Getter and Setter
+
+Use property decorators to define getters and setters.
+
+Solution: 
+
+```python
+class Celsius:
+    def __init__(self, temperature=0):
+        self._temperature = temperature
+
+    @property
+    def temperature(self):
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, value):
+        if value < -273.15:
+            raise ValueError("Temperature below -273.15 is not possible."
+                             "\nAbsolute zero, technically known as zero kelvins, "
+                             "equals −273.15 degrees Celsius or -459.67 Fahrenheit")
+        self._temperature = value
+
+temp = Celsius()
+temp.temperature = 30
+print(temp.temperature)  # Output: 30
+
+'''
+The next two lines throw an ValueError with the message
+Temperature below -273.15 is not possible.
+Absolute zero, technically known as zero kelvins, equals −273.15 degrees Celsius or -459.67 Fahrenheit
+'''
+# temp.temperature = -274.5
+# print(temp.temperature)  # Output: 30
+```
+
+Go back to [Contents](#contents).
 
 ## Modules and Packages
 
@@ -2554,7 +3333,8 @@ Go back to [Contents](#contents).
 #### Ramon Figueiredo Pessoa
 
 * LinkedIn: https://www.linkedin.com/in/ramonfigueiredo/
-* GitHub: https://ramonfigueiredo.github.io/
+* Homepage: https://ramonfigueiredo.github.io/
+* GitHub: https://github.com/ramonfigueiredo
 * YouTube: www.youtube.com/@ramon-figueiredo
 
 Go back to [Contents](#contents).
