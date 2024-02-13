@@ -42,6 +42,10 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    5. [More 10 Error Handling examples](#more-10-error-handling-examples)
 6. [Intermediate Python](#error-handling)
    1. [Comprehensions](#comprehensions)
+      1. [List Comprehensions](#list-comprehensions)
+      2. [Dictionary Comprehensions](#dictionary-comprehensions)
+      3. [Set Comprehensions](#set-comprehensions)
+      4. [Some Examples of List Comprehensions, Dictionary Comprehensions, and Set Comprehensions](#some-examples-of-list-comprehensions,-dictionary-comprehensions,-and-set-comprehensions) 
    2. [Lambda Functions](#lambda-functions)
    3. [Map and Filter](#map-and-filter)
 7. [Object-Oriented Programming](#object-oriented-programming)
@@ -1782,9 +1786,195 @@ Go back to [Contents](#contents).
 
 ## Intermediate Python
 
+As we advance, we'll look at more sophisticated features of Python. 
+
+We'll cover comprehensions, lambda functions, and how to use map and filter. These concepts will elevate your Python skills to a new level.
+
 Go back to [Contents](#contents).
 
 ### Comprehensions
+
+Comprehensions in Python provide a concise, readable way to create lists, dictionaries, and sets. They offer a simpler syntax when you want to create a new collection based on the values of an existing collection.
+
+#### List Comprehensions
+
+List Comprehensions are a beautiful way to create new lists by applying an expression to each element of an existing iterable. 
+
+For example, let’s say we want to square each number in a list. Here’s how you can do it with a list comprehension:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared = [number ** 2 for number in numbers]
+print(squared)  # Output: [1, 4, 9, 16, 25]
+```
+
+This one-line (`squared = [number ** 2 for number in numbers]`) replaces multiple lines of a traditional `for` loop, making your code compact and readable.
+
+#### Dictionary Comprehensions
+
+Moving on to Dictionary Comprehensions, which are similar, but they create dictionaries instead of lists. You can transform and filter data into key-value pairs. 
+
+For example, creating a dictionary where keys are numbers and values are their squares:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared_dict = {number: number ** 2 for number in numbers}
+print(squared_dict)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+```
+
+#### Set Comprehensions
+
+Set Comprehensions work similarly, but are used for creating sets. The syntax is almost identical to list comprehensions, but with curly braces. 
+
+An example can be creating a set of even numbers:
+
+```python
+numbers = [1, 2, 3, 4, 5, 2, 3, 4]
+evens = {number for number in numbers if number % 2 == 0}
+print(evens)  # Output: {2, 4}
+```
+
+Notice how duplicates are automatically removed, which is a characteristic of sets.
+
+#### Some Examples of List Comprehensions, Dictionary Comprehensions, and Set Comprehensions 
+
+Go back to [Contents](#contents).
+
+#### Exceptions
+
+**Problem 1:** Square Numbers in Range
+
+Create a list of squares for numbers from 1 to 10.
+
+Solution: 
+
+```python
+squares = [x**2 for x in range(1, 11)]
+print(squares)
+```
+
+**Problem 2:** Filter Even Numbers
+
+From a list, create a new list of only even numbers.
+
+Solution: 
+
+```python
+original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+evens = [num for num in original if num % 2 == 0]
+print(evens)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Create a Dictionary from Two Lists
+
+Make a dictionary from lists of countries and capitals.
+
+Solution: 
+
+```python
+countries = ["Japan", "Canada", "Germany"]
+capitals = ["Tokyo", "Ottawa", "Berlin"]
+country_capitals = {countries[i]: capitals[i] for i in range(len(countries))}
+print(country_capitals)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Invert a Dictionary
+
+Swap keys and values in a dictionary.
+
+Solution: 
+
+```python
+original_dict = {"a": 1, "b": 2, "c": 3}
+inverted_dict = {value: key for key, value in original_dict.items()}
+print(inverted_dict)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Generate a Set of Unique Characters
+
+From a string, create a set of unique characters.
+
+Solution: 
+
+```python
+string = "hello world"
+unique_chars = {char for char in string}
+print(unique_chars)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Square Even Numbers Only
+
+Square only the even numbers in a range.
+
+Solution: 
+
+```python
+squared_evens = [x**2 for x in range(1, 11) if x % 2 == 0]
+print(squared_evens)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Create a List of Tuples
+
+Generate a list of (number, square of number) tuples.
+
+Solution: 
+
+```python
+tuples = [(x, x**2) for x in range(1, 6)]
+print(tuples)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** List of Lowercase and Uppercase Letters
+
+From a string, create a list of tuples with lowercase and uppercase versions of each letter.
+
+Solution: 
+
+```python
+string = "abcd"
+letter_cases = [(char, char.upper()) for char in string]
+print(letter_cases)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Dictionary of Word-Length
+
+Create a dictionary with words and their lengths from a list of words.
+
+Solution: 
+
+```python
+words = ["apple", "banana", "cherry"]
+word_length = {word: len(word) for word in words}
+print(word_length)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Filter and Transform
+
+From a range of numbers, create a list of strings for even numbers only.
+
+Solution: 
+
+```python
+numbers = range(1, 11)
+even_str = [f"Even: {num}" for num in numbers if num % 2 == 0]
+print(even_str)
+```
 
 Go back to [Contents](#contents).
 
