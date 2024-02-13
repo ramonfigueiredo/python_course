@@ -51,6 +51,9 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       2. [Lambda Functions Usage](#lambda-functions-usage)
       3. [Some Lambda Functions examples](#some-lambda-functions-examples)
    3. [Map and Filter](#map-and-filter)
+      1. [The map function](#the-map-function)
+      2. [The filter function](#the-filter-function)
+      3. [Some Map and Filter examples](#some-map-and-filter-examples)
 7. [Object-Oriented Programming](#object-oriented-programming)
    1. [Classes and Objects](#classes-and-objects)
    2. [Inheritance](#inheritance)
@@ -2182,9 +2185,207 @@ Go back to [Contents](#contents).
 
 ### Map and Filter
 
+Next, let's explore two of Python's built-in functions that incorporate functional programming: `map` and `filter`. 
+
+These functions provide elegant, concise ways to perform operations on iterable collections like lists, tuples, or even strings.
+
+Notes: 
+
+- `map` and `filter` are incredibly useful for handling iterable collections in Python. 
+- They enable you to write cleaner, more readable code by abstracting the loop mechanism, making your code more in line with the functional programming paradigm.
+
 Go back to [Contents](#contents).
 
+#### The map function
 
+The `map` function applies a given function to each item of an iterable and returns a map object (which is an iterator). 
+
+Essentially, `map` helps you transform a collection based on a transformation rule. This is particularly useful when you want to apply a single operation to all elements in a collection. 
+
+For example:
+
+```python
+def square(number):
+    return number ** 2
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = list(map(square, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+```
+
+In this example:
+
+- We have a simple function `square` that we map across a list of numbers. 
+- The `map` function applies the square function to each element in numbers.
+
+Go back to [Contents](#contents).
+
+#### The filter function
+
+Moving on to the filter function. Whereas `map` is about transforming data, the `filter` function is about selecting data. 
+
+The `filter` function constructs an iterator from elements of an iterable for which a function returns true. In other words, it filters out all the elements of an iterable, for which the function returns `True`. 
+
+Here's how you can use the `filter` function:
+
+```python
+def is_even(number):
+    return number % 2 == 0
+
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(is_even, numbers))
+print(even_numbers)  # Output: [2, 4, 6]
+```
+
+Here, the `filter` function is used to extract even numbers from a list. The function `is_even` returns `True` for even numbers, which are then included in the `even_numbers` list.
+
+Go back to [Contents](#contents).
+
+#### Some Map and Filter examples
+
+The next are some examples that demonstrate the power of `map` and `filter` in transforming and filtering data in lists, utilizing lambda functions for inline processing.
+
+Go back to [Contents](#contents).
+
+**Problem 1:** Convert All Strings in a List to Upper Case
+
+Use `map` to convert each string in a list to upper case.
+
+Solution: 
+
+```python
+strings = ["hello", "world", "python"]
+upper_strings = list(map(str.upper, strings))
+print(upper_strings)  # Output: ['HELLO', 'WORLD', 'PYTHON']
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Find Length of Each Word
+
+Use `map` to find the length of each word in a list of words.
+
+Solution: 
+
+```python
+words = ["apple", "banana", "cherry"]
+lengths = list(map(len, words))
+print(lengths)  # Output: [5, 6, 6]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Square Each Number
+
+Use `map` to square each number in a list.
+
+Solution: 
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # Output: [1, 4, 9, 16, 25]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Filter Out Negative Numbers
+
+Use `filter` to remove negative numbers from a list.
+
+Solution: 
+
+```python
+numbers = [1, -2, 3, -4, 5]
+positive_numbers = list(filter(lambda x: x > 0, numbers))
+print(positive_numbers)  # Output: [1, 3, 5]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Extract Names Starting with a Specific Letter
+
+Use `filter` to get names starting with 'J' from a list.
+
+Solution: 
+
+```python
+names = ["Jack", "Sarah", "James", "Rachel"]
+j_names = list(filter(lambda name: name.startswith('J'), names))
+print(j_names)  # Output: ['Jack', 'James']
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Convert Temperatures from Celsius to Fahrenheit
+
+Use `map` to convert a list of temperatures from Celsius to Fahrenheit.
+
+Solution: 
+
+```python
+celsius = [0, 10, 20, 30]
+fahrenheit = list(map(lambda c: (c * 9/5) + 32, celsius))
+print(fahrenheit)  # Output: [32.0, 50.0, 68.0, 86.0]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Convert Strings to Floats
+
+Use `map` to convert a list of numeric strings to floats.
+
+Solution: 
+
+```python
+str_numbers = ["1.2", "2.3", "3.4"]
+float_numbers = list(map(float, str_numbers))
+print(float_numbers)  # Output: [1.2, 2.3, 3.4]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Remove Empty Strings from a List
+
+Use `filter` to remove empty strings from a list of strings.
+
+Solution: 
+
+```python
+strings = ["apple", "", "banana", " ", "cherry"]
+non_empty = list(filter(None, strings))
+print(non_empty)  # Output: ['apple', 'banana', ' ', 'cherry']
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Create a List of Tuples (Number, Square)
+
+Use `map` to create a list of tuples, each containing a number and its square.
+
+Solution: 
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared_tuples = list(map(lambda x: (x, x**2), numbers))
+print(squared_tuples)  # Output: [(1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Extract Even-Length Words
+
+Use `filter` to get words of even length from a list.
+
+Solution: 
+
+```python
+words = ["apple", "banana", "kiwi", "grape"]
+even_length_words = list(filter(lambda x: len(x) % 2 == 0, words))
+print(even_length_words)  # Output: ['apple', 'banana', 'grape']
+```
+
+Go back to [Contents](#contents).
 
 ## Object-Oriented Programming
 
