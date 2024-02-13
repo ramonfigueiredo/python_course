@@ -47,6 +47,9 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       3. [Set Comprehensions](#set-comprehensions)
       4. [Some Comprehensions examples](#some-comprehensions-examples) 
    2. [Lambda Functions](#lambda-functions)
+      1. [Lambda Function Example](#lambda-function-example)
+      2. [Lambda Functions Usage](#lambda-functions-usage)
+      3. [Some Lambda Functions examples](#some-lambda-functions-examples)
    3. [Map and Filter](#map-and-filter)
 7. [Object-Oriented Programming](#object-oriented-programming)
    1. [Classes and Objects](#classes-and-objects)
@@ -1989,6 +1992,191 @@ print(even_str)
 Go back to [Contents](#contents).
 
 ### Lambda Functions
+
+Lambda functions are a distinctive feature of Python, providing a quick and efficient way to create small, unnamed, or 'anonymous' functions. They are particularly useful for short, simple functions that are used only once or a limited number of times.
+
+Let's start by understanding what lambda functions are and how they work. 
+
+- In Python, a lambda function is a small anonymous function defined by the keyword 'lambda'. 
+- It can take any number of arguments, but can only have one expression. 
+
+The syntax of a lambda function is:
+
+```python
+lambda arguments: expression
+```
+
+This expression is evaluated and returned.
+
+Go back to [Contents](#contents).
+
+#### Lambda Function Example
+
+Lambda functions are often used in situations where you need a simple function for a short period and don’t want to formally define it using the standard `def` keyword.
+
+For example, consider a simple lambda function that adds two numbers:
+
+```python
+add = lambda x, y: x + y
+print(add(5, 3))  # Output: 8
+```
+
+In this example, `lambda x, y: x + y` is an anonymous function that takes two arguments and returns their sum. This code assign this lambda function to the variable `add`, and then we can use it just like any other function.
+
+Go back to [Contents](#contents).
+
+#### Lambda Functions Usage
+
+Lambda functions are particularly powerful when used in conjunction with functions like `map()`, `filter()`, and `reduce()`, which allow for functional-style programming. 
+* **Functional programming (FP)** is an approach to software development that uses pure functions to create maintainable software. In other words, building programs by applying and composing functions.
+
+For instance, let’s use a lambda function with `map()` to square each number in a list:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, numbers))
+print(squared)  # Output: [1, 4, 9, 16, 25]
+```
+
+Here, `map()` applies the lambda function to each item in the list numbers.
+
+Go back to [Contents](#contents).
+
+#### Some Lambda Functions examples
+
+Go back to [Contents](#contents).
+
+**Problem 1:** Compute Square of a Number
+
+Create a lambda function to compute the square of a number.
+
+Solution: 
+
+```python
+square = lambda x: x**2
+print(square(5))  # Output: 25
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Add Two Numbers
+
+Use a lambda function to add two numbers.
+
+Solution: 
+
+```python
+add = lambda x, y: x + y
+print(add(3, 7))  # Output: 10
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Filter Even Numbers
+
+Use a lambda function with filter to extract even numbers from a list.
+
+Solution: 
+
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+evens = list(filter(lambda x: x % 2 == 0, numbers))
+print(evens)  # Output: [2, 4, 6]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Sort a List of Tuples
+
+Use a lambda function to sort a list of tuples by the second item.
+
+Solution: 
+
+```python
+pairs = [(1, 'three'), (3, 'one'), (2, 'two')]
+pairs.sort(key=lambda pair: pair[1])
+print(pairs)  # Output: [(3, 'one'), (2, 'two'), (1, 'three')]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Multiply Elements of a List
+
+Use a lambda function with map to double each element in a list.
+
+Solution: 
+
+```python
+numbers = [1, 2, 3, 4, 5]
+doubled = list(map(lambda x: x * 2, numbers))
+print(doubled)  # Output: [2, 4, 6, 8, 10]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Get Maximum of Two Values
+
+Create a lambda function to find the maximum of two values.
+
+Solution: 
+
+```python
+max_value = lambda a, b: a if a > b else b
+print(max_value(10, 20))  # Output: 20
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Concatenate Strings
+
+Use a lambda function to concatenate two strings.
+
+Solution: 
+
+```python
+concat = lambda s1, s2: s1 + s2
+print(concat("Hello, ", "World!"))  # Output: Hello, World!
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Convert Celsius to Fahrenheit
+
+Create a lambda function to convert Celsius to Fahrenheit.
+
+Solution: 
+
+```python
+c_to_f = lambda c: (c * 9/5) + 32
+print(c_to_f(0))  # Output: 32.0
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Find Length of Each Word
+
+Use a lambda function with map to find the length of each word in a list.
+
+Solution: 
+
+```python
+words = ["apple", "banana", "cherry"]
+lengths = list(map(lambda word: len(word), words))
+print(lengths)  # Output: [5, 6, 6]
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Reverse a String
+
+Use a lambda function to reverse a string.
+
+Solution: 
+
+```python
+reverse_str = lambda s: s[::-1]
+print(reverse_str("hello"))  # Output: olleh
+```
 
 Go back to [Contents](#contents).
 
