@@ -81,6 +81,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    1. [Scripting vs Programming](#scripting-vs-programming)
    2. [Automating Tasks](#automating-tasks)
    3. [Best Practices](#best-practices)
+   4. [Some Python Scripting examples](#some-python-scripting-examples)
 11. [Python Libraries](#python-libraries)
    1. [NumPy](#numpy)
    2. [SciPy](#scipy)
@@ -3684,13 +3685,256 @@ Go back to [Contents](#contents).
 
 ## Python Scripting and Programming
 
+Let's explore the nuances of scripting versus programming and delve into how Python can be used for automating everyday tasks, making life easier and more productive.
+
 Go back to [Contents](#contents).
 
 ### Scripting vs Programming
 
+While the terms **Scripting** and **Programming** are often used interchangeably, they do have distinct meanings. 
+
+- Programming is generally considered the process of creating more complex and structured software applications, which often involves writing code that is compiled before it’s run. 
+- Scripting, on the other hand, is more about writing small programs, or 'scripts', that are meant to automate simple tasks. 
+  - These scripts are usually interpreted rather than compiled.
+
+Python excels in scripting due to its straightforward syntax and powerful built-in libraries. 
+- It allows you to write scripts quickly and run them directly, making it an ideal tool for automating routine tasks.
+
 Go back to [Contents](#contents).
 
 ### Automating Tasks
+
+Python is an incredibly versatile tool that can automate numerous mundane tasks like file manipulation, data scraping, or even sending emails. 
+
+Its readability and simplicity make it accessible for writing scripts that can save time on a daily basis. 
+
+Let's look at a simple example of a Python script that renames multiple files in a directory:
+
+```python
+import os
+
+def rename_files(directory, extension, new_name):
+    for count, filename in enumerate(os.listdir(directory)):
+        if filename.endswith(extension):
+            dst = f"{new_name}_{count}{extension}"
+            src = f"{directory}/{filename}"
+            dst = f"{directory}/{dst}"
+            
+            os.rename(src, dst)
+    print("Files renamed successfully.")
+
+rename_files('path/to/directory', '.txt', 'new_name')
+```
+
+In this script, we define a function `rename_files` that takes a `directory`, a file `extension`, and a `new_name` as parameters. 
+- It then renames all files with the specified extension in the given directory. 
+
+Such automation scripts can significantly streamline your workflow.
+
+Go back to [Contents](#contents).
+
+### Some Python Scripting examples
+
+**Problem 1:** Rename Files in a Directory
+
+Rename all .txt files in a directory to include a sequential number.
+
+Solution: 
+
+```python
+import os
+
+def rename_files(directory):
+    for count, filename in enumerate(os.listdir(directory)):
+        if filename.endswith('.txt'):
+            os.rename(os.path.join(directory, filename),
+                      os.path.join(directory, f"file_{count}.txt"))
+
+rename_files('path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 2:** Batch Image Resizing
+
+Resize all images in a directory to a specific size using the PIL library.
+
+Solution: 
+
+```python
+from PIL import Image
+import os
+
+def resize_images(directory, size):
+    for filename in os.listdir(directory):
+        if filename.endswith('.jpg'):
+            img = Image.open(os.path.join(directory, filename))
+            img = img.resize(size)
+            img.save(os.path.join(directory, filename))
+
+resize_images('path/to/images', (100, 100))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 3:** Extracting Text from Multiple Files
+
+Read text from multiple .txt files and print their contents.
+
+Solution: 
+
+```python
+def read_multiple_files(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.txt'):
+            with open(os.path.join(directory, filename), 'r') as file:
+                print(file.read())
+
+read_multiple_files('path/to/text_files')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 4:** Create a Daily Backup Script
+
+Create a script to copy a specific file as a daily backup.
+
+Solution: 
+
+```python
+import shutil
+from datetime import datetime
+
+def daily_backup(file_path, backup_dir):
+    backup_file = f"{backup_dir}/{datetime.now().strftime('%Y%m%d')}_backup.txt"
+    shutil.copyfile(file_path, backup_file)
+
+daily_backup('path/to/file.txt', 'path/to/backup')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 5:** Bulk File Conversion
+
+Convert all .txt files in a directory to .md (Markdown) files.
+
+Solution: 
+
+```python
+import os
+
+def convert_files(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.txt'):
+            base = os.path.splitext(filename)[0]
+            os.rename(os.path.join(directory, filename),
+                      os.path.join(directory, base + '.md'))
+
+convert_files('path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 6:** Generating a Report from Logs
+
+Read a log file and generate a report of error counts.
+
+Solution: 
+
+```python
+def generate_error_report(log_file):
+    with open(log_file, 'r') as file:
+        log_content = file.readlines()
+
+    error_count = sum("ERROR" in line for line in log_content)
+    print(f"Total Errors: {error_count}")
+
+generate_error_report('path/to/logfile.log')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 7:** Deleting Temporary Files
+
+Delete all files with a `.tmp` extension in a directory.
+
+Solution: 
+
+```python
+import os
+
+def delete_temp_files(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.tmp'):
+            os.remove(os.path.join(directory, filename))
+
+delete_temp_files('path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 8:** Automating Email Sending
+
+Send an email using Python's `smtplib`.
+
+Solution: 
+
+```python
+import smtplib
+
+def send_email(subject, message, from_addr, to_addr, smtp_server, port):
+    with smtplib.SMTP(smtp_server, port) as server:
+        server.sendmail(from_addr, to_addr, f"Subject: {subject}\n{message}")
+
+send_email("Test Subject", "Hello, this is a test.", "sender@example.com", "receiver@example.com", "smtp.example.com", 587)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 9:** Monitoring File Changes
+
+Monitor a directory for any changes to files.
+
+Solution: 
+
+```python
+import time
+import os
+
+def monitor_changes(directory, interval=60):
+    initial_snapshot = os.listdir(directory)
+    while True:
+        time.sleep(interval)
+        current_snapshot = os.listdir(directory)
+        if current_snapshot != initial_snapshot:
+            print("Changes detected in directory.")
+            initial_snapshot = current_snapshot
+
+monitor_changes('path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 10:** Parsing and Analyzing CSV Data
+
+Read a CSV file and calculate the average of values in a column.
+
+Solution: 
+
+```python
+import csv
+
+def calculate_average(csv_file, column):
+    total, count = 0, 0
+    with open(csv_file, newline='') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            total += float(row[column])
+            count += 1
+    return total / count if count else 0
+
+print(calculate_average('data.csv', 'price'))
+```
 
 Go back to [Contents](#contents).
 
