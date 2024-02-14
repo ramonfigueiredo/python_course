@@ -6,12 +6,13 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
 ## Contents
 
 1. [Introduction to Python](#introduction-to-python)
-   1. [Keywords and Identifiers](#keywords-and-identifiers)
-   2. [Comments](#comments)
-   3. [Indentation](#indentation)
-   4. [Variables](#variables)
-   5. [Operators](#operators)
-   6. [Input and Output Functions](#input-and-output-functions)
+   1. [Keywords](#keywords)
+   2. [Identifiers](#identifiers)
+   3. [Comments](#comments)
+   4. [Indentation](#indentation)
+   5. [Variables](#variables)
+   6. [Operators](#operators)
+   7. [Input and Output Functions](#input-and-output-functions)
 2. [Control Structures](#control-structures)
    1. [Conditional Statements](#conditional-statements)
       1. [More 10 conditional statements examples](#10-conditional-statements-examples)
@@ -110,28 +111,165 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
 
 Go back to [Contents](#contents).
 
-### Keywords and Identifiers
+### Keywords
 
-* **Keywords:** Python reserved words (e.g., **if**, **else**, **for**, **while**, **return**).
+Python keywords are reserved words that cannot be used as identifiers (variable names, function names, class names, etc.) because they are part of the syntax of the language and are used to define its structure and operations.
+
+Here's a Python code that attempts to incorporate as many Python keywords as possible in a meaningful way. This script includes concepts such as function definition, class definition, control flow, exception handling, and more.
 
 ```python
-# Example of using Python keywords
-def my_func(n1, n2):
-    if n1 < n2:
-        return True
-    else:
-        return False
+# This Python code aims to use as many Python keywords as possible in a meaningful context.
 
-if __name__ == '__main__':
-    n1 = input("Enter a number: ")
-    n2 = input("Enter another number: ")
-    ans = my_func(n1, n2)
-    print('Result: {}'.format(ans))
+# Define a class
+class Example:
+    def __init__(self, value):
+        self.value = value
+
+    # Use of the 'property' decorator to create a getter
+    @property
+    def value(self):
+        return self._value
+
+    # Use of the 'property' setter to set a value
+    @value.setter
+    def value(self, val):
+        if val < 0:
+            raise ValueError("Value must be non-negative")
+        self._value = val
+
+# Function definition using def
+def my_func():
+    # try-except-else-finally for exception handling
+    try:
+        example = Example(10)
+        
+        # if-elif-else for conditional statements
+        if example.value > 0:
+            print("Positive value")
+        elif example.value == 0:
+            print("Zero")
+        else:
+            print("Negative value")  # This won't actually print due to the ValueError in the setter
+        
+        # for loop and the 'in' keyword
+        for i in range(3):
+            print(i)
+        
+        # while loop with 'break' and 'continue'
+        count = 0
+        while True:
+            if count > 2:
+                break
+            elif count == 1:
+                count += 1
+                continue
+            print(f"Count: {count}")
+            count += 1
+        
+        # Use of 'assert' for a simple assertion
+        assert example.value == 10, "example.value should be 10"
+        
+    except ValueError as e:
+        print(e)
+    else:
+        # 'pass' is used here as a placeholder for future code
+        pass
+    finally:
+        print("Cleanup can go here")
+
+# Global scope
+if __name__ == "__main__":
+    # 'del' keyword usage for deleting an object reference
+    obj = Example(5)
+    del obj
+    
+    # Use of 'global' keyword
+    global_var = 10
+    
+    def modify_global():
+        global global_var
+        global_var += 1
+    
+    modify_global()
+    
+    # Use of 'nonlocal' within nested function
+    def outer():
+        x = "local"
+        def inner():
+            nonlocal x
+            x = "nonlocal"
+            print(x)
+        inner()
+    outer()
+    
+    # Use of 'with' statement for context management
+    with open("test.txt", "w") as f:
+        f.write("Hello, world!")
+    
+    # Use of 'import' and 'from' keywords
+    import math
+    from sys import version
+    
+    # Use of 'as' for aliasing
+    import datetime as dt
+    
+    # Use of 'lambda' for anonymous function
+    square = lambda x: x ** 2
+    
+    # Use of 'return' in the context of the lambda
+    print(square(5))
+    
+    from collections.abc import Generator
+
+    # Use of 'yield' in a generator
+    def simple_gen():
+        for i in range(3):
+            print(i)
+            yield i
+    
+    if isinstance(simple_gen(), Generator):
+        print("It's a generator!")
+    
+    # Calling the my_func function
+    my_func()
 ```
+
+The Python code provided uses a variety of keywords, each serving a specific purpose within the language. 
+
+Here's a list of the keywords used and a brief description of their role in the code:
+
+- `class`: Used to define a new class.
+- `def`: Used for function and method definition.
+- `try`: Begins a block of code that will be attempted, which may lead to an exception.
+- `except`: Specifies an exception handler or types of exceptions to catch after a try block.
+- `else`: Defines a block of code to be executed if no exceptions were raised in the try block.
+- `finally`: Defines a block of code to be executed at the end of a try block, regardless of whether an exception was raised or not.
+- `if`: Used for conditional execution.
+- `elif`: Used for additional conditions in an if...else block.
+- `for`: Begins a for loop.
+- `in`: Used to check if a value is present in a sequence or to iterate over a sequence in a for loop.
+- `while`: Begins a while loop.
+- `break`: Exits the closest enclosing loop.
+- `continue`: Skips the rest of the code inside the loop for the current iteration and goes to the next iteration of the loop.
+- `assert`: Used for debugging purposes to check if a condition is true.
+- `pass`: A null statement, a placeholder for future code.
+- `del`: Deletes an object.
+- `global`: Declares a variable as global.
+- `nonlocal`: Declares a variable as not local, used to work with variables inside nested functions.
+- `with`: Used to wrap the execution of a block of code within methods defined by the context manager.
+- `import`: Imports a module.
+- `from`: Used to import specific attributes or functions from a module.
+- `as`: Used to create an alias while importing a module.
+- `lambda`: Creates an anonymous function.
+- `return`: Exits a function and returns a value.
+- `yield`: Used by a generator function to return a value and pause its execution.
+- `is`: Tests for object identity.
 
 Go back to [Contents](#contents).
 
-* **Identifiers:** Names given to variables, functions, classes, etc.
+### Identifiers
+
+Identifiers are names given to variables, functions, classes, etc.
 
 ```python
 # Correct identifiers
