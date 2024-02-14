@@ -12,6 +12,14 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    4. [Indentation](#indentation)
    5. [Variables](#variables)
    6. [Operators](#operators)
+      1. [Arithmetic Operators](#arithmetic-operators)
+      2. [Assignment Operators](#assignment-operators)
+      3. [Comparison Operators](#comparison-operators)
+      4. [Logical Operators](#logical-operators)
+      5. [Identity Operators](#identity-operators)
+      6. [Membership Operators](#membership-operators)
+      7. [Bitwise Operators](#bitwise-operators)
+      8. [Examples for each type of operator in Python](#examples-for-each-type-of-operator-in-python)
    7. [Input and Output Functions](#input-and-output-functions)
 2. [Control Structures](#control-structures)
    1. [Conditional Statements](#conditional-statements)
@@ -337,42 +345,167 @@ Go back to [Contents](#contents).
 
 ### Operators
 
-Python supports various types of operators, but we'll focus on three main categories: Arithmetic, Comparison, and Logical operators.
+In Python, operators are special symbols that are used to perform operations on variables and values. 
 
-* **Arithmetic operators** include addition (+), subtraction (-), multiplication (*), and division (/). These operators are used to perform mathematical operations:
-
-```python
-a = 10
-b = 5
-sum = a + b  # 15
-difference = a - b  # 5
-product = a * b  # 50
-quotient = a / b  # 2.0
-```
+Here's an explanation of each type of operator:
 
 Go back to [Contents](#contents).
 
-* **Comparison operators**, like equal to (==), not equal to (!=), greater than (>), and less than (<), are used to compare values:
+#### Arithmetic Operators
 
-```python
-a = 10
-b = 5
-print(a == b)  # False
-print(a > b)   # True
-print(a < b)   # False
-```
+Arithmetic operators are used to perform mathematical operations.
+
+- `+` (Addition): Adds two operands
+- `-` (Subtraction): Subtracts the second operand from the first
+- `*` (Multiplication): Multiplies two operands
+- `/` (Division): Divides the first operand by the second
+- `%` (Modulus): Returns the remainder when the first operand is divided by the second
+- `**` (Exponentiation): Raises the first operand to the power of the second
+- `//` (Floor Division): Divides the first operand by the second and rounds down to the nearest whole number
 
 Go back to [Contents](#contents).
 
-* **Logical operators** include AND, OR, and NOT. They are used to combine conditional statements:
+#### Assignment Operators
 
-```python
-a = True
-b = False
-print(a and b)  # False
-print(a or b)   # True
-print(not a)    # False
-```
+Assignment operators are used to assign values to variables.
+
+- `=`: Assigns a value to a variable
+- `+=`: Adds the right operand to the left operand and assigns the result to the left operand
+- `-=`: Subtracts the right operand from the left operand and assigns the result to the left operand
+- `*=`: Multiplies the left operand by the right operand and assigns the result to the left operand
+- `/=`: Divides the left operand by the right operand and assigns the result to the left operand
+- `%=`: Takes modulus using two operands and assigns the result to the left operand
+- `**=`: Performs exponential (power) calculation on operators and assigns the value to the left operand
+- `//=`: Performs floor division on operators and assigns the value to the left operand
+
+Go back to [Contents](#contents).
+
+#### Comparison Operators
+
+Comparison operators are used to compare two values.
+
+- `==`: Equal to - True if both operands are equal
+- `!=`: Not equal to - True if operands are not equal
+- `>`: Greater than - True if the left operand is greater than the right
+- `<`: Less than - True if the left operand is less than the right
+- `>=`: Greater than or equal to - True if the left operand is greater than or equal to the right
+- `<=`: Less than or equal to - True if the left operand is less than or equal to the right
+
+Go back to [Contents](#contents).
+
+#### Logical Operators
+
+Logical operators are used to combine conditional statements.
+
+- `and`: Returns True if both statements are true
+- `or`: Returns True if one of the statements is true
+- `not`: Reverse the result, returns False if the result is true
+
+Go back to [Contents](#contents).
+
+#### Identity Operators
+
+Identity operators are used to compare the memory locations of two objects.
+
+- `is`: True if both operands refer to the same object
+- `is not`: True if operands refer to different objects
+
+Go back to [Contents](#contents).
+
+#### Membership Operators
+
+Membership operators are used to test whether a sequence is presented in an object.
+
+- `in`: `True` if the sequence with the specified value is present in the object
+- `not in`: `True` if the sequence with the specified value is not present in the object
+
+Go back to [Contents](#contents).
+
+#### Bitwise Operators
+
+Bitwise operators are used to perform bitwise calculations on integers.
+
+- `&`: AND - Sets each bit to 1 if both bits are 1
+- `|`: OR - Sets each bit to 1 if one of two bits is 1
+- `^`: XOR - Sets each bit to 1 if only one of two bits is 1
+- `~`: NOT - Inverts all the bits
+- `<<`: Zero fill left shift - Shift left by pushing zeros in from the right and let the leftmost bits fall off
+- `>>`: Signed right shift - Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+
+Go back to [Contents](#contents).
+
+#### Examples for each type of operator in Python
+
+Each type of operator serves a different purpose and is used in different contexts depending on what you are trying to achieve in your Python code.
+
+Arithmetic Operators:
+
+- `+` (Addition): `3 + 2` will give `5`
+- `-` (Subtraction): `3 - 2` will give `1`
+- `*` (Multiplication): `3 * 2` will give `6`
+- `/` (Division): `3 / 2` will give `1.5`
+- `%` (Modulus): `3 % 2` will give `1` (remainder of the division)
+- `**` (Exponentiation): `3 ** 2` will give `9` (3 squared)
+- `//` (Floor Division): `3 // 2` will give `1` (division without remainder)
+
+Go back to [Contents](#contents).
+
+Assignment Operators:
+
+- `=`: `x = 5` will assign the value `5` to `x`
+- `+=`: `x += 3` is equivalent to `x = x + 3`
+- `-=`: `x -= 3` is equivalent to `x = x - 3`
+- `*=`: `x *= 3` is equivalent to `x = x * 3`
+- `/=`: `x /= 3` is equivalent to `x = x / 3`
+- `%=`: `x %= 3` is equivalent to `x = x % 3`
+- `**=`: `x **= 3` is equivalent to `x = x ** 3`
+- `//=`: `x //= 3` is equivalent to `x = x // 3`
+
+Go back to [Contents](#contents).
+
+Comparison Operators:
+
+- `==`: `5 == 5` will return `True`
+- `!=`: `5 != 3` will return `True`
+- `>`: `5 > 3` will return `True`
+- `<`: `5 < 3` will return `False`
+- `>=`: `5 >= 5` will return `True`
+- `<=`: `5 <= 5` will return `True`
+
+Go back to [Contents](#contents).
+
+Logical Operators:
+
+- `and`: `(5 > 3) and (5 > 4)` will return `True`
+- `or`: `(5 > 3) or (5 < 4)` will return `True`
+- `not`: `not(5 > 3)` will return `False`
+
+Go back to [Contents](#contents).
+
+Identity Operators:
+
+- `is`: `a = [1,2,3]`; `b = [1,2,3]`; `a is b` will return `False` (different objects in memory)
+- `is not`: `a is not b` will return `True`
+
+Go back to [Contents](#contents).
+
+Membership Operators:
+
+- `in`: `'a' in 'cat'` will return `True`
+- `not in`: `'b' not in 'cat'` will return `True`
+
+Go back to [Contents](#contents).
+
+Bitwise Operators:
+
+- `&`: `5 & 3` will return `1` (binary `0101 & 0011` is `0001`)
+- `|`: `5 | 3` will return `7` (binary `0101 | 0011` is `0111`)
+- `^`: `5 ^ 3` will return `6` (binary `0101 ^ 0011` is `0110`)
+- `~`: `~5` will return `-6` (inverts the bits of `0101`, resulting in `1010` in two's complement which is `-6`)
+- `<<`: `5 << 1` will return `10` (shifts the bits of `0101` left by `1`, resulting in `1010`)
+- `>>`: `5 >> 1` will return `2` (shifts the bits of `0101` right by `1`, resulting in `0010`)
+
+Go back to [Contents](#contents).
 
 ### Input and Output Functions
 
