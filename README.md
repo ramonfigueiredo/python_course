@@ -749,44 +749,145 @@ Go back to [Contents](#contents).
 
 ### Loops
 
-Python provides two types of loops - 'for' and 'while'. 
+Python provides two types of loops - `for` and `while`. 
 
-A 'for' loop is used for iterating over a sequence like a list, tuple, string, or range. 
+A `for` loop is used for iterating over a sequence like a list, tuple, string, or range. 
 
-Meanwhile, a 'while' loop repeats as long as a certain boolean condition is met.
+Meanwhile, a `while` loop repeats as long as a certain boolean condition is met.
 
 Go back to [Contents](#contents).
 
 #### The for loop
 
-Here's how a 'for' loop works:
+Use a `for` loop when:
+
+- **You know the exact number of iterations in advance**
+  - This is the most common scenario for using for loops, such as iterating over a sequence (like a list, tuple, dictionary, set, or string) or when you have a fixed number of iterations.
+- **You are iterating over a collection of items**
+  - `for` loops are inherently designed to iterate over items of a collection directly, making the code more readable and concise.
+- **You are using generators or iterators**
+  - When dealing with generators or iterators, including those returned by built-in functions like `range()`, `enumerate()`, or `zip()`, `for` loops are the way to go.
+
+Here are Python code examples for each of the scenarios where a `for` loop is commonly used:
+
+1. Iterating over a sequence with a known number of iterations
 
 ```python
-for i in range(5):
+# Iterating over a range of numbers
+for i in range(5):  # Known number of iterations
     print(i)
 ```
 
-This loop prints numbers from 0 to 4. The 'range(5)' function generates a sequence of numbers, which the loop iterates through.
+2. Iterating over a collection of items
+
+```python
+# Iterating over a list
+fruits = ['apple', 'banana', 'cherry']
+for fruit in fruits:
+    print(fruit)
+
+# Iterating over a dictionary
+person = {'name': 'John', 'age': 30}
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
+3. Using generators or iterators
+
+```python
+# Using a generator expression
+squares = (x*x for x in range(5))
+for square in squares:
+    print(square)
+
+# Using the enumerate function to get index-value pairs
+names = ['Alice', 'Bob', 'Charlie']
+for index, name in enumerate(names):
+    print(index, name)
+
+# Using the zip function to iterate over two lists in parallel
+names = ['Alice', 'Bob', 'Charlie']
+ages = [24, 30, 28]
+for name, age in zip(names, ages):
+    print(f"{name} is {age} years old")
+```
+
+Each of these examples demonstrates the versatility and readability of for loops in scenarios where you have a clear iteration pattern, whether it's over a sequence, a collection of items, or through the use of iterators and generators.
 
 Go back to [Contents](#contents).
 
 #### The while loop
 
-Here's how a 'while' loop works:
+Use a `while` loop when:
+
+- **The number of iterations is not known in advance**
+  - If you're looping until a certain condition changes and you cannot determine in advance how many iterations it will take, a while loop is appropriate.
+
+- **You want to maintain state between iterations**
+  - While you can maintain state between iterations in a for loop as well, a while loop might be more intuitive if the state significantly affects the continuation of the loop.
+
+- **The loop condition is based on something other than iterating over a sequence**
+  - When your loop continues until a specific condition changes (regardless of how many iterations it takes), a while loop can directly express this logic.
+
+Here are Python code examples for each of the scenarios where a `while` loop is commonly used:
+
+1. The number of iterations is not known in advance
 
 ```python
-count = 5
-while count > 0:
-    print(count)
-    count -= 1
+# A loop that continues until a user inputs a specific word
+
+input_word = ""
+
+while input_word.lower() != "stop":
+    input_word = input("Enter a word (type 'stop' to exit): ")
+    print(f"You entered: {input_word}")
 ```
 
-This loop continues running until 'count' is no longer greater than 0.
+2. Maintaining state between iterations
+
+```python
+# A guessing game where the user has to guess a number
+
+import random
+
+target_number = random.randint(1, 100)  # Random number between 1 and 100
+guess = None
+tries = 0
+
+while guess != target_number:
+    guess = int(input("Guess a number between 1 and 100: "))
+    tries += 1
+    if guess < target_number:
+        print("Too low!")
+    elif guess > target_number:
+        print("Too high!")
+
+print(f"Congratulations! You guessed the number in {tries} tries.")
+```
+
+3. Loop condition based on something other than iterating over a sequence
+
+```python
+# A loop that runs until a certain condition is met, e.g., achieving a balance goal
+
+balance = 1000  # Starting balance
+goal = 1500  # Target balance
+interest_rate = 0.05  # Interest rate per period
+periods = 0
+
+while balance < goal:
+    balance += balance * interest_rate  # Apply interest
+    periods += 1
+
+print(f"Your balance reached {balance:.2f} after {periods} periods.")
+```
 
 Go back to [Contents](#contents).
 
+Each of these examples demonstrates the use of `while` loops in situations where the number of iterations is not predetermined, where maintaining and updating state is crucial, and where the loop's continuation is based on dynamic conditions rather than a pre-defined sequence or collection.
 
 #### Loop statements - break  - continue - pass
+
 Furthermore, loops can be controlled with 'break', 'continue', and 'pass' statements. 
 
 * 'break' exits the loop
@@ -795,14 +896,44 @@ Furthermore, loops can be controlled with 'break', 'continue', and 'pass' statem
 
 For example:
 
+1. `break` - exits the loop
+
 ```python
-for i in range(10):
-    if i == 5:
-        break
-    print(i)
+# Example: Find the first number divisible by 5 in a list
+
+numbers = [2, 3, 7, 11, 15, 18, 20, 22]
+
+for number in numbers:
+    if number % 5 == 0:
+        print(f"The first number divisible by 5 is {number}.")
+        break  # Exit the loop
 ```
 
-This loop will print numbers from 0 to 4. When it reaches 5, the 'break' statement terminates the loop.
+2. `continue` - skips to the next iteration
+
+```python
+# Example: Print only odd numbers from a list, skipping even numbers
+
+numbers = range(1, 10)  # Numbers from 1 to 9
+
+for number in numbers:
+    if number % 2 == 0:
+        continue  # Skip this iteration and proceed with the next one
+    print(number)  # This will print only odd numbers
+```
+
+3. `pass` - does nothing
+
+```python
+# Example: Iterate over numbers but only print a message for a specific condition, do nothing otherwise
+
+numbers = range(1, 5)  # Numbers from 1 to 4
+for number in numbers:
+    if number == 3:
+        print("Number is three")
+    else:
+        pass  # Do nothing, but the loop continues
+```
 
 Go back to [Contents](#contents).
 
