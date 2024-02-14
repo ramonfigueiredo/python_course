@@ -21,6 +21,8 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       7. [Bitwise Operators](#bitwise-operators)
       8. [Examples for each type of operator in Python](#examples-for-each-type-of-operator-in-python)
    7. [Input and Output Functions](#input-and-output-functions)
+      1. [The print function](#the-print-function)
+      2. [The input function](#the-input-function)
 2. [Control Structures](#control-structures)
    1. [Conditional Statements](#conditional-statements)
       1. [More 10 conditional statements examples](#10-conditional-statements-examples)
@@ -526,7 +528,258 @@ print("Hello, " + name)
 
 Go back to [Contents](#contents).
 
+#### The print function
 
+The `print()` function in Python is quite versatile and can be used in various ways to format and display output. 
+
+Below are several examples showcasing different uses and features of the `print()` function:
+
+Go back to [Contents](#contents).
+
+1. Printing Simple Messages
+
+The most straightforward use is to print a simple message or variable:
+
+```python
+print("Hello, Python!")
+```
+
+Go back to [Contents](#contents).
+
+2. Printing Multiple Arguments
+
+You can print multiple items separated by commas. Python will automatically insert spaces between items:
+
+```python
+x = 5
+print("The value of x is", x, "and its double is", x * 2)
+```
+
+Go back to [Contents](#contents).
+
+3. Using String Concatenation
+
+You can concatenate strings using the `+` operator before printing:
+
+```python
+name = "Alice"
+print("Hello, " + name + "!")
+```
+
+Go back to [Contents](#contents).
+
+4. Using String Formatting
+
+a. f-strings (Python 3.6+)
+
+```python
+name = "Alice"
+age = 30
+print(f"{name} is {age} years old.")
+```
+
+b. str.format()
+
+```python
+name = "Alice"
+age = 30
+print("{} is {} years old.".format(name, age))
+```
+
+c. % formatting (older method)
+
+```python
+name = "Alice"
+age = 30
+print("%s is %d years old." % (name, age))
+```
+
+Go back to [Contents](#contents).
+
+5. Printing Without a Newline
+
+By default, `print()` adds a newline character (`\n`) after each call, but you can change this behavior using the end parameter:
+
+```python
+print("Hello, ", end="")
+print("world!")
+```
+
+This prints Hello, world! on the same line.
+
+Go back to [Contents](#contents).
+
+6. Printing With a Custom Separator
+
+The `sep` parameter changes the separator between items from a space to a string of your choice:
+
+```python
+print("2024", "02", "14", sep="-")
+```
+
+Go back to [Contents](#contents).
+
+7. Printing To a File
+
+Instead of printing to the standard output, you can redirect the output to a file using the file parameter:
+
+```python
+with open("output.txt", "w") as file:
+    print("Hello, file!", file=file)
+```
+
+This writes Hello, file! into output.txt.
+
+Go back to [Contents](#contents).
+
+8. Printing in a Loop
+
+`print()` can be used inside loops to display sequences or to format output in a structured manner:
+
+```python
+for i in range(3):
+    print(i, end=" ")  # Prints: 0 1 2
+```
+
+Go back to [Contents](#contents).
+
+9. Flushing the Output Buffer
+
+The flush parameter forces Python to "flush" the output buffer, ensuring that output is immediately visible:
+
+```python
+import time
+
+print("Starting...", end="", flush=True)
+time.sleep(2)  # Wait for 2 seconds.
+print("done.")
+```
+Go back to [Contents](#contents).
+
+These examples demonstrate the flexibility of the `print()` function for displaying output in Python scripts, allowing you to easily format and control how information is presented to users.
+
+Go back to [Contents](#contents).
+
+#### The input function
+
+The `input()` function in Python is used to capture user input from the standard input, typically the keyboard. 
+
+Here are various ways to use the `input()` function to read different types of data, handle user inputs more effectively, and make your programs interactive:
+
+Go back to [Contents](#contents).
+
+1. Basic String Input
+
+The simplest use case is to prompt the user for some text input:
+
+```python
+name = input("Enter your name: ")
+print(f"Hello, {name}!")
+```
+
+Go back to [Contents](#contents).
+
+2. Converting Input Types
+
+By default, input() returns a string. To work with different data types, you need to convert the input accordingly:
+
+Integer Input:
+
+```python
+age = int(input("Enter your age: "))
+print(f"You are {age} years old.")
+```
+
+Floating Point Input:
+
+```python
+height = float(input("Enter your height in meters: "))
+print(f"Your height is {height} meters.")
+```
+
+Go back to [Contents](#contents).
+
+3. Multiline Input
+
+For reading multiline input from the user, you can loop until a specific condition is met, for example, an empty string:
+
+```python
+print("Enter your address (leave a blank line to finish):")
+lines = []
+while True:
+    line = input()
+    if line:
+        lines.append(line)
+    else:
+        break
+address = "\n".join(lines)
+print("Your address is:")
+print(address)
+```
+
+Go back to [Contents](#contents).
+
+4. Password Input (Hiding the Input)
+
+For sensitive information like passwords, you might not want the input to be visible. Use the `getpass` module instead of `input()`:
+
+```python
+import getpass
+
+password = getpass.getpass("Enter your password: ")
+print("Password entered! (but not shown)")
+```
+
+Note: `getpass` might not work as expected in some IDEs or Jupyter notebooks.
+
+Go back to [Contents](#contents).
+
+5. Command-line Arguments (Alternative to `input()`)
+
+For scripting or when you want to process input parameters at the start, you can use command-line arguments instead of interactive input:
+
+```python
+import sys
+
+if len(sys.argv) > 1:
+    name = sys.argv[1]
+    print(f"Hello, {name}!")
+else:
+    print("No name provided.")
+```
+
+Run this script from the command line with an argument to see the effect.
+
+Go back to [Contents](#contents).
+
+6. Reading a List of Items
+
+You can ask the user to input a list of items separated by a specific delimiter, and then use string methods to handle the input:
+
+```python
+items_input = input("Enter items separated by commas: ")
+items = items_input.split(',')
+print("You entered:", items)
+```
+
+Go back to [Contents](#contents).
+
+7. Using eval() for Dynamic Type Input
+
+Use eval() carefully to automatically determine the type of user input. This can be useful but poses a security risk if the input is not controlled:
+
+```python
+expression = eval(input("Enter an expression: "))
+print("Result:", expression)
+```
+
+Be cautious with `eval()` as it can execute arbitrary code. It's typically best to avoid it unless you're sure of the input's safety.
+
+Go back to [Contents](#contents).
+
+These examples demonstrate the versatility of the `input()` function in Python for interacting with users and processing their input in various formats. Always validate and sanitize user input to ensure your program behaves as expected and securely.
+
+Go back to [Contents](#contents).
 
 ## Control Structures
 
