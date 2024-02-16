@@ -6,6 +6,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
 ## Contents
 
 1. [Introduction to Python](#introduction-to-python)
+2. [Python Basics](#python-basics)
    1. [Keywords](#keywords)
    2. [Identifiers](#identifiers)
    3. [Comments](#comments)
@@ -23,7 +24,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    7. [Input and Output Functions](#input-and-output-functions)
       1. [The print function](#the-print-function)
       2. [The input function](#the-input-function)
-2. [Control Structures](#control-structures)
+3. [Control Structures](#control-structures)
    1. [Conditional Statements](#conditional-statements)
       1. [More 10 conditional statements examples](#10-conditional-statements-examples)
    2. [Loops](#loops)
@@ -31,7 +32,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       2. [The while loop](#the-while-loop)
       3. [Loop statements - break  - continue - pass](#loop-statements---break---continue---pass)
       4. [More 10 loops examples](#10-loops-examples)
-3. [Data Structures](#data-structures)
+4. [Data Structures](#data-structures)
    1. [Lists and Tuples](#lists-and-tuples)
       1. [List](#list)
       2. [Tuple](#tuple)
@@ -40,59 +41,61 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       1. [More 10 Dictionaries examples](#more-10-dictionaries-examples)
    3. [Sets](#sets)
       1. [More 10 Sets examples](#more-10-sets-examples)
-4. [Functions](#functions)
+5. [Functions](#functions)
    1. [Defining Functions](#defining-functions)
    2. [Parameters and Return Value](#parameters-and-return-value)
    3. [Scope](#scope)
    4. [More 10 Functions examples](#more-10-functions-examples)
-5. [Error Handling](#error-handling)
+6. [Error Handling](#error-handling)
    1. [Exceptions](#exceptions)
    2. [Try-Except Block](#try-except-block)
    3. [Finally Clause](#finally-clause)
    4. [Some Error Handling examples](#some-error-handling-examples)
    5. [More 10 Error Handling examples](#more-10-error-handling-examples)
-6. [Intermediate Python](#error-handling)
-   1. [Comprehensions](#comprehensions)
-      1. [List Comprehensions](#list-comprehensions)
-      2. [Dictionary Comprehensions](#dictionary-comprehensions)
-      3. [Set Comprehensions](#set-comprehensions)
-      4. [Some Comprehensions examples](#some-comprehensions-examples) 
-   2. [Lambda Functions](#lambda-functions)
-      1. [Lambda Function Example](#lambda-function-example)
-      2. [Lambda Functions Usage](#lambda-functions-usage)
-      3. [Some Lambda Functions examples](#some-lambda-functions-examples)
-   3. [Map and Filter](#map-and-filter)
-      1. [The map function](#the-map-function)
-      2. [The filter function](#the-filter-function)
-      3. [Some Map and Filter examples](#some-map-and-filter-examples)
-7. [Object-Oriented Programming](#object-oriented-programming)
-   1. [Classes and Objects](#classes-and-objects)
-   2. [Class Member Visibility](#class-member-visibility)
-      1. [Public Members](#public-members)
-      2. [Protected Members](#protected-members)
-      3. [Private Members](#private-members)
-      4. [Default Visibility](#default-visibility)
-      5. [Name mangling in Python](#name-mangling-in-python)
-   3. [Inheritance](#inheritance)
-   4. [Encapsulation and Polymorphism](#encapsulation-and-polymorphism)
-   5. [Abstract Method](#abstract-method)
-   6. [Class Method and Static Method](#class-method-and-static-method)
-   7. [Property decorators - getter setter deleter](#property-decorators---getter-setter-deleter)
-   8. [Some Object-Oriented Programming examples](#some-object-oriented-programming-examples)
-8. [Modules and Packages](#modules-and-packages)
-   1. [Modules](#modules)
-   2. [Packages](#packages)
-   3. [Import Statements](#import-statements)
-   4. [Why use Modules and Packages](#why-use-modules-and-packages)
-9. [Working with Files](#working-with-files)
-   1. [File Operations](#file-operations)
-   2. [File Handling Modes](#file-handling-modes)
-   3. [Context Managers](#context-managers)
-10. [Python Scripting and Programming](#python-scripting-and-programming)
+7. [Comprehensions](#comprehensions)
+   1. [List Comprehensions](#list-comprehensions)
+   2. [Dictionary Comprehensions](#dictionary-comprehensions)
+   3. [Set Comprehensions](#set-comprehensions)
+   4. [Some Comprehensions examples](#some-comprehensions-examples) 
+8. [Lambda Functions](#lambda-functions)
+   1. [Lambda Function Example](#lambda-function-example)
+   2. [Lambda Functions Usage](#lambda-functions-usage)
+   3. [Some Lambda Functions examples](#some-lambda-functions-examples)
+9. [Map and Filter](#map-and-filter)
+   1. [The map function](#the-map-function)
+   2. [The filter function](#the-filter-function)
+   3. [Some Map and Filter examples](#some-map-and-filter-examples)
+10. [Object-Oriented Programming](#object-oriented-programming)
+    1. [Classes and Objects](#classes-and-objects)
+    2. [Class Member Visibility](#class-member-visibility)
+       1. [Public Members](#public-members)
+       2. [Protected Members](#protected-members)
+       3. [Private Members](#private-members)
+       4. [Default Visibility](#default-visibility)
+       5. [Name mangling in Python](#name-mangling-in-python)
+    3. [Inheritance](#inheritance)
+    4. [Encapsulation and Polymorphism](#encapsulation-and-polymorphism)
+    5. [Abstract Method](#abstract-method)
+    6. [Class Method and Static Method](#class-method-and-static-method)
+    7. [Property decorators - getter setter deleter](#property-decorators---getter-setter-deleter)
+    8. [Some Object-Oriented Programming examples](#some-object-oriented-programming-examples)
+11. [Modules and Packages](#modules-and-packages)
+    1. [Modules](#modules)
+    2. [Packages](#packages)
+    3. [Import Statements](#import-statements)
+    4. [Why use Modules and Packages](#why-use-modules-and-packages)
+12. [Working with Files](#working-with-files)
+    1. [File Operations](#file-operations)
+    2. [File Handling Modes](#file-handling-modes)
+    3. [Context Managers](#context-managers)
+13. [Unit Tests in Python](#unit-tests-in-python)
+    1. [unittest](#unittest)
+    2. [pytest](#pytest)
+14. [Python Scripting and Programming](#python-scripting-and-programming)
     1. [Scripting vs Programming](#scripting-vs-programming)
     2. [Automating Tasks](#automating-tasks)
     3. [Some Python Scripting examples](#some-python-scripting-examples)
-11. [Python Libraries](#python-libraries)
+15. [Python Libraries](#python-libraries)
     1. [NumPy](#numpy)
     2. [SciPy](#scipy)
     3. [Pandas](#pandas)
@@ -108,16 +111,28 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     13. [TensorFlow](#tensorflow)
     14. [PyTorch](#pytorch)
     15. [Keras](#keras)
-12. [Unit Tests in Python](#unit-tests-in-python)
-    1. [unittest](#unittest)
-    2. [pytest](#pytest)
-13. [Conclusion](#conclusion)
-   1. [Summary of Key Points](#summary-of-key-points)
-   2. [Further Learning Resources](#further-learning-resources)
-14. [Contact](#contact)
-15. [License](#license)
+16. [Conclusion](#conclusion)
+    1. [Summary of Key Points](#summary-of-key-points)
+    2. [Further Learning Resources](#further-learning-resources)
+17. [Contact](#contact)
+18. [License](#license)
 
 ## Introduction to Python
+
+Python official website: https://www.python.org/
+
+About the Python programming language:
+* Python is a high-level, interpreted programming language known for its simplicity and elegance.
+* It is used in various domains, from web development to artificial intelligence.
+* One of Python's greatest strengths is its readability, making it an excellent choice for beginners.
+* Its extensive libraries and supportive community further enhance its appeal.
+* Python is a powerful and versatile language, forming the backbone of many modern technologies and applications.
+
+Go back to [Contents](#contents).
+
+
+
+## Python Basics
 
 Go back to [Contents](#contents).
 
@@ -781,6 +796,8 @@ These examples demonstrate the versatility of the `input()` function in Python f
 
 Go back to [Contents](#contents).
 
+
+
 ## Control Structures
 
 Go back to [Contents](#contents).
@@ -1362,6 +1379,8 @@ print("Exited the loop")
 
 Go back to [Contents](#contents).
 
+
+
 ## Data Structures
 
 Next, we will explore some of the most versatile and fundamental data structures in Python: 
@@ -1874,6 +1893,7 @@ print(fruits)  # Output: set()
 Go back to [Contents](#contents).
 
 
+
 ## Functions
 
 Functions are the building blocks of any Python program. They help you to organize your code into manageable parts and promote code reusability. 
@@ -2125,6 +2145,7 @@ print("Outside function:", x)  # Accessing global x
 ```
 
 Go back to [Contents](#contents).
+
 
 
 ## Error Handling
@@ -2456,21 +2477,14 @@ except FileNotFoundError:
 Go back to [Contents](#contents).
 
 
-## Intermediate Python
 
-As we advance, we'll look at more sophisticated features of Python. 
-
-We'll cover comprehensions, lambda functions, and how to use map and filter. These concepts will elevate your Python skills to a new level.
-
-Go back to [Contents](#contents).
-
-### Comprehensions
+## Comprehensions
 
 Comprehensions in Python provide a concise, readable way to create lists, dictionaries, and sets. They offer a simpler syntax when you want to create a new collection based on the values of an existing collection.
 
 Go back to [Contents](#contents).
 
-#### List Comprehensions
+### List Comprehensions
 
 List Comprehensions are a beautiful way to create new lists by applying an expression to each element of an existing iterable. 
 
@@ -2486,7 +2500,7 @@ This one-line (`squared = [number ** 2 for number in numbers]`) replaces multipl
 
 Go back to [Contents](#contents).
 
-#### Dictionary Comprehensions
+### Dictionary Comprehensions
 
 Moving on to Dictionary Comprehensions, which are similar, but they create dictionaries instead of lists. You can transform and filter data into key-value pairs. 
 
@@ -2500,7 +2514,7 @@ print(squared_dict)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
 
 Go back to [Contents](#contents).
 
-#### Set Comprehensions
+### Set Comprehensions
 
 Set Comprehensions work similarly, but are used for creating sets. The syntax is almost identical to list comprehensions, but with curly braces. 
 
@@ -2516,11 +2530,7 @@ Notice how duplicates are automatically removed, which is a characteristic of se
 
 Go back to [Contents](#contents).
 
-#### Some Comprehensions examples
-
-Go back to [Contents](#contents).
-
-#### Exceptions
+### Some Comprehensions examples
 
 **Problem 1:** Square Numbers in Range
 
@@ -2660,7 +2670,9 @@ print(even_str)
 
 Go back to [Contents](#contents).
 
-### Lambda Functions
+
+
+## Lambda Functions
 
 Lambda functions are a distinctive feature of Python, providing a quick and efficient way to create small, unnamed, or 'anonymous' functions. They are particularly useful for short, simple functions that are used only once or a limited number of times.
 
@@ -2679,7 +2691,7 @@ This expression is evaluated and returned.
 
 Go back to [Contents](#contents).
 
-#### Lambda Function Example
+### Lambda Function Example
 
 Lambda functions are often used in situations where you need a simple function for a short period and don’t want to formally define it using the standard `def` keyword.
 
@@ -2694,7 +2706,7 @@ In this example, `lambda x, y: x + y` is an anonymous function that takes two ar
 
 Go back to [Contents](#contents).
 
-#### Lambda Functions Usage
+### Lambda Functions Usage
 
 Lambda functions are particularly powerful when used in conjunction with functions like `map()`, `filter()`, and `reduce()`, which allow for functional-style programming. 
 * **Functional programming (FP)** is an approach to software development that uses pure functions to create maintainable software. In other words, building programs by applying and composing functions.
@@ -2711,9 +2723,7 @@ Here, `map()` applies the lambda function to each item in the list numbers.
 
 Go back to [Contents](#contents).
 
-#### Some Lambda Functions examples
-
-Go back to [Contents](#contents).
+### Some Lambda Functions examples
 
 **Problem 1:** Compute Square of a Number
 
@@ -2849,7 +2859,9 @@ print(reverse_str("hello"))  # Output: olleh
 
 Go back to [Contents](#contents).
 
-### Map and Filter
+
+
+## Map and Filter
 
 Next, let's explore two of Python's built-in functions that incorporate functional programming: `map` and `filter`. 
 
@@ -2862,7 +2874,7 @@ Notes:
 
 Go back to [Contents](#contents).
 
-#### The map function
+### The map function
 
 The `map` function applies a given function to each item of an iterable and returns a map object (which is an iterator). 
 
@@ -2886,7 +2898,7 @@ In this example:
 
 Go back to [Contents](#contents).
 
-#### The filter function
+### The filter function
 
 Moving on to the filter function. Whereas `map` is about transforming data, the `filter` function is about selecting data. 
 
@@ -2907,7 +2919,7 @@ Here, the `filter` function is used to extract even numbers from a list. The fun
 
 Go back to [Contents](#contents).
 
-#### Some Map and Filter examples
+### Some Map and Filter examples
 
 The next are some examples that demonstrate the power of `map` and `filter` in transforming and filtering data in lists, utilizing lambda functions for inline processing.
 
@@ -3052,6 +3064,8 @@ print(even_length_words)  # Output: ['apple', 'banana', 'grape']
 ```
 
 Go back to [Contents](#contents).
+
+
 
 ## Object-Oriented Programming
 
@@ -3840,6 +3854,8 @@ Absolute zero, technically known as zero kelvins, equals −273.15 degrees Celsi
 
 Go back to [Contents](#contents).
 
+
+
 ## Modules and Packages
 
 This part is all about organizing and reusing code effectively. 
@@ -4128,9 +4144,17 @@ print(obj.greet())  # Output: Hello from MyClass
 
 Go back to [Contents](#contents).
 
+
+
 ## Working with Files
 
 File operations are a fundamental part of programming, particularly when it comes to storing and retrieving data. 
+
+Go back to [Contents](#contents).
+
+
+
+## Unit Tests in Python
 
 Go back to [Contents](#contents).
 
@@ -4336,6 +4360,8 @@ with open('example.txt', 'w') as file:
 ```
 
 Go back to [Contents](#contents).
+
+
 
 ## Python Scripting and Programming
 
@@ -4662,12 +4688,6 @@ Go back to [Contents](#contents).
 
 Go back to [Contents](#contents).
 
-
-
-## Unit Tests in Python
-
-Go back to [Contents](#contents).
-
 ### unittest
 
 Go back to [Contents](#contents).
@@ -4698,6 +4718,8 @@ Go back to [Contents](#contents).
 * YouTube: www.youtube.com/@ramon-figueiredo
 
 Go back to [Contents](#contents).
+
+
 
 ## License
 
