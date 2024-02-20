@@ -24,15 +24,14 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    7. [Input and Output Functions](#input-and-output-functions)
       1. [The print function](#the-print-function)
       2. [The input function](#the-input-function)
-3. [Control Structures](#control-structures)
-   1. [Conditional Statements](#conditional-statements)
-      1. [More 10 conditional statements examples](#10-conditional-statements-examples)
-   2. [Loops](#loops)
-      1. [The for loop](#the-for-loop)
-      2. [The while loop](#the-while-loop)
-      3. [Loop statements - break  - continue - pass](#loop-statements---break---continue---pass)
-      4. [More 10 loops examples](#10-loops-examples)
-4. [Data Structures](#data-structures)
+3. [Conditional Statements](#conditional-statements)
+   1. [More 10 conditional statements examples](#10-conditional-statements-examples)
+4. [Loops](#loops)
+   1. [The for loop](#the-for-loop)
+   2. [The while loop](#the-while-loop)
+   3. [Loop statements - break  - continue - pass](#loop-statements---break---continue---pass)
+   4. [More 10 loops examples](#10-loops-examples)
+5. [Data Structures](#data-structures)
    1. [Lists and Tuples](#lists-and-tuples)
       1. [List](#list)
       2. [Tuple](#tuple)
@@ -41,35 +40,35 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       1. [More 10 Dictionaries examples](#more-10-dictionaries-examples)
    3. [Sets](#sets)
       1. [More 10 Sets examples](#more-10-sets-examples)
-5. [Functions](#functions)
+6. [Functions](#functions)
    1. [Defining Functions](#defining-functions)
    2. [Parameters and Return Value](#parameters-and-return-value)
    3. [Scope](#scope)
    4. [More 10 Functions examples](#more-10-functions-examples)
-6. [Error Handling](#error-handling)
+7. [Error Handling](#error-handling)
    1. [Exceptions](#exceptions)
    2. [Try-Except Block](#try-except-block)
    3. [Finally Clause](#finally-clause)
    4. [Some Error Handling examples](#some-error-handling-examples)
    5. [More 10 Error Handling examples](#more-10-error-handling-examples)
-7. [Comprehensions](#comprehensions)
+8. [Comprehensions](#comprehensions)
    1. [List Comprehensions](#list-comprehensions)
    2. [Dictionary Comprehensions](#dictionary-comprehensions)
    3. [Set Comprehensions](#set-comprehensions)
    4. [Some Comprehensions examples](#some-comprehensions-examples) 
-8. [Lambda Functions](#lambda-functions)
+9. [Lambda Functions](#lambda-functions)
    1. [Lambda Function Example](#lambda-function-example)
    2. [Lambda Functions Usage](#lambda-functions-usage)
    3. [Some Lambda Functions examples](#some-lambda-functions-examples)
-9. [Map and Filter](#map-and-filter)
-   1. [The map function](#the-map-function)
-   2. [The filter function](#the-filter-function)
-   3. [Some Map and Filter examples](#some-map-and-filter-examples)
-10. [Working with Files](#working-with-files)
+10. [Map and Filter](#map-and-filter)
+    1. [The map function](#the-map-function)
+    2. [The filter function](#the-filter-function)
+    3. [Some Map and Filter examples](#some-map-and-filter-examples)
+11. [Working with Files](#working-with-files)
     1. [File Operations](#file-operations)
     2. [File Handling Modes](#file-handling-modes)
     3. [Context Managers](#context-managers)
-11. [Object-Oriented Programming](#object-oriented-programming)
+12. [Object-Oriented Programming](#object-oriented-programming)
     1. [Classes and Objects](#classes-and-objects)
     2. [Class Member Visibility](#class-member-visibility)
        1. [Public Members](#public-members)
@@ -83,19 +82,19 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     6. [Class Method and Static Method](#class-method-and-static-method)
     7. [Property decorators - getter setter deleter](#property-decorators---getter-setter-deleter)
     8. [Some Object-Oriented Programming examples](#some-object-oriented-programming-examples)
-12. [Modules and Packages](#modules-and-packages)
+13. [Modules and Packages](#modules-and-packages)
     1. [Modules](#modules)
     2. [Packages](#packages)
     3. [Import Statements](#import-statements)
     4. [Why use Modules and Packages](#why-use-modules-and-packages)
-13. [Unit Tests in Python](#unit-tests-in-python)
+14. [Unit Tests in Python](#unit-tests-in-python)
     1. [unittest](#unittest)
     2. [pytest](#pytest)
-14. [Python Scripting and Programming](#python-scripting-and-programming)
+15. [Python Scripting and Programming](#python-scripting-and-programming)
     1. [Scripting vs Programming](#scripting-vs-programming)
     2. [Automating Tasks](#automating-tasks)
     3. [Some Python Scripting examples](#some-python-scripting-examples)
-15. [Python Libraries](#python-libraries)
+16. [Python Libraries](#python-libraries)
     1. [NumPy](#numpy)
     2. [SciPy](#scipy)
     3. [Pandas](#pandas)
@@ -111,11 +110,13 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     13. [TensorFlow](#tensorflow)
     14. [PyTorch](#pytorch)
     15. [Keras](#keras)
-16. [Conclusion](#conclusion)
+17. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
-17. [Contact](#contact)
-18. [License](#license)
+18. [Contact](#contact)
+19. [License](#license)
+
+
 
 ## Introduction to Python
 
@@ -798,11 +799,7 @@ Go back to [Contents](#contents).
 
 
 
-## Control Structures
-
-Go back to [Contents](#contents).
-
-### Conditional Statements
+## Conditional Statements
 
 In Python, the conditional statements are primarily the 'if', 'elif', and 'else' statements. They allow your program to execute different actions based on certain conditions. 
 
@@ -1017,7 +1014,9 @@ else:
 
 Go back to [Contents](#contents).
 
-### Loops
+
+
+## Loops
 
 Python provides two types of loops - `for` and `while`. 
 
