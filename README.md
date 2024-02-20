@@ -4152,12 +4152,6 @@ File operations are a fundamental part of programming, particularly when it come
 
 Go back to [Contents](#contents).
 
-
-
-## Unit Tests in Python
-
-Go back to [Contents](#contents).
-
 ### File Operations
 
 Python makes reading from and writing to files very straightforward. 
@@ -4685,6 +4679,12 @@ Go back to [Contents](#contents).
 Go back to [Contents](#contents).
 
 ### Keras
+
+Go back to [Contents](#contents).
+
+
+
+## Unit Tests in Python
 
 Go back to [Contents](#contents).
 
