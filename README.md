@@ -4356,6 +4356,20 @@ Go back to [Contents](#contents).
 
 
 
+## Unit Tests in Python
+
+Go back to [Contents](#contents).
+
+### unittest
+
+Go back to [Contents](#contents).
+
+### pytest
+
+Go back to [Contents](#contents).
+
+
+
 ## Python Scripting and Programming
 
 Let's explore the nuances of scripting versus programming and delve into how Python can be used for automating everyday tasks, making life easier and more productive.
@@ -4678,20 +4692,6 @@ Go back to [Contents](#contents).
 Go back to [Contents](#contents).
 
 ### Keras
-
-Go back to [Contents](#contents).
-
-
-
-## Unit Tests in Python
-
-Go back to [Contents](#contents).
-
-### unittest
-
-Go back to [Contents](#contents).
-
-### pytest
 
 Go back to [Contents](#contents).
 
