@@ -40,35 +40,37 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       1. [More 10 Dictionaries examples](#more-10-dictionaries-examples)
    3. [Sets](#sets)
       1. [More 10 Sets examples](#more-10-sets-examples)
-6. [Functions](#functions)
+6. [Strings](strings)
+   1. [String Methods](string-methods)
+8. [Functions](#functions)
    1. [Defining Functions](#defining-functions)
    2. [Parameters and Return Value](#parameters-and-return-value)
    3. [Scope](#scope)
    4. [More 10 Functions examples](#more-10-functions-examples)
-7. [Error Handling](#error-handling)
+9. [Error Handling](#error-handling)
    1. [Exceptions](#exceptions)
    2. [Try-Except Block](#try-except-block)
    3. [Finally Clause](#finally-clause)
    4. [Some Error Handling examples](#some-error-handling-examples)
    5. [More 10 Error Handling examples](#more-10-error-handling-examples)
-8. [Comprehensions](#comprehensions)
-   1. [List Comprehensions](#list-comprehensions)
-   2. [Dictionary Comprehensions](#dictionary-comprehensions)
-   3. [Set Comprehensions](#set-comprehensions)
-   4. [Some Comprehensions examples](#some-comprehensions-examples) 
-9. [Lambda Functions](#lambda-functions)
+10. [Comprehensions](#comprehensions)
+    1. [List Comprehensions](#list-comprehensions)
+    2. [Dictionary Comprehensions](#dictionary-comprehensions)
+    3. [Set Comprehensions](#set-comprehensions)
+    4. [Some Comprehensions examples](#some-comprehensions-examples) 
+11. [Lambda Functions](#lambda-functions)
    1. [Lambda Function Example](#lambda-function-example)
    2. [Lambda Functions Usage](#lambda-functions-usage)
    3. [Some Lambda Functions examples](#some-lambda-functions-examples)
-10. [Map and Filter](#map-and-filter)
+12. [Map and Filter](#map-and-filter)
     1. [The map function](#the-map-function)
     2. [The filter function](#the-filter-function)
     3. [Some Map and Filter examples](#some-map-and-filter-examples)
-11. [Working with Files](#working-with-files)
+13. [Working with Files](#working-with-files)
     1. [File Operations](#file-operations)
     2. [File Handling Modes](#file-handling-modes)
     3. [Context Managers](#context-managers)
-12. [Object-Oriented Programming](#object-oriented-programming)
+14. [Object-Oriented Programming](#object-oriented-programming)
     1. [Classes and Objects](#classes-and-objects)
     2. [Class Member Visibility](#class-member-visibility)
        1. [Public Members](#public-members)
@@ -82,19 +84,19 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     6. [Class Method and Static Method](#class-method-and-static-method)
     7. [Property decorators - getter setter deleter](#property-decorators---getter-setter-deleter)
     8. [Some Object-Oriented Programming examples](#some-object-oriented-programming-examples)
-13. [Modules and Packages](#modules-and-packages)
+15. [Modules and Packages](#modules-and-packages)
     1. [Modules](#modules)
     2. [Packages](#packages)
     3. [Import Statements](#import-statements)
     4. [Why use Modules and Packages](#why-use-modules-and-packages)
-14. [Unit Tests in Python](#unit-tests-in-python)
+16. [Unit Tests in Python](#unit-tests-in-python)
     1. [unittest](#unittest)
     2. [pytest](#pytest)
-15. [Python Scripting and Programming](#python-scripting-and-programming)
+17. [Python Scripting and Programming](#python-scripting-and-programming)
     1. [Scripting vs Programming](#scripting-vs-programming)
     2. [Automating Tasks](#automating-tasks)
     3. [Some Python Scripting examples](#some-python-scripting-examples)
-16. [Python Libraries](#python-libraries)
+18. [Python Libraries](#python-libraries)
     1. [NumPy](#numpy)
     2. [SciPy](#scipy)
     3. [Pandas](#pandas)
@@ -110,11 +112,11 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     13. [TensorFlow](#tensorflow)
     14. [PyTorch](#pytorch)
     15. [Keras](#keras)
-17. [Conclusion](#conclusion)
+19. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
-18. [Contact](#contact)
-19. [License](#license)
+20. [Contact](#contact)
+21. [License](#license)
 
 
 
@@ -1892,6 +1894,457 @@ print(fruits)  # Output: set()
 Go back to [Contents](#contents).
 
 
+
+## Strings
+
+In Python, a string is a sequence of characters enclosed within quotes. 
+- Characters can be anything: letters, numbers, symbols, or whitespace characters (like spaces or tabs), and they are treated as text. 
+- Python supports both single (`'...'`), double (`"..."`), and triple (`'''...'''` or `"""..."""`) quotes to denote string literals, allowing for flexibility in handling strings that contain quote characters or span multiple lines.
+
+Strings in Python are immutable, meaning once a string is created, the characters within it cannot be changed. 
+- Any operation that modifies a string actually creates a new string, rather than altering the original one. 
+- This immutability has implications for performance and safety, as it prevents accidental modification of strings.
+
+Python provides a rich set of operations and methods for working with strings. These include concatenation (joining strings together), slicing (extracting parts of strings), and a wide variety of methods for manipulation (like converting to uppercase or lowercase, trimming whitespace, and finding substrings).
+
+Go back to [Contents](#contents).
+
+### String Methods
+
+Here are examples using different Python string methods to demonstrate their versatility and utility. 
+
+Go back to [Contents](#contents).
+
+1. **capitalize()** - Converts the first character of the string to uppercase and the rest to lowercase.
+
+```python
+text = "python programming."
+print(text.capitalize())  # Python programming.
+```
+
+Go back to [Contents](#contents).
+
+2. **casefold()** - Converts the string to lowercase, designed for caseless matching.
+
+```python
+text = "PYTHON PROGRAMMING"
+print(text.casefold())  # python programming
+```
+
+Go back to [Contents](#contents).
+
+3. **center(width, [fillchar])** - Centers the string within a specified width, optionally filling in with a specified character.
+
+```python
+text = "python"
+print(text.center(20, '-'))  # -------python-------
+```
+
+Go back to [Contents](#contents).
+
+4. **count(sub, [start, [end]])** - Returns the number of occurrences of a substring in the string, optionally within a specified range.
+
+```python
+text = "banana"
+print(text.count('a'))  # 3
+```
+
+Go back to [Contents](#contents).
+
+5. **encode(encoding='utf-8', errors='strict')** - Encodes the string using the specified encoding scheme.
+
+```python
+text = "pythön!"
+print(text.encode('ascii', 'ignore'))  # b'pythn!'
+```
+
+Go back to [Contents](#contents).
+
+6. **endswith(suffix, [start, [end]])** - Returns True if the string ends with the specified suffix, optionally within a specified range.
+
+```python
+text = "python.py"
+print(text.endswith('.py'))  # True
+```
+
+Go back to [Contents](#contents).
+
+7. **expandtabs(tabsize=8)** - Replaces tabs in the string with the specified number of space characters.
+
+```python
+text = "python\tprogramming"
+print(text.expandtabs(4))  # python  programming
+```
+
+Go back to [Contents](#contents).
+
+8. **find(sub, [start, [end]])** - Searches the string for a specified substring and returns the lowest index where it begins or -1 if not found.
+
+```python
+text = "hello world"
+print(text.find('world'))  # 6
+```
+
+Go back to [Contents](#contents).
+
+9. ****format(*args, kwargs)** - Formats the string using the specified values.
+
+```python
+text = "Name: {}, Age: {}"
+print(text.format("Alice", 30))  # Name: Alice, Age: 30
+```
+
+Go back to [Contents](#contents).
+
+10. **format_map(mapping)** - Formats the string using a dictionary of values.
+
+```python
+text = "Name: {name}, Age: {age}"
+data = {'name': 'Alice', 'age': 30}
+print(text.format_map(data))  # Name: Alice, Age: 30
+```
+
+Go back to [Contents](#contents).
+
+11. **index(sub, [start, [end]])** - Like find(), but raises ValueError when the substring is not found.
+
+```python
+text = "hello world"
+print(text.index('world'))  # 6
+```
+
+Go back to [Contents](#contents).
+
+12. **isalnum()** - Returns True if all characters in the string are alphanumeric (letters and numbers only).
+
+```python
+text = "Python3"
+print(text.isalnum())  # True
+```
+
+Go back to [Contents](#contents).
+
+13. **isalpha()** - Returns True if all characters in the string are alphabetic.
+
+```python
+text = "Python"
+print(text.isalpha())  # True
+```
+
+Go back to [Contents](#contents).
+
+14. **isascii()** - Returns True if all characters in the string are ASCII.
+
+```python
+text = "Python"
+print(text.isascii())  # True
+```
+
+Go back to [Contents](#contents).
+
+15. **isdecimal()** - Returns True if all characters in the string are decimal characters. 
+
+- Decimal characters are those that can be used to form numbers in base 10, which means they include the numbers 0 through 9 and a subset of Unicode characters that represent decimal numbers. 
+- This method does not consider characters that represent numbers in other bases or numeric forms that aren't used in decimal number representation (such as fractions, subscripts, superscripts, Roman numerals, and other numeral systems) as decimal characters.
+
+```python
+text = "1234567890"
+print(text.isdecimal())  # True
+```
+
+Example returning `False`.
+
+```python
+text = "\u00B2"  # Superscript two ('²')
+print(text.isdecimal())  # False
+```
+
+Go back to [Contents](#contents).
+
+16. **isdigit()** - Returns True if all characters in the string are digits.
+
+- This includes all characters that the Unicode standard identifies as "digit," which not only includes decimal characters (0-9) but also digits from other numeral systems (like the superscript two '²', Arabic-Indic digits, and more).
+- Essentially, `text.isdigit()` is broader in scope than text.isdecimal(), as it accepts more characters, including those that are considered numeric but not strictly decimal.
+
+```python
+text = "1234567890"
+print(text.isdigit())  # True
+```
+
+Example where it also returns True, differing from `isdecimal()`:
+
+```python
+text = "\u00B2"  # Superscript two ('²')
+print(text.isdigit())  # True
+```
+
+Go back to [Contents](#contents).
+
+17. **isidentifier()** - Returns True if the string is a valid identifier according to Python syntax.
+
+```python
+text = "variable_name"
+print(text.isidentifier())  # True
+```
+
+Go back to [Contents](#contents).
+
+18. **islower()** - Returns True if all cased characters in the string are lowercase.
+
+```python
+text = "python"
+print(text.islower())  # True
+```
+
+Go back to [Contents](#contents).
+
+19. **isnumeric()** - Returns True if all characters in the string are numeric characters.
+
+```python
+text = "12345"
+print(text.isnumeric())  # True
+```
+
+Go back to [Contents](#contents).
+
+20. **isprintable()** - Returns True if all characters in the string are printable or the string is empty.
+
+```python
+text = "Python 3.8"
+print(text.isprintable())  # True
+```
+
+Go back to [Contents](#contents).
+
+21. **isspace()** - Returns True if all characters in the string are whitespace characters.
+
+```python
+text = "   "
+print(text.isspace())  # True
+```
+
+Go back to [Contents](#contents).
+
+22. **istitle()** - Returns True if the string is titled (first character of each word is uppercase, others are lowercase).
+
+```python
+text = "Hello World"
+print(text.istitle())  # True
+```
+
+Go back to [Contents](#contents).
+
+23. **isupper()** - Returns True if all cased characters in the string are uppercase.
+
+```python
+words = ["Python", "Programming"]
+print(" ".join(words))  # Python Programming
+```
+
+Go back to [Contents](#contents).
+
+24. **join(iterable)** - Concatenates the strings in the provided iterable, separating them by the string providing this method.
+
+```python
+text = "python"
+print(text.ljust(10, '-'))  # python----
+```
+
+Go back to [Contents](#contents).
+
+25. **ljust(width, [fillchar])** - Returns the string left-justified in a string of specified width.
+
+```python
+text = "python"
+print(text.ljust(10, '-'))  # python----
+```
+
+Go back to [Contents](#contents).
+
+26. **lower()** - Converts all characters in the string to lowercase.
+
+```python
+text = "PYTHON"
+print(text.lower())  # python
+```
+
+Go back to [Contents](#contents).
+
+27. **lstrip([chars])** - Returns a copy of the string with leading characters removed.
+
+```python
+text = "   python"
+print(text.lstrip())  # 'python'
+```
+
+Go back to [Contents](#contents).
+
+28. **maketrans(intab, outtab)** - Creates a translation table to be used in translations.
+
+```python
+intab = "aeiou"
+outtab = "12345"
+trantab = str.maketrans(intab, outtab)
+text = "python programming"
+print(text.translate(trantab))  # pyth4n pr4gr1mm1ng
+```
+
+Go back to [Contents](#contents).
+
+29. **partition(sep)** - Splits the string at the first occurrence of sep, and returns a 3-tuple containing the part before the separator, the separator itself, and the part after the separator.
+
+```python
+text = "hello world python"
+print(text.partition('world'))  # ('hello ', 'world', ' python')
+```
+
+Go back to [Contents](#contents).
+
+30. **replace(old, new[, count])** - Returns a string where all occurrences of the old substring are replaced by the new one.
+
+```python
+text = "hello world"
+print(text.replace('world', 'Python'))  # hello Python
+```
+
+Go back to [Contents](#contents).
+
+31. **rfind(sub, [start, [end]])** - Searches the string for a specified substring and returns the highest index where it begins or -1 if not found.
+
+```python
+text = "hello world world"
+print(text.rfind('world'))  # 12
+```
+
+Go back to [Contents](#contents).
+
+32. **rindex(sub, [start, [end]])** - Like rfind(), but raises ValueError when the substring is not found.
+
+```python
+text = "hello world world"
+print(text.rindex('world'))  # 12
+```
+
+Go back to [Contents](#contents).
+
+33. **rjust(width, [fillchar])** - Returns the string right-justified in a string of specified width.
+
+```python
+text = "python"
+print(text.rjust(10, '-'))  # ----python
+```
+
+Go back to [Contents](#contents).
+
+34. **rpartition(sep)** - Splits the string at the last occurrence of sep, and returns a 3-tuple containing the part before the separator, the separator itself, and the part after the separator.
+
+```python
+text = "hello world python"
+print(text.rpartition('world'))  # ('hello ', 'world', ' python')
+```
+
+Go back to [Contents](#contents).
+
+35. **rsplit(sep=None, maxsplit=-1)** - Splits the string at the specified separator and returns a list. If maxsplit is specified, splits at most maxsplit times.
+
+```python
+text = "hello world python programming"
+print(text.rsplit(' ', 2))  # ['hello world', 'python', 'programming']
+```
+
+Go back to [Contents](#contents).
+
+36. **rstrip([chars])** - Returns a copy of the string with trailing characters removed.
+
+```python
+text = "python   "
+print(text.rstrip())  # 'python'
+```
+
+Go back to [Contents](#contents).
+
+37. **split(sep=None, maxsplit=-1)** - Splits the string at the specified separator and returns a list. If maxsplit is specified, splits at most maxsplit times.
+
+```python
+text = "hello world python"
+print(text.split())  # ['hello', 'world', 'python']
+```
+
+Go back to [Contents](#contents).
+
+38. **splitlines([keepends])** - Splits the string at line breaks and returns a list.
+
+```python
+text = "hello\nworld"
+print(text.splitlines())  # ['hello', 'world']
+```
+
+Go back to [Contents](#contents).
+
+39. **startswith(prefix, [start, [end]])** - Returns True if the string starts with the specified prefix, optionally within a specified range.
+
+```python
+text = "python programming"
+print(text.startswith('python'))  # True
+```
+
+Go back to [Contents](#contents).
+
+40. **strip([chars])** - Returns a copy of the string with leading and trailing characters removed.
+
+```python
+text = "   python   "
+print(text.strip())  # 'python'
+```
+
+Go back to [Contents](#contents).
+
+41. **swapcase()** - Converts uppercase characters to lowercase and vice versa.
+
+```python
+text = "Python Programming"
+print(text.swapcase())  # pYTHON pROGRAMMING
+```
+
+Go back to [Contents](#contents).
+
+42. **title()** - Converts the first character of each word to uppercase and the rest to lowercase.
+
+```python
+text = "python programming"
+print(text.title())  # Python Programming
+```
+
+Go back to [Contents](#contents).
+
+43. **translate(table)** - Translates the string according to the translation table specified by maketrans().
+
+```python
+text = "hello world"
+trantab = str.maketrans('aeiou', '12345')
+print(text.translate(trantab))  # h2ll4 w4rld
+```
+
+Go back to [Contents](#contents).
+
+44. **upper()** - Converts all characters in the string to uppercase.
+
+```python
+text = "hello world"
+trantab = str.maketrans('aeiou', '12345')
+print(text.translate(trantab))  # h2ll4 w4rld
+```
+
+Go back to [Contents](#contents).
+
+45. **zfill(width)** - Pads the string on the left with zeros until it reaches the specified width.
+
+```python
+text = "42"
+print(text.zfill(5))  # 00042
+```
+
+Go back to [Contents](#contents).
 
 ## Functions
 
