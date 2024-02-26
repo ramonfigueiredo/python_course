@@ -32,16 +32,18 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    3. [Loop statements - break  - continue - pass](#loop-statements---break---continue---pass)
    4. [More 10 loops examples](#10-loops-examples)
 5. [Data Structures](#data-structures)
-   1. [Lists and Tuples](#lists-and-tuples)
+   1. [The length function for data structures](#the-length-function-for-data-structures)
+   2. [Lists and Tuples](#lists-and-tuples)
       1. [List](#list)
       2. [Tuple](#tuple)
       3. [More 10 Lists and Tuples examples](#more-10-lists-and-tuples-examples)
-   2. [Dictionaries](#dictionaries)
+   3. [Dictionaries](#dictionaries)
       1. [More 10 Dictionaries examples](#more-10-dictionaries-examples)
-   3. [Sets](#sets)
+   4. [Sets](#sets)
       1. [More 10 Sets examples](#more-10-sets-examples)
 6. [Strings](#strings)
-   1. [String Methods](#string-methods)
+   1. [The length function for Strings](#the-length-function-for-strings)
+   2. [String Methods](#string-methods)
 7. [Slicing](#slicing)
    1. [List Slicing](#list-slicing)
    2. [Tuple Slicing](#tuple-slicing)
@@ -1389,17 +1391,75 @@ Go back to [Contents](#contents).
 ## Data Structures
 
 Next, we will explore some of the most versatile and fundamental data structures in Python: 
-* Lists and Tuples
-* Dictionaries
-* Sets.
+
+* **Lists** 
+  * Lists are mutable sequences of elements.
+* **Tuples**
+  * Tuples are immutable sequences, similar to lists, but their contents cannot be changed.
+* **Dictionaries**
+  * Dictionaries contain key-value pairs.
+* **Sets** 
+  * Sets are unordered collections of unique elements.
 
 Go back to [Contents](#contents).
+
+
+
+### The length function for data structures
+
+In Python, you can find the length of lists, tuples, dictionaries using the built-in `len()` function.
+
+
+- **List Length:**
+
+```python
+my_list = [10, 20, 30, 40, 50]
+print(len(my_list))  # Output: 5
+```
+
+Go back to [Contents](#contents).
+
+
+- **Tuple Length:**
+
+```python
+my_tuple = (1, 2, 3, 4, 5)
+print(len(my_tuple))  # Output: 5
+```
+
+Go back to [Contents](#contents).
+
+
+- **Dictionary Length:**
+
+Note: For Dictionary, the `len()` function returns the number of pairs (i.e., keys).
+
+```python
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+print(len(my_dict))  # Output: 4
+```
+
+Go back to [Contents](#contents).
+
+
+- **Set Length:**
+
+```python
+my_set = {1, 2, 3, 4, 5}
+print(len(my_set))  # Output: 5
+```
+
+Go back to [Contents](#contents).
+
+
 
 ### Lists and Tuples
 
 Lists and Tuples: Both are used to store collections of items, but they have some key differences. 
 
 Go back to [Contents](#contents).
+
+
 
 #### List
   * List is dynamic.
@@ -1415,6 +1475,8 @@ print(fruits)
 ```
 
 Go back to [Contents](#contents).
+
+
 
 #### Tuple
 *  Tuple is immutable. 
@@ -1912,6 +1974,23 @@ Strings in Python are immutable, meaning once a string is created, the character
 Python provides a rich set of operations and methods for working with strings. These include concatenation (joining strings together), slicing (extracting parts of strings), and a wide variety of methods for manipulation (like converting to uppercase or lowercase, trimming whitespace, and finding substrings).
 
 Go back to [Contents](#contents).
+
+
+
+### The length function for Strings
+
+Strings are sequences of characters. The `len()` function returns the number of characters in the string.
+
+For example:
+
+```python
+my_string = "Hello"
+print(len(my_string))  # Output: 5
+```
+
+Go back to [Contents](#contents).
+
+
 
 ### String Methods
 
