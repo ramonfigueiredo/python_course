@@ -42,6 +42,10 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       1. [More 10 Sets examples](#more-10-sets-examples)
 6. [Strings](#strings)
    1. [String Methods](#string-methods)
+7. [Slicing](slicing)
+   1. [List Slicing](#list-slicing)
+   2. [Tuple Slicing](#tuple-slicing)
+   3. [String Slicing](#string-slicing)
 8. [Functions](#functions)
    1. [Defining Functions](#defining-functions)
    2. [Parameters and Return Value](#parameters-and-return-value)
@@ -2345,6 +2349,306 @@ print(text.zfill(5))  # 00042
 ```
 
 Go back to [Contents](#contents).
+
+
+
+## Slicing
+
+Slicing in Python is a technique that allows you to extract a part of a collection or string. It works by specifying a start index and an optional end index, along with an optional step.
+
+The basic syntax for slicing is `[start:end:step]`, where:
+
+- `start` is the index at which the slice starts (inclusive).
+- `end` is the index at which the slice ends (exclusive).
+- `step` is the interval between each index for slicing.
+
+If `step` is not provided, it defaults to 1. If `start` or `end` are omitted, they default to the start or end of the sequence, respectively.
+
+Go back to [Contents](#contents).
+
+
+
+### List Slicing
+
+Here are 10 examples of slicing lists in Python, demonstrating various combinations of start, end, and step values.
+
+These examples demonstrate the flexibility of list slicing in Python, allowing for efficient and concise data manipulation.
+
+Go back to [Contents](#contents).
+
+
+
+1. Basic Slicing - Get the first 3 elements of a list.
+
+```python
+my_list = [0, 1, 2, 3, 4, 5]
+print(my_list[0:3])  # Output: [0, 1, 2]
+```
+
+Go back to [Contents](#contents).
+
+2. Omitting Start Index - Slice from the beginning until a specific index.
+
+```python
+print(my_list[:4])  # Output: [0, 1, 2, 3]
+```
+
+Go back to [Contents](#contents).
+
+3. Omitting End Index - Slice from a specific index to the end.
+
+```python
+print(my_list[3:])  # Output: [3, 4, 5]
+```
+
+Go back to [Contents](#contents).
+
+4. Negative Start Index - Use a negative index to start the slice.
+
+```python
+print(my_list[-4:])  # Output: [2, 3, 4, 5]
+```
+
+Go back to [Contents](#contents).
+
+5. Negative End Index - Use a negative index to end the slice.
+
+```python
+print(my_list[:-2])  # Output: [0, 1, 2, 3]
+```
+
+Go back to [Contents](#contents).
+
+6. Step Value - Use a step value to skip elements in the slice.
+
+```python
+print(my_list[0:6:2])  # Output: [0, 2, 4]
+```
+
+Go back to [Contents](#contents).
+
+7. Negative Step Value - Reverse the list or part of it.
+
+```python
+print(my_list[::-1])  # Output: [5, 4, 3, 2, 1, 0]
+```
+
+Go back to [Contents](#contents).
+
+8. Slicing with All Parameters - Combine start, end, and step.
+
+```python
+print(my_list[1:5:2])  # Output: [1, 3]
+```
+
+Go back to [Contents](#contents).
+
+9. Omitting All Indices - Duplicate the list with slicing.
+
+```python
+print(my_list[:])  # Output: [0, 1, 2, 3, 4, 5]
+```
+
+Go back to [Contents](#contents).
+
+10. Using Only Step Value - Get every second element of the list.
+
+```python
+print(my_list[::2])  # Output: [0, 2, 4]
+```
+
+Go back to [Contents](#contents).
+
+
+
+### Tuple Slicing
+
+
+Here are 10 examples to illustrate different slicing techniques for tuples. 
+
+These examples showcase how slicing can be used with tuples in Python to access specific portions or patterns within the tuple, similar to how it's done with lists.
+
+Go back to [Contents](#contents).
+
+
+
+1. Basic Slicing - Get the first 3 elements of a tuple.
+
+```python
+my_tuple = (0, 1, 2, 3, 4, 5)
+print(my_tuple[0:3])  # Output: (0, 1, 2)
+```
+
+Go back to [Contents](#contents).
+
+2. Omitting Start Index - Slice from the beginning until a specific index.
+
+```python
+print(my_tuple[:4])  # Output: (0, 1, 2, 3)
+```
+
+Go back to [Contents](#contents).
+
+3. Omitting End Index - Slice from a specific index to the end.
+
+```python
+print(my_tuple[3:])  # Output: (3, 4, 5)
+```
+
+Go back to [Contents](#contents).
+
+4. Negative Start Index - Use a negative index to start the slice.
+
+```python
+print(my_tuple[-4:])  # Output: (2, 3, 4, 5)
+```
+
+Go back to [Contents](#contents).
+
+5. Negative End Index - Use a negative index to end the slice.
+
+```python
+print(my_tuple[:-2])  # Output: (0, 1, 2, 3)
+```
+
+Go back to [Contents](#contents).
+
+6. Step Value - Use a step value to skip elements in the slice.
+
+```python
+print(my_tuple[0:6:2])  # Output: (0, 2, 4)
+```
+
+Go back to [Contents](#contents).
+
+7. Negative Step Value - Reverse the tuple or part of it.
+
+```python
+print(my_tuple[::-1])  # Output: (5, 4, 3, 2, 1, 0)
+```
+
+Go back to [Contents](#contents).
+
+8. Slicing with All Parameters - Combine start, end, and step.
+
+```python
+print(my_tuple[1:5:2])  # Output: (1, 3)
+```
+
+Go back to [Contents](#contents).
+
+9. Omitting All Indices - Create a copy of the tuple with slicing.
+
+```python
+print(my_tuple[:])  # Output: (0, 1, 2, 3, 4, 5)
+```
+
+Go back to [Contents](#contents).
+
+10. Using Only Step Value - Get every second element of the tuple.
+
+```python
+print(my_tuple[::2])  # Output: (0, 2, 4)
+```
+
+Go back to [Contents](#contents).
+
+
+
+### String Slicing
+
+Slicing strings in Python is very similar to slicing lists and tuples. 
+
+Here are 10 examples to demonstrate different slicing techniques for strings.
+
+These examples demonstrate how slicing can be applied to strings in Python, enabling you to extract substrings, reverse strings, and skip characters in flexible ways.
+
+Go back to [Contents](#contents).
+
+
+
+1. Basic Slicing - Get the first 5 characters of a string.
+
+```python
+my_string = "Hello, World!"
+print(my_string[0:5])  # Output: Hello
+```
+
+Go back to [Contents](#contents).
+
+2. Omitting Start Index - Slice from the beginning until a specific index.
+
+```python
+print(my_string[:7])  # Output: Hello,
+```
+
+Go back to [Contents](#contents).
+
+3. Omitting End Index - Slice from a specific index to the end.
+
+```python
+print(my_string[7:])  # Output: World!
+```
+
+Go back to [Contents](#contents).
+
+4. Negative Start Index - Use a negative index to start the slice.
+
+```python
+print(my_string[-6:])  # Output: World!
+```
+
+Go back to [Contents](#contents).
+
+5. Negative End Index - Use a negative index to end the slice.
+
+```python
+print(my_string[:-1])  # Output: Hello, World
+```
+
+Go back to [Contents](#contents).
+
+6. Step Value - Use a step value to skip characters in the slice.
+
+```python
+print(my_string[::2])  # Output: Hlo ol!
+```
+
+Go back to [Contents](#contents).
+
+7. Negative Step Value - Reverse the string.
+
+```python
+print(my_string[::-1])  # Output: !dlroW ,olleH
+```
+
+Go back to [Contents](#contents).
+
+8. Slicing with All Parameters - Combine start, end, and step.
+
+```python
+print(my_string[1:10:2])  # Output: el,Wo
+```
+
+Go back to [Contents](#contents).
+
+9. Omitting All Indices with Step - Use step value to get every character, reversing the string.
+
+```python
+print(my_string[::-2])  # Output: !lo olH
+```
+
+Go back to [Contents](#contents).
+
+10. Using Only Step Value - Get every character using a positive step.
+
+```python
+print(my_string[::1])  # Output: Hello, World!
+```
+
+Go back to [Contents](#contents).
+
+
 
 ## Functions
 
