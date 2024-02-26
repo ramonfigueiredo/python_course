@@ -4132,6 +4132,8 @@ In Python,
 
 Think of a class as a template for creating individual instances, each with their own specific data and functionality. 
 
+#### Example 1:
+
 Here's a basic example of a class in Python:
 
 ```python
@@ -4149,6 +4151,86 @@ print(my_dog.bark())  # Output: Woof!
 ```
 
 In this example, `Dog` is a class with attributes (`name` and `age`) and a method (`bark`). The `my_dog` is an object or instance of the `Dog` class.
+
+Go back to [Contents](#contents).
+
+#### Example 2:
+
+Python strings are implemented using object-oriented programming (OOP) principles. In Python, everything is an object, including strings.
+* The Python string class, known as `str`, provides a rich set of methods that allow you to perform a wide variety of operations on string objects, such as case conversion, trimming, splitting, joining, searching, and much more.
+* The `str` class defines how string objects are created and manipulated in Python. 
+* It encapsulates the data (the sequence of characters) and the behaviors (methods) that can operate on this data. 
+  * This is a fundamental concept of OOP, where data and functions are bundled together into objects.
+
+Let's create our own version of a String class, similar to the Python `string`.
+- Creating a simple version of the Python string class from scratch can be an instructive exercise in understanding object-oriented programming (OOP) and how strings work internally. 
+- We'll implement a basic `MyString` class with a few common string methods. 
+- Note that Python's built-in string class is highly optimized and includes many more features than we'll cover here.
+
+The example is divided into three steps:
+
+**Step 1:** Define the MyString Class
+- We'll start by defining the class and its initialization method. 
+- Our class will need to store the string data, so we'll do that in the constructor.
+
+**Step 2:** Implement Basic Methods
+- We'll implement a few basic methods to mimic the functionality of Python's string class, such as `__len__` (to get the length of the string), `__str__` (to return the string representation), and some custom methods like `to_upper` and `to_lower` (to convert the string to uppercase and lowercase, respectively).
+
+**Step 3:** Demonstrate Usage
+- Finally, we'll demonstrate how to use the implemented class and its methods.
+
+Next is the `MyString` class implementation.
+
+```python
+class MyString:
+    def __init__(self, content=""):
+        self.content = content
+
+    def __str__(self):
+        return self.content
+
+    def __len__(self):
+        return len(self.content)
+    
+    def to_upper(self):
+        return MyString(self.content.upper())
+    
+    def to_lower(self):
+        return MyString(self.content.lower())
+
+    def find(self, sub):
+        return self.content.find(sub)
+    
+    def replace(self, old, new):
+        return MyString(self.content.replace(old, new))
+```
+
+This class definition includes an initializer, methods to get the string's length, its string representation, convert to uppercase and lowercase, find a substring, and replace parts of the string.
+
+Now, let's see how to use the `MyString` class:
+
+```python
+# Creating an instance of MyString
+my_string = MyString("Hello, World!")
+
+# Printing the string
+print(my_string)  # Hello, World!
+
+# Getting the length of the string
+print(len(my_string))  # 13
+
+# Converting to uppercase
+print(my_string.to_upper())  # HELLO, WORLD!
+
+# Converting to lowercase
+print(my_string.to_lower())  # hello, world!
+
+# Finding a substring
+print(my_string.find("World"))  # 7
+
+# Replacing a substring
+print(my_string.replace("World", "Python"))  # Hello, Python!
+```
 
 Go back to [Contents](#contents).
 
