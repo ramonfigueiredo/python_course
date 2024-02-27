@@ -8137,6 +8137,106 @@ The key features of NumPy include:
 
 6. **Integration with other Python Libraries:** Widely used in scientific computing, data science, and is the foundation for many other scientific libraries.
 
+#### Numpy Examples
+
+**Example 1:** Creating a NumPy Array
+
+```python
+import numpy as np
+
+# Creating a simple NumPy array
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)
+```
+
+**Example 2:** Basic Array Operations (Addition, Multiplication)
+
+```python
+# Element-wise addition and multiplication
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+print("Addition:", arr1 + arr2)
+print("Multiplication:", arr1 * arr2)
+```
+
+**Example 3:** Reshaping an Array
+
+```python
+# Reshaping a 1D array to a 2D array
+arr = np.array([1, 2, 3, 4, 5, 6])
+reshaped_arr = arr.reshape((2, 3))
+print(reshaped_arr)
+```
+
+**Example 4:** Slicing Arrays
+
+```python
+# Slicing an array
+arr = np.array([1, 2, 3, 4, 5, 6])
+sliced_arr = arr[1:5]
+print(sliced_arr)
+```
+
+**Example 5:** Linear Algebra - Matrix Multiplication
+
+```python
+# Matrix multiplication
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+
+result = np.dot(A, B)
+print(result)
+```
+
+**Example 6:** Computing the Inverse of a Matrix
+
+```python
+# Inverse of a matrix
+matrix = np.array([[1, 2], [3, 4]])
+inverse_matrix = np.linalg.inv(matrix)
+print(inverse_matrix)
+```
+
+**Example 7:** Generating Random Numbers
+
+```python
+# Generating random numbers
+random_arr = np.random.rand(5)
+print(random_arr)
+```
+
+**Example 8:** Statistical Operations (Mean, Median, Standard Deviation)
+
+```python
+# Statistical operations
+arr = np.array([1, 2, 3, 4, 5])
+print("Mean:", np.mean(arr))
+print("Median:", np.median(arr))
+print("Standard Deviation:", np.std(arr))
+```
+
+**Example 9:** Boolean Indexing
+
+```python
+# Boolean indexing
+arr = np.array([1, 2, 3, 4, 5])
+print(arr[arr > 3])
+```
+
+**Example 10:** Stacking Arrays
+
+```python
+# Stacking arrays vertically and horizontally
+arr1 = np.array([1, 2, 3])
+arr2 = np.array([4, 5, 6])
+
+v_stack = np.vstack((arr1, arr2))
+h_stack = np.hstack((arr1, arr2))
+
+print("Vertical Stack:\n", v_stack)
+print("Horizontal Stack:\n", h_stack)
+```
 
 Go back to [Contents](#contents).
 
