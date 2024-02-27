@@ -8450,6 +8450,98 @@ The key features of Pandas include:
 
 Go back to [Contents](#contents).
 
+#### Pandas Examples
+
+**Example 1:** Creating a DataFrame
+
+```python
+import pandas as pd
+
+# Creating a DataFrame from a dictionary
+data = {'Name': ['John', 'Anna', 'Peter', 'Linda'],
+        'Age': [28, 34, 29, 32]}
+df = pd.DataFrame(data)
+print(df)
+```
+
+**Example 2:** Reading Data from a CSV File
+
+```python
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('path/to/data.csv')
+print(df.head())
+```
+
+**Example 3:** Selecting Columns
+
+```python
+# Selecting a single column
+ages = df['Age']
+print(ages)
+
+# Selecting multiple columns
+subset = df[['Name', 'Age']]
+print(subset)
+```
+
+**Example 4:** Filtering Rows
+
+```python
+# Filtering rows based on a condition
+adults = df[df['Age'] >= 18]
+print(adults)
+```
+
+**Example 5:** Data Aggregation (Group By)
+
+```python
+# Grouping and aggregating data
+average_age = df.groupby('Name')['Age'].mean()
+print(average_age)
+```
+
+**Example 6:** Handling Missing Data
+
+```python
+# Filling missing values
+df.fillna(value=0, inplace=True)
+
+# Dropping rows with missing values
+df.dropna(inplace=True)
+```
+
+**Example 7:** Merging DataFrames
+
+```python
+# Merging two DataFrames
+other_data = pd.DataFrame({'Name': ['John', 'Anna'], 'Salary': [70000, 80000]})
+merged_df = pd.merge(df, other_data, on='Name')
+print(merged_df)
+```
+
+**Example 8:** Sorting Data
+
+```python
+# Sorting the DataFrame by a column
+sorted_df = df.sort_values(by='Age', ascending=False)
+print(sorted_df)
+```
+
+**Example 9:** Pivot Tables
+
+```python
+# Creating a pivot table
+pivot = df.pivot_table(values='Age', index='Name', aggfunc='mean')
+print(pivot)
+```
+
+**Example 10:** Writing to an Excel File
+
+```python
+# Writing DataFrame to an Excel file
+df.to_excel('output.xlsx', index=False)
+```
+
 ### Matplotlib
 
 Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. 
