@@ -8258,6 +8258,180 @@ Key features of SciPy include:
 
 Go back to [Contents](#contents).
 
+#### SciPy Examples
+
+**Example 1:** Solving a Linear System of Equations
+
+```python
+from scipy.linalg import solve
+
+# Define the coefficient matrix A and the constant vector b
+A = np.array([[3, 1], [1, 2]])
+b = np.array([9, 8])
+
+# Solve the linear system Ax = b
+x = solve(A, b)
+print(x)
+```
+
+**Example 2:** Calculating Eigenvalues and Eigenvectors
+
+```python
+from scipy.linalg import eig
+
+# Define a square matrix
+A = np.array([[1, 2], [3, 4]])
+
+# Calculate eigenvalues and eigenvectors
+eigenvalues, eigenvectors = eig(A)
+print("Eigenvalues:", eigenvalues)
+print("Eigenvectors:\n", eigenvectors)
+```
+
+**Example 3:** Optimization - Minimizing a Function
+
+```python
+from scipy.optimize import minimize
+
+# Define a quadratic function
+def f(x):
+    return x**2 + 10 * np.sin(x)
+
+# Minimize the function
+result = minimize(f, x0=0)
+print(result.x)
+```
+
+**Example 4:** Interpolating Data
+
+```python
+from scipy.interpolate import interp1d
+import matplotlib.pyplot as plt
+
+# Define sample data
+x = np.linspace(0, 10, num=10, endpoint=True)
+y = np.cos(-x**2/9.0)
+
+# Interpolate data
+f = interp1d(x, y, kind='cubic')
+
+# New x values
+xnew = np.linspace(0, 10, num=40, endpoint=True)
+
+# Plot
+plt.plot(x, y, 'o', xnew, f(xnew), '-')
+plt.show()
+```
+
+**Example 5:** Signal Processing - Filtering a Signal
+
+```python
+from scipy.signal import butter, lfilter
+import matplotlib.pyplot as plt
+
+# Sample data
+t = np.linspace(0, 1.0, 200)
+signal = np.sin(2 * np.pi * 5 * t) + 0.5 * np.random.randn(t.size)
+
+# Butterworth filter
+b, a = butter(N=3, Wn=0.05)
+filtered_signal = lfilter(b, a, signal)
+
+# Plot
+plt.plot(t, signal, label='Noisy signal')
+plt.plot(t, filtered_signal, label='Filtered signal')
+plt.legend()
+plt.show()
+```
+
+**Example 6:** Computing the Integral of a Function
+
+```python
+from scipy.integrate import quad
+
+# Define a simple function
+def integrand(x):
+    return x**2
+
+# Compute definite integral
+result, error = quad(integrand, 0, 1)
+print(result)
+```
+
+**Example 7:** Solving a Differential Equation
+
+```python
+from scipy.integrate import odeint
+
+# Define a differential equation y' = y
+def model(y, t):
+    return y
+
+# Time points
+t = np.linspace(0, 5)
+
+# Solve ODE
+y = odeint(model, y0=1, t=t)
+
+# Plot
+plt.plot(t, y)
+plt.xlabel('time')
+plt.ylabel('y(t)')
+plt.show()
+```
+
+**Example 8:** Fourier Transform of a Signal
+
+```python
+from scipy.fft import fft
+import matplotlib.pyplot as plt
+
+# Sample data
+t = np.linspace(0, 1.0, 400)
+signal = np.sin(50 * 2 * np.pi * t)
+
+# Compute Fourier Transform
+signal_fft = fft(signal)
+
+# Plot
+plt.plot(t, signal)
+plt.plot(t, np.abs(signal_fft))
+plt.show()
+```
+
+**Example 9:** Performing a T-test
+
+```python
+from scipy.stats import ttest_ind
+
+# Sample data
+a = np.random.normal(0, 1, size=100)
+b = np.random.normal(1, 1, size=100)
+
+# T-test
+t_statistic, p_value = ttest_ind(a, b)
+print("t-statistic:", t_statistic)
+print("p-value:", p_value)
+```
+
+**Example 10:** Multidimensional Image Processing
+
+```python
+from scipy import ndimage
+import matplotlib.pyplot as plt
+
+# Load an image
+image = ndimage.imread('path/to/image.jpg', flatten=True)
+
+# Gaussian blur
+blurred_image = ndimage.gaussian_filter(image, sigma=3)
+
+# Display images
+plt.imshow(image, cmap=plt.cm.gray)
+plt.imshow(blurred_image, cmap=plt.cm.gray)
+plt.show()
+```
+
 ### Pandas
 
 Pandas is a highly popular Python library used primarily for data manipulation and analysis. 
