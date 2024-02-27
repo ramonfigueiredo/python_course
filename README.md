@@ -44,6 +44,25 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       1. [More 10 Dictionaries examples](#more-10-dictionaries-examples)
    4. [Sets](#sets)
       1. [More 10 Sets examples](#more-10-sets-examples)
+   5. [Python Collections Module](#python-collections-module)
+      1. [namedtuple](#namedtuple)
+         1. [More 10 namedtuple examples](#more-10-namedtuple-examples)
+      2. [deque](#deque)
+         1. [More 10 deque examples](#more-10-deque-examples)
+      3. [ChainMap](#chainmap)
+         1. [More 10 ChainMap examples](#more-10-chainmap-examples)
+      4. [Counter](#counter)
+         1. [More 10 Counter examples](#more-10-counter-examples)
+      5. [OrderedDict](#ordereddict)
+         1. [More 10 OrderedDict examples](#more-10-ordereddict-examples)
+      6. [defaultdict](#defaultdict)
+         1. [More 10 defaultdict examples](#more-10-defaultdict-examples)
+      7. [UserDict](#userdict)
+         1. [More 10 UserDict examples](#more-10-userdict-examples)
+      8. [UserList](#userlist)
+         1. [More 10 UserList examples](#more-10-userlist-examples)
+      9. [UserString](#userstring)
+         1. [More 10 UserString examples](#more-10-userstring-examples)
 6. [Strings](#strings)
    1. [The length function for Strings](#the-length-function-for-strings)
    2. [String Methods](#string-methods)
@@ -2014,6 +2033,1874 @@ print(fruits)  # Output: set()
 Go back to [Contents](#contents).
 
 
+
+### Python Collections Module
+
+The Python collections module is an integral part of Python that offers specialized container datatypes. These containers are not just about holding objects, but they are about improving your data manipulation capabilities, and making your code more efficient, and readable.
+
+There are various types of collections in Python, including `namedtuple`, `deque`, `ChainMap`, `Counter`, `OrderedDict`, `defaultdict`, `UserDict`, `UserList`, and `UserString`. Each of these plays a crucial role in handling data in more sophisticated ways than the basic built-ins like lists, dictionaries, and tuples.
+
+Go back to [Contents](#contents).
+
+
+
+#### namedtuple
+
+The `namedtuple` is a factory function for creating subclass of tuples with named fields. 
+- These named fields make code more readable and self-documenting. 
+- They can be accessed through named attributes as well as being indexable and iterable like regular tuples.
+
+For example:
+
+```python
+from collections import namedtuple
+
+# Creating a namedtuple for a point in 2D space
+Point = namedtuple('Point', ['x', 'y'])
+pt = Point(11, 22)
+
+print(pt.x, pt.y)  # Accessing by name
+print(pt[0], pt[1])  # Accessing by index
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 namedtuple examples
+
+Here are 10 examples demonstrating various use cases and features of `namedtuple`.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Basic Usage
+
+Defining a simple `Point` namedtuple for representing coordinates in a 2D space.
+
+```python
+from collections import namedtuple
+
+Point = namedtuple('Point', ['x', 'y'])
+p1 = Point(10, 20)
+print(p1.x, p1.y)  # Output: 10 20
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Accessing Values
+
+Accessing values using field names and also by index.
+
+```python
+from collections import namedtuple
+
+Circle = namedtuple('Circle', ['center_x', 'center_y', 'radius'])
+circle = Circle(0, 0, 5)
+
+print(circle.center_x)  # Access by name
+print(circle[1])  # Access by index, output: 0
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Default Values
+
+Using` _make()` to create a new instance from an iterable, and `_asdict()` to convert a namedtuple instance into an `OrderedDict`.
+
+```python
+from collections import namedtuple
+
+Employee = namedtuple('Employee', 'name position salary')
+emp = Employee._make(['John Doe', 'Manager', 50000])
+
+print(emp._asdict())  # Output: OrderedDict([('name', 'John Doe'), ('position', 'Manager'), ('salary', 50000)])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Unpacking
+
+Unpacking a namedtuple into variables.
+
+```python
+from collections import namedtuple
+
+Color = namedtuple('Color', 'red green blue')
+color = Color(55, 155, 255)
+
+r, g, b = color
+print("R:", r, "G:", g, "B:", b)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Subclassing
+
+Extending a namedtuple by subclassing.
+
+```python
+from collections import namedtuple
+
+Person = namedtuple('Person', 'name age')
+
+class Employee(Person):
+    def __str__(self):
+        return f'{self.name}, {self.age} years old'
+
+emp = Employee('Jane Doe', 30)
+print(emp)  # Output: Jane Doe, 30 years old
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Field Names from a Single String
+
+Using a single space/comma-delimited string for field names.
+
+```python
+from collections import namedtuple
+
+Book = namedtuple('Book', 'title, author, year')
+book = Book('1984', 'George Orwell', 1949)
+
+print(book.title)  # Output: 1984
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Using Replace to Create Modified Instances
+
+Modifying an instance by using the `_replace()` method.
+
+```python
+from collections import namedtuple
+
+Stock = namedtuple('Stock', 'symbol current high low')
+apple_stock = Stock('AAPL', 150, high=180, low=120)
+
+# Updating the current price
+apple_stock = apple_stock._replace(current=155)
+print(apple_stock)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Optional/Default Values
+
+Specifying default values for some fields using the defaults argument.
+
+```python
+from collections import namedtuple
+
+Account = namedtuple('Account', 'owner balance type', defaults=[0, 'savings'])
+acc = Account('John')
+print(acc)  # Output: Account(owner='John', balance=0, type='savings')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Namedtuple as a Dictionary Key
+
+Using namedtuples as keys in dictionaries, benefiting from their hashability.
+
+```python
+from collections import namedtuple
+
+Location = namedtuple('Location', 'latitude longitude')
+visits = {Location(34.0522, -118.2437): 'Los Angeles',
+          Location(40.7128, -74.0060): 'New York'}
+
+print(visits[Location(34.0522, -118.2437)])  # Output: Los Angeles
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Converting a Dictionary to a Namedtuple
+
+Converting a dictionary to a namedtuple using the double-star operator.
+
+```python
+from collections import namedtuple
+
+Person = namedtuple('Person', 'name age')
+person_info = {'name': 'Alice', 'age': 30}
+
+alice = Person(**person_info)
+print(alice)  # Output: Person(name='Alice', age=30)
+```
+
+Go back to [Contents](#contents).
+
+
+#### deque
+
+The `deque` stands for "double-ended queue". 
+- It supports thread-safe, memory-efficient appends and pops from either side of the deque with approximately the same O(1) performance in either direction.
+- O(1) denotes constant time complexity. This term is used to describe an algorithm or operation whose execution time does not change with the size of the input data set.
+
+For example:
+
+```python
+from collections import deque
+
+dq = deque([1, 2, 3, 4, 5])
+dq.append(6)  # Add to the right
+dq.appendleft(0)  # Add to the left
+print(dq)
+
+dq.pop()  # Remove from the right
+dq.popleft()  # Remove from the left
+print(dq)
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 deque examples](#more-10-deque-examples)
+
+Here are 10 examples demonstrating various use cases and features of `deque`.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Basic Usage
+
+Creating a `deque` and appending items to the right (the default behavior).
+
+```python
+from collections import deque
+
+dq = deque([1, 2, 3])
+dq.append(4)  # Add to the right
+print(dq)  # Output: deque([1, 2, 3, 4])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Appending to the Left
+
+Appending items to the left side.
+
+```python
+from collections import deque
+
+dq = deque([1, 2, 3])
+dq.append(4)  # Add to the right
+dq.appendleft(0)  # Add to the left
+print(dq)  # Output: deque([0, 1, 2, 3, 4])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Popping Items
+
+Popping items from both ends.
+
+```python
+from collections import deque
+
+dq = deque([0, 1, 2, 3, 4])
+dq.pop()  # Remove from the right
+dq.popleft()  # Remove from the left
+print(dq)  # Output: deque([1, 2, 3])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Extending the Deque
+
+Extending the deque with multiple elements at once.
+
+```python
+from collections import deque
+
+dq = deque([1, 2, 3, 4])
+dq.extend([4, 5, 6])
+dq.extendleft([0, -1, -2])  # Note: the iterable is added in reverse order
+print(dq)  # Output: deque([-2, -1, 0, 1, 2, 3, 4, 5, 6])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Rotating the Deque
+
+Rotating the deque n steps to the right (n > 0) or left (n < 0).
+
+```python
+from collections import deque
+
+dq = deque([-2, -1, 0, 1, 2, 3, 4, 5, 6])
+dq.rotate(3)  # Rotate right by 3
+print(dq)  # Output: deque([4, 5, 6, -2, -1, 0, 1, 2, 3])
+dq.rotate(-2)  # Rotate left by 2
+print(dq)  # Output: deque([6, -2, -1, 0, 1, 2, 3, 4, 5])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Clearing the Deque
+
+Removing all elements from the deque.
+
+```python
+from collections import deque
+
+dq = deque([-2, -1, 0, 1, 2, 3, 4, 5, 6])
+
+dq.clear()
+print(dq)  # Output: deque([])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Working with Fixed-Size Deques
+
+Creating a fixed-size deque to limit the number of items and automatically discard oldest items when new ones are added.
+
+```python
+from collections import deque
+
+fixed_dq = deque(maxlen=3)
+for i in range(5):
+    fixed_dq.append(i)
+    print(fixed_dq)  # Observe how older items are discarded
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Counting Elements
+
+Counting the occurrences of an element.
+
+```python
+from collections import deque
+
+dq = deque([1, 2, 3, 4, 2, 2, 3])
+print(dq.count(2))  # Output: 3
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Inserting Elements
+
+Inserting an element at a specific position.
+
+```python
+from collections import deque
+
+dq = deque([1, 2, 4, 5])
+dq.insert(2, 3)  # Insert 3 at index 2
+print(dq)  # Output: deque([1, 2, 3, 4, 5])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Reversing the Deque
+
+Reversing the elements in the deque in-place.
+
+```python
+from collections import deque
+
+dq = deque([1, 2, 3, 4, 5])
+dq.reverse()
+print(dq)  # Output: deque([5, 4, 3, 2, 1])
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### ChainMap
+
+The `ChainMap` is used to combine multiple dictionaries or mappings into a single view. 
+- If you update the `ChainMap`, only the first mapping gets updated. 
+- It is especially useful in scenarios where you want to avoid physically merging dictionaries together.
+
+For example:
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'b': 3, 'c': 4}
+chain = ChainMap(dict1, dict2)
+
+print(chain['a'])  # Output from dict1
+print(chain['b'])  # Output from dict1, because it's the first dictionary
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 ChainMap examples
+
+Here are 10 examples demonstrating various uses and features of `ChainMap`.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Basic Usage
+
+Combining two dictionaries into a single `ChainMap`.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+chain = ChainMap(dict1, dict2)
+print(chain['a'])  # Output: 1 (values from the first dictionary have precedence)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Accessing Keys and Values
+
+Iterating over keys, values, and items.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+chain = ChainMap(dict1, dict2)
+
+for key in chain.keys():
+    print(key, end=' ')  # Output: a b c (unique keys from all dictionaries)
+
+for value in chain.values():
+    print(value, end=' ')  # Output: 1 2 3 (values corresponding to the keys)
+
+for item in chain.items():
+    print(item, end=' ')  # Output: ('a', 1) ('b', 2) ('c', 3)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Updating Values
+
+Updating values in the original dictionaries affects the `ChainMap`.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+chain = ChainMap(dict1, dict2)
+
+dict1['a'] = 5
+print(chain['a'])  # Output: 5
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Adding a New Dictionary
+
+Adding a new dictionary to the `ChainMap`.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+chain = ChainMap(dict1, dict2)
+
+dict3 = {'d': 4, 'e': 5}
+chain_new = chain.new_child(dict3)  # Adds dict3 as the new first dictionary
+print(chain_new)  # ChainMap({'d': 4, 'e': 5}, {'a': 5, 'b': 2}, {'c': 3, 'a': 4})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Reversing the ChainMap
+
+Creating a reversed view of the `ChainMap`.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+dict3 = {'d': 4, 'e': 5}
+
+# Original ChainMap with dict1, dict2, and then adding dict3
+chain = ChainMap(dict1, dict2)
+chain_new = chain.new_child(dict3)  # Adds dict3 as the new first dictionary
+
+# To reverse the ChainMap, reverse the order of maps manually
+reversed_chain = ChainMap(*chain_new.maps[::-1])
+
+# Print original and reversed ChainMap for comparison
+print("Original ChainMap:")
+print(chain_new)
+print("\nReversed ChainMap:")
+print(reversed_chain)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Finding a Key in the ChainMap
+
+Checking if a key exists in any of the dictionaries in the `ChainMap`.
+
+```python
+
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+
+chain = ChainMap(dict1, dict2)
+
+print('c' in chain)  # Output: True
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Removing a Dictionary
+
+Removing a dictionary from the `ChainMap` by creating a new one without it.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+dict3 = {'d': 4, 'e': 5}
+
+# Original ChainMap with dict1, dict2, and then adding dict3
+chain = ChainMap(dict1, dict2)
+print(chain)
+
+chain_new = chain.new_child(dict3)  # Adds dict3 as the new first dictionary
+print(chain_new)
+
+reduced_chain = chain_new.parents  # Removes the last added dict
+print(reduced_chain)  # ChainMap({'a': 1, 'b': 2}, {'c': 3, 'a': 4})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Maps Property
+
+Accessing the list of mappings in the `ChainMap`.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+
+chain = ChainMap(dict1, dict2)
+
+print(chain.maps)  # Output: [{'a': 1, 'b': 2}, {'c': 3, 'a': 4}]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Direct Modifications
+
+Directly modifying the `ChainMap` does not create new mappings but updates the first mapping.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+
+chain = ChainMap(dict1, dict2)
+
+chain['b'] = 3
+print(dict1)  # Output: {'a': 1, 'b': 3}
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Creating a Single Combined Dictionary
+
+Creating a single dictionary that combines all the dictionaries in the ChainMap.
+
+```python
+from collections import ChainMap
+
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'a': 4}
+
+chain = ChainMap(dict1, dict2)
+
+combined_dict = dict(chain)
+print(combined_dict)  # Output: {'c': 3, 'a': 1, 'b': 2}
+```
+
+
+#### Counter
+
+The `Counter` is a subclass of dictionary that is used to count hashable objects. 
+- It provides a way to count objects
+- It can return elements in the order of their counts, from the most common to the least.
+
+For example:
+
+```python
+from collections import Counter
+
+cnt = Counter('abracadabra')
+print(cnt.most_common(3))  # Three most common characters
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 Counter examples
+
+Here are 10 examples demonstrating different ways to use `Counter`.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Basic Counting
+
+Counting occurrences of elements in a list.
+
+```python
+from collections import Counter
+
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+print(color_count)  # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Update Counts
+
+Updating the count for existing items and adding new items.
+
+```python
+from collections import Counter
+
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+print(color_count)  # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
+
+more_colors = ['red', 'yellow', 'green', 'blue']
+color_count.update(more_colors)
+print(color_count)  # Updated counts
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Most Common Elements
+
+Finding the most common elements.
+
+```python
+from collections import Counter
+
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+print(color_count)  # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
+
+more_colors = ['red', 'yellow', 'green', 'blue']
+color_count.update(more_colors)
+print(color_count)  # Updated counts
+
+print(color_count.most_common(2))  # Output: [('blue', 4), ('red', 3)]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Subtract Counts
+
+Subtracting counts of elements from another iterable.
+
+```python
+from collections import Counter
+
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+print(color_count) # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
+
+subtract_colors = ['red', 'blue']
+print("subtract_colors = ['red', 'blue']")
+
+color_count.subtract(subtract_colors)
+print(color_count)  # Subtracted counts - Output: Counter({'blue': 2, 'red': 1, 'yellow': 1})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Count Characters in a String
+
+Counting characters in a string.
+
+```python
+from collections import Counter
+
+char_count = Counter("abracadabra")
+print(char_count)  # Output: Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Counter Arithmetic
+
+Performing arithmetic operations with `Counter` objects.
+
+
+```python
+from collections import Counter
+
+counter_a = Counter(['a', 'b', 'c', 'a', 'b'])
+counter_b = Counter(['a', 'b', 'c', 'b', 'd'])
+
+print('counter_a', counter_a)
+print('counter_b', counter_b)
+
+print('counter_a + counter_b', counter_a + counter_b)  # Combine counts
+print('counter_a - counter_b', counter_a - counter_b)  # Subtract counts
+print('counter_a & counter_b', counter_a & counter_b)  # Intersection: min(c1[x], c2[x])
+print('counter_a | counter_b', counter_a | counter_b)  # Union: max(c1[x], c2[x])
+
+# Output:
+# counter_a Counter({'a': 2, 'b': 2, 'c': 1})
+# counter_b Counter({'b': 2, 'a': 1, 'c': 1, 'd': 1})
+# counter_a + counter_b Counter({'b': 4, 'a': 3, 'c': 2, 'd': 1})
+# counter_a - counter_b Counter({'a': 1})
+# counter_a & counter_b Counter({'b': 2, 'a': 1, 'c': 1})
+# counter_a | counter_b Counter({'a': 2, 'b': 2, 'c': 1, 'd': 1})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Elements Method
+
+Getting all elements in the `Counter`.
+
+```python
+from collections import Counter
+
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+print(color_count) # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
+
+# List all elements based on their counts
+print(list(color_count.elements())) # Output: ['blue', 'blue', 'blue', 'red', 'red', 'yellow']
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Set Operations with Counters
+
+Treating `Counter` objects like multisets for set operations.
+
+```python
+from collections import Counter
+
+c1 = Counter('abracadabra')
+c2 = Counter('alacazam')
+
+print(c1)
+print(c2)
+
+print('c1 - c2:', c1 - c2)  # Elements in c1 but not in c2
+print('c1 | c2:', c1 | c2)  # Maximum of c1 and c2 counts
+print('c1 & c2:', c1 & c2)  # Minimum of c1 and c2 counts
+
+# Output
+# Counter({'b': 2, 'r': 2, 'a': 1, 'd': 1})
+# Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1, 'l': 1, 'z': 1, 'm': 1})
+# Counter({'a': 4, 'c': 1})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Total Count
+
+Getting the total count of all elements.
+
+```python
+from collections import Counter
+
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+print(color_count) # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
+
+total_colors = sum(color_count.values())
+
+# Total number of counted colors
+print(total_colors) # 6
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Resetting Counts
+
+Resetting or clearing all counts in a `Counter`.
+
+```python
+from collections import Counter
+
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+
+color_count.clear()
+print(color_count)  # Output: Counter()
+```
+
+
+#### OrderedDict
+
+The `OrderedDict` remembers the order in which entries were added. 
+- Even though regular dictionaries now maintain insertion order (Python 3.7), `OrderedDict` is still useful for its additional functionality, such as reversing the order.
+- Starting from Python 3.7, the standard dictionary implementation in Python maintains insertion order as part of the language specification. 
+  - This means that when you insert items into a dictionary, the order in which you insert them is preserved when iterating over the dictionary, reflecting the order of addition.
+  - This change was a result of the implementation detail of CPython 3.6 becoming a language feature in Python 3.7 and onwards.
+  - Prior to Python 3.6, dictionaries did not guarantee order preservation, and the order could appear random and change with every new insertion.
+
+For example:
+
+```python
+from collections import OrderedDict
+
+od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+od['d'] = 4
+od.move_to_end('b', last=False)  # Move 'b' to the beginning
+print(od)
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 OrderedDict examples
+
+Here are 10 examples of using `OrderedDict`.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Basic Usage
+
+Creating an `OrderedDict` and adding items.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+print(ordered_dict)  # Output: OrderedDict([('a', 1), ('b', 2), ('c', 3)])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Maintaining Insertion Order
+
+Demonstrating that the `OrderedDict` maintains insertion order.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+for key, value in ordered_dict.items():
+    print(key, value)
+# Output: 
+# a 1
+# b 2
+# c 3
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Reversing the Order
+
+Reversing the order of an `OrderedDict`.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+reversed_ordered_dict = OrderedDict(reversed(ordered_dict.items()))
+print(reversed_ordered_dict)  # Output: OrderedDict([('c', 3), ('b', 2), ('a', 1)])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Equality Test
+
+`OrderedDict` compares both the order and the contents for equality.
+
+```python
+from collections import OrderedDict
+
+od1 = OrderedDict([('a', 1), ('b', 2)])
+od2 = OrderedDict([('b', 2), ('a', 1)])
+print(od1 == od2)  # Output: False, because the order of items is different
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Updating Values
+
+Updating the value of an existing key.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+ordered_dict['a'] = 5
+print(ordered_dict)  # OrderedDict([('a', 5), ('b', 2), ('c', 3)])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Pop Items
+
+Popping the last item from the `OrderedDict`.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+ordered_dict.popitem()
+print(ordered_dict)  # Removes ('c', 3)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Pop Items (Last=False)
+
+Popping the first item by specifying `last=False`.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+ordered_dict.popitem(last=False)
+print(ordered_dict)  # Removes ('a', 1)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Move to End
+
+Moving an existing key to the end.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+# Moves 'b' to the end
+ordered_dict.move_to_end('b')
+print(ordered_dict) # Output: OrderedDict([('a', 1), ('c', 3), ('b', 2)])  # Moves 'b' to the end
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Move to Beginning
+
+Moving an existing key to the beginning.
+
+```python
+from collections import OrderedDict
+
+ordered_dict = OrderedDict()
+ordered_dict['a'] = 1
+ordered_dict['b'] = 2
+ordered_dict['c'] = 3
+
+# Moves 'b' to the beginning
+ordered_dict.move_to_end('b', last=False)
+print(ordered_dict) # Output: OrderedDict([('b', 2), ('a', 1), ('c', 3)])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Creating from a Regular Dict
+
+Creating an OrderedDict from a regular dict (order of the regular dict is preserved as of Python 3.7+).
+
+```python
+from collections import OrderedDict
+
+regular_dict = {'one': 1, 'two': 2, 'three': 3}
+ordered_dict_from_regular = OrderedDict(regular_dict)
+# Output order is the same as the input dict
+print(ordered_dict_from_regular)  # Output: OrderedDict([('one', 1), ('two', 2), ('three', 3)])
+```
+
+
+#### defaultdict
+
+The `defaultdict` is a subclass of `dict` that calls a factory function to supply missing values, simplifying the code as there is no need to check if a key is present.
+
+For example:
+
+```python
+from collections import defaultdict
+
+dd = defaultdict(int)  # default factory is int, which defaults to 0
+dd['a'] += 1
+print(dd['a'])  # Output: 1
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 defaultdict examples
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Integer Default
+
+Creating a `defaultdict` with default type `int`, useful for counting.
+
+```python
+from collections import defaultdict
+
+int_default = defaultdict(int)  # Default value of 0 for new keys
+int_default['a'] += 1
+int_default['b'] += 2
+print(int_default)  # Output: defaultdict(<class 'int'>, {'a': 1, 'b': 2})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** List Default
+
+Using `list` as the default factory, which is great for grouping.
+
+```python
+from collections import defaultdict
+
+list_default = defaultdict(list)
+list_default['key1'].append(1)
+list_default['key1'].append(2)
+list_default['key2'].append(3)
+print(list_default)  # Output: defaultdict(<class 'list'>, {'key1': [1, 2], 'key2': [3]})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Set Default
+
+Using `set` as the default factory for storing unique elements.
+
+```python
+from collections import defaultdict
+
+set_default = defaultdict(set)
+set_default['a'].add(1)
+set_default['a'].add(2)
+set_default['a'].add(1)  # Duplicate, won't be added
+print(set_default)  # Output: defaultdict(<class 'set'>, {'a': {1, 2}})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Dictionary Default
+
+Creating a `defaultdict` of dictionaries.
+
+```python
+from collections import defaultdict
+
+dict_default = defaultdict(dict)
+dict_default['a']['inner_key'] = 'value'
+print(dict_default)  # Output: defaultdict(<class 'dict'>, {'a': {'inner_key': 'value'}})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Default Value with lambda
+
+Using `lambda` to provide a custom default value.
+
+```python
+from collections import defaultdict
+
+lambda_default = defaultdict(lambda: 'default value')
+print(lambda_default['a'])  # Output: default value
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Counting Items in a List
+
+Counting items in a list by combining `defaultdict` with `int`.
+
+```python
+from collections import defaultdict
+
+words = ['apple', 'banana', 'apple', 'pear', 'banana', 'orange']
+word_count = defaultdict(int)
+for word in words:
+    word_count[word] += 1
+print(word_count)  # Count of each word
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Grouping Items
+
+Grouping items based on a property.
+
+```python
+from collections import defaultdict
+
+names = ['Alan', 'Alena', 'Bob', 'Alice']
+grouped_by_first_letter = defaultdict(list)
+
+for name in names:
+    grouped_by_first_letter[name[0]].append(name)
+
+# Names grouped by the first letter
+print(grouped_by_first_letter) # Output: defaultdict(<class 'list'>, {'A': ['Alan', 'Alena', 'Alice'], 'B': ['Bob']})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Summarizing Data
+
+Summarizing data, for example, calculating total sales by product.
+
+```python
+from collections import defaultdict
+
+sales_data = [('apple', 2), ('banana', 3), ('apple', 5), ('banana', 2)]
+
+total_sales = defaultdict(int)
+
+for product, units in sales_data:
+    total_sales[product] += units
+
+print(total_sales)  # Total units sold per product
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Building a Graph Representation
+
+Using `defaultdict` to build a simple graph representation.
+
+```python
+from collections import defaultdict
+
+edges = [('a', 'b'), ('b', 'c'), ('a', 'c'), ('c', 'd')]
+
+graph = defaultdict(list)
+
+for start, end in edges:
+    graph[start].append(end)
+    
+print(graph)  # Adjacency list representation of the graph
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Default Factory with Function
+
+Using a function as a default factory to create complex defaults.
+
+```python
+from collections import defaultdict
+
+def default_factory():
+    return 'Undefined'
+
+custom_default = defaultdict(default_factory)
+print(custom_default['a'])  # Output: Undefined
+```
+
+
+#### UserDict
+
+The `UserDict` is a wrapper around dictionary objects that makes it easier to create subclasses of dictionaries by providing standard methods and adding a few of its own.
+
+For example:
+
+```python
+from collections import UserDict
+
+class MyDict(UserDict):
+    # Custom behavior can be added here
+    pass
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 UserDict examples
+
+Here are 10 examples demonstrating various uses of `UserDict`.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Basic Custom Dictionary
+
+Creating a basic custom dictionary that inherits from `UserDict`.
+
+```python
+from collections import UserDict
+
+class MyDict(UserDict):
+    pass
+
+my_dict = MyDict()
+my_dict['key'] = 'value'
+print(my_dict)  # Output: {'key': 'value'}
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Initializing with Default Values
+
+A custom dictionary that initializes with default values.
+
+```python
+from collections import UserDict
+
+class DefaultDict(UserDict):
+    def __init__(self, defaults=None):
+        super().__init__()
+        if defaults:
+            self.data.update(defaults)
+
+default_values = {'a': 1, 'b': 2}
+my_default_dict = DefaultDict(default_values)
+print(my_default_dict)  # Output: {'a': 1, 'b': 2}
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Overriding setitem
+
+Customizing set behavior to only accept integer values.
+
+```python
+from collections import UserDict
+
+class IntDict(UserDict):
+    def __setitem__(self, key, value):
+        if not isinstance(value, int):
+            raise ValueError("Value must be an integer")
+        super().__setitem__(key, value)
+
+int_dict = IntDict()
+int_dict['number'] = 5
+print(int_dict)  # Output: {'number': 5}
+# int_dict['number'] = 'five'  # Raises ValueError
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Logging Accesses
+
+Logging every time a key is accessed.
+
+```python
+from collections import UserDict
+
+class LoggingDict(UserDict):
+    def __getitem__(self, key):
+        print(f"Accessing: {key}")
+        return super().__getitem__(key)
+
+log_dict = LoggingDict({'a': 1, 'b': 2})
+print(log_dict['a'])  # Output: Accessing: a \n 1
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Counting Key Accesses
+
+Counting how many times each key is accessed.
+
+```python
+from collections import UserDict, defaultdict
+
+class CountingDict(UserDict):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.access_count = defaultdict(int)
+
+    def __getitem__(self, key):
+        self.access_count[key] += 1
+        return super().__getitem__(key)
+
+count_dict = CountingDict({'a': 1})
+_ = count_dict['a']
+_ = count_dict['a']
+print(count_dict.access_count)  # Output: defaultdict(<class 'int'>, {'a': 2})
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Read-Only Dictionary
+
+Creating a read-only dictionary where values cannot be changed after being set.
+
+```python
+from collections import UserDict
+
+class ReadOnlyDict(UserDict):
+    def __setitem__(self, key, value):
+        if key in self.data:
+            raise ValueError("Cannot modify existing value")
+        super().__setitem__(key, value)
+
+readonly_dict = ReadOnlyDict({'a': 1})
+# readonly_dict['a'] = 2  # Raises ValueError
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Key Validation
+
+Ensuring only strings are used as keys.
+
+```python
+from collections import UserDict
+
+class StringKeysDict(UserDict):
+    def __setitem__(self, key, value):
+        if not isinstance(key, str):
+            raise ValueError("Key must be a string")
+        super().__setitem__(key, value)
+
+str_keys_dict = StringKeysDict()
+str_keys_dict['key'] = 'value'
+# str_keys_dict[1] = 'value'  # Raises ValueError
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Value Transformation
+
+Automatically transforming values to uppercase when set.
+
+```python
+from collections import UserDict
+
+class UpperCaseDict(UserDict):
+    def __setitem__(self, key, value):
+        super().__setitem__(key, value.upper())
+
+upper_dict = UpperCaseDict()
+upper_dict['greeting'] = 'hello'
+print(upper_dict)  # Output: {'greeting': 'HELLO'}
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Default Values
+
+Returning a default value for missing keys.
+
+```python
+from collections import UserDict
+
+class DefaultUserDict(UserDict):
+    def __getitem__(self, key):
+        return self.data.get(key, 'default')
+
+default_user_dict = DefaultUserDict()
+print(default_user_dict['missing'])  # Output: default
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Combining Dictionaries
+
+A class that combines multiple dictionaries into a single view.
+
+```python
+from collections import UserDict
+
+class MultiDict(UserDict):
+    def add_dict(self, other_dict):
+        for key, value in other_dict.items():
+            self.data[key] = value
+
+multi_dict = MultiDict({'a': 1})
+multi_dict.add_dict({'b': 2, 'c': 3})
+print(multi_dict)  # Output: {'a': 1, 'b': 2, 'c': 3}
+```
+
+#### UserList
+
+The `UserList` is a wrapper around list objects. It's designed for creating subclasses of lists with more specialized behavior than the standard `list`.
+
+For example:
+
+```python
+from collections import UserList
+
+class MyList(UserList):
+    # Custom behavior can be added here
+    pass
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 UserList examples
+
+Here are 10 examples illustrating various ways UserList can be extended and utilized to meet specific requirements.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** BoundedList
+
+Limits the list to a maximum number of elements.
+
+```python
+from collections import UserList
+
+class BoundedList(UserList):
+    def __init__(self, *args, max_length=10, **kwargs):
+        self.max_length = max_length
+        super().__init__(*args, **kwargs)
+
+    def append(self, item):
+        if len(self.data) < self.max_length:
+            super().append(item)
+        else:
+            raise ValueError("List has reached its maximum length")
+
+bounded_list = BoundedList(max_length=2)
+bounded_list.append(1)
+bounded_list.append(2)
+# bounded_list.append(3)  # This would raise a ValueError
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** UniqueList
+
+Ensures all elements in the list are unique.
+
+```python
+from collections import UserList
+
+class UniqueList(UserList):
+    def append(self, item):
+        if item not in self.data:
+            super().append(item)
+        else:
+            raise ValueError("Item already exists in the list")
+
+unique_list = UniqueList()
+unique_list.append(1)
+unique_list.append(2)
+# unique_list.append(1)  # This would raise a ValueError
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** SortedList
+
+Automatically keeps the list sorted.
+
+```python
+from collections import UserList
+
+class SortedList(UserList):
+    def append(self, item):
+        super().append(item)
+        self.data.sort()
+
+sorted_list = SortedList()
+sorted_list.append(3)
+sorted_list.append(1)
+sorted_list.append(2)
+print(sorted_list)  # Output: [1, 2, 3]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Typed List
+
+Enforces that all elements in the list are of a specific type.
+
+```python
+from collections import UserList
+
+class TypedList(UserList):
+    def __init__(self, type_, *args, **kwargs):
+        self.type_ = type_
+        super().__init__(*args, **kwargs)
+
+    def append(self, item):
+        if not isinstance(item, self.type_):
+            raise TypeError(f"Item must be of type {self.type_.__name__}")
+        super().append(item)
+
+typed_list = TypedList(int)
+typed_list.append(1)
+# typed_list.append('string')  # This would raise a TypeError
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** LoggingList
+
+Logs every addition to the list.
+
+```python
+from collections import UserList
+
+class LoggingList(UserList):
+    def append(self, item):
+        print(f"Appending {item}")
+        super().append(item)
+
+logging_list = LoggingList()
+logging_list.append("item")  # Output: Appending item
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** PrependList
+
+Adds a method to prepend items to the list.
+
+```python
+from collections import UserList
+
+class PrependList(UserList):
+    def prepend(self, item):
+        self.data.insert(0, item)
+
+prepend_list = PrependList()
+prepend_list.prepend(1)
+prepend_list.append(2)
+print(prepend_list)  # Output: [1, 2]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** CallbackList
+
+Executes a callback function every time an item is added.
+
+```python
+from collections import UserList
+
+class CallbackList(UserList):
+    def __init__(self, *args, callback=None, **kwargs):
+        self.callback = callback
+        super().__init__(*args, **kwargs)
+
+    def append(self, item):
+        if callable(self.callback):
+            self.callback(item)
+        super().append(item)
+
+callback_list = CallbackList(callback=lambda x: print(f"Added {x}"))
+callback_list.append(1)  # Output: Added 1
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** SquaringList
+
+Automatically squares numbers when they are added.
+
+```python
+from collections import UserList
+
+class SquaringList(UserList):
+    def append(self, item):
+        if isinstance(item, int):
+            item = item ** 2
+        super().append(item)
+
+squaring_list = SquaringList()
+squaring_list.append(3)
+print(squaring_list)  # Output: [9]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** FilteredList
+
+Only appends items that satisfy a certain condition.
+
+```python
+from collections import UserList
+
+class FilteredList(UserList):
+    def append(self, item):
+        if item > 0:
+            super().append(item)
+
+filtered_list = FilteredList()
+filtered_list.append(-1)
+filtered_list.append(2)
+print(filtered_list)  # Output: [2]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** MultiAppendList
+
+Appends multiple items at once.
+
+```python
+from collections import UserList
+
+class MultiAppendList(UserList):
+    def extend(self, items):
+        for item in items:
+            if item not in self.data:
+                super().append(item)
+
+multi_append_list = MultiAppendList()
+multi_append_list.extend([1, 2, 3, 2])
+print(multi_append_list)  # Output: [1, 2, 3]
+```
+
+
+
+#### UserString
+
+The `UserString` acts as a wrapper around string objects, facilitating the subclassing of strings to alter or extend their behavior.
+
+For example:
+
+```python
+from collections import UserString
+
+class MyString(UserString):
+    # Custom behavior can be added here
+    pass
+```
+
+Go back to [Contents](#contents).
+
+
+
+##### More 10 UserString examples
+
+Here is the complete Python code that demonstrates the 10 examples using UserString along with how to use them.
+
+Go back to [Contents](#contents).
+
+```python
+from collections import UserString
+
+# Example 1: AppendSuffixString
+class AppendSuffixString(UserString):
+    def __init__(self, seq, suffix):
+        super().__init__(seq)
+        self.suffix = suffix
+
+    def __add__(self, other):
+        return AppendSuffixString(super().__add__(other), self.suffix) + self.suffix
+
+# Example 2: PrependString
+class PrependString(UserString):
+    def __init__(self, seq, prefix):
+        super().__init__(prefix + seq)
+
+# Example 3: UpperCaseString
+class UpperCaseString(UserString):
+    def __init__(self, seq):
+        super().__init__(seq.upper())
+
+# Example 4: MaskString
+class MaskString(UserString):
+    def __init__(self, seq, mask_char='*'):
+        masked = mask_char * len(seq)
+        super().__init__(masked)
+
+# Example 5: RepeatString
+class RepeatString(UserString):
+    def __init__(self, seq, times):
+        repeated = seq * times
+        super().__init__(repeated)
+
+# Example 6: ReverseString
+class ReverseString(UserString):
+    def __init__(self, seq):
+        reversed_seq = seq[::-1]
+        super().__init__(reversed_seq)
+
+# Example 7: ReplaceVowelsString
+class ReplaceVowelsString(UserString):
+    def __init__(self, seq, replacement='*'):
+        replaced = ''.join([replacement if c in 'aeiouAEIOU' else c for c in seq])
+        super().__init__(replaced)
+
+# Example 8: CamelCaseString
+class CamelCaseString(UserString):
+    def __init__(self, seq):
+        camel_case = ''.join(word.capitalize() for word in seq.split('_'))
+        super().__init__(camel_case)
+
+# Example 9: ConcatenateString
+class ConcatenateString(UserString):
+    def __add__(self, other):
+        return ConcatenateString(super().__add__(other))
+
+# Example 10: NumericString
+class NumericString(UserString):
+    def __init__(self, seq):
+        numeric = ''.join(filter(str.isdigit, seq))
+        super().__init__(numeric)
+
+# Using the classes
+if __name__ == "__main__":
+    # AppendSuffixString usage
+    append_suffix_instance = AppendSuffixString("Hello", "World")
+    print(append_suffix_instance)  # Output: Hello
+
+    # PrependString usage
+    prepend_instance = PrependString("Hello", "World")
+    print(prepend_instance)  # Output: WorldHello
+
+    # UpperCaseString usage
+    upper_case_instance = UpperCaseString("hello")
+    print(upper_case_instance)  # Output: HELLO
+
+    # MaskString usage
+    mask_instance = MaskString("password")
+    print(mask_instance)  # Output: ********
+
+    # RepeatString usage
+    repeat_instance = RepeatString("ha", 3)
+    print(repeat_instance)  # Output: hahaha
+
+    # ReverseString usage
+    reverse_instance = ReverseString("hello")
+    print(reverse_instance)  # Output: olleh
+
+    # ReplaceVowelsString usage
+    replace_vowels_instance = ReplaceVowelsString("hello")
+    print(replace_vowels_instance)  # Output: h*ll*
+
+    # CamelCaseString usage
+    camel_case_instance = CamelCaseString("hello_world")
+    print(camel_case_instance)  # Output: HelloWorld
+
+    # ConcatenateString usage
+    concatenate_instance = ConcatenateString("Hello") + " World"
+    print(concatenate_instance)  # Output: Hello World
+
+    # NumericString usage
+    numeric_instance = NumericString("a1b2c3")
+    print(numeric_instance)  # Output: 123
+```
 
 ## Strings
 
