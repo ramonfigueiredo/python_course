@@ -24,6 +24,9 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    7. [Input and Output Functions](#input-and-output-functions)
       1. [The print function](#the-print-function)
       2. [The input function](#the-input-function)
+   8. [The Python main function](#the-python-main-function)
+      1. [When to Use It](#when-to-use-it)
+      2. [Do You Need to Use It](#do-you-need-to-use-it)
 3. [Conditional Statements](#conditional-statements)
    1. [More 10 conditional statements examples](#10-conditional-statements-examples)
 4. [Loops](#loops)
@@ -802,6 +805,57 @@ Be cautious with `eval()` as it can execute arbitrary code. It's typically best 
 Go back to [Contents](#contents).
 
 These examples demonstrate the versatility of the `input()` function in Python for interacting with users and processing their input in various formats. Always validate and sanitize user input to ensure your program behaves as expected and securely.
+
+Go back to [Contents](#contents).
+
+
+
+### The Python main function
+
+In Python, the concept of a "main" function is not required in the same way it is in some other programming languages like C or Java. 
+
+However, it is a common practice to use a main function as the entry point for a program. This is done for code organization, readability, and maintainability. 
+
+The main function in Python is typically defined by the user, and it encapsulates the primary functionality of the script.
+
+Here's how you can define and use a main function in Python:
+
+1. **Define the main function:** You simply define a function named `main()` that contains the code you wish to execute.
+2. **Call the main function:** To ensure that your `main()` function runs only when your script is executed directly (and not when imported as a module in another script), you use the `if __name__ == "__main__":` idiom at the bottom of your script to call the main() function.
+
+Example:
+
+```python
+def main():
+    # Your main code here
+    print("Hello, world!")
+
+if __name__ == "__main__":
+    main()
+```
+
+Go back to [Contents](#contents).
+
+
+#### When to Use It
+
+- **Organization:**
+  - When your script starts to get complex, having a main function helps keep your code organized and readable. It serves as the entry point and makes it clear where execution begins.
+- **Reusability:** 
+  - If your script is also intended to be imported as a module in other scripts, using a main function prevents the script's code from running immediately upon import. Only the code within the main function runs when the script is executed directly.
+- **Testing:** 
+  - Separating your code into functions, including a main function, makes it easier to test individual parts of your code.
+
+Go back to [Contents](#contents).
+
+
+#### Do You Need to Use It
+
+While it's not a strict requirement in Python to define and use a main function, it is considered good practice, especially for larger or more complex scripts. 
+- It helps with code organization and ensures that your script can be both run directly and safely imported by other scripts without unintended side effects.
+
+In summary, you should use a main function when your script grows in complexity and you need to maintain clarity and reusability. 
+- For very simple or short scripts, it might be overkill and not strictly necessary.
 
 Go back to [Contents](#contents).
 
