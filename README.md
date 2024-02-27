@@ -7217,16 +7217,629 @@ Go back to [Contents](#contents).
 
 ## Unit Tests in Python
 
+Unit testing is a powerful tool to ensure the correctness of your code. 
+- Python comes with a built-in module called `unittest` for unit testing. 
+- The `unittest` module in Python provides all the necessary functionality to write and run tests, helping you catch bugs early and maintain code quality. 
+- A good unit test should be isolated, repeatable, and check a single aspect of the function under test.
+
+Creating unit tests in Python is essential for ensuring that your code behaves as expected and for catching bugs early in the development process. 
+
 Go back to [Contents](#contents).
 
+
+Here’s how you can create unit tests in Python:
+
+
+**Step 1:** Import the unittest Module
+
+The `unittest` module provides a set of tools for constructing and running tests. 
+
+To use it, start by importing it in your test file:
+
+```python
+import unittest
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Step 2:** Write a Test Case
+
+A test case is a class that inherits from `unittest.TestCase`. 
+
+This class includes methods to set up, tear down, and define the tests.
+
+Here's an example of a simple test case:
+
+```python
+import unittest
+
+def my_function(x, y):
+    return x + y
+
+class TestMyFunction(unittest.TestCase):
+
+    def test_addition(self):
+        result = my_function(1, 2)
+        self.assertEqual(result, 3)
+```
+
+In this example, `test_addition` is a method that tests the functionality of my_function. 
+
+The `assertEqual` method is used to check that the result of `my_function(1, 2)` is equal to 3.
+
+Go back to [Contents](#contents).
+
+
+
+**Step 3:** SetUp and TearDown
+
+For more complex tests, you might need to set up some initial conditions. 
+
+The `setUp` and `tearDown` methods allow you to define instructions that will be executed before and after each test method, respectively.
+
+```python
+import unittest
+
+class TestMyFunction(unittest.TestCase):
+
+    def setUp(self):
+        # Code to set up test environment
+        pass
+
+    def tearDown(self):
+        # Code to clean up after the test
+        pass
+
+    def test_addition(self):
+        # Test code
+        pass
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Step 4:** Writing Multiple Test Methods
+
+A single test case class can contain multiple test methods. 
+
+Each method should test a specific aspect of your function's behavior.
+
+```python
+import unittest
+
+class TestMyFunction(unittest.TestCase):
+
+    def test_addition(self):
+        # Test addition
+        pass
+
+    def test_subtraction(self):
+        # Test subtraction
+        pass
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Step 5:** Running the Tests
+
+You can run your tests in several ways:
+
+* **Running from the Command Line:** 
+
+Navigate to the directory containing your test file and run:
+
+```bash
+python -m unittest test_file.py
+```
+
+* **Using** `if __name__ == '__main__'`:
+
+If you include the following code at the end of your test file, you can run the test file directly:
+
+```python
+import unittest
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Step 6:** Additional Assertions
+
+The `unittest` module provides a variety of assertion methods such as `assertEqual`, `assertTrue`, `assertFalse`, `assertRaises`, etc., to check for various conditions.
+
+Go back to [Contents](#contents).
+
+
+**Step 7:** Organizing Test Suites
+
+For larger projects, organize your tests into test suites:
+
+```python
+import unittest
+
+def suite():
+    suite = unittest.TestSuite()
+    suite.addTest(TestMyFunction('test_addition'))
+    suite.addTest(TestMyFunction('test_subtraction'))
+    return suite
+```
+
+Go back to [Contents](#contents).
+
+
+
 ### unittest
+
+Here are 10 examples of Python unit tests using the unittest framework. Each example demonstrates testing a different aspect of code functionality.
+
+Go back to [Contents](#contents).
+
+
+
+**Example 1:** Testing Equality
+
+```python
+import unittest
+
+def add(a, b):
+    return a + b
+
+class TestMathOperations(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(1, 2), 3)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Testing Equality
+
+```python
+import unittest
+
+def subtract(a, b):
+    return a - b
+
+class TestMathOperations(unittest.TestCase):
+    def test_subtract(self):
+        self.assertNotEqual(subtract(5, 3), 1)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Testing for True
+
+```python
+import unittest
+
+def is_even(number):
+    return number % 2 == 0
+
+class TestNumber(unittest.TestCase):
+    def test_is_even(self):
+        self.assertTrue(is_even(4))
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Testing for False
+
+```python
+import unittest
+
+def is_prime(number):
+    if number <= 1:
+        return False
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+    return True
+
+class TestNumber(unittest.TestCase):
+    def test_is_prime(self):
+        self.assertFalse(is_prime(4))
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Testing for Exceptions
+
+```python
+import unittest
+
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Can not divide by zero")
+    return a / b
+
+class TestMathOperations(unittest.TestCase):
+    def test_divide_throws_exception(self):
+        with self.assertRaises(ValueError):
+            divide(10, 0)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Testing with a SetUp Method
+
+```python
+import unittest
+
+class TestListMethods(unittest.TestCase):
+
+    def setUp(self):
+        self.sample_list = [1, 2, 3]
+
+    def test_append(self):
+        self.sample_list.append(4)
+        self.assertEqual(self.sample_list, [1, 2, 3, 4])
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Testing Instance Types
+
+```python
+import unittest
+
+class MyObject:
+    pass
+
+class TestMyObject(unittest.TestCase):
+    def test_instance(self):
+        obj = MyObject()
+        self.assertIsInstance(obj, MyObject)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Testing String Contains
+
+```python
+import unittest
+
+class TestStringMethods(unittest.TestCase):
+    def test_string_contains(self):
+        self.assertIn("hello", "hello world")
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Testing List Length
+
+```python
+import unittest
+
+class TestListMethods(unittest.TestCase):
+    def test_list_length(self):
+        sample_list = [1, 2, 3]
+        self.assertEqual(len(sample_list), 3)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Testing Dictionary Keys
+
+```python
+import unittest
+
+class TestDictionaryMethods(unittest.TestCase):
+    def test_key_in_dictionary(self):
+        sample_dict = {"name": "John", "age": 30}
+        self.assertIn("name", sample_dict)
+
+if __name__ == '__main__':
+    unittest.main()
+```
 
 Go back to [Contents](#contents).
 
 ### pytest
 
+The `pytest` is a popular testing framework for Python that offers a more _pythonic_ way of writing tests compared to the built-in `unittest` framework.
+- The pytest official website: https://docs.pytest.org/en/8.0.x/
+
+It is known for its simplicity, scalability, and ability to handle complex test suites. Here's how you can create unit tests using pytest:
+
 Go back to [Contents](#contents).
 
+
+**Step 1:** Install pytest
+
+First, you need to install `pytest`. You can do this using pip:
+
+```bash
+pip install pytest
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Step 2:** Writing pytest Test Cases
+
+The `pytest` test cases are usually simpler than unittest cases. 
+- You don't need to create a class that inherits from anything; 
+- simply write functions that start with test_.
+
+Here's a basic example:
+
+```python
+# test_example.py
+
+def add(a, b):
+    return a + b
+
+def test_add():
+    assert add(2, 3) == 5
+    assert add(1, 1) != 3
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Step 3:** Running Tests with pytest
+
+To run your tests, simply navigate to the directory that contains your test file and run pytest from the command line:
+
+```bash
+pytest
+```
+
+The `pytest` will automatically discover and run all files of the format `test_*.py` or `*_test.py` in the current directory and its subdirectories.
+
+
+Go back to [Contents](#contents).
+
+
+- Parameterized Tests
+
+The `pytest` allows you to easily test different input values using the `@pytest.mark.parametrize` decorator:
+
+```python
+import pytest
+
+@pytest.mark.parametrize("input1, input2, expected", [(3, 5, 8), (2, 4, 6)])
+def test_add(input1, input2, expected):
+    assert add(input1, input2) == expected
+```
+
+Go back to [Contents](#contents).
+
+
+
+- Fixtures
+
+Fixtures in pytest are a way of providing data, test doubles, or state setup to your tests. Fixtures are created using the @pytest.fixture decorator:
+
+```python
+@pytest.fixture
+def sample_list():
+    return [1, 2, 3, 4, 5]
+
+def test_list_length(sample_list):
+    assert len(sample_list) == 5
+```
+
+Go back to [Contents](#contents).
+
+
+
+- Handling Exceptions
+
+To test exceptions with `pytest`, you can use `pytest.raises`:
+
+```python
+def test_divide_by_zero():
+    with pytest.raises(ZeroDivisionError):
+        divide(1, 0)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Step 4:** Viewing Test Results
+
+When you run tests with pytest, it gives you a detailed report on which tests passed and which failed, along with the reason for the failures.
+
+Here are 10 examples of unit tests using the pytest library in Python. Each example tests a specific function or behavior:
+
+Go back to [Contents](#contents).
+
+
+
+#### More pytest Examples
+
+Here are 10 examples of unit tests using the pytest library in Python. 
+
+Each example tests a specific function or behavior.
+
+Go back to [Contents](#contents).
+
+
+**Example 1:** Testing a Simple Addition Function
+
+```python
+# Function to test
+def add(a, b):
+    return a + b
+
+# Test function
+def test_add():
+    assert add(3, 4) == 7
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Testing String Concatenation
+
+```python
+def concat_strings(a, b):
+    return a + b
+
+def test_concat_strings():
+    assert concat_strings("Hello", "World") == "HelloWorld"
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Testing for an Exception
+
+```python
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+
+def test_divide_exception():
+    with pytest.raises(ValueError):
+        divide(10, 0)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Testing a Function That Reverses a List
+
+```python
+def reverse_list(lst):
+    return lst[::-1]
+
+def test_reverse_list():
+    assert reverse_list([1, 2, 3]) == [3, 2, 1]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Parameterized Test for Multiplication
+
+```python
+import pytest
+
+def multiply(a, b):
+    return a * b
+
+@pytest.mark.parametrize("a, b, expected", [(2, 3, 6), (4, 5, 20), (6, 7, 42)])
+def test_multiply(a, b, expected):
+    assert multiply(a, b) == expected
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Testing a Dictionary Lookup Function
+
+```python
+def get_by_key(dct, key):
+    return dct.get(key)
+
+def test_get_by_key():
+    assert get_by_key({"a": 1, "b": 2}, "a") == 1
+    assert get_by_key({"a": 1, "b": 2}, "c") is None
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Testing a Function That Checks for Even Numbers
+
+```python
+def is_even(num):
+    return num % 2 == 0
+
+def test_is_even():
+    assert is_even(4)
+    assert not is_even(5)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Testing for Membership in a List
+
+```python
+def test_membership():
+    lst = [1, 2, 3, 4]
+    assert 3 in lst
+    assert 5 not in lst
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Testing a Function That Capitalizes a Word
+
+```python
+def capitalize(word):
+    return word.capitalize()
+
+def test_capitalize():
+    assert capitalize("python") == "Python"
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Testing the Length of a String Returned by a Function
+
+```python
+def get_greeting(name):
+    return f"Hello, {name}"
+
+def test_get_greeting_length():
+    assert len(get_greeting("Python")) == 12
+```
+
+Go back to [Contents](#contents).
 
 
 ## Python Scripting and Programming
