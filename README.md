@@ -8738,6 +8738,139 @@ Key features of Flask include:
 
 Go back to [Contents](#contents).
 
+#### Flask Examples
+
+**Example 1:** Basic Flask Application
+
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+**Example 2:** Using Route Parameters
+
+```python
+@app.route('/user/<username>')
+def show_user_profile(username):
+    return f'User {username}'
+```
+
+**Example 3:** Rendering Templates
+
+```python
+from flask import render_template
+
+@app.route('/hello/<name>')
+def hello(name):
+    return render_template('hello.html', name=name)
+```
+
+**Example 4:** Handling POST Requests
+
+```python
+from flask import request
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        return do_the_login()
+    else:
+        return show_the_login_form()
+```
+
+**Example 5:** Redirects and Errors
+
+```python
+from flask import abort, redirect, url_for
+
+@app.route('/redirect')
+def redirect_example():
+    return redirect(url_for('hello_world'))
+
+@app.route('/error')
+def error_example():
+    abort(404)
+```
+
+**Example 6:** Creating a RESTful API
+
+```python
+from flask import jsonify
+
+@app.route('/api/data')
+def get_data():
+    return jsonify({'data': 'Here is some data'})
+```
+
+**Example 7:** File Upload
+
+```python
+from flask import request
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('/path/to/uploaded/file')
+```
+
+**Example 8:** Working with Cookies
+
+```python
+from flask import request, make_response
+
+@app.route('/setcookie')
+def setcookie():
+    resp = make_response('Setting cookie!')
+    resp.set_cookie('mycookie', 'cookie value')
+    return resp
+
+@app.route('/getcookie')
+def getcookie():
+    cookie = request.cookies.get('mycookie')
+    return f'Cookie value: {cookie}'
+```
+
+**Example 9:** Session Management
+
+```python
+from flask import session
+
+@app.route('/setsession')
+def setsession():
+    session['username'] = 'username'
+    return 'Session set'
+
+@app.route('/getsession')
+def getsession():
+    return session.get('username', 'Not set')
+```
+
+**Example 10:** Using Flask Extensions (Flask-SQLAlchemy)
+
+```python
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+```
+
 ### Django
 
 Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
