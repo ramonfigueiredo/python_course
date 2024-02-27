@@ -8560,6 +8560,129 @@ Key features of Matplotlib include:
 
 Go back to [Contents](#contents).
 
+#### Matplotlib Examples
+
+**Example 1:** Basic Line Plot
+
+```python
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+plt.plot(x, y)
+plt.xlabel('x-axis')
+plt.ylabel('y-axis')
+plt.title('Basic Line Plot')
+plt.show()
+```
+
+**Example 2:** Bar Chart
+
+```python
+categories = ['Category A', 'Category B', 'Category C']
+values = [3, 7, 2]
+
+plt.bar(categories, values)
+plt.title('Bar Chart')
+plt.show()
+```
+
+**Example 3:** Histogram
+
+```python
+import numpy as np
+
+data = np.random.normal(0, 1, 1000)
+
+plt.hist(data, bins=30)
+plt.title('Histogram')
+plt.show()
+```
+
+**Example 4:** Scatter Plot
+
+```python
+x = np.random.rand(50)
+y = np.random.rand(50)
+
+plt.scatter(x, y)
+plt.title('Scatter Plot')
+plt.show()
+```
+
+**Example 5:** Pie Chart
+
+```python
+sizes = [25, 35, 20, 20]
+labels = ['Apples', 'Bananas', 'Grapes', 'Oranges']
+
+plt.pie(sizes, labels=labels, autopct='%1.1f%%')
+plt.axis('equal')
+plt.title('Pie Chart')
+plt.show()
+```
+
+**Example 6:** Error Bars
+
+```python
+x = np.arange(0.1, 4, 0.5)
+y = np.exp(-x)
+error = 0.1 + 0.2 * x
+
+plt.errorbar(x, y, yerr=error, fmt='-o')
+plt.title('Error Bars')
+plt.show()
+```
+
+**Example 7:** Subplots
+
+```python
+fig, axs = plt.subplots(2)
+x = np.arange(0, 2, 0.01)
+
+axs[0].plot(x, np.sin(2 * np.pi * x))
+axs[1].plot(x, np.cos(2 * np.pi * x))
+plt.show()
+```
+
+**Example 8:** 3D Plot
+
+```python
+from mpl_toolkits.mplot3d import Axes3D
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+z = np.linspace(-5, 5, 100)
+ax.plot(x, y, z)
+plt.show()
+```
+
+**Example 9:** Heatmap
+
+```python
+data = np.random.rand(10, 10)
+plt.imshow(data, cmap='hot', interpolation='nearest')
+plt.colorbar()
+plt.show()
+```
+
+**Example 10:** Contour Plot
+
+```python
+x = np.linspace(-3.0, 3.0, 100)
+y = np.linspace(-3.0, 3.0, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+plt.contourf(X, Y, Z, cmap='viridis')
+plt.colorbar()
+plt.show()
+```
+
 ### Seaborn
 
 Seaborn is a Python data visualization library based on Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. 
