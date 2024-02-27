@@ -7484,10 +7484,6 @@ print(calculate_average('data.csv', 'price'))
 
 Go back to [Contents](#contents).
 
-### Best Practices
-
-Go back to [Contents](#contents).
-
 
 
 ## Python Libraries
