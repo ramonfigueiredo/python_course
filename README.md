@@ -3902,6 +3902,8 @@ if __name__ == "__main__":
     print(numeric_instance)  # Output: 123
 ```
 
+
+
 ## Strings
 
 In Python, a string is a sequence of characters enclosed within quotes. 
@@ -7842,6 +7844,7 @@ def test_get_greeting_length():
 Go back to [Contents](#contents).
 
 
+
 ## Python Scripting and Programming
 
 Let's explore the nuances of scripting versus programming and delve into how Python can be used for automating everyday tasks, making life easier and more productive.
@@ -9022,6 +9025,7 @@ Key features of Keras include:
 4. **Works with Python:** No separate models configuration files in a declarative format. Models are described in Python code.
 
 Go back to [Contents](#contents).
+
 
 
 ## Conclusion
