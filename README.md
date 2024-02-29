@@ -8213,6 +8213,12 @@ arr = np.array([1, 2, 3, 4, 5])
 print(arr)
 ```
 
+Output:
+
+```
+[1 2 3 4 5]
+```
+
 Go back to [Contents](#contents).
 
 
@@ -8229,6 +8235,13 @@ print("Addition:", arr1 + arr2)
 print("Multiplication:", arr1 * arr2)
 ```
 
+Output:
+
+```
+Addition: [5 7 9]
+Multiplication: [ 4 10 18]
+```
+
 Go back to [Contents](#contents).
 
 
@@ -8243,16 +8256,31 @@ reshaped_arr = arr.reshape((2, 3))
 print(reshaped_arr)
 ```
 
+Output:
+
+```
+[[1 2 3]
+ [4 5 6]]
+```
+
 Go back to [Contents](#contents).
 
 
 **Example 4:** Slicing Arrays
 
 ```python
+import numpy as np
+
 # Slicing an array
 arr = np.array([1, 2, 3, 4, 5, 6])
 sliced_arr = arr[1:5]
 print(sliced_arr)
+```
+
+Output:
+
+``` 
+[2 3 4 5]
 ```
 
 Go back to [Contents](#contents).
@@ -8271,6 +8299,13 @@ result = np.dot(A, B)
 print(result)
 ```
 
+Output:
+
+```
+[[19 22]
+ [43 50]]
+```
+
 Go back to [Contents](#contents).
 
 
@@ -8285,6 +8320,13 @@ inverse_matrix = np.linalg.inv(matrix)
 print(inverse_matrix)
 ```
 
+Output:
+
+```
+[[-2.   1. ]
+ [ 1.5 -0.5]]
+```
+
 Go back to [Contents](#contents).
 
 
@@ -8296,6 +8338,14 @@ import numpy as np
 # Generating random numbers
 random_arr = np.random.rand(5)
 print(random_arr)
+```
+
+Output:
+
+Note: Your output will be different random numbers
+
+```
+[0.99451184 0.11360742 0.12704345 0.4183472  0.9458018 ]
 ```
 
 Go back to [Contents](#contents).
@@ -8313,15 +8363,31 @@ print("Median:", np.median(arr))
 print("Standard Deviation:", np.std(arr))
 ```
 
+Output:
+
+```
+Mean: 3.0
+Median: 3.0
+Standard Deviation: 1.4142135623730951
+```
+
 Go back to [Contents](#contents).
 
 
 **Example 9:** Boolean Indexing
 
 ```python
+import numpy as np
+
 # Boolean indexing
 arr = np.array([1, 2, 3, 4, 5])
 print(arr[arr > 3])
+```
+
+Output:
+
+```
+[4 5]
 ```
 
 Go back to [Contents](#contents).
@@ -8341,6 +8407,16 @@ h_stack = np.hstack((arr1, arr2))
 
 print("Vertical Stack:\n", v_stack)
 print("Horizontal Stack:\n", h_stack)
+```
+
+Output:
+
+```
+Vertical Stack:
+ [[1 2 3]
+ [4 5 6]]
+Horizontal Stack:
+ [1 2 3 4 5 6]
 ```
 
 Go back to [Contents](#contents).
