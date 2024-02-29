@@ -132,6 +132,8 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
        1. [Steps to install and use the SciPy library](#steps-to-install-and-use-the-scipy-library)
        2. [SciPy Examples](#scipy-examples)
     3. [Pandas](#pandas)
+       1. [Steps to install and use the Pandas library](#steps-to-install-and-use-the-pandas-library)
+       2. [Pandas Examples](#pandas-examples)
     4. [Matplotlib](#matplotlib)
     5. [Seaborn](#seaborn)
     6. [Plotly](#plotly)
@@ -8784,7 +8786,60 @@ The key features of Pandas include:
 
 Go back to [Contents](#contents).
 
+
+
+#### Steps to install and use the Pandas library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Pandas (if it is not installed)
+
+```bash
+pip install pandas
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
 #### Pandas Examples
+
 
 **Example 1:** Creating a DataFrame
 
@@ -8792,89 +8847,317 @@ Go back to [Contents](#contents).
 import pandas as pd
 
 # Creating a DataFrame from a dictionary
-data = {'Name': ['John', 'Anna', 'Peter', 'Linda'],
-        'Age': [28, 34, 29, 32]}
+data = {'Name': ['John', 'Mary', 'Anna', 'Peter', 'Linda'],
+        'Age': [28, 15, 34, 29, 32]}
 df = pd.DataFrame(data)
 print(df)
+# Save data frame to a CSV file
+df.to_csv('data/data_name_age.csv', index=False)
 ```
+
+Output:
+
+```
+    Name  Age
+0   John   28
+1   Mary   15
+2   Anna   34
+3  Peter    9
+4  Linda   32
+```
+
+Go back to [Contents](#contents).
+
 
 **Example 2:** Reading Data from a CSV File
 
 ```python
+import pandas as pd
+
 # Reading data from a CSV file into a DataFrame
-df = pd.read_csv('path/to/data.csv')
+df = pd.read_csv('data/data_name_age_salary.csv')
 print(df.head())
 ```
+
+Output:
+
+```
+    Name  Age    Salary
+0   John   28   80000.0
+1   Mary   15       0.0
+2   Anna   34   90000.0
+3  Peter    9       NaN
+4  Linda   32  100000.0
+```
+
+Go back to [Contents](#contents).
+
 
 **Example 3:** Selecting Columns
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_age_salary.csv')
+
+print(df, '\n')
+
 # Selecting a single column
 ages = df['Age']
-print(ages)
+print(ages, '\n')
 
 # Selecting multiple columns
 subset = df[['Name', 'Age']]
-print(subset)
+print(subset, '\n')
 ```
+
+Output:
+
+```
+    Name  Age    Salary
+0   John   28   80000.0
+1   Mary   15       0.0
+2   Anna   34   90000.0
+3  Peter    9       NaN
+4  Linda   32  100000.0 
+
+0    28
+1    15
+2    34
+3     9
+4    32
+Name: Age, dtype: int64 
+
+    Name  Age
+0   John   28
+1   Mary   15
+2   Anna   34
+3  Peter    9
+4  Linda   32
+```
+
+Go back to [Contents](#contents).
+
 
 **Example 4:** Filtering Rows
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_age.csv')
+
+print(df, '\n')
+
 # Filtering rows based on a condition
 adults = df[df['Age'] >= 18]
 print(adults)
 ```
 
+Output:
+
+```
+    Name  Age
+0   John   28
+1   Mary   15
+2   Anna   34
+3  Peter    9
+4  Linda   32 
+
+    Name  Age
+0   John   28
+2   Anna   34
+4  Linda   32
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 5:** Data Aggregation (Group By)
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_and_salary_with_duplicate_names.csv')
+
+print(df, '\n')
+
 # Grouping and aggregating data
-average_age = df.groupby('Name')['Age'].mean()
+average_age = df.groupby('Name')['Salary'].mean()
 print(average_age)
 ```
+
+Output:
+
+```
+   Name  Salary
+0  John   80000
+1  Mary       0
+2  Anna   90000
+3  John   20000
+4  Anna  100000 
+
+Name
+Anna    95000.0
+John    50000.0
+Mary        0.0
+Name: Salary, dtype: float64
+```
+
+Go back to [Contents](#contents).
+
 
 **Example 6:** Handling Missing Data
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_age_salary_missing_values.csv')
+
+print(df, '\n')
+
 # Filling missing values
 df.fillna(value=0, inplace=True)
 
+print(df, '\n')
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_age_salary_missing_values.csv')
+
+print(df, '\n')
+
 # Dropping rows with missing values
 df.dropna(inplace=True)
+
+print(df)
 ```
+
+Output:
+
+```
+    Name   Age    Salary
+0   John  28.0   80000.0
+1    NaN   NaN       NaN
+2   Anna  34.0       NaN
+3  Peter   9.0       NaN
+4  Linda  32.0  100000.0 
+
+    Name   Age    Salary
+0   John  28.0   80000.0
+1      0   0.0       0.0
+2   Anna  34.0       0.0
+3  Peter   9.0       0.0
+4  Linda  32.0  100000.0 
+
+    Name   Age    Salary
+0   John  28.0   80000.0
+1    NaN   NaN       NaN
+2   Anna  34.0       NaN
+3  Peter   9.0       NaN
+4  Linda  32.0  100000.0 
+
+    Name   Age    Salary
+0   John  28.0   80000.0
+4  Linda  32.0  100000.0
+```
+
+Go back to [Contents](#contents).
+
 
 **Example 7:** Merging DataFrames
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_age.csv')
+
 # Merging two DataFrames
 other_data = pd.DataFrame({'Name': ['John', 'Anna'], 'Salary': [70000, 80000]})
 merged_df = pd.merge(df, other_data, on='Name')
 print(merged_df)
 ```
 
+Output:
+
+```
+   Name  Age  Salary
+0  John   28   70000
+1  Anna   34   80000
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 8:** Sorting Data
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_age.csv')
+
 # Sorting the DataFrame by a column
 sorted_df = df.sort_values(by='Age', ascending=False)
 print(sorted_df)
 ```
 
+Output:
+
+```
+    Name  Age
+2   Anna   34
+4  Linda   32
+0   John   28
+1   Mary   15
+3  Peter    9
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 9:** Pivot Tables
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_and_salary_with_duplicate_names.csv')
+
 # Creating a pivot table
-pivot = df.pivot_table(values='Age', index='Name', aggfunc='mean')
+pivot = df.pivot_table(values='Salary', index='Name', aggfunc='mean')
 print(pivot)
 ```
+
+Output:
+
+```
+       Salary
+Name         
+Anna  95000.0
+John  50000.0
+Mary      0.0
+```
+
+Go back to [Contents](#contents).
+
 
 **Example 10:** Writing to an Excel File
 
 ```python
+import pandas as pd
+
+# Reading data from a CSV file into a DataFrame
+df = pd.read_csv('data/data_name_age.csv')
+
 # Writing DataFrame to an Excel file
-df.to_excel('output.xlsx', index=False)
+df.to_excel('data/data_name_age.xlsx', index=False)
 ```
+
+Go back to [Contents](#contents).
 
 
 

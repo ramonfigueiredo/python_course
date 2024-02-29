@@ -2,6 +2,7 @@ numpy
 scipy
 imageio
 pandas
+openpyxl
 matplotlib
 seaborn
 plotly
