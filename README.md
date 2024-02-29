@@ -8166,13 +8166,13 @@ source venv/bin/activate
 pip install --upgrade pip
 ```
 
-* Install Numpy
+* Install Numpy (if it is not installed)
 
 ```bash
 pip install numpy
 ```
 
-* List the virtual environment packages
+* List the virtual environment packages (if you want to list the packages)
 
 ```bash
 pip list
@@ -8187,7 +8187,7 @@ pip list
 python main.py
 ```
 
-* Deactivate the virtual environment
+* To deactivate the virtual environment, type:
 
 ```bash
 deactivate
