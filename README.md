@@ -2434,7 +2434,6 @@ print(dq)  # Output: deque([5, 4, 3, 2, 1])
 Go back to [Contents](#contents).
 
 
-
 #### ChainMap
 
 The `ChainMap` is used to combine multiple dictionaries or mappings into a single view. 
@@ -3529,6 +3528,7 @@ multi_dict = MultiDict({'a': 1})
 multi_dict.add_dict({'b': 2, 'c': 3})
 print(multi_dict)  # Output: {'a': 1, 'b': 2, 'c': 3}
 ```
+
 
 #### UserList
 
