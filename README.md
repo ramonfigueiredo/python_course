@@ -2137,7 +2137,7 @@ Color = namedtuple('Color', 'red green blue')
 color = Color(55, 155, 255)
 
 r, g, b = color
-print("R:", r, "G:", g, "B:", b)
+print("R:", r, "G:", g, "B:", b) # Output: R: 55 G: 155 B: 255
 ```
 
 Go back to [Contents](#contents).
@@ -2191,7 +2191,7 @@ apple_stock = Stock('AAPL', 150, high=180, low=120)
 
 # Updating the current price
 apple_stock = apple_stock._replace(current=155)
-print(apple_stock)
+print(apple_stock) # Output: Stock(symbol='AAPL', current=155, high=180, low=120)
 ```
 
 Go back to [Contents](#contents).
@@ -2260,11 +2260,11 @@ from collections import deque
 dq = deque([1, 2, 3, 4, 5])
 dq.append(6)  # Add to the right
 dq.appendleft(0)  # Add to the left
-print(dq)
+print(dq) # Output: deque([0, 1, 2, 3, 4, 5, 6])
 
 dq.pop()  # Remove from the right
 dq.popleft()  # Remove from the left
-print(dq)
+print(dq) # Output: deque([1, 2, 3, 4, 5])
 ```
 
 Go back to [Contents](#contents).
@@ -2450,8 +2450,8 @@ dict1 = {'a': 1, 'b': 2}
 dict2 = {'b': 3, 'c': 4}
 chain = ChainMap(dict1, dict2)
 
-print(chain['a'])  # Output from dict1
-print(chain['b'])  # Output from dict1, because it's the first dictionary
+print(chain['a'])  # Output from dict1 -> Output: 1
+print(chain['b'])  # Output from dict1, because it's the first dictionary -> Output: 2
 ```
 
 Go back to [Contents](#contents).
@@ -2562,9 +2562,9 @@ reversed_chain = ChainMap(*chain_new.maps[::-1])
 
 # Print original and reversed ChainMap for comparison
 print("Original ChainMap:")
-print(chain_new)
+print(chain_new) # Output: ChainMap({'d': 4, 'e': 5}, {'a': 1, 'b': 2}, {'c': 3, 'a': 4})
 print("\nReversed ChainMap:")
-print(reversed_chain)
+print(reversed_chain) # Output: ChainMap({'c': 3, 'a': 4}, {'a': 1, 'b': 2}, {'d': 4, 'e': 5})
 ```
 
 Go back to [Contents](#contents).
@@ -2575,7 +2575,6 @@ Go back to [Contents](#contents).
 Checking if a key exists in any of the dictionaries in the `ChainMap`.
 
 ```python
-
 from collections import ChainMap
 
 dict1 = {'a': 1, 'b': 2}
@@ -2602,13 +2601,13 @@ dict3 = {'d': 4, 'e': 5}
 
 # Original ChainMap with dict1, dict2, and then adding dict3
 chain = ChainMap(dict1, dict2)
-print(chain)
+print(chain) # Output: ChainMap({'a': 1, 'b': 2}, {'c': 3, 'a': 4})
 
 chain_new = chain.new_child(dict3)  # Adds dict3 as the new first dictionary
-print(chain_new)
+print(chain_new) # Output: ChainMap({'d': 4, 'e': 5}, {'a': 1, 'b': 2}, {'c': 3, 'a': 4})
 
 reduced_chain = chain_new.parents  # Removes the last added dict
-print(reduced_chain)  # ChainMap({'a': 1, 'b': 2}, {'c': 3, 'a': 4})
+print(reduced_chain)  # Output: ChainMap({'a': 1, 'b': 2}, {'c': 3, 'a': 4})
 ```
 
 Go back to [Contents](#contents).
@@ -2680,7 +2679,7 @@ For example:
 from collections import Counter
 
 cnt = Counter('abracadabra')
-print(cnt.most_common(3))  # Three most common characters
+print(cnt.most_common(3))  # Three most common characters -> Output: [('a', 5), ('b', 2), ('r', 2)]
 ```
 
 Go back to [Contents](#contents).
@@ -2722,7 +2721,7 @@ print(color_count)  # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
 
 more_colors = ['red', 'yellow', 'green', 'blue']
 color_count.update(more_colors)
-print(color_count)  # Updated counts
+print(color_count)  # Updated counts -> Output: Counter({'blue': 4, 'red': 3, 'yellow': 2, 'green': 1})
 ```
 
 Go back to [Contents](#contents).
@@ -2741,7 +2740,7 @@ print(color_count)  # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
 
 more_colors = ['red', 'yellow', 'green', 'blue']
 color_count.update(more_colors)
-print(color_count)  # Updated counts
+print(color_count)  # Updated counts -> Output: Counter({'blue': 4, 'red': 3, 'yellow': 2, 'green': 1})
 
 print(color_count.most_common(2))  # Output: [('blue', 4), ('red', 3)]
 ```
@@ -2761,7 +2760,7 @@ color_count = Counter(colors)
 print(color_count) # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
 
 subtract_colors = ['red', 'blue']
-print("subtract_colors = ['red', 'blue']")
+print("subtract_colors = ['red', 'blue']") # Output: subtract_colors = ['red', 'blue']
 
 color_count.subtract(subtract_colors)
 print(color_count)  # Subtracted counts - Output: Counter({'blue': 2, 'red': 1, 'yellow': 1})
@@ -2851,9 +2850,11 @@ print('c1 | c2:', c1 | c2)  # Maximum of c1 and c2 counts
 print('c1 & c2:', c1 & c2)  # Minimum of c1 and c2 counts
 
 # Output
-# Counter({'b': 2, 'r': 2, 'a': 1, 'd': 1})
-# Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1, 'l': 1, 'z': 1, 'm': 1})
-# Counter({'a': 4, 'c': 1})
+# Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+# Counter({'a': 4, 'l': 1, 'c': 1, 'z': 1, 'm': 1})
+# c1 - c2: Counter({'b': 2, 'r': 2, 'a': 1, 'd': 1})
+# c1 | c2: Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1, 'l': 1, 'z': 1, 'm': 1})
+# c1 & c2: Counter({'a': 4, 'c': 1})
 ```
 
 Go back to [Contents](#contents).
@@ -2873,7 +2874,7 @@ print(color_count) # Output: Counter({'blue': 3, 'red': 2, 'yellow': 1})
 total_colors = sum(color_count.values())
 
 # Total number of counted colors
-print(total_colors) # 6
+print(total_colors) # Output: 6
 ```
 
 Go back to [Contents](#contents).
