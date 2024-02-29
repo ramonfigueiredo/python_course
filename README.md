@@ -8548,7 +8548,7 @@ plt.show()
 
 Plotting:
 
-![SciPy - Example 5 - Plotting]()
+![SciPy - Example 5 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/scipy_example_5.png)
 
 Go back to [Contents](#contents).
 
@@ -8600,7 +8600,7 @@ plt.show()
 
 Plotting:
 
-![SciPy - Example 7 - Plotting]()
+![SciPy - Example 7 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/scipy_example_7.png)
 
 Go back to [Contents](#contents).
 
@@ -8627,7 +8627,7 @@ plt.show()
 
 Plotting:
 
-![SciPy - Example 8 - Plotting]()
+![SciPy - Example 8 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/scipy_example_8.png)
 
 Go back to [Contents](#contents).
 
@@ -8677,7 +8677,7 @@ plt.show()
 
 Plotting:
 
-![SciPy - Example 10 - Plotting]()
+![SciPy - Example 10 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/scipy_example_10.png)
 
 Go back to [Contents](#contents).
 
