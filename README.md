@@ -126,6 +126,8 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     3. [Some Python Scripting examples](#some-python-scripting-examples)
 18. [Python Libraries](#python-libraries)
     1. [NumPy](#numpy)
+       1. [Steps to install and use the Numpy library](#steps-to-install-and-use-the-numpy-library)
+       2. [Numpy Examples](#numpy-examples)
     2. [SciPy](#scipy)
     3. [Pandas](#pandas)
     4. [Matplotlib](#matplotlib)
@@ -8120,6 +8122,8 @@ Next, let's touch upon some of the most popular Python libraries.
 
 Go back to [Contents](#contents).
 
+
+
 ### NumPy
 
 NumPy, short for Numerical Python, is one of the most fundamental packages for numerical computations in Python. 
@@ -8140,7 +8144,59 @@ The key features of NumPy include:
 
 6. **Integration with other Python Libraries:** Widely used in scientific computing, data science, and is the foundation for many other scientific libraries.
 
+Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Numpy library
+
+* Create a virtual environment (if it doesn't exist)
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Numpy
+
+```bash
+pip install numpy
+```
+
+* List the virtual environment packages
+
+```bash
+pip list
+```
+
+* Create the Python script using Numpy
+
+* Run the Python script using Numpy
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* Deactivate the virtual environment
+
+```bash
+deactivate
+```
+
+
+
 #### Numpy Examples
+
 
 **Example 1:** Creating a NumPy Array
 
@@ -8152,9 +8208,14 @@ arr = np.array([1, 2, 3, 4, 5])
 print(arr)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 2:** Basic Array Operations (Addition, Multiplication)
 
 ```python
+import numpy as np
+
 # Element-wise addition and multiplication
 arr1 = np.array([1, 2, 3])
 arr2 = np.array([4, 5, 6])
@@ -8163,14 +8224,22 @@ print("Addition:", arr1 + arr2)
 print("Multiplication:", arr1 * arr2)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 3:** Reshaping an Array
 
 ```python
+import numpy as np
+
 # Reshaping a 1D array to a 2D array
 arr = np.array([1, 2, 3, 4, 5, 6])
 reshaped_arr = arr.reshape((2, 3))
 print(reshaped_arr)
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 4:** Slicing Arrays
 
@@ -8181,9 +8250,14 @@ sliced_arr = arr[1:5]
 print(sliced_arr)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 5:** Linear Algebra - Matrix Multiplication
 
 ```python
+import numpy as np
+
 # Matrix multiplication
 A = np.array([[1, 2], [3, 4]])
 B = np.array([[5, 6], [7, 8]])
@@ -8192,32 +8266,50 @@ result = np.dot(A, B)
 print(result)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 6:** Computing the Inverse of a Matrix
 
 ```python
+import numpy as np
+
 # Inverse of a matrix
 matrix = np.array([[1, 2], [3, 4]])
 inverse_matrix = np.linalg.inv(matrix)
 print(inverse_matrix)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 7:** Generating Random Numbers
 
 ```python
+import numpy as np
+
 # Generating random numbers
 random_arr = np.random.rand(5)
 print(random_arr)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 8:** Statistical Operations (Mean, Median, Standard Deviation)
 
 ```python
+import numpy as np
+
 # Statistical operations
 arr = np.array([1, 2, 3, 4, 5])
 print("Mean:", np.mean(arr))
 print("Median:", np.median(arr))
 print("Standard Deviation:", np.std(arr))
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 9:** Boolean Indexing
 
@@ -8227,9 +8319,14 @@ arr = np.array([1, 2, 3, 4, 5])
 print(arr[arr > 3])
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 10:** Stacking Arrays
 
 ```python
+import numpy as np
+
 # Stacking arrays vertically and horizontally
 arr1 = np.array([1, 2, 3])
 arr2 = np.array([4, 5, 6])
@@ -8242,6 +8339,8 @@ print("Horizontal Stack:\n", h_stack)
 ```
 
 Go back to [Contents](#contents).
+
+
 
 ### SciPy
 
