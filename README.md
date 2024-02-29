@@ -8519,7 +8519,7 @@ plt.show()
 
 Plotting:
 
-![SciPy - Example 4 - Plotting]()
+![SciPy - Example 4 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/scipy_example_4.png)
 
 Go back to [Contents](#contents).
 
