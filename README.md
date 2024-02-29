@@ -2911,7 +2911,7 @@ from collections import OrderedDict
 od = OrderedDict([('a', 1), ('b', 2), ('c', 3)])
 od['d'] = 4
 od.move_to_end('b', last=False)  # Move 'b' to the beginning
-print(od)
+print(od) # Output: OrderedDict({'b': 2, 'a': 1, 'c': 3, 'd': 4})
 ```
 
 Go back to [Contents](#contents).
@@ -3031,7 +3031,7 @@ ordered_dict['b'] = 2
 ordered_dict['c'] = 3
 
 ordered_dict.popitem()
-print(ordered_dict)  # Removes ('c', 3)
+print(ordered_dict)  # Removes ('c', 3) -> Output: OrderedDict({'a': 1, 'b': 2})
 ```
 
 Go back to [Contents](#contents).
@@ -3576,6 +3576,9 @@ class BoundedList(UserList):
 bounded_list = BoundedList(max_length=2)
 bounded_list.append(1)
 bounded_list.append(2)
+
+print(bounded_list) # Output: [1, 2]
+
 # bounded_list.append(3)  # This would raise a ValueError
 ```
 
@@ -3646,6 +3649,9 @@ class TypedList(UserList):
 
 typed_list = TypedList(int)
 typed_list.append(1)
+
+print(typed_list) # Output: [1]
+
 # typed_list.append('string')  # This would raise a TypeError
 ```
 
