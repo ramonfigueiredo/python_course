@@ -8126,7 +8126,7 @@ Go back to [Contents](#contents).
 
 ### NumPy
 
-NumPy, short for Numerical Python, is one of the most fundamental packages for numerical computations in Python. 
+NumPy (https://numpy.org/), short for Numerical Python, is one of the most fundamental packages for numerical computations in Python. 
 
 It provides powerful support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions that operate on these arrays.
 
