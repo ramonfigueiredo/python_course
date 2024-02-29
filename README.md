@@ -129,6 +129,8 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
        1. [Steps to install and use the Numpy library](#steps-to-install-and-use-the-numpy-library)
        2. [Numpy Examples](#numpy-examples)
     2. [SciPy](#scipy)
+       1. [Steps to install and use the SciPy library](#steps-to-install-and-use-the-scipy-library)
+       2. [SciPy Examples](#scipy-examples)
     3. [Pandas](#pandas)
     4. [Matplotlib](#matplotlib)
     5. [Seaborn](#seaborn)
@@ -8151,6 +8153,7 @@ Go back to [Contents](#contents).
 #### Steps to install and use the Numpy library
 
 * Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
 ```bash
 virtualenv -p python3 venv
 ```
@@ -8178,9 +8181,9 @@ pip install numpy
 pip list
 ```
 
-* Create the Python script using Numpy
+* Create the Python script
 
-* Run the Python script using Numpy
+* Run the Python script
   * Note: Replace `main.py` with the correct Python script name.
 
 ```bash
@@ -8192,6 +8195,8 @@ python main.py
 ```bash
 deactivate
 ```
+
+Go back to [Contents](#contents).
 
 
 
@@ -8360,11 +8365,65 @@ Key features of SciPy include:
 
 Go back to [Contents](#contents).
 
+
+
+#### Steps to install and use the SciPy library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install SciPy (if it is not installed)
+
+```bash
+pip install scipy
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
 #### SciPy Examples
+
 
 **Example 1:** Solving a Linear System of Equations
 
 ```python
+import numpy as np
 from scipy.linalg import solve
 
 # Define the coefficient matrix A and the constant vector b
@@ -8376,9 +8435,19 @@ x = solve(A, b)
 print(x)
 ```
 
+Output:
+
+```
+[2. 3.]
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 2:** Calculating Eigenvalues and Eigenvectors
 
 ```python
+import numpy as np
 from scipy.linalg import eig
 
 # Define a square matrix
@@ -8390,9 +8459,22 @@ print("Eigenvalues:", eigenvalues)
 print("Eigenvectors:\n", eigenvectors)
 ```
 
+Output:
+
+```
+Eigenvalues: [-0.37228132+0.j  5.37228132+0.j]
+Eigenvectors:
+ [[-0.82456484 -0.41597356]
+ [ 0.56576746 -0.90937671]]
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 3:** Optimization - Minimizing a Function
 
 ```python
+import numpy as np
 from scipy.optimize import minimize
 
 # Define a quadratic function
@@ -8404,9 +8486,19 @@ result = minimize(f, x0=0)
 print(result.x)
 ```
 
+Output:
+
+```python
+[-1.30644012]
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 4:** Interpolating Data
 
 ```python
+import numpy as np
 from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
 
@@ -8425,9 +8517,17 @@ plt.plot(x, y, 'o', xnew, f(xnew), '-')
 plt.show()
 ```
 
+Plotting:
+
+![SciPy - Example 4 - Plotting]()
+
+Go back to [Contents](#contents).
+
+
 **Example 5:** Signal Processing - Filtering a Signal
 
 ```python
+import numpy as np
 from scipy.signal import butter, lfilter
 import matplotlib.pyplot as plt
 
@@ -8446,6 +8546,13 @@ plt.legend()
 plt.show()
 ```
 
+Plotting:
+
+![SciPy - Example 5 - Plotting]()
+
+Go back to [Contents](#contents).
+
+
 **Example 6:** Computing the Integral of a Function
 
 ```python
@@ -8460,9 +8567,18 @@ result, error = quad(integrand, 0, 1)
 print(result)
 ```
 
+``` 
+0.3333333333333333
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 7:** Solving a Differential Equation
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 
 # Define a differential equation y' = y
@@ -8482,9 +8598,17 @@ plt.ylabel('y(t)')
 plt.show()
 ```
 
+Plotting:
+
+![SciPy - Example 7 - Plotting]()
+
+Go back to [Contents](#contents).
+
+
 **Example 8:** Fourier Transform of a Signal
 
 ```python
+import numpy as np
 from scipy.fft import fft
 import matplotlib.pyplot as plt
 
@@ -8501,9 +8625,17 @@ plt.plot(t, np.abs(signal_fft))
 plt.show()
 ```
 
+Plotting:
+
+![SciPy - Example 8 - Plotting]()
+
+Go back to [Contents](#contents).
+
+
 **Example 9:** Performing a T-test
 
 ```python
+import numpy as np
 from scipy.stats import ttest_ind
 
 # Sample data
@@ -8516,14 +8648,23 @@ print("t-statistic:", t_statistic)
 print("p-value:", p_value)
 ```
 
+```
+t-statistic: -6.670615980189455
+p-value: 2.4886726181389886e-10
+```
+
+Go back to [Contents](#contents).
+
+
 **Example 10:** Multidimensional Image Processing
 
 ```python
 from scipy import ndimage
+import imageio
 import matplotlib.pyplot as plt
 
 # Load an image
-image = ndimage.imread('path/to/image.jpg', flatten=True)
+image = imageio.imread('images/RFP_YouTube_Profile_Picture.png')
 
 # Gaussian blur
 blurred_image = ndimage.gaussian_filter(image, sigma=3)
@@ -8533,6 +8674,14 @@ plt.imshow(image, cmap=plt.cm.gray)
 plt.imshow(blurred_image, cmap=plt.cm.gray)
 plt.show()
 ```
+
+Plotting:
+
+![SciPy - Example 10 - Plotting]()
+
+Go back to [Contents](#contents).
+
+
 
 ### Pandas
 
@@ -8643,6 +8792,8 @@ print(pivot)
 # Writing DataFrame to an Excel file
 df.to_excel('output.xlsx', index=False)
 ```
+
+
 
 ### Matplotlib
 
@@ -8785,6 +8936,8 @@ plt.colorbar()
 plt.show()
 ```
 
+
+
 ### Seaborn
 
 Seaborn is a Python data visualization library based on Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. 
@@ -8800,6 +8953,8 @@ Key features of Seaborn include:
 5. **Aesthetic Themes:** Offers a variety of themes and color palettes to make attractive plots that are more appealing and readable.
 
 Go back to [Contents](#contents).
+
+
 
 ### Plotly
 
@@ -8818,6 +8973,8 @@ Key features of Plotly include:
 5. **Ease of Use:** Provides a simple and intuitive syntax for creating complex plots.
 
 Go back to [Contents](#contents).
+
+
 
 ### Flask
 
@@ -8973,6 +9130,8 @@ class User(db.Model):
         return '<User %r>' % self.username
 ```
 
+
+
 ### Django
 
 Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
@@ -8990,6 +9149,8 @@ Key features of Django include:
 7. **Extensible:** Can be extended with plug-ins available in the Django ecosystem.
 
 Go back to [Contents](#contents).
+
+
 
 ### Pillow
 
@@ -9012,6 +9173,8 @@ Key features of Pillow include:
 
 Go back to [Contents](#contents).
 
+
+
 ### OpenCV
 
 OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library. 
@@ -9032,6 +9195,8 @@ Key features of OpenCV include:
 
 Go back to [Contents](#contents).
 
+
+
 ### NLTK
 
 NLTK, or the Natural Language Toolkit, is a leading platform for building Python programs to work with human language data. 
@@ -9048,6 +9213,8 @@ Key features of NLTK include:
 6. **NLP Pipelines:** Building complete natural language processing pipelines.
 
 Go back to [Contents](#contents).
+
+
 
 ### Scikit-Learn
 
@@ -9067,6 +9234,8 @@ Key features of Scikit-Learn include:
 6. **Preprocessing:** Feature extraction and normalization.
 
 Go back to [Contents](#contents).
+
+
 
 ### TensorFlow
 
@@ -9089,6 +9258,8 @@ Key features of TensorFlow include:
 
 Go back to [Contents](#contents).
 
+
+
 ### PyTorch
 
 PyTorch is an open-source machine learning library developed by Facebook's AI Research lab. 
@@ -9107,6 +9278,8 @@ Key features of PyTorch include:
 **Community and Ecosystem:** Strong community support with a wide range of tools and libraries.
 
 Go back to [Contents](#contents).
+
+
 
 ### Keras
 

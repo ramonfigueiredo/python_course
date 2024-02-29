@@ -1,5 +1,6 @@
 numpy
 scipy
+imageio
 pandas
 matplotlib
 seaborn
