@@ -8,6 +8,7 @@ seaborn
 plotly
 flask
 django
+djangorestframework
 pillow
 opencv-python
 nltk
