@@ -138,6 +138,8 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
        1. [Steps to install and use the Matplotlib library](#steps-to-install-and-use-the-matplotlib-library)
        2. [Matplotlib Examples](#matplotlib-examples)
     5. [Seaborn](#seaborn)
+       1. [Steps to install and use the Seaborn library](#steps-to-install-and-use-the-seaborn-library)
+       2. [Seaborn Examples](#seaborn-examples)
     6. [Plotly](#plotly)
     7. [Flask](#flask)
     8. [Django](#django)
@@ -9461,6 +9463,279 @@ Key features of Seaborn include:
 3. **Plotting with DataFrames:** Seamlessly integrates with Pandas DataFrames, allowing for efficient plotting directly from data frames.
 4. **Advanced Plots:** Provides support for more advanced plots such as heatmaps, time series, violin plots, and pair plots.
 5. **Aesthetic Themes:** Offers a variety of themes and color palettes to make attractive plots that are more appealing and readable.
+
+Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Seaborn library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Seaborn (if it is not installed)
+
+```bash
+pip install seaborn
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Seaborn Examples
+
+
+**Example 1:** Basic Scatter Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.scatterplot(x="total_bill", y="tip", data=tips)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 1 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_1.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Line Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+fmri = sns.load_dataset("fmri")
+sns.lineplot(x="timepoint", y="signal", data=fmri)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 2 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_2.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Bar Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.barplot(x="day", y="total_bill", data=tips)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 3 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_3.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Histogram
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.histplot(data=tips, x="total_bill", kde=True)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 4 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_4.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Box Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.boxplot(x="day", y="total_bill", data=tips)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 5 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_5.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Violin Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.violinplot(x="day", y="total_bill", data=tips)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 6 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_6.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Pair Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.pairplot(data=tips)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 7 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_7.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Heatmap
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+flights = sns.load_dataset("flights")
+# Use keyword arguments for clarity and to match the method's expected signature
+flights = flights.pivot(index="month", columns="year", values="passengers")
+sns.heatmap(flights, annot=True, fmt="d")
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 8 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_8.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Joint Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.jointplot(x="total_bill", y="tip", data=tips, kind="reg")
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 9 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_9.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Facet Grid
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+g = sns.FacetGrid(tips, col="time", row="smoker")
+g.map(sns.scatterplot, "total_bill", "tip")
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 10 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_10.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 11:** Count Plot
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.countplot(x="day", data=tips)
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 11 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_11.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 12:** Pair Plot with Hue
+
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+sns.pairplot(data=tips, hue="smoker")
+plt.show()
+```
+
+Plotting:
+
+![Seaborn - Example 12 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/seaborn_example_12.png)
 
 Go back to [Contents](#contents).
 
