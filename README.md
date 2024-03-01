@@ -10603,7 +10603,7 @@ Go back to [Contents](#contents).
 
 **Example 1:** Opening and Saving Images
 
-```shell
+```python
 from PIL import Image
 
 # Open an image
@@ -10622,7 +10622,7 @@ Go back to [Contents](#contents).
 
 **Example 2:** Creating Thumbnails
 
-```shell
+```python
 from PIL import Image
 
 # Open an image
@@ -10641,7 +10641,7 @@ Go back to [Contents](#contents).
 
 **Example 3:** Cropping Images
 
-```shell
+```python
 from PIL import Image
 
 # Open an image
@@ -10661,7 +10661,7 @@ Go back to [Contents](#contents).
 
 **Example 4:** Rotating and Flipping
 
-```shell
+```python
 from PIL import Image
 
 # Open an image
@@ -10691,7 +10691,7 @@ Go back to [Contents](#contents).
 
 **Example 5:** Applying Filters
 
-```shell
+```python
 from PIL import Image, ImageFilter
 
 # Open an image
@@ -10711,7 +10711,7 @@ Go back to [Contents](#contents).
 
 **Example 6:** Adjusting Image Brightness
 
-```shell
+```python
 from PIL import Image, ImageEnhance
 
 # Open an image
@@ -10731,7 +10731,7 @@ Go back to [Contents](#contents).
 
 **Example 7:** Drawing Shapes and Text
 
-```shell
+```python
 from PIL import Image, ImageDraw
 
 # Open an image
@@ -10752,7 +10752,7 @@ Go back to [Contents](#contents).
 
 **Example 8:** Converting Images to Black and White
 
-```shell
+```python
 from PIL import Image
 
 # Open an image
@@ -10771,7 +10771,7 @@ Go back to [Contents](#contents).
 
 **Example 9:** Resizing Images
 
-```shell
+```python
 from PIL import Image
 
 # Open an image
@@ -10790,7 +10790,7 @@ Go back to [Contents](#contents).
 
 **Example 10:** Merging Images
 
-```shell
+```python
 from PIL import Image, ImageChops
 
 # Open an image
@@ -10888,7 +10888,7 @@ Go back to [Contents](#contents).
 
 **Example 1:** Reading and Displaying an Image
 
-```shell
+```python
 import cv2
 
 # Load an image
@@ -10913,7 +10913,7 @@ Go back to [Contents](#contents).
 
 **Example 2:** Converting an Image to Grayscale
 
-```shell
+```python
 import cv2
 
 # Load an image
@@ -10941,7 +10941,7 @@ Go back to [Contents](#contents).
 
 **Example 3:** Saving an Image
 
-```shell
+```python
 import cv2
 
 # Load an image
@@ -10972,7 +10972,7 @@ Go back to [Contents](#contents).
 
 **Example 4:** Resizing an Image
 
-```shell
+```python
 import cv2
 
 # Load an image
@@ -11000,7 +11000,7 @@ Go back to [Contents](#contents).
 
 **Example 5:** Edge Detection
 
-```shell
+```python
 import cv2
 
 # Load an image
@@ -11028,7 +11028,7 @@ Go back to [Contents](#contents).
 
 **Example 6:** Face Detection in an Image
 
-```shell
+```python
 import cv2
 
 # Load an image
@@ -11059,7 +11059,7 @@ Go back to [Contents](#contents).
 
 **Example 7:** Capturing Video from Camera
 
-```shell
+```python
 import cv2
 
 # Get access to the webcam
@@ -11090,7 +11090,7 @@ Go back to [Contents](#contents).
 
 **Example 8:** Read a Video File and Display Its Frames
 
-```shell
+```python
 import cv2
 
 # Path to the video file
@@ -11134,7 +11134,7 @@ Go back to [Contents](#contents).
 
 **Example 9:** Read a Video, Apply the Algorithm Canny, and Save the Output Video
 
-```shell
+```python
 import cv2
 
 # Specify the path of the input video
@@ -11195,7 +11195,7 @@ Go back to [Contents](#contents).
 
 **Example 10:** Create an Output Video with the Histogram of Each Frame of the Input Video
 
-```shell
+```python
 import cv2
 import numpy as np
 
