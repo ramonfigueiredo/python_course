@@ -9834,6 +9834,190 @@ Go back to [Contents](#contents).
 #### Plotly Examples
 
 
+**Example 1:** Basic Line Plot
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(data=go.Scatter(x=[1, 2, 3, 4], y=[10, 11, 12, 13], mode='lines+markers'))
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 1 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_1.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Bar Chart
+
+```python
+import plotly.graph_objects as go
+
+fig = go.Figure(data=[
+    go.Bar(name='Group A', x=['Category 1', 'Category 2'], y=[10, 12]),
+    go.Bar(name='Group B', x=['Category 1', 'Category 2'], y=[13, 17])
+])
+fig.update_layout(barmode='group')
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 2 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_2.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Scatter Plot
+
+```python
+import plotly.express as px
+
+df = px.data.iris()
+fig = px.scatter(df, x='sepal_width', y='sepal_length', color='species')
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 3 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_3.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Pie Chart
+
+```python
+import plotly.express as px
+
+fig = px.pie(values=[30, 35, 35], names=['Product A', 'Product B', 'Product C'])
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 4 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_4.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** 3D Surface Plot
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+x = np.outer(np.linspace(-2, 2, 30), np.ones(30))
+y = x.copy().T
+z = np.sin(x ** 2 + y ** 2)
+
+fig = go.Figure(data=[go.Surface(z=z, x=x, y=y)])
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 5 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_5.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Heatmap
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+data = np.random.rand(10, 10)
+fig = go.Figure(data=go.Heatmap(z=data))
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 6 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_6.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Histogram
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+data = np.random.randn(500)
+fig = go.Figure(data=[go.Histogram(x=data)])
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 7 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_7.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Box Plot
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+data = np.random.normal(size=100)
+fig = go.Figure(data=[go.Box(y=data, boxpoints='all', jitter=0.3, pointpos=-1.8)])
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 8 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_8.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Contour Plot
+
+```python
+import plotly.graph_objects as go
+import numpy as np
+
+x = np.arange(15)
+y = np.arange(15)
+z = np.random.rand(15, 15)
+
+fig = go.Figure(data=[go.Contour(z=z, x=x, y=y)])
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 9 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_9.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Bubble Chart
+
+```python
+import plotly.express as px
+
+df = px.data.gapminder().query("year==2007")
+fig = px.scatter(df, x="gdpPercap", y="lifeExp", size="pop", color="continent",
+                 hover_name="country", log_x=True, size_max=60)
+fig.show()
+```
+
+Plotting:
+
+![Plotly - Example 10 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_10.png)
+
+Go back to [Contents](#contents).
+
+
+
 ### Flask
 
 Flask is a lightweight and powerful web framework for Python. 
