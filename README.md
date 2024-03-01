@@ -10711,20 +10711,19 @@ Go back to [Contents](#contents).
 **Example 6:** Adjusting Image Brightness
 
 ```shell
-from PIL import Image, ImageDraw
+from PIL import Image, ImageEnhance
 
 # Open an image
 image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
-draw = ImageDraw.Draw(image)
-draw.rectangle(((100, 100), (200, 200)), fill="black")
-draw.text((150, 150), "Hello", fill="white")
-image.save('images/RFP_YouTube_Profile_Picture-drawn_image.png')
+enhancer = ImageEnhance.Brightness(image)
+brightened_image = enhancer.enhance(2)  # Increase brightness
+brightened_image.save('images/RFP_YouTube_Profile_Picture-brightened_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 6 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-drawn_image.png)
+![Pillow - Example 6 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-brightened_image.png)
 
 Go back to [Contents](#contents).
 
