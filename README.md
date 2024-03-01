@@ -141,15 +141,35 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
        1. [Steps to install and use the Seaborn library](#steps-to-install-and-use-the-seaborn-library)
        2. [Seaborn Examples](#seaborn-examples)
     6. [Plotly](#plotly)
+       1. [Steps to install and use the Plotly library](#steps-to-install-and-use-the-plotly-library)
+       2. [Plotly Examples](#plotly-examples)
     7. [Flask](#flask)
+       1. [Steps to install and use the Flask library](#steps-to-install-and-use-the-flask-library)
+       2. [Flask Examples](#flask-examples)
     8. [Django](#django)
+       1. [Steps to install and use the Django library](#steps-to-install-and-use-the-django-library)
+       2. [Django Examples](#django-examples)
     9. [Pillow](#pillow)
+       1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
+       2. [Pillow Examples](#pillow-examples)
     10. [OpenCV](#opencv)
+        1. [Steps to install and use the OpenCV library](#steps-to-install-and-use-the-opencv-library)
+        2. [OpenCV Examples](#opencv-examples)
     11. [NLTK](#nltk)
+        1. [Steps to install and use the NLTK library](#steps-to-install-and-use-the-nltk-library)
+        2. [NLTK Examples](#nltk-examples)
     12. [Scikit-Learn](#scikit-learn)
+        1. [Steps to install and use the Scikit-Learn library](#steps-to-install-and-use-the-scikit-learn-library)
+        2. [Scikit-Learn Examples](#scikit-learn-examples)
     13. [TensorFlow](#tensorflow)
+        1. [Steps to install and use the TensorFlow library](#steps-to-install-and-use-the-tensorflow-library)
+        2. [TensorFlow Examples](#tensorflow-examples)
     14. [PyTorch](#pytorch)
+        1. [Steps to install and use the PyTorch library](#steps-to-install-and-use-the-pytorch-library)
+        2. [PyTorch Examples](#pytorch-examples)
     15. [Keras](#keras)
+        1. [Steps to install and use the Keras library](#steps-to-install-and-use-the-keras-library)
+        2. [Keras Examples](#keras-examples)
 19. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
@@ -9761,6 +9781,59 @@ Go back to [Contents](#contents).
 
 
 
+#### Steps to install and use the Plotly library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Plotly (if it is not installed)
+
+```bash
+pip install plotly
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Plotly Examples
+
+
 ### Flask
 
 Flask is a lightweight and powerful web framework for Python. 
@@ -9781,6 +9854,58 @@ Key features of Flask include:
 8. **Extensibility:** Flask can be extended with numerous extensions available for tasks such as database integration, form validation, upload handling, and more.
 
 Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Flask library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Flask (if it is not installed)
+
+```bash
+pip install flask
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
 
 #### Flask Examples
 
@@ -9937,6 +10062,59 @@ Go back to [Contents](#contents).
 
 
 
+#### Steps to install and use the Django library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Django (if it is not installed)
+
+```bash
+pip install django
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Django Examples
+
+
 ### Pillow
 
 Pillow is the friendly fork of the Python Imaging Library (PIL). 
@@ -9957,6 +10135,60 @@ Key features of Pillow include:
 
 
 Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Pillow library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Pillow (if it is not installed)
+
+```bash
+pip install pillow
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Pillow Examples
 
 
 
@@ -9982,6 +10214,60 @@ Go back to [Contents](#contents).
 
 
 
+#### Steps to install and use the OpenCV library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install OpenCV (if it is not installed)
+
+```bash
+pip install opencv-python
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### OpenCV Examples
+
+
+
 ### NLTK
 
 NLTK, or the Natural Language Toolkit, is a leading platform for building Python programs to work with human language data. 
@@ -9998,6 +10284,60 @@ Key features of NLTK include:
 6. **NLP Pipelines:** Building complete natural language processing pipelines.
 
 Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the NLTK library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install NLTK (if it is not installed)
+
+```bash
+pip install nltk
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### NLTK Examples
 
 
 
@@ -10019,6 +10359,60 @@ Key features of Scikit-Learn include:
 6. **Preprocessing:** Feature extraction and normalization.
 
 Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Scikit-Learn library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Scikit-Learn (if it is not installed)
+
+```bash
+pip install scikit-learn
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Scikit-Learn Examples
 
 
 
@@ -10045,6 +10439,60 @@ Go back to [Contents](#contents).
 
 
 
+#### Steps to install and use the TensorFlow library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install TensorFlow (if it is not installed)
+
+```bash
+pip install tensorflow
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### TensorFlow Examples
+
+
+
 ### PyTorch
 
 PyTorch is an open-source machine learning library developed by Facebook's AI Research lab. 
@@ -10066,6 +10514,60 @@ Go back to [Contents](#contents).
 
 
 
+#### Steps to install and use the PyTorch library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install PyTorch (if it is not installed)
+
+```bash
+pip install torch
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### PyTorch Examples
+
+
+
 ### Keras
 
 Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. 
@@ -10082,6 +10584,60 @@ Key features of Keras include:
 4. **Works with Python:** No separate models configuration files in a declarative format. Models are described in Python code.
 
 Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Keras library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Keras (if it is not installed)
+
+```bash
+pip install keras
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Keras Examples
 
 
 
