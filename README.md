@@ -149,6 +149,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     8. [Django](#django)
        1. [Steps to install and use the Django library](#steps-to-install-and-use-the-django-library)
        2. [Django Examples](#django-examples)
+       3. [Some examples of Django projects available on my GitHub account](#some-examples-of-django-projects-available-on-my-github-account)
     9. [Pillow](#pillow)
        1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
        2. [Pillow Examples](#pillow-examples)
@@ -10486,6 +10487,19 @@ from django.contrib.auth.models import User
 # Creating a new user
 user = User.objects.create_user('username', 'email@example.com', 'password')
 ```
+
+Go back to [Contents](#contents).
+
+
+#### Some examples of Django projects available on my GitHub account
+
+My GitHub repository has some public available Django projects.
+
+[Titanic survival predictor using Django and Machine Learning](https://github.com/ramonfigueiredo/titanic_survival_predictor_using_django_and_ml)
+- Use Django, DjangoRESTFramework, Pandas, and Scikit-Learn to predict whether a passenger (with characteristics as your input) can survive the Titanic drowning or not!
+
+[Django REST API - CRUD - supermarket application](https://github.com/ramonfigueiredo/django_rest_api-CRUD_supermarket_application)
+- Use Django and Django REST Framework to create supermarket application
 
 Go back to [Contents](#contents).
 
