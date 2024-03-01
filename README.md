@@ -11127,7 +11127,7 @@ cv2.destroyAllWindows()
 
 Input video:
 
-![OpenCV - Example 8 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
+![OpenCV - Example 8 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
 
 Go back to [Contents](#contents).
 
@@ -11184,11 +11184,11 @@ print("The video was successfully saved as", output_video_path)
 
 Input video:
 
-![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
+![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
 
 Output video:
 
-![OpenCV - Example 9 - Output video - Applying the Canny Algorithm](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel_canny_edges.gif)
+![OpenCV - Example 9 - Output video - Applying the Canny Algorithm](https://github.com/ramonfigueiredo/python_course/blob/main/videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel_canny_edges.gif)
 
 Go back to [Contents](#contents).
 
@@ -11261,11 +11261,11 @@ print("Videos have been successfully saved.")
 
 Input video:
 
-![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
+![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
 
 Output video:
 
-![OpenCV - Example 9 - Output video - Histogram](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel-histogram_video.gif)
+![OpenCV - Example 9 - Output video - Histogram](https://github.com/ramonfigueiredo/python_course/blob/main/videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel-histogram_video.gif)
 
 Go back to [Contents](#contents).
 
