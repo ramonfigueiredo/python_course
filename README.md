@@ -11300,6 +11300,9 @@ This command works similarly to the Unix-based version but is adapted for Window
 - The `-vf` option and its arguments specify the video filters for FPS, scaling, and the resampling algorithm.
 - `%~nG.gif` specifies the output filename by stripping the original extension and appending .gif instead.
 
+Go back to [Contents](#contents).
+
+
 
 ### NLTK
 
