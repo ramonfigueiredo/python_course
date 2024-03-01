@@ -10093,6 +10093,7 @@ Go back to [Contents](#contents).
 
 #### Flask Examples
 
+
 **Example 1:** Basic Flask Application
 
 ```python
@@ -10107,6 +10108,9 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 2:** Using Route Parameters
 
 ```python
@@ -10114,6 +10118,9 @@ if __name__ == '__main__':
 def show_user_profile(username):
     return f'User {username}'
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 3:** Rendering Templates
 
@@ -10124,6 +10131,9 @@ from flask import render_template
 def hello(name):
     return render_template('hello.html', name=name)
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 4:** Handling POST Requests
 
@@ -10137,6 +10147,9 @@ def login():
     else:
         return show_the_login_form()
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 5:** Redirects and Errors
 
@@ -10152,6 +10165,9 @@ def error_example():
     abort(404)
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 6:** Creating a RESTful API
 
 ```python
@@ -10161,6 +10177,9 @@ from flask import jsonify
 def get_data():
     return jsonify({'data': 'Here is some data'})
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 7:** File Upload
 
@@ -10173,6 +10192,9 @@ def upload_file():
         f = request.files['the_file']
         f.save('/path/to/uploaded/file')
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 8:** Working with Cookies
 
@@ -10191,6 +10213,9 @@ def getcookie():
     return f'Cookie value: {cookie}'
 ```
 
+Go back to [Contents](#contents).
+
+
 **Example 9:** Session Management
 
 ```python
@@ -10205,6 +10230,9 @@ def setsession():
 def getsession():
     return session.get('username', 'Not set')
 ```
+
+Go back to [Contents](#contents).
+
 
 **Example 10:** Using Flask Extensions (Flask-SQLAlchemy)
 
@@ -10223,6 +10251,8 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 ```
+
+Go back to [Contents](#contents).
 
 
 
