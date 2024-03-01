@@ -10885,6 +10885,390 @@ Go back to [Contents](#contents).
 #### OpenCV Examples
 
 
+**Example 1:** Reading and Displaying an Image
+
+```shell
+import cv2
+
+# Load an image
+img = cv2.imread('images/RFP_YouTube_Profile_Picture.png')
+
+# Display the image
+cv2.imshow('image', img)
+
+# Press any key to continue
+cv2.waitKey(0)
+
+# Destroy and close all windows
+cv2.destroyAllWindows()
+```
+
+Saved image:
+
+![OpenCV - Example 1 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/opencv-RFP_YouTube_Profile_Picture-input_image.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Converting an Image to Grayscale
+
+```shell
+import cv2
+
+# Load an image
+img = cv2.imread('images/RFP_YouTube_Profile_Picture.png')
+
+# Converting an Image to Grayscale
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Display the image
+cv2.imshow('gray image', gray_img)
+
+# Press any key to continue
+cv2.waitKey(0)
+
+# Destroy and close all windows
+cv2.destroyAllWindows()
+```
+
+Saved image:
+
+![OpenCV - Example 2 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/opencv-RFP_YouTube_Profile_Picture-gray_image.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Saving an Image
+
+```shell
+import cv2
+
+# Load an image
+img = cv2.imread('images/RFP_YouTube_Profile_Picture.png')
+
+# Converting an Image to Grayscale
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Save the image
+cv2.imwrite('images/opencv-RFP_YouTube_Profile_Picture-gray_image_saved_image.png', gray_img)
+
+# Display the image
+cv2.imshow('gray image', gray_img)
+
+# Press any key to continue
+cv2.waitKey(0)
+
+# Destroy and close all windows
+cv2.destroyAllWindows()
+```
+
+Saved image:
+
+![OpenCV - Example 3 - Saved image](https://github.com/ramonfigueiredo/python_course/blob/main/images/opencv-RFP_YouTube_Profile_Picture-gray_image_saved_image.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Resizing an Image
+
+```shell
+import cv2
+
+# Load an image
+img = cv2.imread('images/RFP_YouTube_Profile_Picture.png')
+
+# Resize image
+resized_img = cv2.resize(img, (100, 100))
+
+# Show resized image
+cv2.imshow('Resized Image', resized_img)
+
+# Press any key to continue
+cv2.waitKey(0)
+
+# Destroy and close all windows
+cv2.destroyAllWindows()
+```
+
+Saved image:
+
+![OpenCV - Example 4 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/opencv-RFP_YouTube_Profile_Picture-resized_image.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Edge Detection
+
+```shell
+import cv2
+
+# Load an image
+img = cv2.imread('images/RFP_YouTube_Profile_Picture.png')
+
+# Find edges using the Canny algorithm
+edges = cv2.Canny(img, 100, 200)
+
+# Show Edge Image
+cv2.imshow('Edges', edges)
+
+# Press any key to continue
+cv2.waitKey(0)
+
+# Destroy and close all windows
+cv2.destroyAllWindows()
+```
+
+Saved image:
+
+![OpenCV - Example 5 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/opencv-RFP_YouTube_Profile_Picture-canny_edges.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Face Detection in an Image
+
+```shell
+import cv2
+
+# Load an image
+img = cv2.imread('images/albert_einstein.png')
+
+# Converting an Image to Grayscale
+gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+faces = face_cascade.detectMultiScale(gray_img, 1.1, 4)
+for (x, y, w, h) in faces:
+    cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+cv2.imshow('Face Detected', img)
+
+# Press any key to continue
+cv2.waitKey(0)
+
+# Destroy and close all windows
+cv2.destroyAllWindows()
+```
+
+Saved image:
+
+![OpenCV - Example 6 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/opencv-RFP_YouTube_Profile_Picture-face_detection.png)
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Capturing Video from Camera
+
+```shell
+import cv2
+
+# Get access to the webcam
+cap = cv2.VideoCapture(0)
+
+while True:
+    # Get video frame
+    ret, frame = cap.read()
+
+    # Show video frame
+    cv2.imshow('Video', frame)
+
+    # Press the q key to quit
+    if cv2.waitKey(1) == ord('q'):
+        break
+
+# Release video
+cap.release()
+
+# Destroy and close all windows
+cv2.destroyAllWindows()
+```
+
+**Note:** Try the code above with a laptop or a computer that has access to a webcam or other type of input camera.
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Read a Video File and Display Its Frames
+
+```shell
+import cv2
+
+# Path to the video file
+video_path = 'videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4'
+
+# Open the video file
+cap = cv2.VideoCapture(video_path)
+
+# Check if the video was opened successfully
+if not cap.isOpened():
+    print("Error: Could not open video.")
+else:
+    # Read and display frames in a loop
+    while True:
+        # Read a frame
+        ret, frame = cap.read()
+
+        # If frame is read correctly, ret is True
+        if not ret:
+            print("Can't receive frame (stream end?). Exiting ...")
+            break
+
+        # Display the frame
+        cv2.imshow('Frame', frame)
+
+        # Break the loop when 'q' is pressed
+        if cv2.waitKey(1) == ord('q'):
+            break
+
+# Release the VideoCapture object and close display window
+cap.release()
+cv2.destroyAllWindows()
+```
+
+Input video:
+
+![OpenCV - Example 8 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4)
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Read a Video, Apply the Algorithm Canny, and Save the Output Video
+
+```shell
+import cv2
+
+# Specify the path of the input video
+input_video_path = 'videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4'
+
+# Open the input video
+cap = cv2.VideoCapture(input_video_path)
+
+# Check if the video was opened successfully
+if not cap.isOpened():
+    print("Error: Could not open video.")
+    exit()
+
+# Determine the input video's frame size and frame rate to configure the output video
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = cap.get(cv2.CAP_PROP_FPS)
+
+# Define the codec and create a VideoWriter object to write the output video in MP4 format
+output_video_path = 'videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel_canny_edges.mp4'
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for the output video
+out = cv2.VideoWriter(output_video_path, fourcc, fps, (frame_width, frame_height), isColor=False) # Set isColor to False for grayscale output
+
+while True:
+    # Read a frame from the input video
+    ret, frame = cap.read()
+
+    # If frame is read correctly, ret is True
+    if not ret:
+        print("Reached the end of the video or error in reading video frame.")
+        break
+
+    # Convert the frame to grayscale
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # Apply Canny edge detection
+    edges = cv2.Canny(gray, 100, 200) # These thresholds can be adjusted
+
+    # Write the frame with Canny edge detection applied into the output video file
+    out.write(edges)
+
+# Release everything if job is finished
+cap.release()
+out.release()
+print("The video was successfully saved as", output_video_path)
+```
+
+Input video:
+
+![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4)
+
+Output video:
+
+![OpenCV - Example 9 - Output video - Applying the Canny Algorithm](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel_canny_edges.mp4)
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Create an Output Video with the Histogram of Each Frame of the Input Video
+
+```shell
+import cv2
+import numpy as np
+
+# Path to the video file
+video_path = 'videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4'
+
+# Open the video file
+cap = cv2.VideoCapture(video_path)
+
+# Check if the video was opened successfully
+if not cap.isOpened():
+    print("Error: Could not open video.")
+    exit()
+
+# Determine the video's original frame size and frame rate
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps = cap.get(cv2.CAP_PROP_FPS)
+
+# Define the codec and create VideoWriter objects
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+out_histogram = cv2.VideoWriter('videos/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel-histogram_video.mp4',
+                                fourcc, fps,
+                                (256, 300))  # Assuming histogram image size of 256x300
+
+while True:
+    # Read a frame
+    ret, frame = cap.read()
+
+    # If frame is read correctly, ret is True
+    if not ret:
+        print("Can't receive frame (stream end?). Exiting ...")
+        break
+
+    # Convert the frame to grayscale
+    gray_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # Calculate the histogram of the grayscale image
+    hist = cv2.calcHist([gray_img], [0], None, [256], [0, 256])
+
+    # Normalize the histogram
+    hist = cv2.normalize(hist, hist).flatten()
+
+    # Create an image to display the histogram
+    hist_img = np.zeros((300, 256, 3), dtype=np.uint8)
+
+    # Scale the histogram to fit in the display image
+    hist_height = hist_img.shape[0]
+    max_val = np.max(hist)
+    for x in range(256):
+        pt1 = (x, hist_height)
+        pt2 = (x, hist_height - int((hist[x] / max_val) * hist_height))
+        cv2.line(hist_img, pt1, pt2, (255, 255, 255))
+
+    # Write the histogram image to their respective video frame
+    out_histogram.write(hist_img)
+
+# Release everything if job is finished
+cap.release()
+out_histogram.release()
+print("Videos have been successfully saved.")
+```
+
+Input video:
+
+![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4)
+
+Output video:
+
+![OpenCV - Example 9 - Output video - Histogram](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel-histogram_video.mp4)
+
+Go back to [Contents](#contents).
+
+
 
 ### NLTK
 
