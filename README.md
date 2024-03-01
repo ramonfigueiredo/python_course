@@ -11376,6 +11376,148 @@ Go back to [Contents](#contents).
 #### NLTK Examples
 
 
+**Example 1:** Tokenizing Text
+
+```python
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import word_tokenize
+
+text = "Hello, welcome to the world of NLTK!"
+tokens = word_tokenize(text)
+print(tokens)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Stopwords Removal
+
+```python
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+
+filtered_words = [word for word in tokens if word not in stopwords.words('english')]
+print(filtered_words)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Part-of-Speech Tagging
+
+```python
+nltk.download('averaged_perceptron_tagger')
+from nltk import pos_tag
+
+tagged = pos_tag(tokens)
+print(tagged)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Stemming Words
+
+```python
+from nltk.stem import PorterStemmer
+
+stemmer = PorterStemmer()
+stems = [stemmer.stem(word) for word in tokens]
+print(stems)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Lemmatizing Words
+
+```python
+nltk.download('wordnet')
+from nltk.stem import WordNetLemmatizer
+
+lemmatizer = WordNetLemmatizer()
+lemmas = [lemmatizer.lemmatize(word) for word in tokens]
+print(lemmas)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Named Entity Recognition
+
+```python
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+from nltk import ne_chunk
+
+tagged = pos_tag(word_tokenize("Mark and John are working at Google."))
+entities = ne_chunk(tagged)
+print(entities)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Parsing Sentence Structure
+
+```python
+from nltk import CFG
+
+grammar = CFG.fromstring("""
+    S -> NP VP
+    VP -> V NP | V NP PP
+    V -> "saw" | "ate"
+    NP -> "John" | "Mary" | "Bob" | Det N | Det N PP
+    Det -> "a" | "an" | "the" | "my"
+    N -> "man" | "dog" | "cat" | "telescope" | "park"
+    PP -> P NP
+    P -> "in" | "on" | "by" | "with"
+""")
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Frequency Distribution of Words
+
+```python
+from nltk.probability import FreqDist
+
+fdist = FreqDist(tokens)
+print(fdist.most_common(3))
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Sentiment Analysis
+
+```python
+nltk.download('vader_lexicon')
+from nltk.sentiment import SentimentIntensityAnalyzer
+
+sia = SentimentIntensityAnalyzer()
+sentiment = sia.polarity_scores("I love NLTK. It's amazing!")
+print(sentiment)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Chunking
+
+```python
+grammar = r"""
+    NP: {<DT>?<JJ>*<NN>}
+"""
+cp = nltk.RegexpParser(grammar)
+result = cp.parse(tagged)
+print(result)
+```
+
+Go back to [Contents](#contents).
+
 
 ### Scikit-Learn
 
