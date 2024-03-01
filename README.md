@@ -10274,6 +10274,7 @@ My GitHub repository has some publicly available Flask projects.
 Go back to [Contents](#contents).
 
 
+
 ### Django
 
 Django (https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
@@ -10508,6 +10509,7 @@ user = User.objects.create_user('username', 'email@example.com', 'password')
 Go back to [Contents](#contents).
 
 
+
 #### Some examples of Django projects are available on my GitHub account
 
 My GitHub repository has some publicly available Django projects.
@@ -10519,6 +10521,7 @@ My GitHub repository has some publicly available Django projects.
 - Use Django and Django REST Framework to create supermarket application
 
 Go back to [Contents](#contents).
+
 
 
 ### Pillow
