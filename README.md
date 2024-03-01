@@ -10710,7 +10710,7 @@ image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 draw = ImageDraw.Draw(image)
 draw.rectangle(((100, 100), (200, 200)), fill="black")
 draw.text((150, 150), "Hello", fill="white")
-image.save('images/RFP_YouTube_Profile_Picture-drawn_image.png')
+image.save('images/RFP_YouTube_Profile_Picture-rectangle_and_text_image.png')
 ```
 
 Go back to [Contents](#contents).
