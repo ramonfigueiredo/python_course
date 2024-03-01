@@ -10600,6 +10600,170 @@ Go back to [Contents](#contents).
 #### Pillow Examples
 
 
+**Example 1:** Opening and Saving Images
+
+```shell
+from PIL import Image
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+# Save the image in a different format
+image.save('images/RFP_YouTube_Profile_Picture-new_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Creating Thumbnails
+
+```shell
+from PIL import Image
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+image.thumbnail((100, 100))
+image.save('images/RFP_YouTube_Profile_Picture-thumbnail.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Cropping Images
+
+```shell
+from PIL import Image
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+# Cropping an image
+cropped_image = image.crop((0, 0, 300, 300))
+cropped_image.save('images/RFP_YouTube_Profile_Picture-cropped_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Rotating and Flipping
+
+```shell
+from PIL import Image
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+# Rotate an image
+rotated_image = image.rotate(90)
+rotated_image.save('images/RFP_YouTube_Profile_Picture-rotated_image.png')
+
+# Flip the image
+flipped_image = image.transpose(Image.FLIP_LEFT_RIGHT)
+flipped_image.save('images/RFP_YouTube_Profile_Picture-flipped_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Applying Filters
+
+```shell
+from PIL import Image, ImageFilter
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+# Apply a blur filter
+blurred_image = image.filter(ImageFilter.BLUR)
+blurred_image.save('images/RFP_YouTube_Profile_Picture-blurred_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Adjusting Image Brightness
+
+```shell
+from PIL import Image, ImageDraw
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+draw = ImageDraw.Draw(image)
+draw.rectangle(((100, 100), (200, 200)), fill="black")
+draw.text((150, 150), "Hello", fill="white")
+image.save('images/RFP_YouTube_Profile_Picture-drawn_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Drawing Shapes and Text
+
+```shell
+from PIL import Image, ImageDraw
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+draw = ImageDraw.Draw(image)
+draw.rectangle(((100, 100), (200, 200)), fill="black")
+draw.text((150, 150), "Hello", fill="white")
+image.save('images/RFP_YouTube_Profile_Picture-drawn_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Converting Images to Black and White
+
+```shell
+from PIL import Image
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+bw_image = image.convert('L')
+bw_image.save('images/RFP_YouTube_Profile_Picture-black_white_image.jpg')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Resizing Images
+
+```shell
+from PIL import Image
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+resized_image = image.resize((200, 200))
+resized_image.save('images/RFP_YouTube_Profile_Picture-resized_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Merging Images
+
+```shell
+from PIL import Image, ImageChops
+
+# Open an image
+image = Image.open('images/RFP_YouTube_Profile_Picture.png')
+
+# Flip the image
+flipped_image = image.transpose(Image.FLIP_LEFT_RIGHT)
+
+merged_image = ImageChops.add(image, flipped_image)
+merged_image.save('images/RFP_YouTube_Profile_Picture-merged_image.png')
+```
+
+Go back to [Contents](#contents).
+
+
 
 ### OpenCV
 
