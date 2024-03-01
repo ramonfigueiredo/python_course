@@ -157,6 +157,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     10. [OpenCV](#opencv)
         1. [Steps to install and use the OpenCV library](#steps-to-install-and-use-the-opencv-library)
         2. [OpenCV Examples](#opencv-examples)
+        3. [Converting MP4 video to GIF using FFmpeg](#converting-mp4-video-to-gif-using-ffmpeg)
     11. [NLTK](#nltk)
         1. [Steps to install and use the NLTK library](#steps-to-install-and-use-the-nltk-library)
         2. [NLTK Examples](#nltk-examples)
@@ -11126,7 +11127,7 @@ cv2.destroyAllWindows()
 
 Input video:
 
-![OpenCV - Example 8 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4)
+![OpenCV - Example 8 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
 
 Go back to [Contents](#contents).
 
@@ -11183,11 +11184,11 @@ print("The video was successfully saved as", output_video_path)
 
 Input video:
 
-![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4)
+![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
 
 Output video:
 
-![OpenCV - Example 9 - Output video - Applying the Canny Algorithm](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel_canny_edges.mp4)
+![OpenCV - Example 9 - Output video - Applying the Canny Algorithm](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel_canny_edges.gif)
 
 Go back to [Contents](#contents).
 
@@ -11260,14 +11261,44 @@ print("Videos have been successfully saved.")
 
 Input video:
 
-![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.mp4)
+![OpenCV - Example 9 - Input video](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel.gif)
 
 Output video:
 
-![OpenCV - Example 9 - Output video - Histogram](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel-histogram_video.mp4)
+![OpenCV - Example 9 - Output video - Histogram](https://github.com/ramonfigueiredo/python_course/blob/main/images/thank_you_for_watch_and_subscribe_in_ramon_figueiredo_youtube_channel-histogram_video.gif)
 
 Go back to [Contents](#contents).
 
+#### Converting MP4 video to GIF using FFmpeg
+
+To convert all MP4 videos in a folder to GIF files using [FFmpeg](https://ffmpeg.org/), you can use a command line loop. 
+
+Below, I provide examples for both Windows and Unix-based systems (like Linux and macOS).
+
+**For Unix-based Systems (Linux/macOS):**
+
+```shell
+for f in *.mp4; do ffmpeg -i "$f" -vf "fps=10,scale=320:-1:flags=lanczos" "${f%.mp4}.gif"; done
+```
+
+This command does the following:
+
+- Loops through each MP4 file in the current directory.
+- Uses FFmpeg to convert the video to a GIF. The `-vf "fps=10,scale=320:-1:flags=lanczos"` part of the command sets the frames per second to 10 and scales the output GIF to a width of 320 pixels (maintaining aspect ratio). The `lanczos` flag specifies a high-quality downsampling filter.
+- Saves the output GIF with the same name as the input MP4 file, but with a `.gif` extension.
+
+#### For Windows
+
+```shell
+FOR %G IN (*.mp4) DO ffmpeg -i "%G" -vf "fps=10,scale=320:-1:flags=lanczos" "%~nG.gif"
+```
+
+This command works similarly to the Unix-based version but is adapted for Windows command-line syntax:
+
+- `FOR %G IN (*.mp4) DO` iterates over each MP4 file in the current directory.
+- `ffmpeg -i "%G"` calls FFmpeg for each file.
+- The `-vf` option and its arguments specify the video filters for FPS, scaling, and the resampling algorithm.
+- `%~nG.gif` specifies the output filename by stripping the original extension and appending .gif instead.
 
 
 ### NLTK
