@@ -8458,7 +8458,7 @@ Go back to [Contents](#contents).
 
 ### SciPy
 
-SciPy, short for Scientific Python, is a fundamental library for scientific computing in Python. 
+SciPy (https://scipy.org/), short for Scientific Python, is a fundamental library for scientific computing in Python. 
 
 It builds on NumPy arrays and provides a large number of higher-level functions that operate on numpy arrays and are useful for different types of scientific and engineering applications.
 
@@ -8794,7 +8794,7 @@ Go back to [Contents](#contents).
 
 ### Pandas
 
-Pandas is a highly popular Python library used primarily for data manipulation and analysis. 
+Pandas (https://pandas.pydata.org/) is a highly popular Python library used primarily for data manipulation and analysis. 
 
 Built on top of the NumPy library, it offers data structures and operations for manipulating numerical tables and time series. 
 
@@ -9187,7 +9187,7 @@ Go back to [Contents](#contents).
 
 ### Matplotlib
 
-Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. 
+Matplotlib (https://matplotlib.org/) is a comprehensive library for creating static, animated, and interactive visualizations in Python. 
 
 It is one of the most popular Python libraries used for data visualization. 
 
@@ -9472,7 +9472,7 @@ Go back to [Contents](#contents).
 
 ### Seaborn
 
-Seaborn is a Python data visualization library based on Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. 
+Seaborn (https://seaborn.pydata.org/) is a Python data visualization library based on Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. 
 
 Seaborn is particularly well suited for exploring and understanding data through the use of plotting functions that operate on entire dataframes and arrays containing whole datasets.
 
@@ -9763,7 +9763,7 @@ Go back to [Contents](#contents).
 
 ### Plotly
 
-Plotly is a Python graphing library that makes interactive, publication-quality graphs online. 
+Plotly (https://plotly.com/python/) is a Python graphing library that makes interactive, publication-quality graphs online. 
 
 It is an open-source library capable of creating complex plots with simple syntax, and it supports over 40 unique chart types. 
 
@@ -10020,7 +10020,7 @@ Go back to [Contents](#contents).
 
 ### Flask
 
-Flask is a lightweight and powerful web framework for Python. 
+Flask (https://flask.palletsprojects.com/) is a lightweight and powerful web framework for Python. 
 
 It is classified as a microframework because it does not require particular tools or libraries and has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. 
 
@@ -10228,7 +10228,7 @@ class User(db.Model):
 
 ### Django
 
-Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
+Django (https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
 
 It's known for its robustness and is designed to help developers take applications from concept to completion as quickly as possible.
 
@@ -10299,9 +10299,10 @@ Go back to [Contents](#contents).
 #### Django Examples
 
 
+
 ### Pillow
 
-Pillow is the friendly fork of the Python Imaging Library (PIL). 
+Pillow (https://pillow.readthedocs.io/) is the friendly fork of the Python Imaging Library (PIL). 
 
 It is an open-source library that adds support for opening, manipulating, and saving many different image file formats in Python. 
 
@@ -10378,7 +10379,7 @@ Go back to [Contents](#contents).
 
 ### OpenCV
 
-OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library. 
+OpenCV (Open Source Computer Vision Library, https://pypi.org/project/opencv-python/, https://opencv.org/) is an open-source computer vision and machine learning software library. 
 
 It was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in commercial products. 
 
@@ -10454,7 +10455,7 @@ Go back to [Contents](#contents).
 
 ### NLTK
 
-NLTK, or the Natural Language Toolkit, is a leading platform for building Python programs to work with human language data. 
+NLTK, or the Natural Language Toolkit (https://www.nltk.org/), is a leading platform for building Python programs to work with human language data. 
 
 It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.
 
@@ -10527,7 +10528,7 @@ Go back to [Contents](#contents).
 
 ### Scikit-Learn
 
-Scikit-Learn, often referred to as sklearn, is a popular Python library for machine learning. 
+Scikit-Learn (https://scikit-learn.org/), often referred to as sklearn, is a popular Python library for machine learning. 
 
 It provides a range of supervised and unsupervised learning algorithms via a consistent interface. 
 
@@ -10602,7 +10603,7 @@ Go back to [Contents](#contents).
 
 ### TensorFlow
 
-TensorFlow is an open-source machine learning library developed by the Google Brain team. 
+TensorFlow (https://www.tensorflow.org/) is an open-source machine learning library developed by the Google Brain team. 
 
 It's widely used for deep learning or neural network tasks and is well-regarded for its flexibility and capability to handle large-scale, complex computations. 
 
@@ -10679,7 +10680,7 @@ Go back to [Contents](#contents).
 
 ### PyTorch
 
-PyTorch is an open-source machine learning library developed by Facebook's AI Research lab. 
+PyTorch (https://pytorch.org/) is an open-source machine learning library developed by Facebook's AI Research lab. 
 
 It is widely used for applications such as computer vision and natural language processing. 
 
@@ -10754,7 +10755,7 @@ Go back to [Contents](#contents).
 
 ### Keras
 
-Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. 
+Keras (https://keras.io/) is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. 
 
 It was developed with a focus on enabling fast experimentation. 
 
