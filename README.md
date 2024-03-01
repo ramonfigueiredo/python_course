@@ -10329,6 +10329,166 @@ Go back to [Contents](#contents).
 #### Django Examples
 
 
+**Example 1:** Setting Up a Django Project
+
+```shell
+# First, install Django using pip
+pip install django
+
+# Create a new Django project
+django-admin startproject myproject
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Running the Development Server
+
+```shell
+# Change into the project directory
+cd myproject
+
+# Run the Django development server
+python manage.py runserver
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Creating an App
+
+```shell
+# Inside the Django project directory
+python manage.py startapp myapp
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Defining a Model
+
+```python
+# In myapp/models.py
+
+from django.db import models
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Creating Database Tables for Models
+
+```shell
+# First, make migrations for the app
+python manage.py makemigrations myapp
+
+# Then, apply the migrations to the database
+python manage.py migrate
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Using Django Admin
+
+```python
+# In myapp/admin.py
+
+from django.contrib import admin
+from .models import Post
+
+admin.site.register(Post)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Writing a View
+
+```python
+# In myapp/views.py
+
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello, world!")
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Configuring URLs
+
+```python
+# In myapp/urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Creating Templates
+
+```python
+<!-- In myapp/templates/myapp/index.html -->
+
+<html>
+    <body>
+        <h1>Hello, world!</h1>
+    </body>
+</html>
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Handling Static Files
+
+```python
+<!-- In your template -->
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 11:** Form Handling
+
+```python
+# In myapp/forms.py
+
+from django import forms
+
+class NameForm(forms.Form):
+    your_name = forms.CharField(label='Your name', max_length=100)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 12:** User Authentication
+
+```python
+# Using Django's built-in user authentication system
+from django.contrib.auth.models import User
+
+# Creating a new user
+user = User.objects.create_user('username', 'email@example.com', 'password')
+```
+
+Go back to [Contents](#contents).
+
 
 ### Pillow
 
