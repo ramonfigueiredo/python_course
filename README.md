@@ -135,6 +135,8 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
        1. [Steps to install and use the Pandas library](#steps-to-install-and-use-the-pandas-library)
        2. [Pandas Examples](#pandas-examples)
     4. [Matplotlib](#matplotlib)
+       1. [Steps to install and use the Matplotlib library](#steps-to-install-and-use-the-matplotlib-library)
+       2. [Matplotlib Examples](#matplotlib-examples)
     5. [Seaborn](#seaborn)
     6. [Plotly](#plotly)
     7. [Flask](#flask)
@@ -9179,6 +9181,58 @@ Key features of Matplotlib include:
 
 Go back to [Contents](#contents).
 
+
+
+#### Steps to install and use the Matplotlib library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Matplotlib (if it is not installed)
+
+```bash
+pip install matplotlib
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
 #### Matplotlib Examples
 
 **Example 1:** Basic Line Plot
@@ -9196,9 +9250,18 @@ plt.title('Basic Line Plot')
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 1 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_1.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 2:** Bar Chart
 
 ```python
+import matplotlib.pyplot as plt
+
 categories = ['Category A', 'Category B', 'Category C']
 values = [3, 7, 2]
 
@@ -9207,9 +9270,17 @@ plt.title('Bar Chart')
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 2 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_2.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 3:** Histogram
 
 ```python
+import matplotlib.pyplot as plt
 import numpy as np
 
 data = np.random.normal(0, 1, 1000)
@@ -9219,9 +9290,19 @@ plt.title('Histogram')
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 3 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_3.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 4:** Scatter Plot
 
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
+
 x = np.random.rand(50)
 y = np.random.rand(50)
 
@@ -9230,9 +9311,18 @@ plt.title('Scatter Plot')
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 4 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_4.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 5:** Pie Chart
 
 ```python
+import matplotlib.pyplot as plt
+
 sizes = [25, 35, 20, 20]
 labels = ['Apples', 'Bananas', 'Grapes', 'Oranges']
 
@@ -9242,9 +9332,19 @@ plt.title('Pie Chart')
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 5 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_5.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 6:** Error Bars
 
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
+
 x = np.arange(0.1, 4, 0.5)
 y = np.exp(-x)
 error = 0.1 + 0.2 * x
@@ -9254,9 +9354,19 @@ plt.title('Error Bars')
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 6 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_6.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 7:** Subplots
 
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
+
 fig, axs = plt.subplots(2)
 x = np.arange(0, 2, 0.01)
 
@@ -9265,10 +9375,18 @@ axs[1].plot(x, np.cos(2 * np.pi * x))
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 7 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_7.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 8:** 3D Plot
 
 ```python
-from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+import numpy as np
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -9280,18 +9398,38 @@ ax.plot(x, y, z)
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 8 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_8.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 9:** Heatmap
 
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
+
 data = np.random.rand(10, 10)
 plt.imshow(data, cmap='hot', interpolation='nearest')
 plt.colorbar()
 plt.show()
 ```
 
+Plotting:
+
+![Matplotlib - Example 9 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_9.png)
+
+Go back to [Contents](#contents).
+
+
 **Example 10:** Contour Plot
 
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
+
 x = np.linspace(-3.0, 3.0, 100)
 y = np.linspace(-3.0, 3.0, 100)
 X, Y = np.meshgrid(x, y)
@@ -9301,6 +9439,12 @@ plt.contourf(X, Y, Z, cmap='viridis')
 plt.colorbar()
 plt.show()
 ```
+
+Plotting:
+
+![Matplotlib - Example 10 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/matplotlib_example_10.png)
+
+Go back to [Contents](#contents).
 
 
 
