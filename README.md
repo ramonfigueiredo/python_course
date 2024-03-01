@@ -10610,12 +10610,12 @@ from PIL import Image
 image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 # Save the image in a different format
-image.save('images/RFP_YouTube_Profile_Picture-copy.png')
+image.save('images/pillow-RFP_YouTube_Profile_Picture-copy.png')
 ```
 
 Saved image:
 
-![Pillow - Example 1 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-copy.png)
+![Pillow - Example 1 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-copy.png)
 
 Go back to [Contents](#contents).
 
@@ -10629,12 +10629,12 @@ from PIL import Image
 image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 image.thumbnail((100, 100))
-image.save('images/RFP_YouTube_Profile_Picture-thumbnail.png')
+image.save('images/pillow-RFP_YouTube_Profile_Picture-thumbnail.png')
 ```
 
 Saved image:
 
-![Pillow - Example 2 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-thumbnail.png)
+![Pillow - Example 2 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-thumbnail.png)
 
 Go back to [Contents](#contents).
 
@@ -10649,12 +10649,12 @@ image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 # Cropping an image
 cropped_image = image.crop((0, 0, 300, 300))
-cropped_image.save('images/RFP_YouTube_Profile_Picture-cropped_image.png')
+cropped_image.save('images/pillow-RFP_YouTube_Profile_Picture-cropped_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 3 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-cropped_image.png)
+![Pillow - Example 3 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-cropped_image.png)
 
 Go back to [Contents](#contents).
 
@@ -10669,22 +10669,22 @@ image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 # Rotate an image
 rotated_image = image.rotate(90)
-rotated_image.save('images/RFP_YouTube_Profile_Picture-rotated_image.png')
+rotated_image.save('images/pillow-RFP_YouTube_Profile_Picture-rotated_image.png')
 
 # Flip the image
 flipped_image = image.transpose(Image.FLIP_LEFT_RIGHT)
-flipped_image.save('images/RFP_YouTube_Profile_Picture-flipped_image.png')
+flipped_image.save('images/pillow-RFP_YouTube_Profile_Picture-flipped_image.png')
 ```
 
 Saved images:
 
 a) Rotated image
 
-![Pillow - Example 4 - Output rotated image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-rotated_image.png)
+![Pillow - Example 4 - Output rotated image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-rotated_image.png)
 
 b) Flipped image
 
-![Pillow - Example 4 - Output flipped image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-flipped_image.png)
+![Pillow - Example 4 - Output flipped image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-flipped_image.png)
 
 Go back to [Contents](#contents).
 
@@ -10699,12 +10699,12 @@ image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 # Apply a blur filter
 blurred_image = image.filter(ImageFilter.BLUR)
-blurred_image.save('images/RFP_YouTube_Profile_Picture-blurred_image.png')
+blurred_image.save('images/pillow-RFP_YouTube_Profile_Picture-blurred_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 5 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-blurred_image.png)
+![Pillow - Example 5 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-blurred_image.png)
 
 Go back to [Contents](#contents).
 
@@ -10719,12 +10719,12 @@ image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 enhancer = ImageEnhance.Brightness(image)
 brightened_image = enhancer.enhance(2)  # Increase brightness
-brightened_image.save('images/RFP_YouTube_Profile_Picture-brightened_image.png')
+brightened_image.save('images/pillow-RFP_YouTube_Profile_Picture-brightened_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 6 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-brightened_image.png)
+![Pillow - Example 6 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-brightened_image.png)
 
 Go back to [Contents](#contents).
 
@@ -10740,12 +10740,12 @@ image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 draw = ImageDraw.Draw(image)
 draw.rectangle(((100, 100), (200, 200)), fill="black")
 draw.text((150, 150), "Hello", fill="white")
-image.save('images/RFP_YouTube_Profile_Picture-rectangle_and_text_image.png')
+image.save('images/pillow-RFP_YouTube_Profile_Picture-rectangle_and_text_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 7 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-rectangle_and_text_image.png)
+![Pillow - Example 7 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-rectangle_and_text_image.png)
 
 Go back to [Contents](#contents).
 
@@ -10759,12 +10759,12 @@ from PIL import Image
 image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 bw_image = image.convert('L')
-bw_image.save('images/RFP_YouTube_Profile_Picture-black_white_image.png')
+bw_image.save('images/pillow-RFP_YouTube_Profile_Picture-black_white_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 8 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-black_white_image.png)
+![Pillow - Example 8 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-black_white_image.png)
 
 Go back to [Contents](#contents).
 
@@ -10778,12 +10778,12 @@ from PIL import Image
 image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 
 resized_image = image.resize((200, 200))
-resized_image.save('images/RFP_YouTube_Profile_Picture-resized_image.png')
+resized_image.save('images/pillow-RFP_YouTube_Profile_Picture-resized_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 9 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-resized_image.png)
+![Pillow - Example 9 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-resized_image.png)
 
 Go back to [Contents](#contents).
 
@@ -10800,12 +10800,12 @@ image = Image.open('images/RFP_YouTube_Profile_Picture.png')
 flipped_image = image.transpose(Image.FLIP_LEFT_RIGHT)
 
 merged_image = ImageChops.add(image, flipped_image)
-merged_image.save('images/RFP_YouTube_Profile_Picture-merged_image.png')
+merged_image.save('images/pillow-RFP_YouTube_Profile_Picture-merged_image.png')
 ```
 
 Saved image:
 
-![Pillow - Example 10 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/RFP_YouTube_Profile_Picture-merged_image.png)
+![Pillow - Example 10 - Output image](https://github.com/ramonfigueiredo/python_course/blob/main/images/pillow-RFP_YouTube_Profile_Picture-merged_image.png)
 
 Go back to [Contents](#contents).
 
