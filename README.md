@@ -146,10 +146,11 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     7. [Flask](#flask)
        1. [Steps to install and use the Flask library](#steps-to-install-and-use-the-flask-library)
        2. [Flask Examples](#flask-examples)
+       3. [Some examples of Flask projects are available on my GitHub account](#some-examples-of-flask-projects-are-available-on-my-github-account)
     8. [Django](#django)
        1. [Steps to install and use the Django library](#steps-to-install-and-use-the-django-library)
        2. [Django Examples](#django-examples)
-       3. [Some examples of Django projects available on my GitHub account](#some-examples-of-django-projects-available-on-my-github-account)
+       3. [Some examples of Django projects are available on my GitHub account](#some-examples-of-django-projects-are-available-on-my-github-account)
     9. [Pillow](#pillow)
        1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
        2. [Pillow Examples](#pillow-examples)
@@ -10257,6 +10258,22 @@ Go back to [Contents](#contents).
 
 
 
+#### Some examples of Flask projects are available on my GitHub account
+
+My GitHub repository has some publicly available Flask projects.
+
+[TODO list application - REST api using Flask-RESTful](https://github.com/ramonfigueiredo/flask_todo_app_rest_api-using_flask-restful)
+- Use Flask, Flask-HTTPAuth, and Flask-RESTful to create a TODO list application!
+
+[RESTful Authentication with Flask](https://github.com/ramonfigueiredo/restful_authentication_with_flask)
+- Use Flask, Flask-HTTPAuth, and Flask-SQLAlchemy to create a RESTful Authentication with Flask
+
+[A Flask API for serving scikit-learn models](https://github.com/ramonfigueiredo/flask_api_for_serving_scikit_learn_models)
+- Use Flask, Numpy, Pandas, and Scikit-Learn to craete a Flask API for serving scikit-learn models (using random forest as an example)
+
+Go back to [Contents](#contents).
+
+
 ### Django
 
 Django (https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
@@ -10491,9 +10508,9 @@ user = User.objects.create_user('username', 'email@example.com', 'password')
 Go back to [Contents](#contents).
 
 
-#### Some examples of Django projects available on my GitHub account
+#### Some examples of Django projects are available on my GitHub account
 
-My GitHub repository has some public available Django projects.
+My GitHub repository has some publicly available Django projects.
 
 [Titanic survival predictor using Django and Machine Learning](https://github.com/ramonfigueiredo/titanic_survival_predictor_using_django_and_ml)
 - Use Django, DjangoRESTFramework, Pandas, and Scikit-Learn to predict whether a passenger (with characteristics as your input) can survive the Titanic drowning or not!
