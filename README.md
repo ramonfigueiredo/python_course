@@ -11715,6 +11715,31 @@ forest.score(X_test, y_test)
 Go back to [Contents](#contents)
 
 
+**Example 11:** Cross-Validation
+
+```python
+from sklearn.model_selection import cross_val_score
+
+clf = svm.SVC(kernel='linear', C=1)
+scores = cross_val_score(clf, iris.data, iris.target, cv=5)
+print(scores)
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 12:** Grid Search for Parameter Tuning
+
+```python
+from sklearn.model_selection import cross_val_score
+
+clf = svm.SVC(kernel='linear', C=1)
+scores = cross_val_score(clf, iris.data, iris.target, cv=5)
+print(scores)
+```
+
+Go back to [Contents](#contents)
+
 ### TensorFlow
 
 TensorFlow (https://www.tensorflow.org/) is an open-source machine learning library developed by the Google Brain team. 
