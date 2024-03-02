@@ -125,55 +125,60 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     2. [Automating Tasks](#automating-tasks)
     3. [Some Python Scripting examples](#some-python-scripting-examples)
 18. [Python Libraries](#python-libraries)
-    1. [NumPy](#numpy)
+    1. [Installing Python Libraries](#installing-python-libraries)
+       1. [Step 1 - Ensure Python and pip are Installed](#step-1---ensure-python-and-pip-are-installed) 
+       2. [Step 2 - Use pip to Install Libraries](#step-2---use-pip-to-install-libraries)
+       3. [Step 3 - Verifying Installation](#step-3---verifying-installation)
+       4. [Virtual Environments](#virtual-environments)
+    2. [NumPy](#numpy)
        1. [Steps to install and use the Numpy library](#steps-to-install-and-use-the-numpy-library)
        2. [Numpy Examples](#numpy-examples)
-    2. [SciPy](#scipy)
+    3. [SciPy](#scipy)
        1. [Steps to install and use the SciPy library](#steps-to-install-and-use-the-scipy-library)
        2. [SciPy Examples](#scipy-examples)
-    3. [Pandas](#pandas)
+    4. [Pandas](#pandas)
        1. [Steps to install and use the Pandas library](#steps-to-install-and-use-the-pandas-library)
        2. [Pandas Examples](#pandas-examples)
-    4. [Matplotlib](#matplotlib)
+    5. [Matplotlib](#matplotlib)
        1. [Steps to install and use the Matplotlib library](#steps-to-install-and-use-the-matplotlib-library)
        2. [Matplotlib Examples](#matplotlib-examples)
-    5. [Seaborn](#seaborn)
+    6. [Seaborn](#seaborn)
        1. [Steps to install and use the Seaborn library](#steps-to-install-and-use-the-seaborn-library)
        2. [Seaborn Examples](#seaborn-examples)
-    6. [Plotly](#plotly)
+    7. [Plotly](#plotly)
        1. [Steps to install and use the Plotly library](#steps-to-install-and-use-the-plotly-library)
        2. [Plotly Examples](#plotly-examples)
-    7. [Flask](#flask)
+    8. [Flask](#flask)
        1. [Steps to install and use the Flask library](#steps-to-install-and-use-the-flask-library)
        2. [Flask Examples](#flask-examples)
        3. [Some examples of Flask projects are available on my GitHub account](#some-examples-of-flask-projects-are-available-on-my-github-account)
-    8. [Django](#django)
+    9. [Django](#django)
        1. [Steps to install and use the Django library](#steps-to-install-and-use-the-django-library)
        2. [Django Examples](#django-examples)
        3. [Some examples of Django projects are available on my GitHub account](#some-examples-of-django-projects-are-available-on-my-github-account)
-    9. [Pillow](#pillow)
-       1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
-       2. [Pillow Examples](#pillow-examples)
-    10. [OpenCV](#opencv)
+    10. [Pillow](#pillow)
+        1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
+        2. [Pillow Examples](#pillow-examples)
+    11. [OpenCV](#opencv)
         1. [Steps to install and use the OpenCV library](#steps-to-install-and-use-the-opencv-library)
         2. [OpenCV Examples](#opencv-examples)
         3. [Converting MP4 video to GIF using FFmpeg](#converting-mp4-video-to-gif-using-ffmpeg)
-    11. [NLTK](#nltk)
+    12. [NLTK](#nltk)
         1. [Steps to install and use the NLTK library](#steps-to-install-and-use-the-nltk-library)
         2. [NLTK Examples](#nltk-examples)
-    12. [Scikit-Learn](#scikit-learn)
+    13. [Scikit-Learn](#scikit-learn)
         1. [Steps to install and use the Scikit-Learn library](#steps-to-install-and-use-the-scikit-learn-library)
         2. [Scikit-Learn Examples](#scikit-learn-examples)
-    13. [TensorFlow](#tensorflow)
+    14. [TensorFlow](#tensorflow)
         1. [Steps to install and use the TensorFlow library](#steps-to-install-and-use-the-tensorflow-library)
         2. [TensorFlow Examples](#tensorflow-examples)
-    14. [PyTorch](#pytorch)
+    15. [PyTorch](#pytorch)
         1. [Steps to install and use the PyTorch library](#steps-to-install-and-use-the-pytorch-library)
         2. [PyTorch Examples](#pytorch-examples)
-    15. [Keras](#keras)
+    16. [Keras](#keras)
         1. [Steps to install and use the Keras library](#steps-to-install-and-use-the-keras-library)
         2. [Keras Examples](#keras-examples)
-    16. [Course - Machine Learning in Python - Github Repository](#course---machine-Learning-in-python---github-repository)
+    17. [Course - Machine Learning in Python - Github Repository](#course---machine-Learning-in-python---github-repository)
 19. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
@@ -8158,6 +8163,160 @@ Why are these libraries so crucial?
 Find, install and publish Python packages with the Python Package Index: https://pypi.org/
 
 Next, let's touch upon some of the most popular Python libraries.
+
+Go back to [Contents](#contents).
+
+
+
+### Installing Python Libraries
+
+Installing Python libraries is a straightforward process that can be done using Python's package manager, `pip`. 
+
+Here's a step-by-step guide on how to install Python libraries:
+
+Go back to [Contents](#contents).
+
+
+
+#### Step 1 - Ensure Python and pip are Installed
+
+Before installing Python libraries, you need to have Python installed on your system. 
+
+Python installation typically includes pip (Python's package installer). 
+
+To check if Python and pip are installed, open a command line (Command Prompt on Windows, Terminal on macOS and Linux/Unix) and run:
+
+```shell
+python --version
+pip --version
+```
+
+If you see version numbers for both Python and pip, you're ready to install libraries. 
+
+If not, download and install Python from the official website: [python.org](https://www.python.org/). 
+
+Make sure to select the option to add Python to your PATH during installation.
+
+Go back to [Contents](#contents).
+
+
+
+#### Step 2 - Use pip to Install Libraries
+
+
+Once Python and pip are installed, you can use pip to install libraries. 
+
+The general syntax for installing a library is:
+
+```shell
+pip install library_name
+```
+
+Replace `library_name` with the name of the library you want to install.
+
+Examples:
+
+* To install NumPy, run:
+
+```shell
+pip install numpy
+```
+
+* To install Pandas, run:
+
+```shell
+pip install pandas
+```
+
+* For libraries that require a specific version, you can specify the version number:
+
+```shell
+pip install numpy==1.18.5
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Step 3 - Verifying Installation
+
+After installation, you can verify that a library is installed correctly by importing it in Python. 
+
+Open a Python shell (just type python in your command line) and try importing the library:
+
+```shell
+import numpy
+```
+
+If there are no error messages, the library has been successfully installed.
+
+Go back to [Contents](#contents).
+
+
+
+#### Virtual Environments
+
+
+* **Creating Virtual Environments:** It's often a good practice to use virtual environments to manage dependencies for different projects. 
+To create a virtual environment, you can use:
+
+```shell
+python -m venv myenv
+```
+
+Activate the virtual environment with:
+
+* On Windows:
+
+```shell
+myenv\Scripts\activate
+```
+
+* On macOS and Linux:
+
+```shell
+source myenv/bin/activate
+```
+
+Once activated, you can install libraries within this environment without affecting your global Python installation.
+
+
+* **Updating a Library:** To update an existing library, use:
+
+
+```shell
+pip install --upgrade library_name
+```
+
+
+* **Using requirements.txt:** For larger projects, you can list all required libraries along with their versions in a **requirements.txt** file and install them using:
+
+```shell
+pip install -r requirements.txt
+```
+
+
+* **Export the requirements.txt file:** To export the Python libraries installed in a virtual environment:
+
+Once your virtual environment is activated, run the following command:
+
+```shell
+pip freeze > requirements.txt
+```
+
+* Deactivate the virtual environment:
+
+```shell
+deactivate
+```
+
+* **Troubleshooting:** 
+ 
+If you encounter any issues:
+  * Check your internet connection.
+  * Check the spelling of the library name.
+  * Ensure that you have the necessary permissions to install software on your system. 
+  * For some systems, you might need to prefix pip commands with sudo for administrative access.
 
 Go back to [Contents](#contents).
 
