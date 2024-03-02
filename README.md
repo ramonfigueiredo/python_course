@@ -12069,6 +12069,178 @@ Go back to [Contents](#contents).
 #### PyTorch Examples
 
 
+**Example 1:** Basic Tensor Operations
+
+```python
+import torch
+
+# Create a tensor
+x = torch.tensor([1, 2, 3])
+y = torch.tensor([4, 5, 6])
+
+# Basic operations
+z = x + y
+print(z)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Tensor Reshaping
+
+```python
+x = torch.randn(4, 4)
+y = x.view(16)
+z = x.view(-1, 8)  # the size -1 is inferred from other dimensions
+print(x.size(), y.size(), z.size())
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Computing Gradients (Autograd)
+
+```python
+x = torch.ones(2, 2, requires_grad=True)
+y = x + 2
+z = y * y * 3
+out = z.mean()
+
+# Compute gradients
+out.backward()
+print(x.grad)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Creating a Simple Neural Network
+
+```python
+import torch.nn as nn
+import torch.nn.functional as F
+
+class Net(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        # Define layers
+        self.fc1 = nn.Linear(3, 3)
+        self.fc2 = nn.Linear(3, 2)
+
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+
+net = Net()
+print(net)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Training a Model
+
+```python
+import torch.optim as optim
+
+# Create a simple dataset
+X = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
+Y = torch.tensor([[0.0], [1.0]])
+
+# Define a loss function and optimizer
+criterion = nn.MSELoss()
+optimizer = optim.SGD(net.parameters(), lr=0.01)
+
+# Training loop
+for epoch in range(500):
+    optimizer.zero_grad()
+    outputs = net(X)
+    loss = criterion(outputs, Y)
+    loss.backward()
+    optimizer.step()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Saving and Loading Models
+
+```python
+# Save the model
+torch.save(net.state_dict(), 'model.pth')
+
+# Load the model
+model = Net()
+model.load_state_dict(torch.load('model.pth'))
+model.eval()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Working with Pretrained Models
+
+```python
+# Load a pretrained ResNet model
+model = torch.hub.load('pytorch/vision:v0.6.0', 'resnet18', pretrained=True)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Image Classification
+
+```python
+from torchvision import transforms
+
+# Preprocess the image
+transform = transforms.Compose([
+    transforms.Resize(256),
+    transforms.CenterCrop(224),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+])
+
+# An example PIL image
+img = Image.open("path/to/image.jpg")
+img_t = transform(img)
+batch_t = torch.unsqueeze(img_t, 0)
+
+# Inferencing
+model.eval()
+out = model(batch_t)
+print(out)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Image Segmentation
+
+```python
+# Example for semantic segmentation
+model = torch.hub.load('pytorch/vision:v0.6.0', 'fcn_resnet101', pretrained=True)
+model.eval()
+out = model(batch_t)
+print(out)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Working with Text Data
+
+```python
+# Example of embedding layer for text data
+embedding = nn.Embedding(10, 3)
+input = torch.LongTensor([[1,2,4,5],[4,3,2,9]])
+output = embedding(input)
+```
+
+Go back to [Contents](#contents).
+
+
 
 ### Keras
 
