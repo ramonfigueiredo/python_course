@@ -11593,6 +11593,127 @@ Go back to [Contents](#contents).
 #### Scikit-Learn Examples
 
 
+**Example 1:** Loading a Dataset
+
+```python
+from sklearn import datasets
+
+iris = datasets.load_iris()
+digits = datasets.load_digits()
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Splitting Data into Training and Test Sets
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.5)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Training a Classification Model
+
+```python
+from sklearn import svm
+
+clf = svm.SVC(gamma=0.001, C=100.)
+clf.fit(X_train, y_train)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Making Predictions
+
+```python
+predicted = clf.predict(X_test)
+print(predicted)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Evaluating Model Accuracy
+
+```python
+from sklearn.metrics import accuracy_score
+
+accuracy = accuracy_score(y_test, predicted)
+print(accuracy)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Using a Pipeline
+
+```python
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+
+pipe = make_pipeline(StandardScaler(), svm.SVC(gamma='auto'))
+pipe.fit(X_train, y_train)
+pipe.score(X_test, y_test)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** K-Means Clustering
+
+```python
+from sklearn.cluster import KMeans
+
+k_means = KMeans(n_clusters=3)
+k_means.fit(iris.data)
+print(k_means.labels_)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Principal Component Analysis (PCA)
+
+```python
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+X_r = pca.fit_transform(iris.data)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Decision Trees
+
+```python
+from sklearn.tree import DecisionTreeClassifier
+
+tree = DecisionTreeClassifier(random_state=0)
+tree.fit(X_train, y_train)
+tree.score(X_test, y_test)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** Random Forest Classifier
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+forest = RandomForestClassifier(n_estimators=100, random_state=0)
+forest.fit(X_train, y_train)
+forest.score(X_test, y_test)
+```
+
+Go back to [Contents](#contents)
+
 
 ### TensorFlow
 
