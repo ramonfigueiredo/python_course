@@ -178,7 +178,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     16. [Keras](#keras)
         1. [Steps to install and use the Keras library](#steps-to-install-and-use-the-keras-library)
         2. [Keras Examples](#keras-examples)
-    17. [Course - Machine Learning in Python - Github Repository](#course---machine-Learning-in-python---github-repository)
+    17. [Course - Machine Learning in Python - GitHub Repository](#course---machine-Learning-in-python---github-repository)
 19. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
@@ -12619,7 +12619,7 @@ Go back to [Contents](#contents).
 
 
 
-### Course - Machine Learning in Python - Github Repository
+### Course - Machine Learning in Python - GitHub Repository
 
 Check out my course of Machine Learning in Python (Github repository):
 
