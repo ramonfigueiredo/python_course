@@ -12314,6 +12314,151 @@ Go back to [Contents](#contents).
 #### Keras Examples
 
 
+**Example 1:** Sequential Model
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+
+# Define a Sequential model
+model = Sequential([
+    Dense(32, input_shape=(784,), activation='relu'),
+    Dense(10, activation='softmax')
+])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Compiling the Model
+
+```python
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Model Training
+
+```python
+import numpy as np
+
+# Dummy data
+data = np.random.random((1000, 784))
+labels = np.random.random((1000, 10))
+
+# Train the model
+model.fit(data, labels, epochs=10, batch_size=32)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Model Evaluation
+
+```python
+# Dummy test data
+test_data = np.random.random((100, 784))
+test_labels = np.random.random((100, 10))
+
+# Evaluate the model
+score = model.evaluate(test_data, test_labels, batch_size=32)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Model Prediction
+
+```python
+predictions = model.predict(test_data, batch_size=128)
+print(predictions)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Functional API for Complex Models
+
+```python
+from keras.layers import Input, Dense
+from keras.models import Model
+
+# Define a Functional API model
+inputs = Input(shape=(784,))
+x = Dense(64, activation='relu')(inputs)
+predictions = Dense(10, activation='softmax')(x)
+
+model = Model(inputs=inputs, outputs=predictions)
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Saving and Loading a Model
+
+```python
+# Save a model
+model.save('my_model.h5')
+
+# Load a model
+from keras.models import load_model
+model = load_model('my_model.h5')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Using Pretrained Models
+
+```python
+from keras.applications import VGG16
+
+# Load VGG16 model pre-trained on ImageNet
+model = VGG16(weights='imagenet', include_top=False)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Callbacks
+
+```python
+from keras.callbacks import EarlyStopping
+
+# Early stopping callback
+early_stopping = EarlyStopping(monitor='val_loss', patience=2)
+
+# Train the model with the callback
+model.fit(data, labels, validation_split=0.2, callbacks=[early_stopping])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** CNN with Keras
+
+```python
+from keras.layers import Conv2D, MaxPooling2D, Flatten
+
+# Create a CNN model
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D((2, 2)))
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+```
+
+Go back to [Contents](#contents).
+
+
 
 ### Course - Machine Learning in Python - Github Repository
 
