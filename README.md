@@ -11741,6 +11741,8 @@ print(scores)
 
 Go back to [Contents](#contents)
 
+
+
 ### TensorFlow
 
 TensorFlow (https://www.tensorflow.org/) is an open-source machine learning library developed by the Google Brain team. 
@@ -11815,6 +11817,181 @@ Go back to [Contents](#contents).
 
 
 #### TensorFlow Examples
+
+
+**Example 1:** Basic Operations
+
+```python
+import tensorflow as tf
+
+# Constant tensors
+tensor1 = tf.constant([[1, 2], [3, 4]])
+tensor2 = tf.constant([[5, 6], [7, 8]])
+
+# Basic operations
+result = tf.add(tensor1, tensor2)
+print(result)
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 2:** Linear Regression
+
+```python
+# Placeholder tensors for input and output
+X = tf.placeholder(tf.float32)
+Y = tf.placeholder(tf.float32)
+
+# Model parameters
+W = tf.Variable([.3], tf.float32)
+b = tf.Variable([-.3], tf.float32)
+
+# Linear model
+linear_model = W * X + b
+
+# Loss function
+squared_delta = tf.square(linear_model - Y)
+loss = tf.reduce_sum(squared_delta)
+
+# Optimizer
+optimizer = tf.train.GradientDescentOptimizer(0.01)
+train = optimizer.minimize(loss)
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 3:** Creating and Running a Session
+
+```python
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
+
+# Run a session to evaluate the output
+print(sess.run(result))
+sess.close()
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 4:** Building a Simple Neural Network
+
+```python
+from tensorflow.keras import layers
+
+# Build a simple neural network with one dense layer
+model = tf.keras.Sequential([
+    layers.Dense(64, activation='relu', input_shape=(32,)),
+    layers.Dense(10, activation='softmax')
+])
+
+model.compile(optimizer=tf.optimizers.Adam(),
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 5:** Training and Evaluating Models
+
+```python
+# Dummy data
+data = tf.random.normal([1000, 32])
+labels = tf.random.normal([1000, 10])
+
+# Training the model
+model.fit(data, labels, epochs=10, batch_size=32)
+
+# Evaluating the model
+model.evaluate(data, labels, batch_size=32)
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 6:** Image Classification with CNNs
+
+```python
+# Convolutional Neural Network for image classification
+model = tf.keras.Sequential([
+    tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+    tf.keras.layers.MaxPooling2D((2, 2)),
+    tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+    tf.keras.layers.MaxPooling2D((2, 2)),
+    tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(10, activation='softmax')
+])
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 7:** Saving and Loading Models
+
+```python
+# Save a model
+model.save('my_model.h5')
+
+# Load a model
+new_model = tf.keras.models.load_model('my_model.h5')
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 8:** Data Augmentation
+
+```python
+datagen = tf.keras.preprocessing.image.ImageDataGenerator(
+    rotation_range=40,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest')
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 9:** Text Generation with RNNs
+
+```python
+# Text generation with a Recurrent Neural Network
+model = tf.keras.Sequential([
+    tf.keras.layers.Embedding(tokenizer.vocab_size, 64),
+    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64)),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(1, activation='sigmoid')
+])
+```
+
+Go back to [Contents](#contents)
+
+
+**Example 10:** Transfer Learning
+
+```python
+base_model = tf.keras.applications.MobileNetV2(input_shape=(224, 224, 3),
+                                               include_top=False,
+                                               weights='imagenet')
+global_average_layer = tf.keras.layers.GlobalAveragePooling2D()
+prediction_layer = tf.keras.layers.Dense(1)
+
+model = tf.keras.Sequential([
+  base_model,
+  global_average_layer,
+  prediction_layer
+```
+
+Go back to [Contents](#contents)
 
 
 
