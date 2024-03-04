@@ -12720,6 +12720,168 @@ Go back to [Contents](#contents)
 
 
 
+### Gensim
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the Gensim library
+
+Go back to [Contents](#contents)
+
+
+
+#### Gensim Examples
+
+Go back to [Contents](#contents)
+
+
+
+### OpenAI
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the OpenAI library
+
+Go back to [Contents](#contents)
+
+
+
+#### OpenAI Examples
+
+Go back to [Contents](#contents)
+
+
+
+### LangChain
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the LangChain library
+
+Go back to [Contents](#contents)
+
+
+
+#### LangChain Examples
+
+Go back to [Contents](#contents)
+
+
+
+### MediaPipe
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the MediaPipe library
+
+Go back to [Contents](#contents)
+
+
+
+#### MediaPipe Examples
+
+Go back to [Contents](#contents)
+
+
+
+### Detectron2
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the Detectron2 library
+
+Go back to [Contents](#contents)
+
+
+
+#### Detectron2 Examples
+
+Go back to [Contents](#contents)
+
+
+
+### TF-Graphics
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the TF-Graphics library
+
+Go back to [Contents](#contents)
+
+
+
+#### TF-Graphics Examples
+
+Go back to [Contents](#contents)
+
+
+
+### PyTorch3D
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the PyTorch3D library
+
+Go back to [Contents](#contents)
+
+
+
+#### PyTorch3D Examples
+
+Go back to [Contents](#contents)
+
+
+
+### Keras-GAN
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the Keras-GAN library
+
+Go back to [Contents](#contents)
+
+
+
+#### Keras-GAN Examples
+
+Go back to [Contents](#contents)
+
+
+
+### DALL-E
+
+Go back to [Contents](#contents)
+
+
+
+#### Steps to install and use the DALL-E library
+
+Go back to [Contents](#contents)
+
+
+
+#### DALL-E Examples 
+
+Go back to [Contents](#contents)
+
+
+
 ## Conclusion
 
 Throughout this course, we've embarked on an extensive exploration of Python, starting from the very basics and advancing through to complex topics that touch on the forefronts of technology and innovation. 
