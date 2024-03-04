@@ -159,26 +159,30 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     10. [Pillow](#pillow)
         1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
         2. [Pillow Examples](#pillow-examples)
-    11. [OpenCV](#opencv)
-        1. [Steps to install and use the OpenCV library](#steps-to-install-and-use-the-opencv-library)
-        2. [OpenCV Examples](#opencv-examples)
-        3. [Converting MP4 video to GIF using FFmpeg](#converting-mp4-video-to-gif-using-ffmpeg)
-    12. [NLTK](#nltk)
-        1. [Steps to install and use the NLTK library](#steps-to-install-and-use-the-nltk-library)
-        2. [NLTK Examples](#nltk-examples)
-    13. [Scikit-Learn](#scikit-learn)
-        1. [Steps to install and use the Scikit-Learn library](#steps-to-install-and-use-the-scikit-learn-library)
-        2. [Scikit-Learn Examples](#scikit-learn-examples)
-    14. [TensorFlow](#tensorflow)
-        1. [Steps to install and use the TensorFlow library](#steps-to-install-and-use-the-tensorflow-library)
-        2. [TensorFlow Examples](#tensorflow-examples)
-    15. [PyTorch](#pytorch)
-        1. [Steps to install and use the PyTorch library](#steps-to-install-and-use-the-pytorch-library)
-        2. [PyTorch Examples](#pytorch-examples)
-    16. [Keras](#keras)
-        1. [Steps to install and use the Keras library](#steps-to-install-and-use-the-keras-library)
-        2. [Keras Examples](#keras-examples)
-    17. [Course - Machine Learning in Python - GitHub Repository](#course---machine-Learning-in-python---github-repository)
+    11. Some Python Libraries for Artificial Intelligence - AI
+        1. Check out my Machine Learning and Deep Learning courses
+            1. [ML 101: Introduction to Machine Learning and Deep Learning - YouTube Video](https://www.youtube.com/watch?v=E3onjLGGBxk)
+            2. [Course: ML and DL - Practical code examples - YouTube Playlist](https://www.youtube.com/playlist?list=PLZjc37fQX2kVbZcc8iwm61lJW9fubDEtd)
+            3. [Machine Learning in Python - GitHub Repository](https://github.com/ramonfigueiredo/machine_learning_in_python)
+        2. [OpenCV](#opencv)
+            1. [Steps to install and use the OpenCV library](#steps-to-install-and-use-the-opencv-library)
+            2. [OpenCV Examples](#opencv-examples)
+            3. [Converting MP4 video to GIF using FFmpeg](#converting-mp4-video-to-gif-using-ffmpeg)
+        3. [NLTK](#nltk)
+            1. [Steps to install and use the NLTK library](#steps-to-install-and-use-the-nltk-library)
+            2. [NLTK Examples](#nltk-examples)
+        4. [Scikit-Learn](#scikit-learn)
+            1. [Steps to install and use the Scikit-Learn library](#steps-to-install-and-use-the-scikit-learn-library)
+            2. [Scikit-Learn Examples](#scikit-learn-examples)
+        5. [TensorFlow](#tensorflow)
+            1. [Steps to install and use the TensorFlow library](#steps-to-install-and-use-the-tensorflow-library)
+            2. [TensorFlow Examples](#tensorflow-examples)
+        6. [Keras](#keras)
+            1. [Steps to install and use the Keras library](#steps-to-install-and-use-the-keras-library)
+            2. [Keras Examples](#keras-examples)
+        7. [PyTorch](#pytorch)
+            1. [Steps to install and use the PyTorch library](#steps-to-install-and-use-the-pytorch-library)
+            2. [PyTorch Examples](#pytorch-examples)
 19. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
@@ -10971,6 +10975,78 @@ Go back to [Contents](#contents).
 
 
 
+### Some Python Libraries for Artificial Intelligence - AI
+
+Python offers a wide range of libraries for Artificial Intelligence (AI), each tailored to specific aspects of AI like machine learning, deep learning, natural language processing, computer vision and more.
+
+Here are some of the most popular Python libraries for AI:
+
+1. **[OpenCV](https://opencv.org/):** 
+   - Open Source Computer Vision Library for image and video processing tasks.
+
+2. **[NLTK (Natural Language Toolkit)](https://www.nltk.org/):** 
+   - Library for natural language processing (NLP) tasks such as tokenization, stemming, tagging, parsing, and semantic reasoning.
+
+3. **[Gensim](https://radimrehurek.com/gensim/):** 
+   - Library for topic modeling, document similarity analysis, and other natural language processing tasks, particularly focusing on unsupervised algorithms.
+
+4. **[Scikit-Learn](https://scikit-learn.org/):** 
+   -  Simple and efficient tools for data mining and data analysis, including various machine learning algorithms and utilities for model evaluation and data preprocessing.
+
+5. **[TensorFlow](https://www.tensorflow.org/):** 
+   - Open-source machine learning framework for building and deploying machine learning models, developed by Google Brain team.
+
+6. **[Keras](https://keras.io/):** 
+   - High-level neural networks API, written in Python and capable of running on top of TensorFlow, Theano, or Microsoft Cognitive Toolkit (CNTK).
+
+7. **[PyTorch](https://pytorch.org/):** 
+   - Open-source deep learning framework developed by Facebook's AI Research lab, known for its dynamic computation graph and easy-to-use API.
+
+8. **[OpenAI](https://openai.com/):** 
+   - Research laboratory focusing on artificial intelligence, known for developing cutting-edge AI models and applications.
+
+9. **[LangChain](https://www.langchain.com/):** 
+   - A library for natural language understanding and processing tasks, including text generation, translation, summarization, and more.
+
+10. **[MediaPipe](https://github.com/google/mediapipe):** 
+    - A cross-platform framework for building multimodal applied ML pipelines, including perception (hand, face, pose detection), media (video, audio) understanding, and 3D perception.
+    - https://developers.google.com/mediapipe
+
+11. **[Detectron2](https://detectron2.readthedocs.io/):** 
+    - High-performance object detection library built on PyTorch, offering state-of-the-art object detection algorithms and models.
+    - https://ai.meta.com/tools/detectron2/
+
+12. **[TF-Graphics](https://www.tensorflow.org/graphics/overview):** 
+    - A TensorFlow library for creating and manipulating 3D structures and images, particularly useful for graphics and image generation tasks.
+
+13. **[PyTorch3D](https://pytorch3d.org/):** 
+    - A library built on PyTorch for 3D computer vision tasks, including rendering, mesh processing, and differentiable rendering.
+
+14. **[Keras-GAN](https://keras.io/examples/generative/conditional_gan/):** 
+    - A collection of generative adversarial network (GAN) implementations using Keras and TensorFlow, useful for generating realistic images and videos based on a given dataset.
+
+15. **[DALL-E](https://github.com/openai/DALL-E):** 
+    - A deep learning model developed by OpenAI that generates images from textual descriptions, suitable for creating diverse and creative visuals based on textual prompts.
+
+These libraries offer a wide range of tools and functionalities for developing AI applications, spanning computer vision, natural language processing, generative modeling, and more.
+
+Go back to [Contents](#contents).
+
+
+
+#### Check out my Machine Learning and Deep Learning courses
+
+- ML 101: Introduction to Machine Learning and Deep Learning - YouTube Video
+  - https://www.youtube.com/watch?v=E3onjLGGBxk
+- Course: ML and DL - Practical code examples - YouTube Playlist
+  - https://www.youtube.com/playlist?list=PLZjc37fQX2kVbZcc8iwm61lJW9fubDEtd
+- Machine Learning in Python - GitHub Repository
+  - https://github.com/ramonfigueiredo/machine_learning_in_python
+
+Go back to [Contents](#contents).
+
+
+
 ### OpenCV
 
 OpenCV (Open Source Computer Vision Library, https://pypi.org/project/opencv-python/, https://opencv.org/) is an open-source computer vision and machine learning software library. 
@@ -12153,6 +12229,222 @@ model = tf.keras.Sequential([
 Go back to [Contents](#contents)
 
 
+### Keras
+
+Keras (https://keras.io/) is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. 
+
+It was developed with a focus on enabling fast experimentation. 
+
+Being able to go from idea to result as fast as possible is key to doing good research.
+
+Key features of Keras include:
+
+1. **User-Friendly:** Keras has a simple, consistent interface optimized for common use cases.
+2. **Modular and Composable:** Keras models are made by connecting configurable building blocks together with few restrictions.
+3. **Easy to Extend:** Write custom building blocks to express new ideas for research.
+4. **Works with Python:** No separate models configuration files in a declarative format. Models are described in Python code.
+
+Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Keras library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Keras (if it is not installed)
+
+```bash
+pip install keras
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Keras Examples
+
+
+**Example 1:** Sequential Model
+
+```python
+from keras.models import Sequential
+from keras.layers import Dense
+
+# Define a Sequential model
+model = Sequential([
+    Dense(32, input_shape=(784,), activation='relu'),
+    Dense(10, activation='softmax')
+])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 2:** Compiling the Model
+
+```python
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 3:** Model Training
+
+```python
+import numpy as np
+
+# Dummy data
+data = np.random.random((1000, 784))
+labels = np.random.random((1000, 10))
+
+# Train the model
+model.fit(data, labels, epochs=10, batch_size=32)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 4:** Model Evaluation
+
+```python
+# Dummy test data
+test_data = np.random.random((100, 784))
+test_labels = np.random.random((100, 10))
+
+# Evaluate the model
+score = model.evaluate(test_data, test_labels, batch_size=32)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 5:** Model Prediction
+
+```python
+predictions = model.predict(test_data, batch_size=128)
+print(predictions)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 6:** Functional API for Complex Models
+
+```python
+from keras.layers import Input, Dense
+from keras.models import Model
+
+# Define a Functional API model
+inputs = Input(shape=(784,))
+x = Dense(64, activation='relu')(inputs)
+predictions = Dense(10, activation='softmax')(x)
+
+model = Model(inputs=inputs, outputs=predictions)
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 7:** Saving and Loading a Model
+
+```python
+# Save a model
+model.save('my_model.h5')
+
+# Load a model
+from keras.models import load_model
+model = load_model('my_model.h5')
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 8:** Using Pretrained Models
+
+```python
+from keras.applications import VGG16
+
+# Load VGG16 model pre-trained on ImageNet
+model = VGG16(weights='imagenet', include_top=False)
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 9:** Callbacks
+
+```python
+from keras.callbacks import EarlyStopping
+
+# Early stopping callback
+early_stopping = EarlyStopping(monitor='val_loss', patience=2)
+
+# Train the model with the callback
+model.fit(data, labels, validation_split=0.2, callbacks=[early_stopping])
+```
+
+Go back to [Contents](#contents).
+
+
+**Example 10:** CNN with Keras
+
+```python
+from keras.layers import Conv2D, MaxPooling2D, Flatten
+
+# Create a CNN model
+model = Sequential()
+model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
+model.add(MaxPooling2D((2, 2)))
+model.add(Flatten())
+model.add(Dense(64, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+```
+
+Go back to [Contents](#contents).
+
 
 ### PyTorch
 
@@ -12397,233 +12689,7 @@ input = torch.LongTensor([[1,2,4,5],[4,3,2,9]])
 output = embedding(input)
 ```
 
-Go back to [Contents](#contents).
-
-
-
-### Keras
-
-Keras (https://keras.io/) is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. 
-
-It was developed with a focus on enabling fast experimentation. 
-
-Being able to go from idea to result as fast as possible is key to doing good research.
-
-Key features of Keras include:
-
-1. **User-Friendly:** Keras has a simple, consistent interface optimized for common use cases.
-2. **Modular and Composable:** Keras models are made by connecting configurable building blocks together with few restrictions.
-3. **Easy to Extend:** Write custom building blocks to express new ideas for research.
-4. **Works with Python:** No separate models configuration files in a declarative format. Models are described in Python code.
-
-Go back to [Contents](#contents).
-
-
-
-#### Steps to install and use the Keras library
-
-* Create a virtual environment (if it doesn't exist)
-  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
-```bash
-virtualenv -p python3 venv
-```
-
-* Activate the virtual environment
-```bash
-source venv/bin/activate
-```
-
-* Upgrade pip (if necessary)
-
-```bash
-pip install --upgrade pip
-```
-
-* Install Keras (if it is not installed)
-
-```bash
-pip install keras
-```
-
-* List the virtual environment packages (if you want to list the packages)
-
-```bash
-pip list
-```
-
-* Create the Python script
-
-* Run the Python script
-  * Note: Replace `main.py` with the correct Python script name.
-
-```bash
-python main.py
-```
-
-* To deactivate the virtual environment, type:
-
-```bash
-deactivate
-```
-
-Go back to [Contents](#contents).
-
-
-
-#### Keras Examples
-
-
-**Example 1:** Sequential Model
-
-```python
-from keras.models import Sequential
-from keras.layers import Dense
-
-# Define a Sequential model
-model = Sequential([
-    Dense(32, input_shape=(784,), activation='relu'),
-    Dense(10, activation='softmax')
-])
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 2:** Compiling the Model
-
-```python
-model.compile(optimizer='rmsprop',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 3:** Model Training
-
-```python
-import numpy as np
-
-# Dummy data
-data = np.random.random((1000, 784))
-labels = np.random.random((1000, 10))
-
-# Train the model
-model.fit(data, labels, epochs=10, batch_size=32)
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 4:** Model Evaluation
-
-```python
-# Dummy test data
-test_data = np.random.random((100, 784))
-test_labels = np.random.random((100, 10))
-
-# Evaluate the model
-score = model.evaluate(test_data, test_labels, batch_size=32)
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 5:** Model Prediction
-
-```python
-predictions = model.predict(test_data, batch_size=128)
-print(predictions)
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 6:** Functional API for Complex Models
-
-```python
-from keras.layers import Input, Dense
-from keras.models import Model
-
-# Define a Functional API model
-inputs = Input(shape=(784,))
-x = Dense(64, activation='relu')(inputs)
-predictions = Dense(10, activation='softmax')(x)
-
-model = Model(inputs=inputs, outputs=predictions)
-model.compile(optimizer='rmsprop',
-              loss='categorical_crossentropy',
-              metrics=['accuracy'])
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 7:** Saving and Loading a Model
-
-```python
-# Save a model
-model.save('my_model.h5')
-
-# Load a model
-from keras.models import load_model
-model = load_model('my_model.h5')
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 8:** Using Pretrained Models
-
-```python
-from keras.applications import VGG16
-
-# Load VGG16 model pre-trained on ImageNet
-model = VGG16(weights='imagenet', include_top=False)
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 9:** Callbacks
-
-```python
-from keras.callbacks import EarlyStopping
-
-# Early stopping callback
-early_stopping = EarlyStopping(monitor='val_loss', patience=2)
-
-# Train the model with the callback
-model.fit(data, labels, validation_split=0.2, callbacks=[early_stopping])
-```
-
-Go back to [Contents](#contents).
-
-
-**Example 10:** CNN with Keras
-
-```python
-from keras.layers import Conv2D, MaxPooling2D, Flatten
-
-# Create a CNN model
-model = Sequential()
-model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))
-model.add(MaxPooling2D((2, 2)))
-model.add(Flatten())
-model.add(Dense(64, activation='relu'))
-model.add(Dense(10, activation='softmax'))
-```
-
-Go back to [Contents](#contents).
-
-
-
-### Course - Machine Learning in Python - GitHub Repository
-
-Check out my course of Machine Learning in Python (Github repository):
-
-- https://github.com/ramonfigueiredo/machine_learning_in_python
+Go back to [Contents](#contents)
 
 
 
