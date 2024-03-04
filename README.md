@@ -183,6 +183,33 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
         7. [PyTorch](#pytorch)
             1. [Steps to install and use the PyTorch library](#steps-to-install-and-use-the-pytorch-library)
             2. [PyTorch Examples](#pytorch-examples)
+        8. [Gensim](#gensim) 
+            1. [Steps to install and use the Gensim library](#steps-to-install-and-use-the-gensim-library)
+            2. [Gensim Examples](#gensim-examples)
+        9. [OpenAI](#openai)
+            1. [Steps to install and use the OpenAI library](#steps-to-install-and-use-the-openai-library)
+            2. [OpenAI Examples](#openai-examples)
+        10. [LangChain](#langchain)
+             1. [Steps to install and use the LangChain library](#steps-to-install-and-use-the-langchain-library)
+             2. [LangChain Examples](#langchain-examples)
+        11. [MediaPipe](#mediapipe)
+             1. [Steps to install and use the MediaPipe library](#steps-to-install-and-use-the-mediapipe-library)
+             2. [MediaPipe Examples](#mediapipe-examples)
+        12. [Detectron2](#detectron2)
+             1. [Steps to install and use the Detectron2 library](#steps-to-install-and-use-the-detectron2-library)
+             2. [Detectron2 Examples](#detectron2-examples)
+        13. [TF-Graphics](#tf-graphics)
+             1. [Steps to install and use the TF-Graphics library](#steps-to-install-and-use-the-tf-graphics-library)
+             2. [TF-Graphics Examples](#tf-graphics-examples)
+        14. [PyTorch3D](#pytorch3d)
+             1. [Steps to install and use the PyTorch3D library](#steps-to-install-and-use-the-pytorch3d-library)
+             2. [PyTorch3D Examples](#pytorch3d-examples)
+        15. [Keras-GAN](#keras-gan)
+             1. [Steps to install and use the Keras-GAN library](#steps-to-install-and-use-the-keras-gan-library)
+             2. [Keras-GAN Examples](#keras-gan-examples)
+        16. [DALL-E](#dall-e)
+             1. [Steps to install and use the DALL-E library](#steps-to-install-and-use-the-dall-e-library)
+             2. [DALL-E Examples](#dall-e-examples) 
 19. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
@@ -10987,21 +11014,21 @@ Here are some of the most popular Python libraries for AI:
 2. **[NLTK (Natural Language Toolkit)](https://www.nltk.org/):** 
    - Library for natural language processing (NLP) tasks such as tokenization, stemming, tagging, parsing, and semantic reasoning.
 
-3. **[Gensim](https://radimrehurek.com/gensim/):** 
-   - Library for topic modeling, document similarity analysis, and other natural language processing tasks, particularly focusing on unsupervised algorithms.
-
-4. **[Scikit-Learn](https://scikit-learn.org/):** 
+3. **[Scikit-Learn](https://scikit-learn.org/):** 
    -  Simple and efficient tools for data mining and data analysis, including various machine learning algorithms and utilities for model evaluation and data preprocessing.
 
-5. **[TensorFlow](https://www.tensorflow.org/):** 
+4. **[TensorFlow](https://www.tensorflow.org/):** 
    - Open-source machine learning framework for building and deploying machine learning models, developed by Google Brain team.
 
-6. **[Keras](https://keras.io/):** 
+5. **[Keras](https://keras.io/):** 
    - High-level neural networks API, written in Python and capable of running on top of TensorFlow, Theano, or Microsoft Cognitive Toolkit (CNTK).
 
-7. **[PyTorch](https://pytorch.org/):** 
+6. **[PyTorch](https://pytorch.org/):** 
    - Open-source deep learning framework developed by Facebook's AI Research lab, known for its dynamic computation graph and easy-to-use API.
 
+7. **[Gensim](https://radimrehurek.com/gensim/):** 
+   - Library for topic modeling, document similarity analysis, and other natural language processing tasks, particularly focusing on unsupervised algorithms.
+   
 8. **[OpenAI](https://openai.com/):** 
    - Research laboratory focusing on artificial intelligence, known for developing cutting-edge AI models and applications.
 
