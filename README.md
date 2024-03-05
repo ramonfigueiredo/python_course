@@ -17,6 +17,12 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       1. [venv](#venv)
       2. [virtualenv](#virtualenv)
       3. [conda](#conda)
+   4. [Transition from Python 2 to Python 3](#transition-from-python-2-to-python-3)
+      1. [Syntax and Code Style](#syntax-and-code-style)
+      2. [Performance and Features](#performance-and-features)
+      3. [Compatibility and Community](#compatibility-and-community)
+      4. [Porting from Python 2 to 3](#porting-from-python-2-to-3)
+      5. [Conclusion - This Python Course focus-on Python 3](#conclusion---this-python-course-focus-on-python-3)
 2. [Python Basics](#python-basics)
    1. [Keywords](#keywords)
    2. [Identifiers](#identifiers)
@@ -793,6 +799,97 @@ conda env create -f environment.yml
 ```
 
 The `conda` provides a convenient way to manage dependencies and environments for Python projects, making it a popular choice for data scientists, machine learning practitioners, and scientific computing enthusiasts.
+
+Go back to [Contents](#contents).
+
+
+
+### Transition from Python 2 to Python 3
+
+The transition from Python 2 to Python 3 is one of the most significant in Python's history, with Python 3 bringing in many changes and improvements over Python 2. 
+
+
+
+#### Syntax and Code Style
+
+Here are some of the key differences from Python 2 to Python 3:
+
+1. **Print Statement:**
+   - Python 2: print is a statement, e.g., print "Hello". 
+   - Python 3: print is a function, e.g., print("Hello").
+
+2. **Unicode Support:**
+   - Python 2: Text strings are stored as ASCII by default. Unicode strings are defined with u, e.g., u"Hello".
+   - Python 3: Text strings are Unicode by default. Byte strings are defined with b, e.g., b"Hello".
+
+4. **Division of Integers:**
+   - Python 2: Dividing integers using / returns an integer. To get a float, you need to use //.
+   - Python 3: Dividing integers using / returns a float. To get floor division (integer division), you use //.
+
+5. **Exception Syntax:**
+   - Python 2: except Exception, e:
+   - Python 3: except Exception as e:
+
+6. **Xrange:**
+   - Python 2: Has two range functions: range and xrange, with xrange being more memory efficient for large ranges.
+   - Python 3: xrange is removed; range behaves like xrange in Python 2.
+
+Go back to [Contents](#contents).
+
+
+
+#### Performance and Features
+
+1. **Python 3 Offers Improved Performance:** 
+   - Features like more efficient garbage collection and faster dictionary access have improved overall performance in Python 3.
+
+2. **Modern Libraries and Frameworks:** 
+   - Many newer Python libraries and frameworks are developed specifically for Python 3.
+
+3. **Type Hinting:** 
+   - Introduced in Python 3.5, type hinting helps with code readability and allows for better static analysis.
+
+Go back to [Contents](#contents).
+
+
+
+#### Compatibility and Community
+
+1. **End of Life for Python 2:** 
+   - Python 2 reached its end of life in January 2020. 
+   - This means it no longer receives updates, not even for security vulnerabilities.
+
+2. **Community and Support:** 
+   - The Python community has largely shifted to Python 3, meaning most ongoing development and community support are focused on Python 3.
+
+Go back to [Contents](#contents).
+
+
+
+#### Porting from Python 2 to 3
+
+Python 3 is not backward-compatible with Python 2.
+
+Tools like [2to3](https://docs.python.org/3/library/2to3.html) can help in converting Python 2 code to Python 3.
+
+```shell
+pip install 2to3
+```
+
+Writing code that is compatible with both versions can be challenging, especially for complex projects.
+
+Go back to [Contents](#contents).
+
+
+
+#### Conclusion - This Python Course focus-on Python 3
+
+Python 3 is more modern, efficient, and the future of Python. 
+- Its enhancements in terms of both language features and performance optimizations make it a preferred choice for Python developers. 
+- For any new projects, it is highly recommended to use Python 3. 
+- For existing Python 2 projects, planning for migration to Python 3 is advisable considering the end of support for Python 2.
+
+This Python Course focus-on Python 3!
 
 Go back to [Contents](#contents).
 
