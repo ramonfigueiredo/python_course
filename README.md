@@ -145,18 +145,21 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     1. [The Python Standard Library](#the-python-standard-library)
        1. [sys](#sys)
        2. [os](#os)
-       3. [datetime](#datetime)
-       4. [math](#math)
-       5. [random](#random)
-       6. [collections](#collections)
-       7. [json](#json)
-       8. [re](#re)
-       9. [subprocess](#subprocess)
-       10. [threading](#threading)
-       11. [urllib](#urllib)
-       12. [socket](#socket)
-       13. [sqlite3](#sqlite3)
-       14. [logging](#logging)
+       3. [time](#time)
+       4. [datetime](#datetime)
+       5. [math](#math)
+       6. [random](#random)
+       7. [collections](#collections)
+       8. [json](#json)
+       9. [re](#re)
+       10. [subprocess](#subprocess)
+       11. [threading](#threading)
+       12. [urllib](#urllib)
+       13. [socket](#socket)
+       14. [sqlite3](#sqlite3)
+       15. [logging](#logging)
+       16. [glob](#glob)
+       17. [argparse](#argparse)
     2. [Installing Python Libraries](#installing-python-libraries)
        1. [Step 1 - Ensure Python and pip are Installed](#step-1---ensure-python-and-pip-are-installed) 
        2. [Step 2 - Use pip to Install Libraries](#step-2---use-pip-to-install-libraries)
@@ -9224,6 +9227,183 @@ for root, dirs, files in os.walk('/path/to/directory'):
 Go back to [Contents](#contents).
 
 
+
+#### time
+
+The `time` module in Python provides various time-related functions. 
+
+Here are 10 examples demonstrating different uses of the time module, from basic time manipulation to more advanced timing and sleep functionalities.
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Getting the Current Time
+
+Solution: 
+
+```python
+import time
+
+current_time = time.time()
+print(f"Current time since the Epoch: {current_time} seconds")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Converting a Time Tuple to a Timestamp
+
+Solution: 
+
+```python
+import time
+
+time_tuple = (2023, 2, 1, 12, 0, 0, 0, 0, 0)  # Year, Month, Day, Hour, Minute, Second, Day of Week, Day of Year, DST
+timestamp = time.mktime(time_tuple)
+print(f"Timestamp: {timestamp}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Displaying Readable Time Format (ctime)
+
+Solution: 
+
+```python
+import time
+
+readable_time = time.ctime(time.time())
+print(f"Readable time: {readable_time}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Getting Structured Time (localtime and gmtime)
+
+Solution: 
+
+```python
+import time
+
+local_time = time.localtime(time.time())
+print(f"Local time: {local_time}")
+
+gm_time = time.gmtime(time.time())
+print(f"UTC time: {gm_time}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Formatting Time with strftime
+
+Solution: 
+
+```python
+import time
+
+formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+print(f"Formatted time: {formatted_time}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Parsing a String to Time with strptime
+
+Solution: 
+
+```python
+import time
+
+time_string = "2023-02-01 12:00:00"
+parsed_time = time.strptime(time_string, "%Y-%m-%d %H:%M:%S")
+print(f"Parsed time: {parsed_time}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Sleeping for a Specific Interval
+
+Solution: 
+
+```python
+import time
+
+print("Start of interval")
+time.sleep(5)  # Sleep for 5 seconds
+print("End of interval")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Measuring Performance Time
+
+Solution: 
+
+```python
+import time
+
+start_time = time.perf_counter()
+# Some task to measure
+time.sleep(2)
+end_time = time.perf_counter()
+print(f"Time taken: {end_time - start_time} seconds")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Using a Monotonic Clock
+
+Solution: 
+
+```python
+import time
+
+start = time.monotonic()
+time.sleep(1)
+end = time.monotonic()
+print(f"Elapsed time: {end - start} seconds")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Handling Time Zones with time
+
+While `time` has limited support for time zones, you can manually calculate time zone offsets or use the `datetime` module for more complex time zone handling. 
+
+Here's a basic example using time:
+
+Solution: 
+
+```python
+import time
+
+utc_offset = -5  # Assuming EST (UTC-5)
+local_time = time.time() + (utc_offset * 3600)
+print(f"Local time (EST): {time.ctime(local_time)}")
+```
+
+Go back to [Contents](#contents).
+
+
+
 #### datetime
 
 The `datetime` module in Python provides classes for manipulating dates and times in both simple and complex ways. 
@@ -11515,6 +11695,395 @@ logger.info('info message')
 logger.warning('warn message')
 logger.error('error message')
 logger.critical('critical message')
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### glob
+
+The `glob` module in Python is used to retrieve files/pathnames matching a specified pattern according to the rules used by Unix shell. 
+
+Here are 10 examples demonstrating different uses of the `glob` module to work with file system paths:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** List all Python files in the current directory
+
+Solution: 
+
+```python
+import glob
+
+for file in glob.glob("*.py"):
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** List all files in the current directory
+
+Solution: 
+
+```python
+HERE
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** List all Python files in a specific directory
+
+Solution: 
+
+```python
+import glob
+
+for file in glob.glob("/path/to/directory/*.py"):
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Using recursive wildcards to match files in subdirectories
+
+Solution: 
+
+```python
+import glob
+
+for file in glob.glob("**/*.py", recursive=True):
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** List all JPEG and PNG files in the current directory
+
+Solution: 
+
+```python
+import glob
+
+for file in glob.glob("*.jpg") + glob.glob("*.png"):
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** List directories only
+
+Solution: 
+
+```python
+import glob
+import os
+
+for dir in glob.glob("*/"):
+    print(os.path.dirname(dir))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** List specific files using wildcard in the middle of the pattern
+
+Solution: 
+
+```python
+import glob
+
+for file in glob.glob("session_*.log"):
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Exclude specific files using a list comprehension and `glob`
+
+Solution: 
+
+```python
+import glob
+
+all_py_files = glob.glob("*.py")
+excluded_files = ["setup.py", "config.py"]
+files = [f for f in all_py_files if f not in excluded_files]
+
+for file in files:
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** List files with multiple extensions using `glob` with set syntax
+
+Solution: 
+
+```python
+import glob
+
+for file in glob.glob("*.{py,txt}", recursive=True):
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Using glob to find specific configuration files in a directory tree
+
+Solution: 
+
+```python
+import glob
+
+for file in glob.glob("**/*.conf", recursive=True):
+    print(file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### argparse
+
+The `argparse` module in Python is used for parsing command-line arguments. 
+
+It provides a mechanism to specify what arguments are required and automatically generates help and usage messages. 
+
+Here are 10 examples demonstrating different uses and features of the argparse module:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Basic Argument Parsing
+
+A simple script that parses one argument and prints it.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Process some integers.')
+parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                    help='an integer for the accumulator')
+args = parser.parse_args()
+print(args.integers)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Adding Optional Arguments
+
+Demonstrates adding optional arguments, which are not required to run the script.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Example with optional arguments.')
+parser.add_argument('--sum', dest='accumulate', action='store_const',
+                    const=sum, default=max,
+                    help='sum the integers (default: find the max)')
+args = parser.parse_args()
+print(args.accumulate(args.integers))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Using Short and Long Option Names
+
+Using Short and Long Option Names
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Short and long option names.')
+parser.add_argument('-v', '--verbose', action='store_true',
+                    help='increase output verbosity')
+args = parser.parse_args()
+if args.verbose:
+    print("Verbosity turned on.")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Specifying Data Types for Arguments
+
+Specifies the expected data type for the input arguments.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Specify data type of arguments.')
+parser.add_argument('radius', metavar='R', type=float,
+                    help='the radius of a circle')
+args = parser.parse_args()
+print(f"The area of the circle is: {3.14159 * args.radius ** 2}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Default Values for Arguments
+
+Shows how to set default values for optional arguments.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Default values for arguments.')
+parser.add_argument('--name', default='John Doe',
+                    help='your name (default: %(default)s)')
+args = parser.parse_args()
+print(f"Hello, {args.name}!")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Choice Arguments
+
+Limits the options for an argument to a specific set of choices.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Choosing from a set of values.')
+parser.add_argument('move', choices=['rock', 'paper', 'scissors'],
+                    help='your move in the game')
+args = parser.parse_args()
+print(f"You chose {args.move}.")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Counting Arguments
+
+Counts the number of occurrences of a specific optional argument.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Count the occurrences of an argument.')
+parser.add_argument('-v', '--verbose', action='count', default=0,
+                    help='increase output verbosity (can be repeated)')
+args = parser.parse_args()
+level = args.verbose
+print(f"Verbosity level: {level}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Grouping Arguments
+
+Groups related arguments together in the help message.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Grouping arguments in help.')
+group = parser.add_mutually_exclusive_group()
+group.add_argument('--verbose', action='store_true',
+                   help='make the operation more talkative')
+group.add_argument('--quiet', action='store_true',
+                   help='make the operation quieter')
+args = parser.parse_args()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Sub-commands
+
+Uses subparsers to implement sub-commands.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='An example with sub-commands.')
+subparsers = parser.add_subparsers(dest='command', help='sub-command help')
+
+# create the parser for the "a" command
+parser_a = subparsers.add_parser('a', help='a help')
+parser_a.add_argument('bar', type=int, help='bar help')
+
+# create the parser for the "b" command
+parser_b = subparsers.add_parser('b', help='b help')
+parser_b.add_argument('--baz', choices='XYZ', help='baz help')
+
+args = parser.parse_args()
+print(f"Executing '{args.command}' command.")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Argument Groups for Organizing Arguments
+
+Organizes arguments into groups for better help message organization.
+
+Solution: 
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser(description='Groups for organizing arguments.')
+group = parser.add_argument_group('group1', 'Group 1 description')
+group.add_argument('--foo', help='foo help')
+group2 = parser.add_argument_group('group2', 'Group 2 description')
+group2.add_argument('--bar', help='bar help')
+
+args = parser.parse_args()
 ```
 
 Go back to [Contents](#contents).
