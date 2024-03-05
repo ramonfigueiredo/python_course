@@ -183,18 +183,21 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     8. [Plotly](#plotly)
        1. [Steps to install and use the Plotly library](#steps-to-install-and-use-the-plotly-library)
        2. [Plotly Examples](#plotly-examples)
-    9. [Flask](#flask)
-       1. [Steps to install and use the Flask library](#steps-to-install-and-use-the-flask-library)
-       2. [Flask Examples](#flask-examples)
-       3. [Some examples of Flask projects are available on my GitHub account](#some-examples-of-flask-projects-are-available-on-my-github-account)
-    10. [Django](#django)
+    9. [Requests](#requests)
+       1. [Steps to install and use the requests library](#steps-to-install-and-use-the-requests-library)
+       2. [Requests Examples](#requests-examples)
+    10. [Flask](#flask)
+        1. [Steps to install and use the Flask library](#steps-to-install-and-use-the-flask-library)
+        2. [Flask Examples](#flask-examples)
+        3. [Some examples of Flask projects are available on my GitHub account](#some-examples-of-flask-projects-are-available-on-my-github-account)
+    11. [Django](#django)
         1. [Steps to install and use the Django library](#steps-to-install-and-use-the-django-library)
         2. [Django Examples](#django-examples)
         3. [Some examples of Django projects are available on my GitHub account](#some-examples-of-django-projects-are-available-on-my-github-account)
-    11. [Pillow](#pillow)
+    12. [Pillow](#pillow)
         1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
         2. [Pillow Examples](#pillow-examples)
-    12. Some Python Libraries for Artificial Intelligence - AI
+    13. Some Python Libraries for Artificial Intelligence - AI
         1. Check out my Machine Learning and Deep Learning courses
             1. [ML 101: Introduction to Machine Learning and Deep Learning - YouTube Video](https://www.youtube.com/watch?v=E3onjLGGBxk)
             2. [Course: ML and DL - Practical code examples - YouTube Playlist](https://www.youtube.com/playlist?list=PLZjc37fQX2kVbZcc8iwm61lJW9fubDEtd)
@@ -14098,6 +14101,242 @@ fig.show()
 Plotting:
 
 ![Plotly - Example 10 - Plotting](https://github.com/ramonfigueiredo/python_course/blob/main/images/plotly_example_10.png)
+
+Go back to [Contents](#contents).
+
+
+
+### Requests
+
+The requests (https://requests.readthedocs.io/en/latest/) library in Python simplifies making HTTP requests to web servers. 
+
+It's not part of the standard library, so it requires installation using pip install requests. Once installed, it provides an easy-to-use API for making GET, POST, and other HTTP requests, handling cookies, sessions, headers, and more. 
+
+Go back to [Contents](#contents).
+
+
+
+#### Steps to install and use the Requests library
+
+* Create a virtual environment (if it doesn't exist)
+  * You can give any name for your virtual folder. Replace `venv` folder name with any name you want.
+```bash
+virtualenv -p python3 venv
+```
+
+* Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+
+* Upgrade pip (if necessary)
+
+```bash
+pip install --upgrade pip
+```
+
+* Install Requests (if it is not installed)
+
+```bash
+pip install requests
+```
+
+* List the virtual environment packages (if you want to list the packages)
+
+```bash
+pip list
+```
+
+* Create the Python script
+
+* Run the Python script
+  * Note: Replace `main.py` with the correct Python script name.
+
+```bash
+python main.py
+```
+
+* To deactivate the virtual environment, type:
+
+```bash
+deactivate
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### Requests Examples
+
+
+**Example 1:** Making a GET Request
+
+Retrieves information from a specified URL.
+
+```python
+import requests
+
+response = requests.get('https://api.github.com')
+print(response.status_code)
+print(response.text)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 2:** Adding Query Parameters to GET Request
+
+Sends additional data in the URL's query string.
+
+```python
+import requests
+
+payload = {'q': 'python', 'sort': 'stars'}
+response = requests.get('https://api.github.com/search/repositories', params=payload)
+print(response.url)  # The URL will contain the query parameters
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 3:** Making a POST Request
+
+Sends data to a URL to create/update a resource.
+
+```python
+import requests
+
+data = {'key': 'value'}
+response = requests.post('https://httpbin.org/post', data=data)
+print(response.text)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 4:** Adding Headers to Your Request
+
+Modifies request headers.
+
+```python
+import requests
+
+headers = {'User-Agent': 'my-app/0.0.1'}
+response = requests.get('https://api.github.com', headers=headers)
+print(response.request.headers)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 5:** Handling Response JSON Content
+
+Automatically decodes JSON response content.
+
+```python
+import requests
+
+response = requests.get('https://api.github.com')
+if response.status_code == 200:
+    data = response.json()
+    print(data)  # `data` is a Python dictionary
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 6:** Handling HTTP Exceptions Gracefully
+
+Catches HTTP errors elegantly.
+
+```python
+import requests
+from requests.exceptions import HTTPError
+
+try:
+    response = requests.get('https://api.github.com/invalid')
+    response.raise_for_status()
+except HTTPError as http_err:
+    print(f'HTTP error occurred: {http_err}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 7:** Using Sessions with `requests`
+
+Reuses configuration across requests.
+
+```python
+import requests
+
+with requests.Session() as session:
+    session.headers.update({'User-Agent': 'my-app/0.0.1'})
+    
+    response = session.get('https://api.github.com')
+    print(response.headers)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 8:** Downloading Files
+
+Efficiently downloads files without loading them entirely into memory.
+
+```python
+import requests
+
+url = 'http://example.com/somefile.zip'
+with requests.get(url, stream=True) as r:
+    with open('somefile.zip', 'wb') as f:
+        for chunk in r.iter_content(chunk_size=8192): 
+            f.write(chunk)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 9:** Handling Cookies
+
+Sends and receives cookies.
+
+```python
+import requests
+
+response = requests.get('https://www.google.com')
+print(response.cookies)
+
+# Send cookies to a server
+cookies = {'session_token': '123456789'}
+response = requests.get('https://www.google.com', cookies=cookies)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Example 10:** Using Timeouts
+
+Sets a timeout for a request to avoid hanging indefinitely.
+
+```python
+import requests
+
+try:
+    response = requests.get('https://api.github.com', timeout=1)
+    print(response.status_code)
+except requests.Timeout:
+    print('The request timed out')
+```
 
 Go back to [Contents](#contents).
 
