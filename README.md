@@ -142,41 +142,56 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
     2. [Automating Tasks](#automating-tasks)
     3. [Some Python Scripting examples](#some-python-scripting-examples)
 18. [Python Libraries](#python-libraries)
-    1. [Installing Python Libraries](#installing-python-libraries)
+    1. [The Python Standard Library](#the-python-standard-library)
+       1. [sys](#sys)
+       2. [os](#os)
+       3. [datetime](#datetime)
+       4. [math](#math)
+       5. [random](#random)
+       6. [collections](#collections)
+       7. [json](#json)
+       8. [re](#re)
+       9. [subprocess](#subprocess)
+       10. [threading](#threading)
+       11. [urllib](#urllib)
+       12. [socket](#socket)
+       13. [sqlite3](#sqlite3)
+       14. [logging](#logging)
+    2. [Installing Python Libraries](#installing-python-libraries)
        1. [Step 1 - Ensure Python and pip are Installed](#step-1---ensure-python-and-pip-are-installed) 
        2. [Step 2 - Use pip to Install Libraries](#step-2---use-pip-to-install-libraries)
        3. [Step 3 - Verifying Installation](#step-3---verifying-installation)
        4. [Virtual Environments](#virtual-environments)
-    2. [NumPy](#numpy)
+    3. [NumPy](#numpy)
        1. [Steps to install and use the Numpy library](#steps-to-install-and-use-the-numpy-library)
        2. [Numpy Examples](#numpy-examples)
-    3. [SciPy](#scipy)
+    4. [SciPy](#scipy)
        1. [Steps to install and use the SciPy library](#steps-to-install-and-use-the-scipy-library)
        2. [SciPy Examples](#scipy-examples)
-    4. [Pandas](#pandas)
+    5. [Pandas](#pandas)
        1. [Steps to install and use the Pandas library](#steps-to-install-and-use-the-pandas-library)
        2. [Pandas Examples](#pandas-examples)
-    5. [Matplotlib](#matplotlib)
+    6. [Matplotlib](#matplotlib)
        1. [Steps to install and use the Matplotlib library](#steps-to-install-and-use-the-matplotlib-library)
        2. [Matplotlib Examples](#matplotlib-examples)
-    6. [Seaborn](#seaborn)
+    7. [Seaborn](#seaborn)
        1. [Steps to install and use the Seaborn library](#steps-to-install-and-use-the-seaborn-library)
        2. [Seaborn Examples](#seaborn-examples)
-    7. [Plotly](#plotly)
+    8. [Plotly](#plotly)
        1. [Steps to install and use the Plotly library](#steps-to-install-and-use-the-plotly-library)
        2. [Plotly Examples](#plotly-examples)
-    8. [Flask](#flask)
+    9. [Flask](#flask)
        1. [Steps to install and use the Flask library](#steps-to-install-and-use-the-flask-library)
        2. [Flask Examples](#flask-examples)
        3. [Some examples of Flask projects are available on my GitHub account](#some-examples-of-flask-projects-are-available-on-my-github-account)
-    9. [Django](#django)
-       1. [Steps to install and use the Django library](#steps-to-install-and-use-the-django-library)
-       2. [Django Examples](#django-examples)
-       3. [Some examples of Django projects are available on my GitHub account](#some-examples-of-django-projects-are-available-on-my-github-account)
-    10. [Pillow](#pillow)
+    10. [Django](#django)
+        1. [Steps to install and use the Django library](#steps-to-install-and-use-the-django-library)
+        2. [Django Examples](#django-examples)
+        3. [Some examples of Django projects are available on my GitHub account](#some-examples-of-django-projects-are-available-on-my-github-account)
+    11. [Pillow](#pillow)
         1. [Steps to install and use the Pillow library](#steps-to-install-and-use-the-pillow-library)
         2. [Pillow Examples](#pillow-examples)
-    11. Some Python Libraries for Artificial Intelligence - AI
+    12. Some Python Libraries for Artificial Intelligence - AI
         1. Check out my Machine Learning and Deep Learning courses
             1. [ML 101: Introduction to Machine Learning and Deep Learning - YouTube Video](https://www.youtube.com/watch?v=E3onjLGGBxk)
             2. [Course: ML and DL - Practical code examples - YouTube Playlist](https://www.youtube.com/playlist?list=PLZjc37fQX2kVbZcc8iwm61lJW9fubDEtd)
@@ -8856,6 +8871,2651 @@ Why are these libraries so crucial?
 Find, install and publish Python packages with the Python Package Index: https://pypi.org/
 
 Next, let's touch upon some of the most popular Python libraries.
+
+Go back to [Contents](#contents).
+
+
+
+### The Python Standard Library
+
+In Python, the standard library provides a wide range of modules that support various aspects of programming, from data manipulation to web development. 
+
+Some of the most commonly used built-in libraries include:
+
+1. **sys:** Provides access to some variables used or maintained by the Python interpreter and functions that interact strongly with the interpreter. Useful for manipulating Python runtime environment.
+
+2. **os:** Offers a way of using operating system-dependent functionality like reading or writing to a file system, managing paths, and executing shell commands.
+
+3. **datetime:** Supplies classes for manipulating dates and times in both simple and complex ways. It's widely used in applications that need to handle date and time information.
+
+4. **math:** Provides access to the mathematical functions defined by the C standard. These include functions for complex mathematical operations like trigonometry, logarithms, and more.
+
+5. **random:** This module implements pseudo-random number generators for various distributions. It's used for anything that requires randomness, from simulations to games.
+
+6. **collections:** Offers alternative container datatypes, such as Counter, OrderedDict, defaultdict, and namedtuple, which are designed for high-performance container operations.
+
+7. **json:** Used for parsing JSON data and converting Python data to JSON. It's extremely useful for web development and working with APIs that communicate using JSON.
+
+8. **re:** Provides regular expression matching operations similar to those found in Perl. It's used for string searching and manipulation.
+
+9. **subprocess:** Allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes. It's crucial for running external commands.
+
+10. **threading:** Enables concurrent programming. It's used to run code in parallel, making it possible to perform tasks that require waiting (like I/O operations) more efficiently.
+
+11. **urllib:** A package that collects several modules for working with URLs, such as urllib.request for opening and reading URLs or urllib.parse for parsing URLs.
+
+12. **socket:** Provides access to the BSD socket interface. It's used for network programming, such as creating client-server applications.
+
+13. **sqlite3:** Implements a SQL interface compliant with the DB-API 2.0 specification described by PEP 249. It's used for applications that require a lightweight disk-based database without the need for a separate server process.
+
+14. **logging:** Offers a flexible logging system for applications to report status, error, and informational messages.
+
+Go back to [Contents](#contents).
+
+
+
+#### sys
+
+The `sys` module in Python provides access to some variables used or maintained by the Python interpreter and to functions that interact strongly with the interpreter. 
+
+Here are 10 examples of how the `sys` module can be used in Python scripts:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Accessing command-line arguments:
+
+Solution: 
+
+```python
+import sys
+# Access command-line arguments
+args = sys.argv[1:]
+print(args)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Exiting the script with a specific status:
+
+Solution: 
+
+```python
+import sys
+# Exit the script with status 1
+sys.exit(1)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Getting the Python version information:
+
+Solution: 
+
+```python
+import sys
+# Print Python version information
+print(sys.version)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Finding the path of the Python interpreter:
+
+Solution: 
+
+```python
+import sys
+# Print the path of the Python interpreter binary
+print(sys.executable)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Modifying the Python module search path:
+
+Solution: 
+
+```python
+import sys
+# Add a directory to the module search path
+sys.path.append('/path/to/module/directory')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Redirecting output stream:
+
+Solution: 
+
+```python
+import sys
+# Redirect standard output to a file
+with open('output.txt', 'w') as f:
+    sys.stdout = f
+    print('This will be written to output.txt')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Checking the size of an object (useful for memory management):
+
+Solution: 
+
+```python
+import sys
+# Check the size of an object in bytes
+my_list = [1, 2, 3]
+print(sys.getsizeof(my_list))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Listing loaded modules:
+
+Solution: 
+
+```python
+import sys
+# List all loaded modules
+print(sys.modules)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Reading from standard input:
+
+Solution: 
+
+```python
+import sys
+# Read a line from standard input
+line = sys.stdin.readline()
+print(f'You entered: {line}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Checking the platform:
+
+Solution: 
+
+```python
+import sys
+# Check the platform
+if sys.platform == 'win32':
+    print('Running on Windows')
+elif sys.platform == 'linux':
+    print('Running on Linux')
+else:
+    print(f'Running on {sys.platform}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### os
+
+The `os` module in Python provides a way of using operating system-dependent functionality. 
+
+It includes functions for interacting with the file system, managing processes, and reading or setting the environment. 
+
+Here are 10 examples demonstrating different uses of the os module:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Getting the current working directory:
+
+Solution: 
+
+```python
+import os
+cwd = os.getcwd()
+print(f'Current working directory: {cwd}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Changing the current working directory:
+
+Solution: 
+
+```python
+import os
+os.chdir('/path/to/new/directory')
+print(f'Changed to new directory: {os.getcwd()}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Listing files and directories in a specified path:
+
+Solution: 
+
+```python
+import os
+entries = os.listdir('/path/to/directory')
+for entry in entries:
+    print(entry)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Creating a new directory:
+
+Solution: 
+
+```python
+import os
+os.mkdir('/path/to/new/directory')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Removing a directory:
+
+Solution: 
+
+```python
+import os
+os.rmdir('/path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Renaming a file or directory:
+
+Solution: 
+
+```python
+import os
+os.rename('/path/to/old_name', '/path/to/new_name')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Getting environment variables:
+
+Solution: 
+
+```python
+import os
+home_dir = os.environ.get('HOME')
+print(f'Home directory: {home_dir}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Setting environment variables:
+
+Solution: 
+
+```python
+import os
+os.environ['MY_VARIABLE'] = 'value'
+print(f'My variable: {os.environ.get("MY_VARIABLE")}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Executing a shell command:
+
+Solution: 
+
+```python
+import os
+os.system('echo Hello World')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Walking a directory tree
+
+Solution: 
+
+```python
+import os
+for root, dirs, files in os.walk('/path/to/directory'):
+    print(f'Found directory: {root}')
+    for file_name in files:
+        print(f'\t{file_name}')
+```
+
+Go back to [Contents](#contents).
+
+
+#### datetime
+
+The `datetime` module in Python provides classes for manipulating dates and times in both simple and complex ways. 
+
+Here are 10 examples to showcase different functionalities of the `datetime` module:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Getting the current date and time:
+
+Solution: 
+
+```python
+from datetime import datetime
+now = datetime.now()
+print(f'Current date and time: {now}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Creating a specific datetime object:
+
+Solution: 
+
+```python
+from datetime import datetime
+dt = datetime(2023, 1, 1, 12, 0)
+print(f'Specific datetime: {dt}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Formatting a datetime object as a string
+
+Solution: 
+
+```python
+from datetime import datetime
+now = datetime.now()
+formatted = now.strftime('%Y-%m-%d %H:%M:%S')
+print(f'Formatted datetime: {formatted}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Parsing a string to a datetime object:
+
+Solution: 
+
+```python
+from datetime import datetime
+dt_str = '2023-01-01 12:00:00'
+dt = datetime.strptime(dt_str, '%Y-%m-%d %H:%M:%S')
+print(f'Parsed datetime: {dt}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Getting the current date:
+
+Solution: 
+
+```python
+from datetime import date
+today = date.today()
+print(f'Today\'s date: {today}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Calculating the difference between two dates or times:
+
+Solution: 
+
+```python
+from datetime import datetime
+dt1 = datetime(2023, 1, 1)
+dt2 = datetime(2023, 6, 1)
+delta = dt2 - dt1
+print(f'Difference: {delta.days} days')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Adding or subtracting days from a date:
+
+Solution: 
+
+```python
+from datetime import datetime, timedelta
+now = datetime.now()
+future_date = now + timedelta(days=10)
+past_date = now - timedelta(days=10)
+print(f'Future date: {future_date}')
+print(f'Past date: {past_date}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Replacing a specific part of a datetime object (e.g., year):
+
+Solution: 
+
+```python
+from datetime import datetime
+dt = datetime(2023, 1, 1)
+dt_replaced = dt.replace(year=2024)
+print(f'Datetime with replaced year: {dt_replaced}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Getting the weekday of a date:
+
+Solution: 
+
+```python
+from datetime import datetime
+dt = datetime.now()
+weekday = dt.weekday()  # Monday is 0 and Sunday is 6
+print(f'Weekday: {weekday}')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Working with time zones
+
+Solution: 
+
+```python
+from datetime import datetime
+from pytz import timezone
+dt_utc = datetime.now(timezone('UTC'))
+dt_local = dt_utc.astimezone(timezone('America/New_York'))
+print(f'UTC time: {dt_utc}')
+print(f'Local time (NY): {dt_local}')
+```
+
+Go back to [Contents](#contents).
+
+
+#### math
+
+The `math` module in Python provides access to mathematical functions defined by the C standard. 
+
+These functions include trigonometric functions, representation functions, logarithmic functions, and more. 
+
+Here are 10 examples demonstrating different uses of the math module:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Calculating the square root:
+
+Solution: 
+
+```python
+import math
+print(math.sqrt(16))  # Output: 4.0
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Rounding up with ceil:
+
+Solution: 
+
+```python
+import math
+print(math.ceil(3.4))  # Output: 4
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Rounding down with floor:
+
+Solution: 
+
+```python
+import math
+print(math.floor(3.7))  # Output: 3
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Calculating the factorial of a number:
+
+Solution: 
+
+```python
+import math
+print(math.factorial(5))  # Output: 120
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Calculating the power of e (Euler's number):
+
+Solution: 
+
+```python
+import math
+print(math.exp(1))  # Output: 2.718281828459045
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Calculating logarithms (default base e, can also specify base):
+
+Solution: 
+
+```python
+import math
+print(math.log(10))  # Natural logarithm, base e
+print(math.log(100, 10))  # Logarithm base 10
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Calculating trigonometric functions:
+
+Solution: 
+
+```python
+import math
+# All trigonometric functions expect input in radians, not degrees
+angle = math.radians(45)  # Convert 45 degrees to radians
+print(math.sin(angle))  # Output: 0.7071067811865475 (sin of 45 degrees)
+print(math.cos(angle))  # Output: 0.7071067811865476 (cos of 45 degrees)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Converting radians to degrees and vice versa:
+
+Solution: 
+
+```python
+import math
+radians = math.radians(180)  # Convert degrees to radians
+degrees = math.degrees(math.pi)  # Convert radians to degrees
+print(f"Radians: {radians}, Degrees: {degrees}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Calculating the greatest common divisor (GCD):
+
+Solution: 
+
+```python
+import math
+print(math.gcd(48, 180))  # Output: 12
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Calculating the hypotenuse of a right-angled triangle:
+
+Solution: 
+
+```python
+import math
+print(math.hypot(3, 4))  # Output: 5.0
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### random
+
+The `random` module in Python is used to generate pseudo-random numbers for various distributions. 
+
+Here are 10 examples demonstrating its use for different purposes:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Generating a random float between 0.0 and 1.0:
+
+Solution: 
+
+```python
+import random
+print(random.random())
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Generating a random integer within a specified range:
+
+Solution: 
+
+```python
+import random
+print(random.randint(1, 100))  # Includes both end points
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Picking a random element from a list
+
+Solution: 
+
+```python
+import random
+choices = ['apple', 'banana', 'cherry']
+print(random.choice(choices))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Shuffling a list in place:
+
+Solution: 
+
+```python
+import random
+items = [1, 2, 3, 4, 5]
+random.shuffle(items)
+print(items)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Generating a random sample from a list without replacement:
+
+Solution: 
+
+```python
+import random
+population = ['red', 'blue', 'green', 'yellow', 'black']
+print(random.sample(population, 3))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Generating a random floating-point number within a specified range
+
+Solution: 
+
+```python
+import random
+print(random.uniform(1, 10))  # Float between 1 and 10
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Generating a random integer with a step size (similar to range() function):
+
+Solution: 
+
+```python
+import random
+print(random.randrange(0, 101, 5))  # Random number between 0 and 100, inclusive, counting by 5s
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Generating a random boolean value:
+
+Solution: 
+
+```python
+import random
+print(random.choice([True, False]))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Seeding the random number generator to produce repeatable results:
+
+Solution: 
+
+```python
+import random
+random.seed(123)
+print(random.random())  # This will always print the same number every time the program is run
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Generating a random byte string of specified length
+
+Solution: 
+
+```python
+import random
+print(random.randbytes(5))  # Generates a random byte string of length 5
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### collections
+
+The `collections` module in Python provides specialized container datatypes, offering alternatives to Python’s general purpose built-in containers: `dict`, `list`, `set`, and `tuple`. 
+
+Here are 10 examples demonstrating different uses of the `collections` module:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** `Counter` for counting hashable objects:
+
+Solution: 
+
+```python
+from collections import Counter
+colors = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']
+color_count = Counter(colors)
+print(color_count)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** `defaultdict` for dictionaries with a default value for missing keys:
+
+Solution: 
+
+```python
+from collections import defaultdict
+fruit = defaultdict(int)
+fruit['apple'] += 1
+print(fruit['apple'])  # Outputs 1
+print(fruit['banana'])  # Outputs 0, default int value
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** `OrderedDict` for dictionaries that maintain insertion order:
+
+Solution: 
+
+```python
+from collections import OrderedDict
+ordered_dict = OrderedDict()
+ordered_dict['banana'] = 3
+ordered_dict['apple'] = 4
+ordered_dict['pear'] = 1
+print(ordered_dict)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** `namedtuple` for creating tuple subclasses with named fields:
+
+Solution: 
+
+```python
+from collections import namedtuple
+Point = namedtuple('Point', 'x y')
+pt = Point(1, -4)
+print(pt.x, pt.y)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** `deque` for double-ended queue allowing appends and pops from either side efficiently:
+
+Solution: 
+
+```python
+from collections import deque
+dq = deque(['a', 'b', 'c'])
+dq.append('d')  # add to the right
+dq.appendleft('e')  # add to the left
+print(dq)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** `ChainMap` for creating a single view of multiple mappings:
+
+Solution: 
+
+```python
+from collections import ChainMap
+dict1 = {'apple': 1, 'banana': 2}
+dict2 = {'orange': 3, 'banana': 4}
+combined = ChainMap(dict1, dict2)
+print(combined['banana'])  # Outputs 2 (from dict1)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** `UserDict`, `UserList`, and `UserString` for easier creation of your own container types:
+
+Solution: 
+
+```python
+from collections import UserDict
+class MyDict(UserDict):
+    pass
+my_dict = MyDict()
+my_dict['fruit'] = 'apple'
+print(my_dict)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Updating a `Counter` object with another collection of items:
+
+Solution: 
+
+```python
+from collections import Counter
+c = Counter(cats=4, dogs=8)
+c.update(['cats', 'parrots', 'dogs'])
+print(c)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Subtracting elements from a `Counter` object:
+
+Solution: 
+
+```python
+from collections import Counter
+inventory = Counter(apples=30, oranges=12, bananas=15)
+sold = Counter(apples=5, oranges=7)
+inventory.subtract(sold)
+print(inventory)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Rotating elements in a `deque`:
+
+HERE
+
+Solution: 
+
+```python
+from collections import deque
+dq = deque(range(5))
+dq.rotate(2)  # Rotate two steps to the right
+print(dq)  # deque([3, 4, 0, 1, 2])
+dq.rotate(-2)  # Rotate two steps to the left
+print(dq)  # deque([0, 1, 2, 3, 4])
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### json
+
+The `json` module in Python is used for parsing JSON data (to convert JSON data into Python data structures) and for encoding Python objects into JSON format. 
+
+Here are 10 examples that demonstrate various uses of the `json` module:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Loading JSON from a string:
+
+Solution: 
+
+```python
+import json
+data = '{"name": "John", "age": 30, "city": "New York"}'
+python_obj = json.loads(data)
+print(python_obj)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Dumping Python object to a JSON string:
+
+Solution: 
+
+```python
+import json
+python_obj = {'name': 'John', 'age': 30, 'city': 'New York'}
+json_data = json.dumps(python_obj)
+print(json_data)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Pretty printing JSON data:
+
+Solution: 
+
+```python
+import json
+python_obj = {'name': 'John', 'age': 30, 'city': 'New York', 'hasPets': False, 'titles': ['Engineer', 'Programmer']}
+json_data = json.dumps(python_obj, indent=4, sort_keys=True)
+print(json_data)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Writing JSON data to a file:
+
+Solution: 
+
+```python
+import json
+python_obj = {'name': 'John', 'age': 30, 'city': 'New York'}
+with open('data.json', 'w') as json_file:
+    json.dump(python_obj, json_file)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Reading JSON data from a file:
+
+Solution: 
+
+```python
+import json
+with open('data.json', 'r') as json_file:
+    python_obj = json.load(json_file)
+    print(python_obj)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Handling complex objects using json.dumps:
+
+Solution: 
+
+```python
+import json
+from datetime import datetime
+def complex_encoder(obj):
+    if isinstance(obj, datetime):
+        return obj.__str__()
+python_obj = {'name': 'John', 'joined': datetime.now()}
+json_data = json.dumps(python_obj, default=complex_encoder)
+print(json_data)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Decoding custom JSON object:
+
+Solution: 
+
+```python
+import json
+def custom_decoder(python_obj):
+    if 'datetime' in python_obj:
+        return datetime.strptime(python_obj['datetime'], '%Y-%m-%d %H:%M:%S')
+    return python_obj
+json_data = '{"name": "John", "datetime": "2023-01-01 12:00:00"}'
+python_obj = json.loads(json_data, object_hook=custom_decoder)
+print(python_obj)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Encoding and decoding a list of data:
+
+Solution: 
+
+```python
+import json
+python_obj = [{'name': 'John'}, {'name': 'Alice'}, {'name': 'Bob'}]
+json_data = json.dumps(python_obj)
+new_python_obj = json.loads(json_data)
+print(new_python_obj)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Using `json.dumps()` with `separators` and `sort_keys` parameters:
+
+Solution: 
+
+```python
+import json
+python_obj = {'name': 'John', 'age': 30, 'city': 'New York', 'hasPets': False}
+json_data = json.dumps(python_obj, indent=4, separators=(',', ': '), sort_keys=True)
+print(json_data)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Filtering keys while encoding Python objects to JSON:
+
+Solution: 
+
+```python
+import json
+python_obj = {'name': 'John', 'password': '1234', 'age': 30}
+def filter_keys(obj):
+    return {key: value for key, value in obj.items() if key != 'password'}
+json_data = json.dumps(python_obj, default=filter_keys)
+print(json_data)
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### re
+
+The `re` module in Python is used for working with regular expressions. 
+
+It provides a powerful way to search, match, and manipulate text. 
+
+Here are 10 examples demonstrating different uses of the `re` module, from basic pattern matching to more complex text manipulations.
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Matching a Pattern in a String
+
+Checks if the pattern is present in the string.
+
+Solution: 
+
+```python
+import re
+
+text = "Hello, world!"
+if re.search("world", text):
+    print("Found a match!")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Splitting a String
+
+Splits a string by any number of spaces.
+
+Solution: 
+
+```python
+import re
+
+text = "Hello,    world! Welcome    to Python."
+words = re.split(r"\s+", text)
+print(words)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Replacing Text in a String
+
+Replaces occurrences of a pattern with a specified string.
+
+Solution: 
+
+```python
+import re
+
+text = "Hello, world! world!"
+replaced_text = re.sub("world", "Python", text)
+print(replaced_text)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Extracting All Matches
+
+Finds all non-overlapping matches of a pattern.
+
+Solution: 
+
+```python
+import re
+
+text = "Email me at email1@example.com and email2@example.net."
+emails = re.findall(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", text)
+print(emails)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Ignoring Case Sensitivity
+
+Performs case-insensitive matching.
+
+Solution: 
+
+```python
+import re
+
+text = "Hello, World!"
+if re.search("world", text, re.IGNORECASE):
+    print("Found a match!")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Grouping with Parentheses
+
+Groups part of a pattern to extract specific portions of the matched text.
+
+Solution: 
+
+```python
+import re
+
+text = "My phone number is 123-456-7890."
+match = re.search(r"(\d{3})-(\d{3})-(\d{4})", text)
+if match:
+    print("Area code:", match.group(1))
+    print("Local number:", match.group(2), match.group(3))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Using finditer for Match Objects
+
+Finds all non-overlapping matches and returns them as an iterator of match objects.
+
+Solution: 
+
+```python
+import re
+
+text = "two too."
+matches = re.finditer(r"t[wo]o", text, re.IGNORECASE)
+for match in matches:
+    print(f"'{match.group()}' found at {match.span()}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Compiling Regular Expressions
+
+Pre-compiles a regular expression pattern for repeated use.
+
+Solution: 
+
+```python
+import re
+
+pattern = re.compile(r"\d{3}-\d{3}-\d{4}")
+text = "Call me at 123-456-7890 or 098-765-4321."
+for match in pattern.finditer(text):
+    print("Found phone number:", match.group())
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Named Groups
+
+Uses named groups to refer to matched groups.
+
+Solution: 
+
+```python
+import re
+
+text = "John Smith <john.smith@example.com>"
+match = re.search(r"(?P<name>[\w\s]+) <(?P<email>[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})>", text)
+if match:
+    print("Name:", match.group("name"))
+    print("Email:", match.group("email"))
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Lookahead and Lookbehind Assertions
+
+Matches a pattern only if it is followed or preceded by another pattern.
+
+Solution: 
+
+```python
+import re
+
+# Positive lookahead to find 'is' only if it's followed by ' great'
+text = "Python is great, but not all the time is easy."
+matches = re.findall(r"is(?= great)", text)
+for match in matches:
+    print("Found:", match)
+
+# Negative lookbehind to exclude matches preceded by 'not '
+text = "good bad not good"
+matches = re.findall(r"(?<!not )good", text)
+for match in matches:
+    print("Found:", match)
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### subprocess
+
+The `subprocess` module in Python allows you to spawn new processes, connect to their input/output/error pipes, and obtain their return codes. 
+
+Here are 10 examples demonstrating its use for various tasks:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Running an external command and capturing its output:
+
+Solution: 
+
+```python
+import subprocess
+result = subprocess.run(['ls', '-l'], capture_output=True, text=True)
+print(result.stdout)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Checking the output of a command:
+
+Solution: 
+
+```python
+import subprocess
+result = subprocess.check_output(['echo', 'Hello World'], text=True)
+print(result)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Running a command and checking for errors:
+
+Solution: 
+
+```python
+import subprocess
+subprocess.run(['false'], check=True)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Running a shell command:
+
+Solution: 
+
+```python
+import subprocess
+subprocess.run('cat /etc/passwd | grep root', shell=True)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Piping data between processes:
+
+Solution: 
+
+```python
+import subprocess
+p1 = subprocess.Popen(['ps', 'aux'], stdout=subprocess.PIPE)
+p2 = subprocess.Popen(['grep', 'httpd'], stdin=p1.stdout, stdout=subprocess.PIPE)
+p1.stdout.close()  # Allow p1 to receive a SIGPIPE if p2 exits.
+output = p2.communicate()[0]
+print(output)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Running a command with environment variables:
+
+Solution: 
+
+```python
+import subprocess
+env = {'MY_VAR': 'value'}
+subprocess.run(['env'], env=env)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Running a command with a timeout:
+
+Solution: 
+
+```python
+import subprocess
+try:
+    subprocess.run(['sleep', '10'], timeout=5)
+except subprocess.TimeoutExpired:
+    print('The command timed out.')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Capturing `stderr` separately from stdout:
+
+Solution: 
+
+```python
+import subprocess
+result = subprocess.run(['ls', 'non_existent_file'], capture_output=True, text=True)
+print('stdout:', result.stdout)
+print('stderr:', result.stderr)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Using the `subprocess.Popen` class for more control:
+
+Solution: 
+
+```python
+import subprocess
+process = subprocess.Popen(['ping', '-c', '4', 'example.com'], stdout=subprocess.PIPE, text=True)
+for line in process.stdout:
+    print(line.strip())
+process.stdout.close()
+process.wait()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Sending input to a process:
+
+Solution: 
+
+```python
+import subprocess
+process = subprocess.Popen(['cat'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, text=True)
+stdout, stderr = process.communicate('Hello World\n')
+print(stdout)
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### threading
+
+The `threading` module in Python is used for running tasks concurrently. 
+
+This can significantly improve the performance of I/O-bound applications. 
+
+Here are 10 examples demonstrating different uses of the `threading` module:
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Creating and starting a thread:
+
+Solution: 
+
+```python
+import threading
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+t = threading.Thread(target=print_numbers)
+t.start()
+t.join()  # Wait for the thread to complete
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Passing arguments to thread target function:
+
+Solution: 
+
+```python
+import threading
+
+def print_message(message):
+    print(message)
+
+t = threading.Thread(target=print_message, args=("Hello, threading!",))
+t.start()
+t.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Using a subclass of `Thread`:
+
+Solution: 
+
+```python
+import threading
+
+class MyThread(threading.Thread):
+    def run(self):
+        print("Thread running")
+
+t = MyThread()
+t.start()
+t.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Synchronizing threads with a `Lock`:
+
+Solution: 
+
+```python
+import threading
+
+lock = threading.Lock()
+
+def thread_safe_function():
+    with lock:
+        # Critical section of code
+        print("Lock acquired")
+
+t1 = threading.Thread(target=thread_safe_function)
+t2 = threading.Thread(target=thread_safe_function)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Using `Semaphore` for limiting access:
+
+Solution: 
+
+```python
+import threading
+import time
+
+semaphore = threading.Semaphore(2)
+
+def access_resource(i):
+    print(f"Thread {i} is waiting to access the resource")
+    with semaphore:
+        print(f"Resource accessed by thread {i}")
+        time.sleep(1)
+    print(f"Thread {i} released the resource")
+
+threads = [threading.Thread(target=access_resource, args=(i,)) for i in range(4)]
+
+for t in threads:
+    t.start()
+
+for t in threads:
+    t.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Using `Event` for signaling between threads:
+
+Solution: 
+
+```python
+import threading
+
+event = threading.Event()
+
+def waiter():
+    print("Waiting for event")
+    event.wait()
+    print("Event triggered")
+
+def trigger():
+    print("Triggering event")
+    event.set()
+
+t1 = threading.Thread(target=waiter)
+t2 = threading.Thread(target=trigger)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Using `Condition` for complex thread synchronization:
+
+Solution: 
+
+```python
+import threading
+
+condition = threading.Condition()
+item = None
+
+def producer():
+    global item
+    with condition:
+        item = "Something"
+        condition.notify()
+
+def consumer():
+    with condition:
+        condition.wait()
+        print(f"Consumed {item}")
+
+t1 = threading.Thread(target=producer)
+t2 = threading.Thread(target=consumer)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Using `Barrier` for synchronizing threads at a point:
+
+Solution: 
+
+```python
+import threading
+
+barrier = threading.Barrier(3)
+
+def worker():
+    print(f"Thread {threading.current_thread().name} waiting at barrier")
+    barrier.wait()
+    print(f"Thread {threading.current_thread().name} passed the barrier")
+
+threads = [threading.Thread(target=worker) for _ in range(3)]
+
+for t in threads:
+    t.start()
+
+for t in threads:
+    t.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Using `Timer` for delayed execution of a function:
+
+Solution: 
+
+```python
+import threading
+
+def delayed_function():
+    print("Function executed after delay")
+
+timer = threading.Timer(5, delayed_function)  # Delay for 5 seconds
+timer.start()
+timer.join()  # Wait for the timer to expire
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Managing thread-local data:
+
+Solution: 
+
+```python
+import threading
+
+thread_local = threading.local()
+
+def worker():
+    thread_local.x = threading.current_thread().name
+    print(f"Thread {thread_local.x} setting thread-local data")
+
+t1 = threading.Thread(target=worker)
+t2 = threading.Thread(target=worker)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### urllib
+
+The `urllib` library in Python is used for fetching URLs (Uniform Resource Locators). 
+
+It offers a simple interface for network resource access. 
+
+Below are 10 examples demonstrating various uses of the `urllib` library, specifically focusing on `urllib.request` for HTTP requests, `urllib.parse` for URL parsing, and handling exceptions.
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Fetching a Web Page's Content
+
+Solution: 
+
+```python
+import urllib.request
+
+url = "http://example.com"
+response = urllib.request.urlopen(url)
+webContent = response.read()
+
+print(webContent[:500])  # Print the first 500 bytes of the content
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Downloading a File
+
+Solution: 
+
+```python
+import urllib.request
+
+url = "http://example.com/somefile.zip"
+filename = "somefile.zip"
+urllib.request.urlretrieve(url, filename)
+
+print(f"Downloaded {url} as {filename}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Sending Data with a POST Request
+
+Solution: 
+
+```python
+import urllib.parse
+import urllib.request
+
+url = "http://httpbin.org/post"
+values = {'key': 'value'}
+data = urllib.parse.urlencode(values).encode('utf-8')  # Data should be bytes
+req = urllib.request.Request(url, data)
+response = urllib.request.urlopen(req)
+result = response.read()
+
+print(result)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Adding Headers to a Request
+
+Solution: 
+
+```python
+import urllib.request
+
+url = "http://httpbin.org/headers"
+headers = {'User-Agent': 'My User Agent 1.0'}
+req = urllib.request.Request(url, headers=headers)
+response = urllib.request.urlopen(req)
+result = response.read()
+
+print(result)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Error Handling
+
+Solution: 
+
+```python
+import urllib.request
+from urllib.error import URLError
+
+url = "http://thisurldoesnotexist.com"
+try:
+    response = urllib.request.urlopen(url)
+except URLError as e:
+    print(e.reason)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Parsing URLs
+
+Solution: 
+
+```python
+from urllib.parse import urlparse
+
+url = "http://www.example.com/site?name=Main&section=Home"
+parsed_url = urlparse(url)
+
+print(f"Scheme: {parsed_url.scheme}")
+print(f"Netloc: {parsed_url.netloc}")
+print(f"Path: {parsed_url.path}")
+print(f"Query: {parsed_url.query}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Constructing URLs
+
+Solution: 
+
+```python
+from urllib.parse import urlunparse
+
+components = ('http', 'www.example.com', '/index.html', '', 'a=1&b=2', '')
+url = urlunparse(components)
+
+print(url)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Encoding Query Parameters
+
+Solution: 
+
+```python
+from urllib.parse import urlencode
+
+query_params = {'name': 'John Doe', 'city': 'New York'}
+encoded_params = urlencode(query_params)
+
+print(f"Encoded Query Parameters: {encoded_params}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Basic Authentication
+
+Solution: 
+
+```python
+import urllib.request
+
+url = "http://example.com/login"
+username = "user"
+password = "pass"
+
+# Create a password manager
+password_mgr = urllib.request.HTTPPasswordMgrWithDefaultRealm()
+password_mgr.add_password(None, url, username, password)
+
+handler = urllib.request.HTTPBasicAuthHandler(password_mgr)
+opener = urllib.request.build_opener(handler)
+
+urllib.request.install_opener(opener)
+response = urllib.request.urlopen(url)
+webContent = response.read()
+
+print(webContent[:500])
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Handling Redirects
+
+Solution: 
+
+```python
+import urllib.request
+
+url = "http://github.com"  # GitHub HTTP URLs redirect to HTTPS
+
+response = urllib.request.urlopen(url)
+final_url = response.geturl()
+
+print(f"Final URL after redirects: {final_url}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### socket
+
+The `socket` module in Python provides access to the BSD socket interface, offering a way to communicate over networks using the TCP/IP protocol. 
+
+Here are 10 examples demonstrating different uses of the socket module, from creating basic clients and servers to more advanced networking concepts.
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Basic TCP Server
+
+Solution: 
+
+```python
+import socket
+
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind(('localhost', 12345))
+server_socket.listen()
+
+while True:
+    client_socket, addr = server_socket.accept()
+    print(f"Connection from {addr}")
+    client_socket.sendall(b'Hello, client!')
+    client_socket.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Basic TCP Client
+
+Solution: 
+
+```python
+import socket
+
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client_socket.connect(('localhost', 12345))
+data = client_socket.recv(1024)
+client_socket.close()
+
+print(f"Received: {data.decode()}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** UDP Server
+
+Solution: 
+
+```python
+import socket
+
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server_socket.bind(('localhost', 12345))
+
+while True:
+    data, addr = server_socket.recvfrom(1024)
+    print(f"Received from {addr}: {data.decode()}")
+    server_socket.sendto(b'Hello, UDP client!', addr)
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** UDP Client
+
+Solution: 
+
+```python
+import socket
+
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+message = b'Hello, server!'
+client_socket.sendto(message, ('localhost', 12345))
+data, server = client_socket.recvfrom(1024)
+client_socket.close()
+
+print(f"Received: {data.decode()}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Setting Socket Options
+
+Solution: 
+
+```python
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # Enable address reuse
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Non-blocking Sockets
+
+Solution: 
+
+```python
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setblocking(False)  # Set socket to non-blocking mode
+try:
+    s.connect(('localhost', 12345))
+except BlockingIOError:
+    pass  # Ignore expected blocking errors
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Timeout for Sockets
+
+Solution: 
+
+```python
+import socket
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.settimeout(5)  # Set timeout to 5 seconds
+
+try:
+    s.connect(('localhost', 12345))
+except socket.timeout:
+    print("Connection timed out")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Echo Server with SocketServer
+
+Solution: 
+
+```python
+from socketserver import BaseRequestHandler, TCPServer
+
+class EchoHandler(BaseRequestHandler):
+    def handle(self):
+        data = self.request.recv(1024)
+        self.request.sendall(data)
+
+server = TCPServer(('localhost', 12345), EchoHandler)
+server.serve_forever()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Getting Local Machine Name
+
+Solution: 
+
+```python
+import socket
+
+hostname = socket.gethostname()
+print(f"Hostname: {hostname}")
+
+local_ip = socket.gethostbyname(hostname)
+print(f"IP Address: {local_ip}")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Using `getaddrinfo` for DNS Resolution
+
+Solution: 
+
+```python
+import socket
+
+result = socket.getaddrinfo("www.example.com", None)
+for item in result:
+    print(item)
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### sqlite3
+
+The `sqlite3` module in Python provides an SQL interface compliant with the DB-API 2.0 specification.
+
+SQLite (https://www.sqlite.org/): 
+- SQLite is a software library that provides a relational database management system. 
+- It is lightweight, serverless, and self-contained, meaning it doesn't require a separate server process to operate. 
+- SQLite stores the entire database (definitions, tables, indexes, and the data itself) as a single cross-platform file on a host machine. 
+- It's widely used for embedded database applications, such as in mobile apps, desktop applications, and certain web browsers, because of its simplicity, reliability, and ease of integration.
+
+The `sqlite3` is a built-in module, so you don't need to install anything extra to use [SQLite](https://www.sqlite.org/) databases in Python. 
+
+Here are 10 examples demonstrating various uses of the `sqlite3` module, from basic database operations to more advanced concepts.
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Creating a New SQLite Database and Table
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.execute('''CREATE TABLE stocks
+             (date text, trans text, symbol text, qty real, price real)''')
+
+conn.commit()
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Inserting Data into a Table
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.execute("INSERT INTO stocks VALUES ('2020-01-05','BUY','RHAT',100,35.14)")
+
+conn.commit()
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Querying Data
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+for row in c.execute('SELECT * FROM stocks WHERE trans=?', ('BUY',)):
+    print(row)
+
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Using Parameterized Queries
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+symbol = 'RHAT'
+c.execute("SELECT * FROM stocks WHERE symbol = ?", (symbol,))
+print(c.fetchone())
+
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Updating Data
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.execute("UPDATE stocks SET price = 100.0 WHERE symbol = 'RHAT'")
+conn.commit()
+
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Deleting Data
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.execute("DELETE FROM stocks WHERE symbol = 'RHAT'")
+conn.commit()
+
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Using Row Objects
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+conn.row_factory = sqlite3.Row
+
+c = conn.cursor()
+c.execute('SELECT * FROM stocks')
+
+row = c.fetchone()
+print(row['symbol'], row['price'])
+
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Creating an Index
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.execute('CREATE INDEX idx_symbol ON stocks (symbol)')
+
+conn.commit()
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Executing Multiple Commands at Once
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+c.executescript('''
+    DROP TABLE IF EXISTS stocks;
+    CREATE TABLE stocks (date text, trans text, symbol text, qty real, price real);
+''')
+
+conn.commit()
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Using Transactions
+
+Solution: 
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+c = conn.cursor()
+
+# Start a transaction
+conn.execute('BEGIN TRANSACTION;')
+
+try:
+    c.execute("INSERT INTO stocks VALUES ('2020-01-05','BUY','RHAT',100,35.14)")
+    # Imagine some other operations here...
+    conn.commit()  # Commit changes
+except:
+    conn.rollback()  # Roll back changes on error
+
+conn.close()
+```
+
+Go back to [Contents](#contents).
+
+
+
+#### logging
+
+The `logging` module in Python is a standard module that provides a flexible framework for emitting log messages from Python programs. 
+
+It is designed to be easy to use and configure. 
+
+Here are 10 examples demonstrating different uses of the logging module, from basic logging to configuring loggers with different log levels, formats, and output destinations.
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 1:** Basic Logging
+
+Solution: 
+
+```python
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logging.info("This is an info message")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 2:** Logging to a File
+
+Solution: 
+
+```python
+import logging
+
+logging.basicConfig(filename='example.log', level=logging.DEBUG)
+logging.debug('This message will be written to the log file.')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 3:** Setting the Logging Format
+
+Solution: 
+
+```python
+import logging
+
+logging.basicConfig(format='%(levelname)s:%(asctime)s:%(message)s', level=logging.DEBUG)
+logging.info('This is an info message with a custom format.')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 4:** Logging Exception Information
+
+Solution: 
+
+```python
+import logging
+
+try:
+    1 / 0
+except ZeroDivisionError:
+    logging.exception("Exception occurred")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 5:** Creating Custom Loggers
+
+Solution: 
+
+```python
+import logging
+
+logger = logging.getLogger('my_logger')
+logger.setLevel(logging.WARNING)
+
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+
+logger.addHandler(handler)
+logger.warning('This is a warning message.')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 6:** Logging to Multiple Destinations
+
+Solution: 
+
+```python
+import logging
+
+logger = logging.getLogger('my_app')
+logger.setLevel(logging.DEBUG)
+
+# Log to file
+file_handler = logging.FileHandler('app.log')
+file_handler.setLevel(logging.ERROR)
+
+# Log to console
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+
+formatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+console_handler.setFormatter(formatter)
+
+logger.addHandler(file_handler)
+logger.addHandler(console_handler)
+
+logger.debug('Debug message')
+logger.error('Error message')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 7:** Using Different Log Levels
+
+Solution: 
+
+```python
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logging.debug('Debugging information')
+logging.info('Informational message')
+logging.warning('Warning:Config file %s not found', 'server.conf')
+logging.error('Error occurred')
+logging.critical('Critical error -- shutting down')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 8:** Rotating Log Files
+
+Solution: 
+
+```python
+import logging
+from logging.handlers import RotatingFileHandler
+
+logger = logging.getLogger('my_rotating_logger')
+logger.setLevel(logging.INFO)
+
+# add a rotating handler
+handler = RotatingFileHandler('my_log.log', maxBytes=2000, backupCount=5)
+logger.addHandler(handler)
+
+for _ in range(10000):
+    logger.info("This is a test log message.")
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 9:** Using Filters to Control Logging Output
+
+Solution: 
+
+```python
+import logging
+
+class InfoFilter(logging.Filter):
+    def filter(self, record):
+        return record.levelno == logging.INFO
+
+logger = logging.getLogger(__name__)
+handler = logging.StreamHandler()
+handler.addFilter(InfoFilter())
+
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
+
+logger.debug('This is a debug message and should not appear.')
+logger.info('This is an info message and should appear.')
+```
+
+Go back to [Contents](#contents).
+
+
+
+**Problem 10:** Configuring Logging Using a Configuration File
+
+Assuming you have a configuration file named logging.conf with the appropriate content.
+
+Solution: 
+
+```python
+import logging
+import logging.config
+
+logging.config.fileConfig('logging.conf')
+
+# create logger
+logger = logging.getLogger('simpleExample')
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+```
 
 Go back to [Contents](#contents).
 
