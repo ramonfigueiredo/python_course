@@ -248,7 +248,7 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
         16. [DALL-E](#dall-e)
              1. [Steps to install and use the DALL-E library](#steps-to-install-and-use-the-dall-e-library)
              2. [DALL-E Examples](#dall-e-examples) 
-    14. [How to publish your Python library on Python Package Index - pypi.org](#how-to-publish-your-python-library-on-python-package-index---pypi.org)
+    14. [How to publish your Python library on Python Package Index](#how-to-publish-your-python-library-on-python-package-index)
 19. [Conclusion](#conclusion)
     1. [Summary of Key Points](#summary-of-key-points)
     2. [Further Learning Resources](#further-learning-resources)
@@ -17013,7 +17013,7 @@ Go back to [Contents](#contents)
 
 
 
-### How to publish your Python library on Python Package Index - pypi.org
+### How to publish your Python library on Python Package Index
 
 To publish your Python library on PyPI (Python Package Index), follow these steps:
 
