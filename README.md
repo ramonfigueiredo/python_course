@@ -23,6 +23,15 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       3. [Compatibility and Community](#compatibility-and-community)
       4. [Porting from Python 2 to 3](#porting-from-python-2-to-3)
       5. [Conclusion - This Python Course focus-on Python 3](#conclusion---this-python-course-focus-on-python-3)
+   5. [Running Python Code](#running-python-code)
+      1. [Running Python code using the Terminal](#running-python-code-using-the-terminal)
+      2. [Running Python code using Sublime Text](#running-python-code-using-sublime-text)
+      3. [Running Python code using other text editors](#running-python-code-using-other-text-editors)
+      4. [Running Python code using Visual Studio Code](#running-python-code-using-visual-studio-code)
+      5. [Running Python code using PyCharm](#running-python-code-using-pycharm)
+      6. [Running Python code using Google Colab](#running-python-code-using-google-colab)
+      7. [Running Python code using Jupiter Notebook](#running-python-code-using-jupiter-notebook)
+      8. [Running Python code using Anaconda](#running-python-code-using-anaconda)
 2. [Python Basics](#python-basics)
    1. [Keywords](#keywords)
    2. [Identifiers](#identifiers)
@@ -912,6 +921,293 @@ Python 3 is more modern, efficient, and the future of Python.
 - For existing Python 2 projects, planning for migration to Python 3 is advisable considering the end of support for Python 2.
 
 This Python Course focus-on Python 3!
+
+Go back to [Contents](#contents).
+
+
+
+### Running Python Code
+
+Running Python code can be done in various environments, including the terminal, using a text editor such as [Sublime Text](https://www.sublimetext.com/), [Visual Studio Code (VSCode)](https://code.visualstudio.com/), [PyCharm](https://www.jetbrains.com/pycharm/), [Google Colab](https://colab.google/), [Jupiter Notebook](https://colab.google/), [Anaconda](https://www.anaconda.com/), and more. 
+
+Here's how to run Python in each of these environments:
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using the Terminal
+
+1. Open the Terminal:
+   - On Windows, open Command Prompt or PowerShell.
+   - On macOS or Linux, open the Terminal.
+
+2. Check Python Installation:
+   - Type `python --version` or `python3 --version` (depending on how Python is installed on your system) to check if Python is installed.
+
+3. Run Python Code:
+   - Navigate to the directory containing your Python script using the `cd` command.
+   - Run the script by typing `python script_name.py` or `python3 script_name.py`
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using Sublime Text
+
+1. Install Sublime Text: 
+   - If you haven't already, download and install [Sublime Text](https://www.sublimetext.com/) from the official website.
+
+2. Install Package Control: 
+   - Package Control is a Sublime Text package manager that allows you to easily install additional packages. 
+   - You can install it by following the instructions on this page: https://packagecontrol.io/installation
+
+3. Install a Python Build System: 
+   - Sublime Text comes with built-in support for various programming languages, including Python. 
+   - However, you may need to configure a Python build system to execute your Python scripts directly from Sublime Text.
+
+4. Create a Python Script: 
+   - Write your Python code in Sublime Text and save it with a ".py" extension.
+
+5. Configure Build System: 
+   - Go to "Tools" > "Build System" and select "Python" as the build system. 
+   - If you don't see the "Python" option, you may need to create a custom build system or install a package that provides it.
+
+6. Run the Script: 
+   - Once you've selected the Python build system, you can run your Python script by pressing `Ctrl + B` (`Cmd + B` on macOS) or by selecting "Tools" > "Build" from the menu.
+
+7. View Output: 
+   - Sublime Text will execute your Python script and display the output in the Sublime Text console at the bottom of the window.
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using other text editors
+
+Running Python code using various text editors involves similar principles across different platforms. 
+
+Here's a general guide on how to run Python code using some popular text editors:
+
+1. [Vim](https://www.vim.org/):
+   - Open your Python script in Vim.
+   - Press ":" to enter command mode, then type "w" to save the file.
+   - Use ":!" followed by "python" and the name of your script to execute it. For example: `:!python script.py`
+
+2. [Vi](https://www.redhat.com/sysadmin/introduction-vi-editor):
+   - Open your Python script in Vi.
+   - Press "Esc" to exit insert mode.
+   - Type ":w" to save the file.
+   - Use ":!" followed by "python" and the name of your script to execute it. For example: `:!python script.py`
+
+3. [Nano](https://www.nano-editor.org/):
+   - Open your Python script in Nano.
+   - Press "Ctrl + O" to save the file.
+   - Press "Ctrl + X" to exit Nano.
+   - Use the terminal to run the script. 
+   - Navigate to the directory containing the script and run `python script.py`
+
+For any text editor:
+   - Create a Python script.
+   - Save the file.
+   - Use the terminal to navigate to the directory containing the script.
+   - Run `python script.py` to execute the script.
+
+Remember, these are general steps, and the actual commands may vary slightly depending on your operating system and configuration. 
+
+Additionally, you'll need to have Python installed on your system to execute Python scripts.
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using Visual Studio Code
+
+1. Install [Visual Studio Code (VSCode)](https://code.visualstudio.com/):
+   - Download and install Visual Studio Code from the official website: https://code.visualstudio.com/
+
+2. Install Python Extension:
+   - Open VSCode, go to Extensions (sidebar), and search for the Python extension. 
+   - Install the extension by Microsoft.
+
+3. Open or Create a Python File:
+   - Open an existing Python file or create a new one and save it with the `.py` extension.
+
+4. Select Python Interpreter:
+   - Click on the Python version in the bottom-right corner of the window, or use the command palette (`Ctrl+Shift+P` on Windows/Linux, `Cmd+Shift+P` on macOS) and type `Python: Select Interpreter`. 
+   - Choose the appropriate Python interpreter if you have multiple versions installed.
+
+5. Run the Code:
+   - You can run the script by clicking the green play button in the top-right corner of the editor window.
+   - Alternatively, you can right-click in the editor and select "Run Python File in Terminal".
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using PyCharm
+
+1. Install PyCharm:
+   - Download and install [PyCharm](https://www.jetbrains.com/pycharm/) from the JetBrains website. 
+   - Both a community (free) and a professional (paid) version are available.
+
+2. Create or Open a Project:
+   - Open PyCharm and either create a new project or open an existing one.
+
+3. Configure Python Interpreter:
+   - Go to `File` > `Settings` (or `PyCharm` > `Preferences` on macOS), then `Project` > `Project Interpreter`. 
+   - Select the Python interpreter you would like to use from the list, or add a new one.
+
+4. Run the Code:
+   - Open a Python file in the project. Right-click in the editor and choose Run 'filename' to run the script.
+   - Alternatively, use the green play button in the top-right corner of the editor window.
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using Google Colab
+
+To run Python code using [Google Colab](https://colab.google/), follow these steps:
+
+1. Open Google Colab:
+   - Go to https://colab.research.google.com/ to access Google Colab.
+
+2. Create or Open a Notebook:
+   - You can either create a new notebook by clicking on "File" > "New notebook" or open an existing notebook by uploading it or selecting it from Google Drive.
+
+3. Write or Paste Python Code:
+   - In a code cell, write or paste your Python code.
+
+4. Run Code Cells:
+   - To execute a code cell, click on the "Play" button next to the cell, or press "Shift + Enter" after selecting the cell. 
+   - Alternatively, you can run all cells in the notebook by clicking on "Runtime" > "Run all" or pressing "Ctrl + F9".
+
+5. View Output:
+   - Output, including print statements, plots, and error messages, will appear below the corresponding code cell.
+
+6. Interact with Code:
+   - You can edit and rerun code cells as needed. 
+   - Colab notebooks allow for interactive coding and data analysis.
+
+7. Save and Share:
+   - Save your changes by clicking on "File" > "Save" or pressing "Ctrl + S".
+   - You can share the notebook with others by clicking on "Share" in the top right corner and providing the appropriate permissions.
+
+Google Colab provides a free and convenient environment for running Python code, especially for data analysis, machine learning, and collaborative projects.
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using Jupiter Notebook
+
+To run Python code using [Jupiter Notebook](https://jupyter.org/), follow these steps:
+
+1. Launch Jupyter Notebook:
+   - Open your terminal (Command Prompt on Windows or Terminal on macOS/Linux).
+   - Type `jupyter notebook` and press Enter.
+   - This will launch the Jupyter Notebook interface in your default web browser.
+
+2. Create a New Notebook:
+   - In the Jupyter Notebook interface, click on the "New" button in the top-right corner.
+   - Select "Python" under the "Notebook" section to create a new Python notebook.
+
+3. Write or Paste Python Code:
+   - In the first cell of the notebook, write or paste your Python code.
+   - You can add new cells by clicking on the "+" button in the toolbar or by pressing "Esc" followed by "B" on your keyboard.
+
+4. Run Code Cells:
+   - To execute a code cell, select the cell by clicking on it, then press "Shift + Enter" on your keyboard.
+   - Alternatively, you can click on the "Run" button in the toolbar or select "Cell" > "Run Cells" from the menu.
+
+5. View Output:
+   - Output, including print statements, plots, and error messages, will appear below the corresponding code cell.
+
+6. Interact with Code:
+   - You can edit and rerun code cells as needed. 
+   - Jupyter Notebooks allow for interactive coding and data analysis.
+
+7. Save and Export:
+   - Save your changes by clicking on "File" > "Save and Checkpoint" or pressing "Ctrl + S".
+   - You can export the notebook to various formats, such as HTML, PDF, or Python script, by selecting "File" > "Download as" from the menu.
+
+In addition to Jupyter Notebook and JupyterLab, Anaconda provides several other tools that you can use to run your Python code effectively. 
+
+Here are some of the key tools:
+
+- **Spyder:**
+  - Spyder is an integrated development environment (IDE) designed specifically for scientific computing and data analysis. 
+  - It provides a powerful code editor, interactive console, and variable explorer, making it suitable for tasks ranging from simple scripting to complex data manipulation.
+
+- QtConsole:
+  - QtConsole is an enhanced interactive Python shell that is part of the IPython project. 
+  - It features syntax highlighting, tab completion, and inline plotting capabilities, making it a versatile tool for exploring and testing code interactively.
+
+- Anaconda Prompt (Windows) / Terminal (macOS and Linux):
+  - Anaconda Prompt (or Terminal on macOS and Linux) is a command-line interface that allows you to manage Python environments and packages using conda and `pip` commands. 
+  - You can create, activate, and deactivate virtual environments, install packages, and run Python scripts directly from the command line.
+
+- Navigator:
+  - Anaconda Navigator is a graphical user interface (GUI) that provides a convenient way to manage your Python environments, packages, and applications. 
+  - It allows you to launch various tools and applications, such as Jupyter Notebook, Spyder, and QtConsole, as well as manage your environments and packages with ease.
+
+- VS Code with Anaconda Extension:
+  - Visual Studio Code (VS Code) is a popular code editor that supports various programming languages, including Python. 
+  - With the Anaconda Extension installed, you can access features such as IntelliSense code completion, linting, debugging, and Jupyter Notebooks directly within VS Code, providing a seamless development experience.
+
+- PyCharm with Anaconda Plugin:
+  - PyCharm is a powerful IDE for Python development that offers features such as code analysis, debugging, version control integration, and support for web development frameworks. 
+
+By installing the Anaconda plugin, you can seamlessly integrate Anaconda environments and packages into PyCharm, enhancing your development workflow.
+
+By leveraging these tools available within Anaconda, you can choose the one that best suits your workflow and preferences to effectively run and manage your Python code projects. 
+
+Each tool offers unique features and capabilities tailored to different use cases, ensuring a smooth and efficient development experience.
+
+Go back to [Contents](#contents).
+
+
+
+#### Running Python code using Anaconda
+
+To run Python code using [Anaconda](https://www.anaconda.com/), you can follow these steps:
+
+1. Launch Anaconda Navigator:
+   - Open Anaconda Navigator from your system's applications or by searching for it in the Start menu (Windows) or Spotlight search (macOS).
+
+2. Open a Python Environment:
+   - Once Anaconda Navigator opens, you'll see a list of environments on the left sidebar.
+   - Select the Python environment in which you want to run your code. 
+   - If you don't have a specific environment, you can use the "base" environment.
+
+3. Launch Jupyter Notebook or JupyterLab:
+   - With your chosen environment selected, click on the "Launch" button next to Jupyter Notebook or JupyterLab.
+   - This will open a new tab in your default web browser with the Jupyter interface.
+
+4. Navigate to Your Working Directory:
+   - In the Jupyter interface, navigate to the directory where your Python code is located. 
+   - You can use the file browser on the left side.
+
+5. Create a New Notebook or Open an Existing One:
+   - If you want to create a new notebook, click on the "New" button and select "Python 3" under the "Notebook" section.
+   - If you already have a notebook containing your Python code, click on it to open it.
+
+6. Run Python Code Cells:
+   - In the notebook, you'll see code cells where you can write or paste your Python code.
+   - To execute a code cell, select it by clicking on it, then press "Shift + Enter" on your keyboard. 
+   - Alternatively, you can click the "Run" button in the toolbar.
+   - Output, including print statements and any visualizations, will appear below the code cell.
+
+7. Interact with Code:
+   - You can edit and rerun code cells as needed. 
+   - Jupyter notebooks allow for interactive coding and data analysis.
+
+8. Save and Export:
+   - Save your changes by clicking on "File" > "Save and Checkpoint" in the notebook interface.
+   - You can export the notebook to various formats, such as HTML, PDF, or Python script, by selecting "File" > "Download as" from the menu.
+
+By following these steps, you can easily run Python code using Anaconda and Jupyter Notebook or JupyterLab, which provides an interactive environment for data exploration, visualization, and analysis.
 
 Go back to [Contents](#contents).
 
