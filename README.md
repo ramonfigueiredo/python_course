@@ -9333,6 +9333,789 @@ print(calculate_average('data.csv', 'price'))
 
 Go back to [Contents](#contents).
 
+**Problem 11:** Counting Word Frequency in a Text File
+
+Read a text file and count the frequency of each word.
+
+```python
+from collections import Counter
+
+def word_frequency(file_path):
+    with open(file_path, 'r') as file:
+        words = file.read().split()
+    return Counter(words)
+
+print(word_frequency('path/to/textfile.txt'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 12:** Combining Multiple Text Files into One
+
+Combine the content of all `.txt` files in a directory into one file.
+
+```python
+import os
+
+def combine_files(directory, output_file):
+    with open(output_file, 'w') as outfile:
+        for filename in os.listdir(directory):
+            if filename.endswith('.txt'):
+                with open(os.path.join(directory, filename), 'r') as infile:
+                    outfile.write(infile.read() + "\n")
+
+combine_files('path/to/directory', 'combined_output.txt')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 13:** Renaming Image Files with Date
+
+Rename image files in a directory to include the current date.
+
+```python
+import os
+from datetime import datetime
+
+def rename_image_files(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.jpg'):
+            new_name = datetime.now().strftime('%Y%m%d') + "_" + filename
+            os.rename(os.path.join(directory, filename), os.path.join(directory, new_name))
+
+rename_image_files('path/to/images')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 14:** Extract Email Addresses from a Text File
+
+Extract and print all email addresses found in a text file.
+
+```python
+import re
+
+def extract_emails(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+    return re.findall(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', content)
+
+print(extract_emails('path/to/textfile.txt'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 15:** Convert JSON to CSV
+
+Read a JSON file and convert its content to a CSV file.
+
+```python
+import json
+import csv
+
+def json_to_csv(json_file, csv_file):
+    with open(json_file, 'r') as file:
+        data = json.load(file)
+    
+    with open(csv_file, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(data[0].keys())  # column headers
+        for row in data:
+            writer.writerow(row.values())
+
+json_to_csv('data.json', 'output.csv')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 16:** Automate Downloading Files from the Web
+
+Download a file from a given URL.
+
+```python
+import requests
+
+def download_file(url, filename):
+    response = requests.get(url)
+    with open(filename, 'wb') as file:
+        file.write(response.content)
+
+download_file('http://example.com/file.txt', 'downloaded_file.txt')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 17:** Batch Resize Images and Change Format
+
+Resize all `.jpg` images in a directory and save them as `.png`.
+
+```python
+from PIL import Image
+import os
+
+def resize_and_convert_images(directory, size):
+    for filename in os.listdir(directory):
+        if filename.endswith('.jpg'):
+            img = Image.open(os.path.join(directory, filename))
+            img = img.resize(size)
+            new_filename = os.path.splitext(filename)[0] + '.png'
+            img.save(os.path.join(directory, new_filename))
+
+resize_and_convert_images('path/to/images', (128, 128))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 18:** Create a Directory Tree Snapshot
+
+Create a text file that lists all files and directories under a given directory.
+
+```python
+import os
+
+def create_directory_tree(directory, output_file):
+    with open(output_file, 'w') as file:
+        for root, dirs, files in os.walk(directory):
+            level = root.replace(directory, '').count(os.sep)
+            indent = ' ' * 4 * level
+            file.write(f'{indent}{os.path.basename(root)}/\n')
+            subindent = ' ' * 4 * (level + 1)
+            for f in files:
+                file.write(f'{subindent}{f}\n')
+
+create_directory_tree('path/to/directory', 'directory_tree.txt')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 19:** Automating System Health Checks
+
+Script to check disk usage and free space.
+
+```python
+import shutil
+
+def check_disk_usage(path):
+    total, used, free = shutil.disk_usage(path)
+    print(f"Total: {total / (2**30):.2f} GB")
+    print(f"Used: {used / (2**30):.2f} GB")
+    print(f"Free: {free / (2**30):.2f} GB")
+
+check_disk_usage('/')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 20:** Parsing and Summing Numeric Data from a File
+
+Sum all numbers found in a text file.
+
+```python
+import re
+
+def sum_numbers_in_file(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+    numbers = map(int, re.findall(r'\b\d+\b', content))
+    return sum(numbers)
+
+print(sum_numbers_in_file('path/to/numbers.txt'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 21:** Cleaning Up Log Files
+
+Delete log files older than 7 days.
+
+```python
+import os
+import time
+
+def cleanup_logs(directory, days=7):
+    cutoff = time.time() - days * 86400
+    for filename in os.listdir(directory):
+        file_path = os.path.join(directory, filename)
+        if os.path.isfile(file_path) and os.path.getmtime(file_path) < cutoff:
+            os.remove(file_path)
+            print(f"Deleted {filename}")
+
+cleanup_logs('path/to/logs')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 22:** Batch File Renaming with Date Stamp
+
+Add a current date stamp to the beginning of each file name.
+
+```python
+import os
+from datetime import datetime
+
+def add_date_stamp(directory):
+    for filename in os.listdir(directory):
+        new_name = datetime.now().strftime("%Y%m%d_") + filename
+        os.rename(os.path.join(directory, filename), os.path.join(directory, new_name))
+
+add_date_stamp('path/to/files')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 23:** Generating a Simple HTML File from Text
+
+Convert a text file into a basic HTML file.
+
+```python
+def text_to_html(input_file, output_file):
+    with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
+        outfile.write('<html><body>\n')
+        for line in infile:
+            outfile.write(f"<p>{line.rstrip()}</p>\n")
+        outfile.write('</body></html>')
+
+text_to_html('example.txt', 'example.html')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 24:** Listing All Python Files in a Directory
+
+Create a list of all Python files (`*.py`) in a directory and its subdirectories.
+
+```python
+import os
+
+def list_python_files(directory):
+    py_files = []
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith('.py'):
+                py_files.append(os.path.join(root, file))
+    return py_files
+
+print(list_python_files('path/to/directory'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 25:** Extracting URLs from a Text File
+
+Find and print all URLs in a text file.
+
+```python
+import re
+
+def extract_urls(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+    urls = re.findall(r'http[s]?://\S+', content)
+    return urls
+
+print(extract_urls('path/to/textfile.txt'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 26:** Checking for Broken Links in a File
+
+Verify if URLs in a text file are reachable (HTTP status 200).
+
+```python
+import requests
+import re
+
+def check_broken_links(file_path):
+    with open(file_path, 'r') as file:
+        content = file.read()
+    urls = re.findall(r'http[s]?://\S+', content)
+    for url in urls:
+        try:
+            response = requests.head(url)
+            if response.status_code != 200:
+                print(f"Broken link found: {url}")
+        except requests.exceptions.RequestException:
+            print(f"Error checking URL: {url}")
+
+check_broken_links('path/to/urls.txt')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 27:** Counting Lines, Words, and Characters in a Text File
+
+Implement a Python script that mimics the `wc` (word count) command.
+
+```python
+def word_count(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+        words = [word for line in lines for word in line.split()]
+        characters = [char for line in lines for char in line]
+    return len(lines), len(words), len(characters)
+
+print(word_count('path/to/file.txt'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 28:** Creating a Directory Only If It Doesn't Exist
+
+Write a script to create a directory but only if it doesn't already exist.
+
+```python
+import os
+
+def create_directory_if_not_exists(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+        print(f"Directory created: {directory}")
+    else:
+        print(f"Directory already exists: {directory}")
+
+create_directory_if_not_exists('path/to/new_directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 29:** Automatically Backing Up a Folder
+
+Create a script to compress and back up an entire folder.
+
+```python
+import shutil
+
+def backup_folder(source_folder, backup_folder):
+    shutil.make_archive(backup_folder, 'zip', source_folder)
+    print(f"Folder {source_folder} backed up as {backup_folder}.zip")
+
+backup_folder('path/to/source_folder', 'path/to/backup_folder')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 30:** Merging Multiple CSV Files into One
+
+Combine multiple CSV files into one CSV file.
+
+```python
+import pandas as pd
+import os
+
+def merge_csv_files(directory, output_file):
+    csv_files = [os.path.join(directory, file)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 31:** Monitoring CPU and Memory Usage
+
+Script to monitor and print the CPU and memory usage of the system.
+
+```python
+import psutil
+
+def system_usage():
+    print("CPU Usage:", psutil.cpu_percent(1), "%")
+    print("Memory Usage:", psutil.virtual_memory().percent, "%")
+
+system_usage()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 32:** Converting PDF to Text
+
+Extract text from a PDF file.
+
+```python
+import PyPDF2
+
+def pdf_to_text(pdf_file):
+    with open(pdf_file, 'rb') as file:
+        reader = PyPDF2.PdfFileReader(file)
+        text = ''
+        for page in range(reader.numPages):
+            text += reader.getPage(page).extractText()
+    return text
+
+print(pdf_to_text('path/to/pdf_file.pdf'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 33:** Sending SMS Alerts
+
+Use Twilio API to send an SMS alert.
+
+```python
+from twilio.rest import Client
+
+def send_sms(alert_message, twilio_number, recipient_number):
+    account_sid = 'your_account_sid'
+    auth_token = 'your_auth_token'
+    client = Client(account_sid, auth_token)
+
+    message = client.messages.create(
+        body=alert_message,
+        from_=twilio_number,
+        to=recipient_number
+    )
+    print(f"Message sent: {message.sid}")
+
+send_sms("Hello from Python!", '+1234567890', '+0987654321')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 34:** Encrypting and Decrypting Text
+
+Encrypt and decrypt a string using the `cryptography` package.
+
+```python
+from cryptography.fernet import Fernet
+
+def encrypt_decrypt(text):
+    key = Fernet.generate_key()
+    cipher_suite = Fernet(key)
+    
+    # Encrypt
+    encrypted_text = cipher_suite.encrypt(text.encode())
+    print("Encrypted:", encrypted_text)
+
+    # Decrypt
+    decrypted_text = cipher_suite.decrypt(encrypted_text).decode()
+    print("Decrypted:", decrypted_text)
+
+encrypt_decrypt("Hello, Python!")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 35:** Scraping Web Data
+
+Scrape data from a webpage using `requests` and BeautifulSoup.
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+def scrape_data(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    return soup.title.text
+
+print(scrape_data('http://example.com'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 36:** Checking Internet Speed
+
+Test and print the internet download and upload speeds.
+
+```python
+import speedtest
+
+def test_internet_speed():
+    st = speedtest.Speedtest()
+    st.download()
+    st.upload()
+    print(f"Download Speed: {st.results.download / 1024 / 1024:.2f} Mbps")
+    print(f"Upload Speed: {st.results.upload / 1024 / 1024:.2f} Mbps")
+
+test_internet_speed()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 37:** Automating Browser Actions
+
+Open a website and perform a search using Selenium.
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+def automate_search(query):
+    driver = webdriver.Chrome()
+    driver.get("http://www.google.com")
+    search_box = driver.find_element_by_name('q')
+    search_box.send_keys(query)
+    search_box.send_keys(Keys.RETURN)
+
+automate_search("Python programming")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 38:** Creating a Simple HTTP Server
+
+Set up a basic HTTP server using Python.
+
+```python
+import http.server
+import socketserver
+
+def run_server(port):
+    handler = http.server.SimpleHTTPRequestHandler
+    with socketserver.TCPServer(("", port), handler) as httpd:
+        print(f"Serving at port {port}")
+        httpd.serve_forever()
+
+run_server(8000)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 39:** Compressing Files into a ZIP Archive
+
+Compress multiple files into a ZIP archive.
+
+```python
+import zipfile
+
+def compress_files(zip_file, files):
+    with zipfile.ZipFile(zip_file, 'w') as zipf:
+        for file in files:
+            zipf.write(file)
+
+compress_files('compressed.zip', ['file1.txt', 'file2.txt'])
+```
+
+Go back to [Contents](#contents).
+
+**Problem 40:** Checking for Palindromes
+
+Create a script to check if a word is a palindrome.
+
+```python
+def is_palindrome(word):
+    return word == word[::-1]
+
+print(is_palindrome("radar"))  # True
+print(is_palindrome("python"))  # False
+```
+
+Go back to [Contents](#contents).
+
+**Problem 41:** Renaming Image Files Based on EXIF Date
+
+Rename image files in a directory based on their EXIF creation date.
+
+```python
+from PIL import Image
+import os
+from datetime import datetime
+
+def rename_images_by_date(directory):
+    for filename in os.listdir(directory):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            img_path = os.path.join(directory, filename)
+            img = Image.open(img_path)
+            exif_data = img._getexif()
+            creation_time = datetime.fromtimestamp(os.path.getmtime(img_path))
+            if exif_data:
+                # Extracting the creation date (tag 36867)
+                creation_time = datetime.strptime(exif_data[36867], '%Y:%m:%d %H:%M:%S')
+            new_filename = creation_time.strftime('%Y%m%d_%H%M%S') + os.path.splitext(filename)[1]
+            os.rename(img_path, os.path.join(directory, new_filename))
+
+rename_images_by_date('path/to/images')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 42:** Generating Random Passwords
+
+Create a script to generate a random password.
+
+```python
+import random
+import string
+
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(characters) for i in range(length))
+
+print(generate_password(12))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 43:** Checking Disk Space and Alerting
+
+Alert if the disk space is below a certain threshold.
+
+```python
+import shutil
+
+def check_disk_space(threshold=20):
+    total, used, free = shutil.disk_usage("/")
+    percent_free = (free / total) * 100
+    if percent_free < threshold:
+        print(f"Warning: Low disk space. Only {percent_free:.2f}% remaining.")
+
+check_disk_space()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 44:** Converting XML to JSON
+
+Convert an XML file to JSON format.
+
+```python
+import xml.etree.ElementTree as ET
+import json
+
+def xml_to_json(xml_file):
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+    return json.dumps({root.tag: {child.tag: child.text for child in root}})
+
+print(xml_to_json('data.xml'))
+```
+
+**Problem 45:** Batch Resizing and Watermarking Images
+
+Resize images in a directory and add a watermark.
+
+```python
+from PIL import Image, ImageDraw, ImageFont
+
+def watermark_images(directory, watermark_text, size):
+    for filename in os.listdir(directory):
+        if filename.endswith('.jpg'):
+            img = Image.open(os.path.join(directory, filename))
+            img = img.resize(size, Image.ANTIALIAS)
+
+            draw = ImageDraw.Draw(img)
+            font = ImageFont.load_default()
+            textsize = draw.textsize(watermark_text, font)
+            draw.text((size[0] - textsize[0], size[1] - textsize[1]), watermark_text, font=font)
+
+            img.save(os.path.join(directory, filename))
+
+watermark_images('path/to/images', 'Watermark', (800, 600))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 46:** Create a To-Do List CLI Application
+
+A command-line to-do list application.
+
+```python
+import sys
+
+def todo_list():
+    tasks = []
+    while True:
+        task = input("Enter a task or 'exit': ")
+        if task == 'exit':
+            break
+        tasks.append(task)
+
+    print("\nYour To-Do List:")
+    for task in tasks:
+        print(f" - {task}")
+
+if __name__ == "__main__":
+    todo_list()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 47:** Parsing Command Line Arguments
+
+Script to parse and print command line arguments.
+
+```python
+import argparse
+
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Process some integers.")
+    parser.add_argument('integers', metavar='N', type=int, nargs='+', help='an integer for the accumulator')
+    parser.add_argument('--sum', dest='accumulate', action='store_const', const=sum, default=max, help='sum the integers (default: find the max)')
+
+    args = parser.parse_args()
+    print(args.accumulate(args.integers))
+
+if __name__ == "__main__":
+    parse_arguments()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 48:** Creating a Simple Web Scraper
+
+Scrape and print the headlines from a news website.
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+def scrape_headlines(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    for headline in soup.find_all('h2'):
+        print(headline.text.strip())
+
+scrape_headlines('https://news.ycombinator.com/')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 49:** Monitoring a Web Page for Changes
+
+Monitor a web page and alert if the content changes.
+
+```python
+import requests
+import time
+import hashlib
+
+def monitor_webpage(url, check_interval=60):
+    page_content = requests.get(url).text
+    current_hash = hashlib.md5(page_content.encode()).hexdigest()
+
+    while True:
+        time.sleep(check_interval)
+        new_page_content = requests.get(url).text
+        new_hash = hashlib.md5(new_page_content.encode()).hexdigest()
+
+        if new_hash != current_hash:
+            print("Webpage has changed!")
+            break
+
+monitor_webpage('http://example.com')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 50:** Automating Database Backups
+
+Automate the backup of a SQL database.
+
+```python
+import os
+import subprocess
+from datetime import datetime
+
+def backup_database(db_name, backup_path):
+    date_str = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = os.path.join(backup_path, f"{db_name}_{date_str}.sql")
+    command = f"mysqldump -u username -p'password' {db_name} > {filename}"
+    subprocess.run(command, shell=True)
+
+backup_database('my_database', '/path/to/backup')
+```
+
+Go back to [Contents](#contents).
+
 
 
 ## Python Libraries
