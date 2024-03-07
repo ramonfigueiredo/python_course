@@ -32,6 +32,11 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       6. [Running Python code using Google Colab](#running-python-code-using-google-colab)
       7. [Running Python code using Jupiter Notebook](#running-python-code-using-jupiter-notebook)
       8. [Running Python code using Anaconda](#running-python-code-using-anaconda)
+   6. [Debugging the Python Code](#debugging-the-python-code)
+      1. [Importance of Debugging the Code](#importance-of-debugging-the-code)
+      2. [Debugging Code in Visual Studio Code](#debugging-code-in-visual-studio-code)
+      3. [Debugging Code in PyCharm](#debugging-code-in-pycharm)
+      4. [Python Debugger tool - pdb](#python-debugger-tool---pdb)
 2. [Python Basics](#python-basics)
    1. [Keywords](#keywords)
    2. [Identifiers](#identifiers)
@@ -1208,6 +1213,177 @@ To run Python code using [Anaconda](https://www.anaconda.com/), you can follow t
    - You can export the notebook to various formats, such as HTML, PDF, or Python script, by selecting "File" > "Download as" from the menu.
 
 By following these steps, you can easily run Python code using Anaconda and Jupyter Notebook or JupyterLab, which provides an interactive environment for data exploration, visualization, and analysis.
+
+Go back to [Contents](#contents).
+
+
+
+### Debugging the Python Code
+
+Debugging is the process of identifying and removing errors, or "bugs," from software code. 
+
+It involves finding the cause of unexpected behavior or crashes in your program and fixing these issues to make the code run correctly and efficiently.
+
+Debugging is a crucial part of the development process. 
+- Tools provided by VSCode and PyCharm greatly simplify the debugging process by providing a user-friendly interface to step through code, inspect variables, and evaluate expressions. 
+- These capabilities are invaluable for both identifying and solving problems in your code.
+
+Go back to [Contents](#contents).
+
+
+
+#### Importance of Debugging the Code
+
+1. **Correctness:** 
+   - Ensuring that the code works as intended and produces the correct output.
+
+2. **Quality and Reliability:** 
+   - Debugged code is more reliable and less likely to cause crashes or incorrect results.
+
+3. **Performance:** 
+   - Debugging can help identify and fix performance bottlenecks, making the code faster and more efficient.
+
+4. **Maintainability:** 
+   - Well-debugged code is generally cleaner and easier to understand, which makes future maintenance easier.
+
+5. **Learning Opportunity:** 
+   - The debugging process can be a learning experience, helping developers understand their code better and improving their coding skills.
+
+Go back to [Contents](#contents).
+
+
+
+#### Debugging Code in Visual Studio Code
+
+1. **Set Up a Python Environment:** 
+   - Ensure you have Python and the Python extension for VSCode installed.
+
+2. **Open Your Python File:** 
+   - Open the Python file you want to debug.
+
+3. **Set Breakpoints:** 
+   - Click on the left margin (or use `F9`) on the line where you want the debugger to pause execution. 
+   - Breakpoints are spots in the code where you suspect a bug might be present.
+
+4. **Configure the Debugger:** 
+   - Click on the "Run and Debug" icon on the sidebar or use the `Ctrl+Shift+D` shortcut. 
+   - If you haven't already configured the debugger, VSCode will prompt you to select the environment.
+
+5. **Start Debugging:** 
+   - Click the green play button in the debug panel or press `F5` to start the debugging session. 
+   - The debugger will run the program and pause at the first breakpoint.
+
+6. **Inspect Variables and Step Through the Code:** 
+   - When the debugger pauses, you can hover over variables to inspect their values, use the debug console, or use the step over (`F10`), step into (`F11`), and continue (`F5`) commands to control the execution flow.
+
+7. **Watch Expressions and Call Stack:** 
+   - You can add expressions to watch their values and see the call stack to understand the sequence of function calls.
+
+Go back to [Contents](#contents).
+
+
+
+#### Debugging Code in PyCharm
+
+1. **Set Up Your Project:** 
+   - Open your project in PyCharm and ensure the correct interpreter is selected.
+
+2. **Set Breakpoints:** 
+   - Like in VSCode, you can set breakpoints by clicking on the left margin next to the line numbers.
+
+3. **Start a Debug Session:** 
+   - Click on the bug icon or press `Shift+F9` to start debugging. 
+   - PyCharm will run your code and pause at the first breakpoint.
+
+4. **Use the Debug Tool Window:** 
+   - PyCharm provides a debug tool window with several tabs for variables, watches, frames, and more. 
+   - You can use these to inspect and modify the state of your program.
+
+5. **Step Through the Code:** 
+   - Utilize the step over, step into, step out, and run to cursor features to control the execution flow and analyze your code's behavior at each step.
+
+6. **Evaluate Expressions:** 
+   - PyCharm allows you to evaluate expressions on-the-fly to see what certain parts of your code are returning.
+
+7. **Analyze the Stack Trace:** 
+   - Use the stack trace to see the order of function calls that led to each breakpoint.
+
+Go back to [Contents](#contents).
+
+
+
+#### Python Debugger tool - pdb
+
+The [Python Debugger](https://docs.python.org/3/library/pdb.html), often abbreviated as `pdb`, is a built-in debugging tool in Python that allows developers to interactively debug their code. 
+
+It provides a convenient way to pause execution, inspect variables, and step through code line by line to identify and fix errors.
+
+Key features of pdb include:
+- **Breakpoints:** Developers can insert breakpoints into their code to pause execution at specific lines or functions.
+- **Interactive Debugging:** Once execution is paused, developers can interactively explore the state of their program, inspect variables, and evaluate expressions.
+- **Step-by-Step Execution:** `pdb` allows developers to execute code line by line, stepping into functions or skipping over them as needed.
+- **Stack Traces:** Developers can examine the call stack to understand the sequence of function calls that led to the current point of execution.
+- **Variable Inspection:** `pdb` provides commands to inspect the values of variables and expressions at runtime, helping developers diagnose issues in their code.
+- **Conditional Breakpoints:** Developers can set breakpoints with conditions, allowing them to pause execution only when certain conditions are met.
+
+Popular integrated development environments (IDEs) for Python, such as VSCode and PyCharm, leverage the Python Debugger (`pdb`) for debugging code. They provide user-friendly interfaces and additional features to enhance the debugging experience.
+
+Here's how you can debug your Python code using the `pdb` (Python Debugger) tool.
+
+1. **Insert Debugger Statement:** 
+    - In your Python script, insert the following line at the point where you want to start debugging:
+
+```python
+import pdb; pdb.set_trace()
+```
+
+This line tells Python to pause execution and enter the debugger mode when it encounters this statement during runtime.
+
+2. **Run Your Script:** 
+   - Execute your Python script as you normally would.
+
+3. **Enter Debugger Mode:** 
+   - When Python encounters the `pdb.set_trace()` statement, it will pause execution and enter the debugger mode. 
+   - You'll see a debugger prompt that looks like this:
+
+```shell
+(Pdb)
+```
+
+4. **Debug Your Code:** 
+    - Once in debugger mode, you can interactively debug your code using various commands. 
+
+Here are some commonly used commands:
+
+- `h` or `help`: Display a list of available debugger commands and their descriptions.
+- `n` or `next`: Execute the current line of code and move to the next line.
+- `s` or `step`: Step into the function call on the current line.
+- `c` or `continue`: Continue execution until the next breakpoint or the end of the script.
+- `l` or `list`: Show the current line of code and a few lines of surrounding context.
+- `p` or `print`: Print the value of a variable or expression.
+- `q` or `quit`: Quit the debugger and terminate the script.
+
+5. **Inspect Variables:** 
+   - While in debugger mode, you can inspect the values of variables, evaluate expressions, and interact with your code as needed. For example, you can type the name of a variable and press Enter to see its current value.
+
+6. **Continue Execution:** 
+   - Use the continue command to resume normal execution of your script. The debugger will remain active until either the script completes or you explicitly quit the debugger using the quit command.
+
+Here's an example of how you might use pdb to debug a Python script:
+
+```python
+import pdb
+
+def add(a, b):
+    pdb.set_trace()  # Insert debugger statement
+    result = a + b
+    return result
+
+x = 5
+y = 10
+z = add(x, y)
+print("Result:", z)
+```
 
 Go back to [Contents](#contents).
 
