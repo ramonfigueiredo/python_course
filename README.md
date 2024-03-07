@@ -10116,6 +10116,1047 @@ backup_database('my_database', '/path/to/backup')
 
 Go back to [Contents](#contents).
 
+**Problem 51:** Automate File Encryption and Decryption
+
+Encrypt and decrypt files using the cryptography package.
+
+```python
+from cryptography.fernet import Fernet
+
+def encrypt_file(file_path, key):
+    with open(file_path, 'rb') as file:
+        data = file.read()
+    encrypted_data = Fernet(key).encrypt(data)
+    with open(file_path + '.encrypted', 'wb') as file:
+        file.write(encrypted_data)
+
+def decrypt_file(encrypted_file_path, key):
+    with open(encrypted_file_path, 'rb') as file:
+        encrypted_data = file.read()
+    decrypted_data = Fernet(key).decrypt(encrypted_data)
+    with open(encrypted_file_path.replace('.encrypted', ''), 'wb') as file:
+        file.write(decrypted_data)
+
+# Generate a key or load from a secure location
+key = Fernet.generate_key()
+encrypt_file('path/to/file.txt', key)
+decrypt_file('path/to/file.txt.encrypted', key)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 52:** Batch Image Format Conversion
+
+Convert all images in a directory from PNG to JPEG.
+
+```python
+from PIL import Image
+import os
+
+def convert_images(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.png'):
+            img = Image.open(os.path.join(directory, filename))
+            new_filename = os.path.splitext(filename)[0] + '.jpg'
+            img.convert('RGB').save(os.path.join(directory, new_filename))
+
+convert_images('path/to/images')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 53:** Extracting ZIP Archives
+
+Unzip all ZIP files in a given directory.
+
+```python
+import zipfile
+import os
+
+def extract_zip_files(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith('.zip'):
+            with zipfile.ZipFile(os.path.join(directory, filename), 'r') as zip_ref:
+                zip_ref.extractall(directory)
+
+extract_zip_files('path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 54:** Creating a CSV File from User Input
+
+Take user input and write it to a CSV file.
+
+```python
+import csv
+
+def write_to_csv(file_path):
+    with open(file_path, 'w', newline='') as file:
+        writer = csv.writer(file)
+        while True:
+            row = input("Enter data separated by commas (or 'exit' to quit): ")
+            if row.lower() == 'exit':
+                break
+            writer.writerow(row.split(','))
+
+write_to_csv('output.csv')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 55:** Checking Website Availability
+
+Monitor the availability of a list of websites.
+
+```python
+import requests
+
+def check_websites(websites):
+    for website in websites:
+        try:
+            response = requests.get(website)
+            if response.status_code == 200:
+                print(f"{website} is up!")
+            else:
+                print(f"{website} is down. Status Code: {response.status_code}")
+        except requests.RequestException as e:
+            print(f"{website} is down. Error: {e}")
+
+check_websites(['http://example.com', 'http://nonexistentwebsite.com'])
+```
+
+Go back to [Contents](#contents).
+
+**Problem 56:** Converting Text to Speech
+
+Convert a given text to an audio file using gTTS (Google Text-to-Speech).
+
+```python
+from gtts import gTTS
+
+def text_to_speech(text, output_file):
+    tts = gTTS(text)
+    tts.save(output_file)
+
+text_to_speech("Hello, this is a test.", "output.mp3")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 57:** Bulk Resizing and Rotating Images
+
+Resize and rotate all images in a directory.
+
+```python
+from PIL import Image
+import os
+
+def resize_and_rotate_images(directory, size, angle):
+    for filename in os.listdir(directory):
+        if filename.endswith('.jpg'):
+            img = Image.open(os.path.join(directory, filename))
+            img = img.resize(size)
+            img = img.rotate(angle)
+            img.save(os.path.join(directory, filename))
+
+resize_and_rotate_images('path/to/images', (300, 300), 90)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 58:** Automatically Organizing Downloads Folder
+
+Sort files in the Downloads folder into subfolders based on file types.
+
+```python
+import os
+import shutil
+
+def organize_downloads(directory):
+    file_types = {
+        'Documents': ['.pdf', '.docx', '.txt'],
+        'Images': ['.jpg', '.jpeg', '.png'],
+        'Videos': ['.mp4', '.mov', '.avi']
+    }
+    for filename in os.listdir(directory):
+        for category, extensions in file_types.items():
+            if any(filename.lower().endswith(ext) for ext in extensions):
+                category_path = os.path.join(directory, category)
+                if not os.path.exists(category_path):
+                    os.makedirs(category_path)
+                shutil.move(os.path.join(directory, filename), category_path)
+                break
+
+organize_downloads('/path/to/downloads')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 59:** Validating Email Addresses in a List
+
+Check if email addresses in a list are valid based on a simple pattern.
+
+```python
+import re
+
+def validate_emails(emails):
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    return [email for email in emails if re.match(pattern, email)]
+
+email_list = ["test@example.com", "invalid-email", "hello@world.net"]
+print(validate_emails(email_list))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 60:** Creating a Simple Event Reminder
+
+Set a reminder for an event and alert when the time is up.
+
+```python
+import time
+from datetime import datetime, timedelta
+
+def set_reminder(event, event_time):
+    print(f"Reminder set for {event} at {event_time}")
+    while datetime.now() < event_time:
+        time.sleep(10)  # Check every 10 seconds
+    print(f"Reminder: {event} is happening now!")
+
+event_date = datetime.now() + timedelta(minutes=1)  # Reminder for 1 minute from now
+set_reminder("Meeting with Bob", event_date)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 61:** Generating a Report from a Database Query
+
+Execute a database query and write the results to a CSV file.
+
+```python
+import sqlite3
+import csv
+
+def export_query_results_to_csv(db_file, query, output_csv):
+    connection = sqlite3.connect(db_file)
+    cursor = connection.cursor()
+    cursor.execute(query)
+
+    with open(output_csv, 'w', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile)
+        csv_writer.writerow([i[0] for i in cursor.description])  # column headers
+        csv_writer.writerows(cursor)
+
+    cursor.close()
+    connection.close()
+
+export_query_results_to_csv('database.db', 'SELECT * FROM table_name', 'output.csv')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 62:** Plotting Data from a CSV File
+
+Read data from a CSV file and plot using Matplotlib.
+
+```python
+import matplotlib.pyplot as plt
+import csv
+
+def plot_csv_data(csv_file):
+    with open(csv_file, 'r') as file:
+        reader = csv.reader(file)
+        next(reader)  # Skip header row
+        data = list(reader)
+
+    x = [row[0] for row in data]
+    y = [int(row[1]) for row in data]
+
+    plt.plot(x, y)
+    plt.show()
+
+plot_csv_data('data.csv')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 63:** Monitoring a Directory for New Files
+
+Notify when a new file is added to a directory.
+
+```python
+import os
+import time
+
+def monitor_new_files(directory):
+    known_files = set(os.listdir(directory))
+    while True:
+        current_files = set(os.listdir(directory))
+        new_files = current_files - known_files
+        if new_files:
+            print(f"New file(s) detected: {new_files}")
+            known_files = current_files
+        time.sleep(5)  # Check every 5 seconds
+
+monitor_new_files('path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 64:** Creating an Interactive Command Line Menu
+
+Build an interactive command line menu for user input.
+
+```python
+def show_menu():
+    menu = """
+    1. Option One
+    2. Option Two
+    3. Exit
+    """
+    while True:
+        print(menu)
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            print("Option One selected")
+        elif choice == "2":
+            print("Option Two selected")
+        elif choice == "3":
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+show_menu()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 65:** Extracting Specific Data from JSON
+
+Parse a JSON file and extract specific data.
+
+```python
+import json
+
+def extract_data_from_json(json_file, key):
+    with open(json_file, 'r') as file:
+        data = json.load(file)
+        return data.get(key, "Key not found")
+
+print(extract_data_from_json('data.json', 'target_key'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 66:** Generating QR Codes
+
+Create a QR code for a given URL or text.
+
+```python
+import qrcode
+
+def generate_qr_code(data, output_file):
+    qr = qrcode.QRCode(version=1, box_size=10, border=5)
+    qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image(fill='black', back_color='white')
+    img.save(output_file)
+
+generate_qr_code('https://www.example.com', 'qrcode.png')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 67:** Sending Automated Keyboard Inputs
+
+Automate keyboard inputs for repetitive tasks using PyAutoGUI.
+
+```python
+import pyautogui
+import time
+
+def automate_keyboard_input(text):
+    time.sleep(5)  # Wait 5 seconds to switch to the input window
+    pyautogui.typewrite(text)
+    pyautogui.press("enter")
+
+automate_keyboard_input("Hello, automated world!")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 68:** Creating a Countdown Timer
+
+Make a countdown timer that prints the time remaining.
+
+```python
+import time
+
+def countdown_timer(seconds):
+    while seconds:
+        mins, secs = divmod(seconds, 60)
+        time_format = '{:02d}:{:02d}'.format(mins, secs)
+        print(time_format, end='\r')
+        time.sleep(1)
+        seconds -= 1
+    print("Time's up!")
+
+countdown_timer(60)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 69:** Scraping and Saving Images from a Web Page
+
+Download all images from a given webpage.
+
+```python
+import requests
+from bs4 import BeautifulSoup
+import os
+
+def download_images(url, folder):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    images = soup.find_all('img')
+    
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+    
+    for i, img in enumerate(images, start=1):
+        img_url = img.get('src')
+        img_data = requests.get(img_url).content
+        with open(os.path.join(folder, f'image_{i}.jpg'), 'wb') as file:
+            file.write(img_data)
+
+download_images('http://example.com', 'downloaded_images')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 70:** Parsing Command Line Arguments and Executing Functions
+
+Script that parses command line arguments to execute specific functions.
+
+```python
+import argparse
+
+def greet(name):
+    print(f"Hello, {name}!")
+
+def farewell(name):
+    print(f"Goodbye, {name}!")
+
+def main():
+    parser = argparse.ArgumentParser(description="Greet or bid farewell.")
+    parser.add_argument('name', type=str, help="Name of the person.")
+    parser.add_argument('--farewell', action='store_true', help="Bid farewell instead of greeting.")
+
+    args = parser.parse_args()
+    if args.farewell:
+        farewell(args.name)
+    else:
+        greet(args.name)
+
+if __name__ == "__main__":
+    main()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 71:** Batch Renaming Files with Regular Expressions
+
+Rename files in a directory based on a regular expression pattern.
+
+```python
+import os
+import re
+
+def rename_files_regex(directory, pattern, replacement):
+    for filename in os.listdir(directory):
+        new_name = re.sub(pattern, replacement, filename)
+        os.rename(os.path.join(directory, filename), os.path.join(directory, new_name))
+
+rename_files_regex('path/to/files', r'\s+', '_')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 72:** Finding Prime Numbers in a Range
+
+Generate a list of prime numbers within a specified range.
+
+```python
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def find_primes(start, end):
+    return [n for n in range(start, end + 1) if is_prime(n)]
+
+print(find_primes(10, 50))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 73:** Automated Data Backup to a ZIP File
+
+Compress and back up a directory to a ZIP file with a timestamp.
+
+```python
+import zipfile
+import os
+from datetime import datetime
+
+def backup_to_zip(directory):
+    zip_filename = os.path.basename(directory) + '_' + datetime.now().strftime('%Y%m%d%H%M%S') + '.zip'
+    with zipfile.ZipFile(zip_filename, 'w') as zipf:
+        for root, dirs, files in os.walk(directory):
+            for file in files:
+                zipf.write(os.path.join(root, file))
+    print(f"Backup created: {zip_filename}")
+
+backup_to_zip('path/to/directory')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 74:** Checking for Active Internet Connection
+
+Verify if the system is connected to the internet.
+
+```python
+import socket
+
+def check_internet_connection(host="8.8.8.8", port=53, timeout=3):
+    try:
+        socket.create_connection((host, port), timeout=timeout)
+        return True
+    except socket.error:
+        return False
+
+print("Connected" if check_internet_connection() else "No Internet Connection")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 75:** Converting CSV Data to a Dictionary
+
+Read a CSV file and convert it into a list of dictionaries.
+
+```python
+import csv
+
+def csv_to_dict(csv_file):
+    with open(csv_file, mode='r') as infile:
+        reader = csv.DictReader(infile)
+        return list(reader)
+
+data = csv_to_dict('data.csv')
+print(data)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 76:** Parsing and Processing JSON from a URL
+
+Fetch and process JSON data from a web URL.
+
+```python
+import requests
+
+def fetch_process_json(url):
+    response = requests.get(url)
+    data = response.json()
+    # Process data
+    return data
+
+json_data = fetch_process_json('https://api.example.com/data')
+print(json_data)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 77:** Automating File Compression for Upload
+
+Compress a file for easier upload.
+
+```python
+import gzip
+import shutil
+
+def compress_file_for_upload(file_path):
+    with open(file_path, 'rb') as f_in:
+        with gzip.open(file_path + '.gz', 'wb') as f_out:
+            shutil.copyfileobj(f_in, f_out)
+    print(f"Compressed file created: {file_path}.gz")
+
+compress_file_for_upload('path/to/large_file.txt')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 78:** Creating a Markdown Table from CSV Data
+
+Convert CSV data into a Markdown table format.
+
+```python
+import csv
+
+def csv_to_markdown_table(csv_file):
+    table = ""
+    with open(csv_file, mode='r') as infile:
+        reader = csv.reader(infile)
+        headers = next(reader)
+        table = "| " + " | ".join(headers) + " |\n"
+        table += "| " + " | ".join(['---']*len(headers)) + " |\n"
+        for row in reader:
+            table += "| " + " | ".join(row) + " |\n"
+    return table
+
+markdown_table = csv_to_markdown_table('data.csv')
+print(markdown_table)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 79:** Automating HTML Template Generation
+
+Generate an HTML file from a template with placeholders.
+
+```python
+def generate_html(template, data, output_file):
+    with open(template, 'r') as file:
+        html_content = file.read()
+
+    for key, value in data.items():
+        html_content = html_content.replace(f"{{{{ {key} }}}}", value)
+
+    with open(output_file, 'w') as file:
+        file.write(html_content)
+
+data = {'title': 'My Page', 'header': 'Welcome to My Page', 'body': 'This is content.'}
+generate_html('template.html', data, 'output.html')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 80:** Creating a Network Packet Sniffer
+
+Build a simple packet sniffer to capture network traffic.
+
+```python
+import socket
+import struct
+
+def sniff_packets():
+    s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(3))
+    while True:
+        raw_data, addr = s.recvfrom(65536)
+        dest_mac, src_mac, eth_proto, data = struct.unpack('! 6s 6s H', raw_data[:14])
+        print(f"Destination: {dest_mac}, Source: {src_mac}, Protocol: {eth_proto}")
+
+sniff_packets()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 81:** Tracking Cryptocurrency Prices
+
+Fetch and display the current price of a cryptocurrency.
+
+```python
+import requests
+
+def get_crypto_price(crypto_symbol):
+    url = f"https://api.coingecko.com/api/v3/simple/price?ids={crypto_symbol}&vs_currencies=usd"
+    response = requests.get(url)
+    data = response.json()
+    return data[crypto_symbol]['usd']
+
+print("Bitcoin Price: $", get_crypto_price('bitcoin'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 82:** Validating IP Addresses
+
+Check if a list of IP addresses are valid.
+
+```python
+import re
+
+def validate_ip(ip):
+    pattern = r'^\d{1,3}(\.\d{1,3}){3}$'
+    return bool(re.match(pattern, ip))
+
+ips = ["192.168.0.1", "256.256.256.256"]
+for ip in ips:
+    print(f"{ip}: {'Valid' if validate_ip(ip) else 'Invalid'}")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 83:** Calculating Fibonacci Sequence Using Recursion
+
+Calculate Fibonacci sequence up to N using recursion.
+
+```python
+def fibonacci(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+n_terms = 10
+print([fibonacci(i) for i in range(n_terms)])
+```
+
+Go back to [Contents](#contents).
+
+**Problem 84:** Bulk Downloading Images from URLs
+
+Download images from a list of URLs.
+
+```python
+import requests
+import os
+
+def download_images(image_urls, download_folder):
+    if not os.path.exists(download_folder):
+        os.makedirs(download_folder)
+
+    for i, url in enumerate(image_urls, start=1):
+        response = requests.get(url)
+        if response.status_code == 200:
+            with open(os.path.join(download_folder, f'image_{i}.jpg'), 'wb') as file:
+                file.write(response.content)
+
+image_urls = ["http://example.com/image1.jpg", "http://example.com/image2.jpg"]
+download_images(image_urls, 'downloaded_images')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 85:** Sending Desktop Notifications
+
+Send a desktop notification.
+
+```python
+from plyer import notification
+
+def send_notification(title, message):
+    notification.notify(
+        title=title,
+        message=message,
+        timeout=10  # seconds
+    )
+
+send_notification("Reminder", "Take a break!")
+```
+
+Go back to [Contents](#contents).
+
+**Problem 86:** Creating a Simple Web Crawler
+
+Crawl a website and print all internal links found.
+
+```python
+import requests
+from urllib.parse import urljoin
+from bs4 import BeautifulSoup
+
+def crawl_website(base_url):
+    response = requests.get(base_url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    for link in soup.find_all('a'):
+        href = link.get('href')
+        if href and href.startswith('/'):
+            print(urljoin(base_url, href))
+
+crawl_website('http://example.com')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 87:** Generating a Word Cloud from Text
+
+Create a word cloud image from a given text.
+
+```python
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+def generate_word_cloud(text):
+    wordcloud = WordCloud(width=800, height=800, background_color='white').generate(text)
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.axis("off")
+    plt.show()
+
+text = "Python is a great programming language for data analysis, web development, scripting."
+generate_word_cloud(text)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 88:** Automating WhatsApp Messages
+
+Send a WhatsApp message at a scheduled time.
+
+```python
+import pywhatkit
+
+def send_whatsapp_message(number, message, time_hour, time_minute):
+    pywhatkit.sendwhatmsg(number, message, time_hour, time_minute)
+
+send_whatsapp_message('+1234567890', 'Hello, this is an automated message.', 22, 30)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 89:** Generating Random Usernames
+
+Create random usernames using a combination of words.
+
+```python
+import random
+
+def generate_username(words, length):
+    return ''.join(random.choice(words) for _ in range(length))
+
+words = ["cool", "python", "coder", "dev", "program"]
+print(generate_username(words, 3))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 90:** Converting Speech to Text
+
+Convert spoken words into text using SpeechRecognition.
+
+```python
+import speech_recognition as sr
+
+def speech_to_text():
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        audio = recognizer.listen(source)
+        try:
+            text = recognizer.recognize_google(audio)
+            print("You said:", text)
+        except sr.UnknownValueError:
+            print("Sorry, I did not understand that.")
+        except sr.RequestError:
+            print("Sorry, my speech service is down.")
+
+speech_to_text()
+```
+
+Go back to [Contents](#contents).
+
+**Problem 91:** Batch Resizing Images to a Fixed Width While Maintaining Aspect Ratio
+
+Resize all images in a directory to a specified width while maintaining aspect ratio.
+
+```python
+from PIL import Image
+import os
+
+def resize_images_to_width(directory, width):
+    for filename in os.listdir(directory):
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            img_path = os.path.join(directory, filename)
+            img = Image.open(img_path)
+            w_percent = (width / float(img.size[0]))
+            h_size = int((float(img.size[1]) * float(w_percent)))
+            img = img.resize((width, h_size), Image.ANTIALIAS)
+            img.save(img_path)
+
+resize_images_to_width('path/to/images', 300)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 92:** Extracting ZIP Files to a Target Directory
+
+Unzip files in a directory to a specified target directory.
+
+```python
+import zipfile
+import os
+
+def extract_zip_to_folder(zip_folder, target_folder):
+    for filename in os.listdir(zip_folder):
+        if filename.endswith('.zip'):
+            zip_path = os.path.join(zip_folder, filename)
+            with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                zip_ref.extractall(target_folder)
+
+extract_zip_to_folder('path/to/zip_files', 'path/to/extracted_files')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 93:** Merging PDF Files into One
+
+Combine multiple PDF files in a directory into a single PDF file.
+
+```python
+import PyPDF2
+import os
+
+def merge_pdfs(directory, output_file):
+    merger = PyPDF2.PdfFileMerger()
+    for item in os.listdir(directory):
+        if item.endswith('.pdf'):
+            merger.append(os.path.join(directory, item))
+    merger.write(output_file)
+    merger.close()
+
+merge_pdfs('path/to/pdf_files', 'merged_output.pdf')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 94:** Creating a Countdown Clock in the Terminal
+
+Display a countdown clock in the console for a specified duration.
+
+```python
+import time
+
+def countdown_clock(seconds):
+    while seconds:
+        mins, secs = divmod(seconds, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        time.sleep(1)
+        seconds -= 1
+    print("Time's up!")
+
+countdown_clock(120)  # 120 seconds countdown
+```
+
+Go back to [Contents](#contents).
+
+**Problem 95:** Removing Duplicate Lines from a Text File
+
+Read a text file, remove duplicate lines, and save the result.
+
+```python
+def remove_duplicates(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+    unique_lines = set(lines)
+    with open(file_path, 'w') as file:
+        file.writelines(unique_lines)
+
+remove_duplicates('path/to/textfile.txt')
+```
+
+Go back to [Contents](#contents).
+
+**Problem 96:** Creating a Simple Local Server with HTTPServer
+
+Start a basic local HTTP server for serving static files.
+
+```python
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+
+def start_server(port):
+    httpd = HTTPServer(('localhost', port), SimpleHTTPRequestHandler)
+    print(f"Serving HTTP on port {port}...")
+    httpd.serve_forever()
+
+start_server(8000)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 97:** Listing Files with a Specific Extension in a Directory
+
+Print a list of all files with a certain extension in a directory.
+
+```python
+import os
+
+def list_files_with_extension(directory, extension):
+    return [file for file in os.listdir(directory) if file.endswith(extension)]
+
+print(list_files_with_extension('path/to/directory', '.txt'))
+```
+
+Go back to [Contents](#contents).
+
+**Problem 98:** Encrypting and Decrypting a Text File
+
+Encrypt the contents of a text file and then decrypt it.
+
+```python
+from cryptography.fernet import Fernet
+
+def encrypt_file(file_path, key):
+    with open(file_path, 'rb') as file:
+        original = file.read()
+    encrypted = Fernet(key).encrypt(original)
+    with open(file_path, 'wb') as file:
+        file.write(encrypted)
+
+def decrypt_file(file_path, key):
+    with open(file_path, 'rb') as file:
+        encrypted = file.read()
+    decrypted = Fernet(key).decrypt(encrypted)
+    with open(file_path, 'wb') as file:
+        file.write(decrypted)
+
+key = Fernet.generate_key()
+encrypt_file('path/to/file.txt', key)
+decrypt_file('path/to/file.txt', key)
+```
+
+Go back to [Contents](#contents).
+
+**Problem 99:** Automatically Shutting Down the Computer
+
+Schedule a shutdown of the computer after a certain period.
+
+```python
+import os
+import time
+
+def schedule_shutdown(seconds):
+    time.sleep(seconds)
+    os.system("shutdown /s /t 1")
+
+schedule_shutdown(3600)  # Shuts down after 1 hour
+```
+
+Go back to [Contents](#contents).
+
+**Problem 100:** Parsing HTML and Extracting Data
+
+Extract specific data from an HTML file.
+
+```python
+from bs4 import BeautifulSoup
+
+def extract_data_from_html(html_file, tag, class_name):
+    with open(html_file, 'r') as file:
+        soup = BeautifulSoup(file, 'html.parser')
+        return [element.get_text() for element in soup.find_all(tag, class_=class_name)]
+
+print(extract_data_from_html('example.html', 'p', 'content'))
+```
+
+Go back to [Contents](#contents).
+
 
 
 ## Python Libraries
