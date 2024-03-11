@@ -1703,7 +1703,7 @@ Go back to [Contents](#contents).
 
 6. **Type Checking:**
 
-To actually enforce these types, you would need to use a static type checker like `mypy` ([https://mypy-lang.org/]Ihttps://mypy-lang.org/). 
+To actually enforce these types, you would need to use a static type checker like [mypy](Ihttps://mypy-lang.org/). 
 
 Running a type checker is a separate step from running your Python code:
 
