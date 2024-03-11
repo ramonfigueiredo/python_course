@@ -43,7 +43,10 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
    3. [Comments](#comments)
    4. [Indentation](#indentation)
    5. [Variables](#variables)
-   6. [Operators](#operators)
+   6. [Python type annotations](#python-type-annotations)
+      1. [Python type annotations - Basic syntax](#python-type-annotations---basic-syntax)
+      1. [Python type annotations examples](#python-type-annotations-examples)
+   7. [Operators](#operators)
       1. [Arithmetic Operators](#arithmetic-operators)
       2. [Assignment Operators](#assignment-operators)
       3. [Comparison Operators](#comparison-operators)
@@ -52,10 +55,10 @@ by [Ramon Figueiredo](https://ramonfigueiredo.github.io/)
       6. [Membership Operators](#membership-operators)
       7. [Bitwise Operators](#bitwise-operators)
       8. [Examples for each type of operator in Python](#examples-for-each-type-of-operator-in-python)
-   7. [Input and Output Functions](#input-and-output-functions)
+   8. [Input and Output Functions](#input-and-output-functions)
       1. [The print function](#the-print-function)
       2. [The input function](#the-input-function)
-   8. [The Python main function](#the-python-main-function)
+   9. [The Python main function](#the-python-main-function)
       1. [When to Use It](#when-to-use-it)
       2. [Do You Need to Use It](#do-you-need-to-use-it)
 3. [Conditional Statements](#conditional-statements)
@@ -1614,6 +1617,103 @@ temperature = 25.5  # A floating-point number
 name = "Python"     # A string
 is_valid = True     # A boolean
 ```
+
+Go back to [Contents](#contents).
+
+### Python type annotations
+
+Python type annotations are a way to explicitly indicate the types of variables, function parameters, return values, and more. Introduced in Python 3.5 through PEP 484, type annotations offer a way to use Python as a statically-typed language, though they do not enforce type checking at runtime. Instead, they can be used by third-party tools, IDEs, and linters to perform static type checking, improve code readability, and catch certain types of errors before runtime.
+
+Go back to [Contents](#contents).
+
+#### Python type annotations - Basic syntax
+
+The basic syntax for type annotations in Python involves adding a colon (:) followed by the type after variable names or function parameters, and for function return types, an arrow (->) followed by the type just before the colon that ends the function definition.
+
+Go back to [Contents](#contents).
+
+#### Python type annotations examples
+
+1. **Variable Annotations:**
+
+```python
+age: int = 25
+name: str = "Alice"
+is_student: bool = True
+```
+
+Go back to [Contents](#contents).
+
+2. **Function Annotations:**
+
+Annotations for function arguments and the return type:
+
+```python
+def greet(name: str) -> str:
+    return f"Hello, {name}!"
+```
+
+Go back to [Contents](#contents).
+
+3. **List, Set, Dict, and Other Collections:**
+
+With the `typing` module, you can specify types for collections:
+
+```python
+from typing import List, Set, Dict
+
+names: List[str] = ["Alice", "Bob", "Charlie"]
+unique_ids: Set[int] = {1, 2, 3}
+student_scores: Dict[str, int] = {"Alice": 85, "Bob": 90}
+```
+
+Go back to [Contents](#contents).
+
+4. **Optional Types:**
+
+Use `Optional` when a variable could be `None`:
+
+```python
+from typing import Optional
+
+def find_student(name: str) -> Optional[Dict]:
+    # Imagine a function that returns a student record as a dictionary if found,
+    # or None if not found.
+    pass
+```
+
+Go back to [Contents](#contents).
+
+5. **Type Aliases:**
+
+You can create aliases for types to make complex annotations easier to read:
+
+```python
+from typing import Dict, List
+
+Student = Dict[str, str]
+Classroom = List[Student]
+
+def list_students(classroom: Classroom) -> None:
+    for student in classroom:
+        print(student['name'])
+```
+
+Go back to [Contents](#contents).
+
+6. **Type Checking:**
+
+To actually enforce these types, you would need to use a static type checker like `mypy` ([https://mypy-lang.org/]Ihttps://mypy-lang.org/). 
+
+Running a type checker is a separate step from running your Python code:
+
+```shell
+mypy script.py
+```
+
+This checks `script.py` for type consistency according to its annotations.
+
+Type annotations are entirely optional and are not enforced at runtime, but they are highly useful for larger projects, enabling better code completion, error detection, and documentation.
 
 Go back to [Contents](#contents).
 
